@@ -1,19 +1,17 @@
 <script>
 
-
+ import Button from "$lib/components/Button.svelte";
 
 </script>
 
-<!-- <header class="flex justify-between items-center p-7">
-  <h1 class="font-bold text-2xl hover:scale-90 duration-300 cursor-pointer">AR</h1>
-  <nav>
-    <el class="flex items-center list-none gap-10 bg-white py-3 px-5 rounded-full font-bold">
-      <li class="hover:text-light-purple duration-200 cursor-pointer">À propos</li>
-      <li class="hover:text-light-purple duration-200 cursor-pointer">Skills</li>
-      <li class="hover:text-light-purple duration-200 cursor-pointer">Projets</li>
-      <li class="hover:text-light-purple duration-200 cursor-pointer">Contact</li>
-    </el>
-  </nav>
-</header> -->
+<section class="flex flex-col items-center justify-around h-screen lg:h-[90vh]">
 
+  <div class="flex flex-col items-center">
+    <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl xl:text-7xl">Arnaud Royer</h1>
+    <h2 class="text-xl lg:text-2xl xl:text-4xl">Développeur Fullstack</h2>
+    <Button href="#" classes="mt-2 sm:mt-3 lg:text-lg xl:text-xl xl:mt-4">C'est parti !</Button>
+  </div>
 
+  <i class="fa-solid fa-arrow-down-long text-light-purple animate-bounce mt-28 text-xl"></i>
+
+</section>
