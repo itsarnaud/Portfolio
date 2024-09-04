@@ -3,7 +3,7 @@
   let menuOpen = false;
 
   const menuItems = [
-    { name: 'À propos', href: '#' },
+    { name: 'À propos', href: '#about' },
     { name: 'Skills', href: '#' },
     { name: 'Projets', href: '#' },
     { name: 'Contact', href: '#' },
