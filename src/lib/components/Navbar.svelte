@@ -4,7 +4,7 @@
 
   const menuItems = [
     { name: 'À propos', href: '#about' },
-    { name: 'Skills', href: '#' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Projets', href: '#' },
     { name: 'Contact', href: '#' },
   ];
