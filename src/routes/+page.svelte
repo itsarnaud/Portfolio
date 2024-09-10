@@ -1,6 +1,8 @@
 <script>
 
- import Button from "$lib/components/Button.svelte";
+  import Button       from "$lib/components/Button.svelte";
+  import { skills }   from "$lib/config/skills";
+  import { projects } from "$lib/config/projects";
 
 </script>
 
@@ -39,19 +41,44 @@
       </div>
     </div>
 
-
   </section>
 
-  <section id="skills" class="mt-7">
+  <section id="skills" class="my-7">
 
-    <h2 class="text-light-purple font-bold px-3 mb-7 text-lg lg:text-xl xl:text-2xl xl:px-10">02 | Skills</h2>
+    <h2 class="text-light-purple font-bold px-3 text-lg lg:text-xl xl:text-2xl xl:px-10">02 | Skills</h2>
 
-    <div class="grid grid-cols-1">
-      <h3 class="text-xl font-bold">Front</h3>
-      <h3>Back</h3>
-      <h3>Design</h3>
+    <div class="flex flex-col items-center justify-center md:flex-row md:gap-20 md:items-start lg:gap-32 xl:gap-40">
+      {#each skills as category}
+        <div class="flex flex-col gap-4 items-center justify-center md:items-start">
+          <h3 class="text-lg font-bold my-7 lg:text-xl xl:text-2xl">{category.title}</h3>
+          {#each category.skills as skill}
+            <div class="flex items-center gap-2 lg:gap-4">
+              <img src={skill.image} alt={skill.name} class="h-10">
+              <p class="text-sm lg:text-base">{skill.name}</p>
+            </div>
+          {/each}
+        </div>
+      {/each}
     </div>
     
+  </section>
+
+  <section id="projects">
+
+    <h2 class="text-light-purple font-bold px-3 text-lg mb-7 lg:text-xl xl:text-2xl xl:px-10">03 | Projets</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 px-5 justify-items-center xl:px-16">
+      {#each projects as project}
+        <div class="flex flex-col w-10/12 gap-3 md:w-full">
+          <img src={project.img} alt={project.title} class="rounded-2xl">
+          <div class="flex justify-between w-full">
+            <span>{project.title}</span>
+            <Button href={project.link}><img src="/projects/arrow.svg" alt="arrow" class="w-5"></Button>
+          </div>
+        </div>
+      {/each}
+    </div>
+
   </section>
 
 </main>

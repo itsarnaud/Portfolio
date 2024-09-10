@@ -5,8 +5,8 @@
   const menuItems = [
     { name: 'À propos', href: '#about' },
     { name: 'Skills', href: '#skills' },
-    { name: 'Projets', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Projets', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ];
 
 </script>
