@@ -5,6 +5,16 @@ export const projects = [
     link:  "#",
   },
   {
+    title:'Igo Dust.js',
+    img:   "/projects/IgoDust.webp",
+    link:  "#",
+  },
+  {
+    title:'Template Engine Benchmark',
+    img:   "/projects/Benchmark.webp",
+    link:  "#",
+  },
+  {
     title: "Zushi",
     img:   "/projects/Zushi.webp",
     link:  "#",
@@ -15,8 +25,13 @@ export const projects = [
     link:  "#",
   },
   {
-    title: "Au Delà des filtres",
-    img:   "/projects/AuDelaDesFiltres.webp",
+    title: "Webdocumentaire",
+    img:   "/projects/Webdoc.webp",
     link:  "#",
   },
+  // {
+  //   title: "Au Delà des filtres",
+  //   img:   "/projects/AuDelaDesFiltres.webp",
+  //   link:  "#",
+  // },
 ];
