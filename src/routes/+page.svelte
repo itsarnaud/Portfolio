@@ -6,6 +6,7 @@
 
   import { skills }   from "$lib/config/skills";
   import { projects } from "$lib/config/projects";
+  import Footer from "../lib/components/Footer.svelte";
 
 
 </script>
@@ -36,7 +37,7 @@
 
     <div class="flex flex-col justify-center items-center gap-5 lg:gap-20 md:flex-row md:px-5 xl:px-16">
       <img src="/portrait.JPEG" alt="Moi" class="w-[200px] sm:w-[300px] lg:w-[400px] xl:w-[500px] rounded-lg">
-      <div class="px-3 text-sm md:p-0 lg:text-base">
+      <div class="px-5 text-sm md:p-0 lg:text-base">
         <p>Salut, c’est Arnaud :) <br/><br/></p>
         <p>J’ai 20 ans, je suis actuellement étudiant en 3ème année de BUT Métiers du Multimédia et de l’Internet et je suis alternant développeur fullstack.<br/><br/></p>
         <p>J’ai toujours été passionné par la programmation et l’informatique en générale. J’ai commencé par bricoler et apprendre des choses en python, puis j’ai découvert le web et c’était le coup de foudre.<br/><br/></p>
@@ -63,7 +64,7 @@
 
     <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">03 | Projets</h2>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-7 justify-items-center md:px-20 xl:px-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-7 justify-items-center px-5 md:px-20 xl:px-16">
       {#each projects as project}
         <Project {project} />
       {/each}
@@ -71,4 +72,36 @@
 
   </section>
 
+  <section id="contact">
+
+    <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">04 | Me contacter</h2>
+
+    <div class="px-5 md:w-full md:px-20 xl:px-16">
+      <h3 class="text-lg font-medium lg:text-xl xl:text-2xl">Une idée ? Un projet ? Une envie ? Allons en discuter !</h3>
+      <div class="flex flex-col gap-y-4 mt-7">
+        <div>
+          <i class="fa-solid fa-phone fa-lg mx-2"></i>
+          <a href="tel:+33781521620" class="text-sm lg:text-base hover:underline">07 81 52 16 20</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-envelope fa-lg mx-2"></i>
+          <a href="mailto:arnaud.royer77@gmail.com" class="text-sm lg:text-base hover:underline">arnaud.royer77@gmail.com</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-github fa-lg mx-2"></i>
+          <a href="https://www.github.com/itsarnaud" class="text-sm lg:text-base hover:underline">itsarnaud</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-linkedin fa-lg mx-2"></i>
+          <a href="http://linkedin.com/in/royer-arnaud/" class="text-sm lg:text-base hover:underline">Arnaud Royer</a>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
 </main>
+
+<Footer />
