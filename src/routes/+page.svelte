@@ -6,7 +6,6 @@
 
   import { skills }   from "$lib/config/skills";
   import { projects } from "$lib/config/projects";
-  import Footer from "../lib/components/Footer.svelte";
 
 
 </script>
@@ -103,5 +102,3 @@
   </section>
 
 </main>
-
-<Footer />
