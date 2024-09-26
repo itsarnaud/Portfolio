@@ -3,16 +3,16 @@
   let menuOpen = false;
 
   const menuItems = [
-    { name: 'À propos', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projets', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'À propos', href: '/#about' },
+    { name: 'Skills', href: '/#skills' },
+    { name: 'Projets', href: '/#projects' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
 </script>
 
 <header class="flex justify-between items-center p-2 bg-white {menuOpen ? 'h-screen items-baseline' : ''} sm:bg-transparent sm:p-4 md:p-6 lg:p-8">
-  <h1 class="sm:text-lg lg:text-2xl font-bold">AR</h1>
+  <a href="/" class="sm:text-lg lg:text-2xl font-bold duration-300 hover:scale-110">AR</a>
 
   <!-- Mobile -->
   <nav class="flex flex-col items-end sm:hidden">

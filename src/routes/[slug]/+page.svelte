@@ -3,7 +3,7 @@
   import { projects } from '$lib/config/projects'
   import { register } from 'swiper/element/bundle'
 
-  $: project = projects.find(p => p.link === $page.params.slug);
+  $: project = projects.find(p => p.href === $page.params.slug);
 
   register()
 </script>
@@ -14,16 +14,36 @@
 
     <section>
 
-      <h2 class="">{project.title}</h2>
-      <swiper-container navigation=true autoplay={{ delay: 5000 }} loop=true class="py-4 z-0">
-        {#each project.img as img}
-          <swiper-slide><img src={img} alt=""></swiper-slide>
-        {/each}
-      </swiper-container>
-      <h3>Description : </h3>
+      <div class="w-10/12 mx-auto mt-10">
+        <h2 class="text-light-purple font-bold text-xl mb-2 lg:text-2xl xl:text-3xl">{project.title}</h2>
+        <swiper-container navigation=true autoplay={{ delay: 5000 }} loop=true>
+          {#each project.img as img}
+            <swiper-slide><img src={img} alt="projects images" class="w-full"></swiper-slide>
+          {/each}
+        </swiper-container>
+      </div>
 
-      <h3>Technos : </h3>
+      <div class="w-10/12 mx-auto mt-10">
+        <h3 class="text-light-purple font-bold text-lg mb-2 lg:text-xl xl:text-2xl">Description : </h3>
+        <p class="text-sm lg:text-base">{@html project.description}</p>
+      </div>
 
+      <div class="w-10/12 mx-auto mt-10">
+        <h3 class="text-light-purple font-bold text-lg mb-2 lg:text-xl xl:text-2xl">Technologies utilisées : </h3>
+        <div class="flex gap-3">
+          {#each project.technos as techno}
+            <img src="{techno}" alt="techno utilisé" class="h-10">
+          {/each}
+        </div>
+      </div>
+
+      <div class="w-10/12 mx-auto mt-10">
+        {#if project.link}
+          <a href={project.link} target="_blank" class="text-light-purple font-bold text-md mb-2 lg:text-lg xl:text-xl hover:underline">Lien du site ici !</a>
+        {:else}
+          <a href={project.github} target="_blank" class="text-light-purple font-bold text-md mb-2 lg:text-lg xl:text-xl hover:underline">Lien du repository ici !</a>
+        {/if}
+      </div>
     </section>
 
   </main>
