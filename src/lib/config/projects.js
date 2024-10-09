@@ -10,11 +10,11 @@ export const projects = [
 
   {
     title:        "Igo Dust.js",
-    description:  "",
-    img:          ["/projects/IgoDust.webp"],
+    description:  "<strong>Igo Dust.js</strong> est un moteur de template open source basé sur Dust.js.  <br /><br /> Comme cette librairie ne disposait d’aucune documentation, j’ai pris en charge la création d’une documentation complète pour expliquer son fonctionnement. Mon objectif était de rendre cette documentation claire, accessible et facile à comprendre, afin que les développeurs puissent rapidement maîtriser l’utilisation d’Igo Dust.js dans leurs projets.",
+    img:          ["/projects/IgoDust/IgoDust.webp", "/projects/IgoDust/IgoDust2.webp"],
     href:         "igodust",
-    technos:      [""],
-    link:         "",
+    technos:      ["/skills/Docsify.svg", "/skills/Markdown.svg"],
+    link:         "https://igocreate.github.io/igo-dust/#/",
   },
 
   {
@@ -27,30 +27,39 @@ export const projects = [
   },
 
   {
+    title:        "ESCAPE.",
+    description:  "<strong>ESCAPE.</strong> est un projet universitaire dont l’objectif est de concevoir une carte interactive pour promouvoir un objet emblématique de la région sélectionnée. Une zone cliquable sur une carte permettra à l’utilisateur d’afficher le(s) objet(s) modélisé(s) en 3D. Ici, nous avons décidé de parler des Vikings et de leur célèbre Langskip (« drakkar »). <br /><br /> Ce projet combine les fonctionnalités de Svelte et de Three.js pour créer une application web interactive qui affiche un modèle 3D dans le navigateur. Le modèle 3D est chargé à partir d’un fichier GLB (format de fichier 3D) et rendu dans une scène 3D en utilisant les fonctionnalités de Three.js. L’interface utilisateur réactive est construite avec Svelte, ce qui permet de manipuler facilement les états et les composants de l’application.  <br /><br />J’ai pris en charge la conception et le développement de l’ensemble du site web, de la mise en place de l’architecture front-end avec Svelte à l’intégration des fonctionnalités de Three.js pour le rendu des modèles 3D. J’ai également géré l’optimisation des performances pour garantir une expérience utilisateur fluide, tout en veillant à la compatibilité multi-plateforme.",
+    img:          ["/projects/ESCAPE/ESCAPE.webp", "/projects/ESCAPE/ESCAPE2.webp"],
+    href:         "escape",
+    technos:      ["/skills/Svelte.svg", "/skills/CSS.svg", "/skills/JavaScript.svg", "/skills/ThreeJS.svg"],
+    link:         "https://escape-sae.netlify.app/",
+  },
+
+  {
     title:        "Zushi",
-    description:  "",
-    img:          ["/projects/Zushi.webp"],
+    description:  "<strong>Zushi</strong> est une application web de gestion des commandes pour un restaurant de sushi, développée avec Angular pour le front-end et Symfony pour le back-end. <br /><br /> Je me suis exclusivement occupé du développement de la partie front-end et du design, en créant l’interface utilisateur ainsi que les maquettes et le logo du site. J’ai veillé à ce que l’interface soit ergonomique et visuellement attrayante, tout en intégrant les services via l’API pour gérer les commandes en temps réel.",
+    img:          ["/projects/Zushi/Zushi.webp", "/projects/Zushi/Zushi2.webp", "/projects/Zushi/Zushi3.webp"],
     href:         "zushi",
-    technos:      [""],
-    link:         "",
+    technos:      ["/skills/Angular.svg", "/skills/Tailwind.svg", "/skills/TypeScript.svg", "/skills/Figma.svg", "/skills/Illustrator.svg", "skills/inDesign.svg"],
+    github:        "https://github.com/GuedesAlexandre/Zushi",
   },
 
   {
     title:        "ACF2L",
-    description:  "",
+    description:  "<strong>ACF2L</strong> consiste en la refonte du site web de l’association ACF2L, permettant notamment la gestion des réservations pour ses activités. <br /><br /> Je me suis chargé du design, du développement front-end et back-end, en créant une interface utilisateur attractive et fonctionnelle, ainsi qu’un système de réservation en ligne. Le back-end, développé en PHP, gère la base de données MySQL pour stocker les informations des utilisateurs et des réservations, tandis que le front-end utilise HTML, CSS, et JavaScript pour une navigation fluide.",
     img:          ["/projects/ACF2L.webp"],
     href:         "acf2l",
-    technos:      [""],
-    link:         "",
+    technos:      ["/skills/HTML.svg", "/skills/CSS.svg", "/skills/PHP.svg","/skills/MySQL.svg", "/skills/Figma.svg", "/skills/Illustrator.svg", "/skills/inDesign.svg"],
+    github:        "https://github.com/GuedesAlexandre/ACF2L",
   },
 
   {
     title:        "Webdocumentaire",
-    description:  "",
+    description:  "<strong>Le projet Webdoc</strong> est un webdocumentaire interactif portant sur les kioskiers, explorant leur quotidien et leur rôle dans la société. <br /><br /> Je me suis occupé d’une partie du design, de la rédaction d’un article, ainsi que du développement du site web. J’ai contribué à la création de l’interface utilisateur et à l’intégration de contenus interactifs, permettant de raconter cette histoire de manière immersive et engageante pour les utilisateurs.",
     img:          ["/projects/Webdoc.webp"],
     href:         "webdoc",
-    technos:      [""],
-    link:         "",
+    technos:      ["/skills/HTML.svg", "/skills/CSS.svg", "/skills/Figma.svg", "/skills/inDesign.svg"],
+    link:         "https://itsarnaud.github.io/webdoc/",
   },
 
   
