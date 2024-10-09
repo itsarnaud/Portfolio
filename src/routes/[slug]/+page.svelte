@@ -8,6 +8,11 @@
   register()
 </script>
 
+<svelte:head>
+  <title>Arnaud Royer - {project ? project.title.toUpperCase() : 'Projet inconnu'}</title>
+</svelte:head>
+
+
 {#if project}
 
   <!-- Blobs -->
@@ -51,6 +56,12 @@
       </div>
     </section>
 
+  </main>
+
+{:else}
+
+  <main class="flex items-center justify-center h-[70vh]">
+    <h1 class="text-2xl font-bold">Oh oh, je ne connais pas ce projet...</h1>
   </main>
 
 {/if}
