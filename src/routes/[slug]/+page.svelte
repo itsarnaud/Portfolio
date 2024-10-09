@@ -9,6 +9,11 @@
 </script>
 
 {#if project}
+
+  <!-- Blobs -->
+  <img src="/blobs/Blob1.png" alt="blob1" class="hidden absolute w-[800px] top-0 left-2/4 -z-10 select-none lg:block">
+  <img src="/blobs/Blob2.png" alt="blob2" class="hidden absolute w-[500px] bottom-0 left-0 -z-10 select-none lg:block">
+  <img src="/blobs/Blob3.png" alt="blob2" class="hidden absolute w-[500px] top-72 right-0 -z-10 select-none lg:block">
   
   <main>
 

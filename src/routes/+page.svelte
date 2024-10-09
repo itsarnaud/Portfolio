@@ -11,9 +11,9 @@
 </script>
 
 <!-- Blobs -->
-<img src="/Blob1.png" alt="blob1" class="hidden absolute w-[800px] top-0 left-1/4 -z-10 lg:block">
-<img src="/Blob2.png" alt="blob2" class="hidden absolute w-[800px] top-3/12 left-0 -z-10 lg:block">
-<img src="/Blob3.png" alt="blob2" class="hidden absolute w-[800px] bottom-9/12 right-0 -z-10 lg:block">
+<img src="/blobs/Blob1.png" alt="blob1" class="hidden absolute w-[800px] top-0 left-1/4 -z-10 select-none lg:block">
+<img src="/blobs/Blob2.png" alt="blob2" class="hidden absolute w-[800px] top-3/12 left-0 -z-10 select-none lg:block">
+<img src="/blobs/Blob3.png" alt="blob2" class="hidden absolute w-[800px] bottom-9/12 right-0 -z-10 select-none lg:block">
 
 <main>
 
@@ -23,14 +23,17 @@
       <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl xl:text-7xl">Arnaud Royer</h1>
       <h2 class="text-xl lg:text-2xl xl:text-4xl">Développeur Fullstack</h2>
       <Button href="#about" classes="mt-2 sm:mt-3 lg:text-lg xl:text-xl xl:mt-4">C'est parti !</Button>
-      <img src="/blob.gif" alt="blob1" class="absolute -top-1/2 -z-10 opacity-20 hidden lg:block">
+      <img src="/blobs/blob.gif" alt="blob1" class="absolute -top-1/2 -z-10 opacity-20 hidden lg:block">
     </div>
 
     <a href="#about"><i class="fa-solid fa-arrow-down-long text-light-purple animate-bounce mt-28 text-xl"></i></a>
 
   </section>
 
-  <section id="about">
+  <section id="about" class="relative">
+
+    <!-- Blobs -->
+    <img src="/blobs/Blob4.png" alt="blob2" class="hidden absolute w-[800px] top-36 left-40 -z-10 select-none lg:block">
 
     <h2 class="text-light-purple font-bold px-3 mb-20 text-lg lg:text-xl xl:text-2xl xl:px-10">01 | À propos de moi</h2>
 
@@ -47,7 +50,11 @@
 
   </section>
 
-  <section id="skills">
+  <section id="skills" class="relative">
+
+    <!-- Blobs -->
+    <img src="/blobs/Blob3.png" alt="blob2" class="hidden absolute w-[800px] -top-40 right-0 -z-10 select-none lg:block">
+    <img src="/blobs/Blob2.png" alt="blob2" class="hidden absolute w-[800px] -top-64 left-0 -z-10 select-none lg:block">
 
     <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">02 | Skills</h2>
 
@@ -59,7 +66,10 @@
     
   </section>
 
-  <section id="projects">
+  <section id="projects" class="relative">
+
+    <!-- Blobs -->
+    <img src="/blobs/Blob2.png" alt="blob2" class="hidden absolute w-[800px] -top-28 left-0 -z-10 select-none lg:block">
 
     <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">03 | Projets</h2>
 
@@ -71,7 +81,10 @@
 
   </section>
 
-  <section id="contact">
+  <section id="contact" class="relative">
+
+    <!-- Blobs -->
+    <img src="/blobs/Blob3.png" alt="blob2" class="hidden absolute w-[800px] bottom-0 right-0 -z-10 select-none lg:block">
 
     <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">04 | Me contacter</h2>
 
