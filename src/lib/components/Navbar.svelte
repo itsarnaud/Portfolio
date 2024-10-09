@@ -12,7 +12,7 @@
 </script>
 
 <header class="flex justify-between items-center p-2 bg-white {menuOpen ? 'h-screen items-baseline' : ''} sm:bg-transparent sm:p-4 md:p-6 lg:p-8">
-  <a href="/" class="sm:text-lg lg:text-2xl font-bold duration-300 hover:scale-110">AR</a>
+  <a href="/" class="duration-300 hover:scale-110"><img src="/Logo.svg" alt="Logo" class="h-7 md:h-10 lg:h-12"></a>
 
   <!-- Mobile -->
   <nav class="flex flex-col items-end sm:hidden">
