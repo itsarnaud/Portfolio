@@ -10,6 +10,10 @@
 
 </script>
 
+<svelte:head>
+  <title>Arnaud Royer - HOME</title>
+</svelte:head>
+
 <!-- Blobs -->
 <img src="/blobs/Blob1.png" alt="blob1" class="hidden absolute w-[800px] top-0 left-1/4 -z-10 select-none lg:block">
 <img src="/blobs/Blob2.png" alt="blob2" class="hidden absolute w-[800px] top-3/12 left-0 -z-10 select-none lg:block">
