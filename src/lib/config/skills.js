@@ -7,6 +7,7 @@ export const skills = [
       { name: "JavaScript", image: "/skills/JavaScript.svg" },
       { name: "Svelte", image: "/skills/Svelte.svg" },
       { name: "Angular", image: "/skills/Angular.svg" },
+      { name: "Next", image: "/skills/Next.svg" },
       { name: "React", image: "/skills/React.svg" },
       { name: "Tailwind", image: "/skills/Tailwind.svg" },
       { name: "Bootstrap", image: "/skills/Bootstrap.svg" },
@@ -21,7 +22,6 @@ export const skills = [
       { name: "MySQL", image: "/skills/MySQL.svg" },
       { name: "TypeScript", image: "/skills/TypeScript.svg" },
       { name: "Java", image: "/skills/Java.svg" },
-      { name: "Spring", image: "/skills/Spring.svg" },
       { name: "Python", image: "/skills/Python.svg" },
       { name: "Nodejs", image: "/skills/Nodejs.svg" },
     ]
