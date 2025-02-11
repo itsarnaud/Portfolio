@@ -5,6 +5,7 @@ export const skills = [
       { name: "HTML", image: "/skills/HTML.svg" },
       { name: "CSS", image: "/skills/CSS.svg" },
       { name: "JavaScript", image: "/skills/JavaScript.svg" },
+      { name: "TypeScript", image: "/skills/TypeScript.svg" },
       { name: "Svelte", image: "/skills/Svelte.svg" },
       { name: "Angular", image: "/skills/Angular.svg" },
       { name: "Next", image: "/skills/Next.svg" },
@@ -17,13 +18,14 @@ export const skills = [
   {
     title: "Backend",
     skills: [
+      { name: "JavaScript", image: "/skills/JavaScript.svg" },
+      { name: "TypeScript", image: "/skills/TypeScript.svg" },
+      { name: "Nodejs", image: "/skills/Nodejs.svg" },
       { name: "PHP", image: "/skills/PHP.svg" },
       { name: "Symfony", image: "/skills/Symfony.svg" },
       { name: "MySQL", image: "/skills/MySQL.svg" },
-      { name: "TypeScript", image: "/skills/TypeScript.svg" },
       { name: "Java", image: "/skills/Java.svg" },
       { name: "Python", image: "/skills/Python.svg" },
-      { name: "Nodejs", image: "/skills/Nodejs.svg" },
     ]
   },
   {
@@ -39,6 +41,7 @@ export const skills = [
     title: "Autre",
     skills: [
       { name: "Markdown", image: "/skills/Markdown.svg" },
+      { name: "Docsify", image: "/skills/Docsify.svg" },
       { name: "Git", image: "/skills/Git.svg" },
     ]
   }
