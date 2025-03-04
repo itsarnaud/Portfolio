@@ -4,8 +4,9 @@
 
   const menuItems = [
     { name: 'À propos', href: '/#about' },
-    { name: 'Skills', href: '/#skills' },
+    { name: 'Compétences', href: '/#skills' },
     { name: 'Projets', href: '/#projects' },
+    { name: 'Veille technologique', href: '/#tech' },
     { name: 'Contact', href: '/#contact' },
   ];
 

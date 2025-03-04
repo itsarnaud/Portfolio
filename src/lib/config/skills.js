@@ -24,6 +24,7 @@ export const skills = [
       { name: "PHP", image: "/skills/PHP.svg" },
       { name: "Symfony", image: "/skills/Symfony.svg" },
       { name: "MySQL", image: "/skills/MySQL.svg" },
+      { name: "PostgreSQL", image: "/skills/PostgreSQL.svg" },
       { name: "Java", image: "/skills/Java.svg" },
       { name: "Python", image: "/skills/Python.svg" },
     ]
@@ -40,6 +41,7 @@ export const skills = [
   {
     title: "Autre",
     skills: [
+      { name: "Docker", image: "/skills/Docker.svg" },
       { name: "Markdown", image: "/skills/Markdown.svg" },
       { name: "Docsify", image: "/skills/Docsify.svg" },
       { name: "Git", image: "/skills/Git.svg" },

@@ -45,9 +45,9 @@
       <img src="/portrait.JPEG" alt="Moi" class="w-[200px] sm:w-[300px] lg:w-[400px] xl:w-[500px] rounded-lg">
       <div class="px-5 text-sm md:p-0 lg:text-base">
         <p>Salut, c’est Arnaud :) <br/><br/></p>
-        <p>J’ai 20 ans, je suis actuellement étudiant en 3ème année de BUT Métiers du Multimédia et de l’Internet et je suis alternant développeur fullstack.<br/><br/></p>
-        <p>J’ai toujours été passionné par la programmation et l’informatique en générale. J’ai commencé par bricoler et apprendre des choses en python, puis j’ai découvert le web et c’était le coup de foudre.<br/><br/></p>
-        <p>Mon objectif est de devenir développeur fullstack et m’orienter vers un Master en développement web.<br/><br/></p>
+        <p>Je suis actuellement étudiant en 3ème année de BUT Métiers du Multimédia et de l’Internet et je suis alternant développeur fullstack dans l'entreprise Igocreate.<br/><br/></p>
+        <p>J’ai toujours été passionné par la programmation et l’informatique en général. J’ai commencé par bricoler et apprendre des choses en Python, puis j’ai découvert le web et c’était le coup de foudre.<br/><br/></p>
+        <p>Mon objectif est de continuer ma formation en Master, mais aussi de reprendre l'aspect de l'informatique en général (de manière plus poussée) afin de devenir un bon développeur.<br/><br/></p>
         <Button href="/CV.pdf" download="CV_Arnaud_Royer.pdf" classes="">Télécharge mon CV !</Button>
       </div>
     </div>
@@ -60,7 +60,7 @@
     <img src="/blobs/Blob3.png" alt="blob2" class="hidden absolute w-[800px] -top-40 right-0 -z-10 select-none lg:block">
     <img src="/blobs/Blob2.png" alt="blob2" class="hidden absolute w-[800px] -top-64 left-0 -z-10 select-none lg:block">
 
-    <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">02 | Skills</h2>
+    <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">02 | Compétences</h2>
 
     <div class="flex flex-col items-center justify-center md:flex-row md:gap-20 md:items-start lg:gap-32 xl:gap-40">
       {#each skills as category}
@@ -85,12 +85,20 @@
 
   </section>
 
+  <section id="tech" class="relative">
+    <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">04 | Veille technologique</h2>
+
+    <div class="px-5 md:w-full md:px-20 xl:px-16">
+      <p class="text-sm lg:text-base">Ma veille technologique porte sur la recherche et l'analyse des dernières tendances dans le développement web, l'intelligence artificielle et les frameworks. Pour ce faire, j'utilise surtout <a href="https://app.daily.dev/" class="text-light-purple hover:underline">Daily.dev</a> pour voir une multitude d'article dans ces sujets, les réseaux sociaux pour suivre des experts et des newsletters (sur l'IA par exemple) pour rester informé des évolutions et des découvertes dans ce secteur. J'utilise aussi YouTube pour regarder des vidéos sur ces sujets, en suivant par exemple <strong>Micode</strong>, <strong>Underscore</strong> ou <strong>Benjamin Code</strong> par exemple. </p>
+    </div>
+  </section>
+
   <section id="contact" class="relative">
 
     <!-- Blobs -->
     <img src="/blobs/Blob3.png" alt="blob2" class="hidden absolute w-[800px] bottom-0 right-0 -z-10 select-none lg:block">
 
-    <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">04 | Me contacter</h2>
+    <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">05 | Me contacter</h2>
 
     <div class="px-5 md:w-full md:px-20 xl:px-16">
       <h3 class="text-lg font-medium lg:text-xl xl:text-2xl">Une idée ? Un projet ? Une envie ? Allons en discuter !</h3>

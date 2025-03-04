@@ -1,5 +1,14 @@
 export const projects = [
   {
+    title:        "Foliode",
+    description:  "<strong>Igowall</strong> est une plateforme qui permet aux utilisateurs de créer facilement leurs propres sites web sans avoir de compétences techniques en développement web. <br /><br /> J'ai travaillé sur la refonte de ce site web en passant de TypeScript à JavaScript et en remplaçant Bootstrap par Tailwind. Ce changement à permis une plus grande flexibilité dans le design et de moderniser l'interface utilisateur. <br /><br /> Mon travail s'est principalement concentré sur le front-end de l'application.",
+    img:          ["/projects/Igowall/Igowall.webp", "/projects/Igowall/Igowall2.webp", "/projects/Igowall/Igowall3.webp", "/projects/Igowall/Igowall4.webp", "/projects/Igowall/Igowall5.webp"],
+    href:         "igowall",
+    technos:      ["/skills/Next.svg", "/skills/React.svg", "/skills/TypeScript.svg", "/skills/Tailwind.svg", "/skills/Symfony.svg", "/skills/PostgreSQL.svg", "/skills/Docker.svg"],
+    github:         "https://github.com/itsarnaud/Foliode/",
+  },
+
+  {
     title:        "Igowall",
     description:  "<strong>Igowall</strong> est une plateforme qui permet aux utilisateurs de créer facilement leurs propres sites web sans avoir de compétences techniques en développement web. <br /><br /> J'ai travaillé sur la refonte de ce site web en passant de TypeScript à JavaScript et en remplaçant Bootstrap par Tailwind. Ce changement à permis une plus grande flexibilité dans le design et de moderniser l'interface utilisateur. <br /><br /> Mon travail s'est principalement concentré sur le front-end de l'application.",
     img:          ["/projects/Igowall/Igowall.webp", "/projects/Igowall/Igowall2.webp", "/projects/Igowall/Igowall3.webp", "/projects/Igowall/Igowall4.webp", "/projects/Igowall/Igowall5.webp"],
