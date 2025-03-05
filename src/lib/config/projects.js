@@ -1,11 +1,12 @@
 export const projects = [
   {
     title:        "Foliode",
-    description:  "<strong>Igowall</strong> est une plateforme qui permet aux utilisateurs de créer facilement leurs propres sites web sans avoir de compétences techniques en développement web. <br /><br /> J'ai travaillé sur la refonte de ce site web en passant de TypeScript à JavaScript et en remplaçant Bootstrap par Tailwind. Ce changement à permis une plus grande flexibilité dans le design et de moderniser l'interface utilisateur. <br /><br /> Mon travail s'est principalement concentré sur le front-end de l'application.",
-    img:          ["/projects/Igowall/Igowall.webp", "/projects/Igowall/Igowall2.webp", "/projects/Igowall/Igowall3.webp", "/projects/Igowall/Igowall4.webp", "/projects/Igowall/Igowall5.webp"],
-    href:         "igowall",
+    description:  "<strong>Foliode</strong> est un générateur de portfolios qui vise à répondre à une problématique importante. En effet, nous avons constaté que les étudiants en première année rencontrent souvent des difficultés lors de la création et du développement de leurs portfolios, qui est essentiel pour trouver des stages. Notre solution leur permet de créer rapidement un portfolio sous forme de site web, regroupant leurs différentes réalisations. <br /><br /> Il est important qu’un portfolio soit personnalisable car il doit représenter le travail d’un étudiant donc nous souhaitons qu’un étudiant puisse créer où modifier le design de son portfolio. <br /><br /> Ici, j'ai été chef de projet et j'ai aussi été développeur fullstack.",
+    img:          ["/projects/Foliode/Foliode.png", "/projects/Foliode/Foliode1.png", "/projects/Foliode/Foliode2.png", "/projects/Foliode/Foliode3.png"],
+    href:         "foliode",
     technos:      ["/skills/Next.svg", "/skills/React.svg", "/skills/TypeScript.svg", "/skills/Tailwind.svg", "/skills/Symfony.svg", "/skills/PostgreSQL.svg", "/skills/Docker.svg"],
-    github:         "https://github.com/itsarnaud/Foliode/",
+    github:       "https://github.com/itsarnaud/Foliode/",
+    type:         "Projet universitaire"
   },
 
   {
@@ -15,6 +16,7 @@ export const projects = [
     href:         "igowall",
     technos:      ["/skills/Svelte.svg", "/skills/Tailwind.svg", "/skills/JavaScript.svg", "/skills/Nodejs.svg"],
     link:         "https://www.igowall.com/",
+    type:         "Projet d'alternance"
   },
 
   {
@@ -24,6 +26,7 @@ export const projects = [
     href:         "igodust",
     technos:      ["/skills/Docsify.svg", "/skills/Markdown.svg"],
     link:         "https://igocreate.github.io/igo-dust/#/",
+    type:         "Projet de stage"
   },
 
   {
@@ -33,6 +36,7 @@ export const projects = [
     href:         "benchmark",
     technos:      ["/skills/JavaScript.svg"],
     github:       "https://github.com/itsarnaud/template-engine-bench",
+    type:         "Projet de stage"
   },
 
   {
@@ -42,6 +46,7 @@ export const projects = [
     href:         "escape",
     technos:      ["/skills/Svelte.svg", "/skills/CSS.svg", "/skills/JavaScript.svg", "/skills/ThreeJS.svg"],
     link:         "https://escape-sae.netlify.app/",
+    type:         "Projet universitaire"
   },
 
   {
@@ -51,15 +56,17 @@ export const projects = [
     href:         "zushi",
     technos:      ["/skills/Angular.svg", "/skills/Tailwind.svg", "/skills/TypeScript.svg", "/skills/Figma.svg", "/skills/Illustrator.svg", "skills/inDesign.svg"],
     github:        "https://github.com/GuedesAlexandre/Zushi",
+    type:         "Projet universitaire"
   },
 
   {
     title:        "ACF2L",
-    description:  "<strong>ACF2L</strong> consiste en la refonte du site web de l’association ACF2L, permettant notamment la gestion des réservations pour ses activités. <br /><br /> Je me suis chargé du design, du développement front-end et back-end, en créant une interface utilisateur attractive et fonctionnelle, ainsi qu’un système de réservation en ligne. Le back-end, développé en PHP, gère la base de données MySQL pour stocker les informations des utilisateurs et des réservations, tandis que le front-end utilise HTML, CSS, et JavaScript pour une navigation fluide.",
+    description:  "<strong>ACF2L</strong> consiste en la refonte du site web de l’association ACF2L, permettant notamment la gestion des réservations pour ses activités. <br /><br /> Je me suis chargé du design, du développement front-end et back-end, en créant une interface utilisateur attractive et fonctionnelle, ainsi qu’un système de réservation en ligne. Le back-end, développé en PHP, gère la base de données MySQL pour stocker les informations des utilisateurs et des réservations, tandis que le front-end utilise HTML, Bootstrap, et JavaScript pour une navigation fluide.",
     img:          ["/projects/ACF2L.webp"],
     href:         "acf2l",
-    technos:      ["/skills/HTML.svg", "/skills/CSS.svg", "/skills/PHP.svg","/skills/MySQL.svg", "/skills/Figma.svg", "/skills/Illustrator.svg", "/skills/inDesign.svg"],
+    technos:      ["/skills/HTML.svg", "/skills/Bootstrap.svg", "/skills/PHP.svg","/skills/MySQL.svg", "/skills/Figma.svg", "/skills/Illustrator.svg", "/skills/inDesign.svg"],
     github:        "https://github.com/GuedesAlexandre/ACF2L",
+    type:         "Projet universitaire"
   },
 
   {
@@ -69,6 +76,7 @@ export const projects = [
     href:         "webdoc",
     technos:      ["/skills/HTML.svg", "/skills/CSS.svg", "/skills/Figma.svg", "/skills/inDesign.svg"],
     link:         "https://itsarnaud.github.io/webdoc/",
+    type:         "Projet universitaire"
   },
 
   

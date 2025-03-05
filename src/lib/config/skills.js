@@ -25,7 +25,7 @@ export const skills = [
       { name: "Symfony", image: "/skills/Symfony.svg" },
       { name: "MySQL", image: "/skills/MySQL.svg" },
       { name: "PostgreSQL", image: "/skills/PostgreSQL.svg" },
-      { name: "Java", image: "/skills/Java.svg" },
+      // { name: "Java", image: "/skills/Java.svg" },
       { name: "Python", image: "/skills/Python.svg" },
     ]
   },

@@ -25,7 +25,10 @@
     <section>
 
       <div class="w-10/12 mx-auto mt-10">
-        <h2 class="text-light-purple font-bold text-xl mb-2 lg:text-2xl xl:text-3xl">{project.title}</h2>
+        <div class="flex w-full justify-between items-center">
+          <h2 class="text-light-purple font-bold text-xl mb-2 lg:text-2xl xl:text-3xl">{project.title}</h2>
+          <span class="text-light-purple">{project.type}</span>
+        </div>
         <swiper-container navigation=true autoplay={{ delay: 5000 }} loop=true>
           {#each project.img as img}
             <swiper-slide><img src={img} alt="projects images" class="w-full"></swiper-slide>

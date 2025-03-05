@@ -48,7 +48,7 @@
         <p>Je suis actuellement étudiant en 3ème année de BUT Métiers du Multimédia et de l’Internet et je suis alternant développeur fullstack dans l'entreprise Igocreate.<br/><br/></p>
         <p>J’ai toujours été passionné par la programmation et l’informatique en général. J’ai commencé par bricoler et apprendre des choses en Python, puis j’ai découvert le web et c’était le coup de foudre.<br/><br/></p>
         <p>Mon objectif est de continuer ma formation en Master, mais aussi de reprendre l'aspect de l'informatique en général (de manière plus poussée) afin de devenir un bon développeur.<br/><br/></p>
-        <Button href="/CV.pdf" download="CV_Arnaud_Royer.pdf" classes="">Télécharge mon CV !</Button>
+        <Button href="/CV.pdf" download="CV_Arnaud_Royer.pdf">Télécharge mon CV !</Button>
       </div>
     </div>
 
@@ -89,7 +89,29 @@
     <h2 class="text-light-purple font-bold px-3 text-lg my-20 lg:text-xl xl:text-2xl xl:px-10">04 | Veille technologique</h2>
 
     <div class="px-5 md:w-full md:px-20 xl:px-16">
-      <p class="text-sm lg:text-base">Ma veille technologique porte sur la recherche et l'analyse des dernières tendances dans le développement web, l'intelligence artificielle et les frameworks. Pour ce faire, j'utilise surtout <a href="https://app.daily.dev/" class="text-light-purple hover:underline">Daily.dev</a> pour voir une multitude d'article dans ces sujets, les réseaux sociaux pour suivre des experts et des newsletters (sur l'IA par exemple) pour rester informé des évolutions et des découvertes dans ce secteur. J'utilise aussi YouTube pour regarder des vidéos sur ces sujets, en suivant par exemple <strong>Micode</strong>, <strong>Underscore</strong> ou <strong>Benjamin Code</strong> par exemple. </p>
+      <p class="text-sm lg:text-base">Ma veille technologique porte sur la recherche et l'analyse des dernières tendances dans le développement web, l'intelligence artificielle et les frameworks. Pour ce faire, j'utilise surtout <a href="https://app.daily.dev/" class="text-light-purple hover:underline">Daily.dev</a> pour voir une multitude d'article dans ces sujets, les réseaux sociaux pour suivre des experts et des newsletters (sur l'IA par exemple) pour rester informé des évolutions et des découvertes dans ce secteur. J'utilise aussi YouTube pour regarder des vidéos de développeurs sur les nouveautés ou juste pour de l'apprentissage.</p>
+    </div>
+
+    <h3 class="px-5 md:w-full md:px-20 xl:px-16 font-bold text-md mt-6 lg:text-lg xl:text-xl">Quelques articles intéressants :</h3>
+    <div class="px-5 md:w-full md:px-20 xl:px-16 grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      <a href="https://tailwindcss.com/blog/tailwindcss-v4" target="_blank" class="block bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+        <img src="/articles/tailwind4.jpg" alt="TailwindCSS v4" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-base lg:text-lg text-light-purple">TailwindCSS v4.0</h3>
+        </div>
+      </a>
+      <a href="https://www.showwcase.com/article/34961/orbstack-blazingly-fast-docker-desktop-alternative-for-macos" target="_blank" class="block bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+        <img src="/articles/orbstack.png" alt="Orbstack" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-light-purple">OrbStack : une alternative de bureau Docker ultra rapide pour MacOS</h3>
+        </div>
+      </a>
+      <a href="https://blog.bitsrc.io/top-7-alternatives-to-next-js-in-2025-917bf9d5ffba" target="_blank" class="block bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+        <img src="/articles/next.webp" alt="next" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg text-light-purple">Les 7 meilleures alternatives à Next.js en 2025</h3>
+        </div>
+      </a>
     </div>
   </section>
 
