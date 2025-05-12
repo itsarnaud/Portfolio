@@ -12,7 +12,7 @@
 </script>
 
 {#if href}
-  <a {href} {download} target="_blank" class="{VARIANTS[variant]} {classes}">
+  <a {href} {download} class="{VARIANTS[variant]} {classes}">
     {#if icon && variant === 'icon'}
       <i class={icon}></i>
     {:else}
