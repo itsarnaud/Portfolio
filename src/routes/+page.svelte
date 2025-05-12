@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-  <title>Arnaud Royer - HOME</title>
+  <title>Arnaud Royer - Portfolio</title>
 </svelte:head>
 
 <!-- Blobs -->
@@ -45,10 +45,14 @@
       <img src="/portrait.JPEG" alt="Moi" class="w-[200px] sm:w-[300px] lg:w-[400px] xl:w-[500px] rounded-lg">
       <div class="px-5 text-sm md:p-0 lg:text-base">
         <p>Salut, c’est Arnaud :) <br/><br/></p>
-        <p>Je suis actuellement étudiant en 3ème année de BUT Métiers du Multimédia et de l’Internet et je suis alternant développeur fullstack dans l'entreprise Igocreate.<br/><br/></p>
-        <p>J’ai toujours été passionné par la programmation et l’informatique en général. J’ai commencé par bricoler et apprendre des choses en Python, puis j’ai découvert le web et c’était le coup de foudre.<br/><br/></p>
-        <p>Mon objectif est de continuer ma formation en Master, mais aussi de reprendre l'aspect de l'informatique en général (de manière plus poussée) afin de devenir un bon développeur.<br/><br/></p>
-        <Button href="/CV.pdf" download="CV_Arnaud_Royer.pdf">Télécharge mon CV !</Button>
+        <p>Je suis développeur fullstack en alternance chez Igocreate et actuellement en 3e année de BUT Métiers du Multimédia et de l’Internet à l’Université Gustave Eiffel. Passionné par le web et la tech en général, je prépare la suite : un Mastère Expert en Informatique et Systèmes d’Information à l’EPSI, que j’aimerais suivre en alternance à Montpellier.<br/><br/></p>
+        <p>J’ai découvert la programmation avec Python, puis j’ai plongé dans le développement web, et là… c’était une évidence. Aujourd’hui, je continue d’apprendre tous les jours, en entreprise comme sur mes projets persos.<br/><br/></p>
+        <p>Parmi eux, il y a Infranéo, une application de gestion de parc informatique que je développe actuellement avec des amis. C’est un vrai terrain d’expérimentation, et vous pouvez suivre l’évolution du projet sur ma page LinkedIn (cliquez sur le bouton juste en dessous ;)).<br/><br/></p>
+        <div class="flex space-x-2">
+          <Button href="/CV.pdf" download="CV_Arnaud_Royer.pdf">Télécharge mon CV !</Button>
+          <Button variant="icon" icon="fa-brands fa-linkedin text-[#0e76a8]" href="http://linkedin.com/in/royer-arnaud/" />
+          <Button variant="icon" icon="fa-brands fa-github" href="http://github.com/itsarnaud" />
+        </div>
       </div>
     </div>
 
