@@ -1,5 +1,25 @@
 export const projects = [
   {
+    title:        "Infranéo",
+    description:  "<strong>Infranéo</strong> est une application de gestion de parc informatique, inspirée de GLPI. L’idée : créer un outil plus rapide, plus moderne et avec davantage de fonctionnalités. <br /><br />Le projet est toujours en cours de développement et vous pouvez en suivre l’évolution directement sur <a class='text-light-purple hover:underline' href='http://linkedin.com/in/royer-arnaud/'>ma page LinkedIn.</a> <br /><br /> Sur ce projet, je travaille sur le frontend et le backend, en construisant l’interface et en développant les fonctionnalités métier.",
+    img:          ["/projects/Infraneo.png"],
+    href:         "infraneo",
+    technos:      ["/skills/Vue.svg", "/skills/Tailwind.svg", "/skills/Java.svg", "/skills/Spring.svg", "/skills/MySQL.svg"],
+    github:       "https://github.com/itsarnaud/infraneo",
+    type:         "Projet perso"
+  },
+
+  {
+    title:        "Igotrack",
+    description:  "<strong>Igotrack</strong> est une application de gestion de projet que nous avons développée en partant d’un constat simple : les outils existants comme Jira ou Linear ne répondaient pas vraiment à nos besoins. Trop complexes, pas assez flexibles, ou simplement pas adaptés à notre façon de travailler. <br /><br /> On a donc décidé de créer notre propre outil, pensé sur mesure pour notre organisation et nos priorités. Le but : garder une vision claire de l’avancement, mieux répartir les tâches, et surtout gagner en efficacité au quotidien. <br /><br /> Sur ce projet, j’ai développé à la fois le frontend et le backend, en contribuant aux interfaces utilisateur et aux fonctionnalités côté serveur.",
+    img:          ["/projects/Igotrack.png"],
+    href:         "igotrack",
+    technos:      ["/skills/Svelte.svg", "/skills/Tailwind.svg", "/skills/JavaScript.svg", "/skills/Nodejs.svg", "/skills/MySQL.svg"],
+    link:         "https://igotrack.co",
+    type:         "Projet d'alternance"
+  },
+
+  {
     title:        "Foliode",
     description:  "<strong>Foliode</strong> est un générateur de portfolios qui vise à répondre à une problématique importante. En effet, nous avons constaté que les étudiants en première année rencontrent souvent des difficultés lors de la création et du développement de leurs portfolios, qui est essentiel pour trouver des stages. Notre solution leur permet de créer rapidement un portfolio sous forme de site web, regroupant leurs différentes réalisations. <br /><br /> Il est important qu’un portfolio soit personnalisable car il doit représenter le travail d’un étudiant donc nous souhaitons qu’un étudiant puisse créer où modifier le design de son portfolio. <br /><br /> Ici, j'ai été chef de projet et j'ai aussi été développeur fullstack.",
     img:          ["/projects/Foliode/Foliode.png", "/projects/Foliode/Foliode1.png", "/projects/Foliode/Foliode2.png", "/projects/Foliode/Foliode3.png"],
