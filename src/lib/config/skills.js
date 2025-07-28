@@ -25,6 +25,7 @@ export const skills = [
       { name: "Symfony", image: "/skills/Symfony.svg" },
       { name: "MySQL", image: "/skills/MySQL.svg" },
       { name: "PostgreSQL", image: "/skills/PostgreSQL.svg" },
+      { name: "Prisma", image: "/skills/Prisma.svg" },
       // { name: "Java", image: "/skills/Java.svg" },
       // { name: "Python", image: "/skills/Python.svg" },
     ]
@@ -52,7 +53,6 @@ export const skills = [
     skills: [
       { name: "Vue", image: "/skills/Vue.svg" },
       { name: "Java", image: "/skills/Java.svg" },
-      // { name: "Docsify", image: "/skills/Docsify.svg" },
       { name: "Spring", image: "/skills/Spring.svg" },
     ]
   }

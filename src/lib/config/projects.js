@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title:        "Stellarica",
+    description:  "<strong>Stellarica</strong> est un bot de modération Discord développé avec Discord.js qui fournit des outils de modération essentiels aux administrateurs et modérateurs de serveurs.  <br /><br />Ce projet à surtout été créé pour m'améliorer en JavaScript et à apprendre de nouvelles choses.",
+    img:          ["/projects/Stellarica.png"],
+    href:         "stellarica",
+    technos:      ["/skills/JavaScript.svg", "/skills/Prisma.svg"],
+    github:       "https://github.com/itsarnaud/Stellarica",
+    type:         "Projet perso"
+  },
+
+  {
     title:        "Infranéo",
     description:  "<strong>Infranéo</strong> est une application de gestion de parc informatique, inspirée de GLPI. L’idée : créer un outil plus rapide, plus moderne et avec davantage de fonctionnalités. <br /><br />Le projet est toujours en cours de développement et vous pouvez en suivre l’évolution directement sur <a class='text-light-purple hover:underline' href='http://linkedin.com/in/royer-arnaud/'>ma page LinkedIn.</a> <br /><br /> Sur ce projet, je travaille sur le frontend et le backend, en construisant l’interface et en développant les fonctionnalités métier.",
     img:          ["/projects/Infraneo.png"],

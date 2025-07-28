@@ -1,38 +1,108 @@
-# create-svelte
+# Portfolio Arnaud Royer
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Mon portfolio personnel développé avec **SvelteKit** et **Tailwind CSS**. Ce site présente mes projets, compétences et mon parcours en tant que développeur fullstack.
 
-## Creating a project
+## 🚀 Technologies utilisées
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Framework** : SvelteKit
+- **Styling** : Tailwind CSS
+- **Language** : JavaScript
+- **Bundler** : Vite
+- **Carrousel** : Swiper.js
+- **Icons** : Font Awesome
+- **Déploiement** : Vercel
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## 📁 Structure du projet
 
-# create a new project in my-app
-npm create svelte@latest my-app
+```txt
+src/
+├── lib/
+│   ├── components/          # Composants réutilisables
+│   │   ├── Button.svelte
+│   │   ├── Navbar.svelte
+│   │   ├── Project.svelte
+│   │   └── ...
+│   └── config/              # Configuration et données
+│       ├── projects.js      # Liste des projets
+│       └── skills.js        # Compétences par catégorie
+├── routes/
+│   ├── +layout.svelte      # Layout principal
+│   ├── +page.svelte        # Page d'accueil
+│   ├── [slug]/             # Pages de détail des projets
+│   └── mentions-legales/   # Mentions légales
+└── static/                 # Assets statiques
 ```
 
-## Developing
+## 🛠️ Installation et développement
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Prérequis
+
+- Node.js 22 (voir `.nvmrc`)
+- npm, pnpm ou yarn
+
+### Installation
 
 ```bash
+# Cloner le repository
+git clone https://github.com/itsarnaud/Portfolio.git
+cd Portfolio
+
+# Installer les dépendances
+npm install
+```
+
+### Développement
+
+```bash
+# Lancer le serveur de développement
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## 🎨 Fonctionnalités
 
-To create a production version of your app:
+- **Design responsive** : Optimisé pour tous les écrans
+- **Carrousel d'images** : Galerie interactive pour les projets
+- **Animations** : Effets visuels avec Tailwind CSS
+- **Routing dynamique** : Pages de détail générées automatiquement
 
-```bash
-npm run build
-```
+## 📱 Sections
 
-You can preview the production build with `npm run preview`.
+- **À propos** : Présentation personnelle
+- **Compétences** : Technologies maîtrisées par catégorie
+- **Projets** : Portfolio de réalisations avec détails
+- **Veille technologique** : Ressources
+- **Contact** : Moyens de me contacter
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## 🎯 Projets mis en avant
+
+Le portfolio présente 11 projets couvrant diverses technologies :
+
+- **Stellarica** : Bot Discord (JavaScript, Prisma)
+- **Infranéo** : Gestion de parc informatique (Vue.js, Java Spring)
+- **Igotrack** : Gestion de projet (Svelte, Node.js)
+- **Foliode** : Générateur de portfolios (Next.js, Symfony)
+- Et bien d'autres...
+
+## 🔧 Configuration
+
+### Tailwind CSS
+
+Le thème personnalisé inclut :
+
+- Couleur principale : `light-purple` (#7E30E1)
+- Configuration responsive complète
+- Utilities personnalisées
+
+### Adapter
+
+Le projet utilise `@sveltejs/adapter-auto` pour un déploiement automatique sur diverses plateformes.
+
+## 📄 Licence
+
+© 2025 Arnaud Royer. Tous droits réservés.
+
+## 📞 Contact
+
+- **Email** : <arnaud.royer77@gmail.com>
+- **Portfolio** : [en ligne](https://arnaud-royer.fr)
+- **GitHub** : [@itsarnaud](https://github.com/itsarnaud)

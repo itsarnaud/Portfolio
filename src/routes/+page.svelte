@@ -45,9 +45,9 @@
       <img src="/portrait.JPEG" alt="Moi" class="w-[200px] sm:w-[300px] lg:w-[400px] xl:w-[500px] rounded-lg">
       <div class="px-5 text-sm md:p-0 lg:text-base">
         <p>Salut, c’est Arnaud :) <br/><br/></p>
-        <p>Je suis développeur fullstack en alternance chez Igocreate et actuellement en 3e année de BUT Métiers du Multimédia et de l’Internet à l’Université Gustave Eiffel. Passionné par le web et la tech en général, je prépare la suite : un Mastère Expert en Informatique et Systèmes d’Information à l’EPSI, que j’aimerais suivre en alternance à Montpellier.<br/><br/></p>
-        <p>J’ai découvert la programmation avec Python, puis j’ai plongé dans le développement web, et là… c’était une évidence. Aujourd’hui, je continue d’apprendre tous les jours, en entreprise comme sur mes projets persos.<br/><br/></p>
-        <p>Parmi eux, il y a Infranéo, une application de gestion de parc informatique que je développe actuellement avec des amis. C’est un vrai terrain d’expérimentation, et vous pouvez suivre l’évolution du projet sur ma page LinkedIn (cliquez sur le bouton juste en dessous ;)).<br/><br/></p>
+        <p>Je suis développeur fullstack en alternance chez Kollirama et actuellement en 1ère année de Master Expert en Informatique et SI à l'école EPSI de Montpellier.<br/><br/></p>
+        <p>Passionné par le web et la tech en général, j’ai découvert la programmation avec Python, puis j’ai plongé dans le développement web, et là… c’était une évidence. Aujourd’hui, je continue d’apprendre tous les jours, en entreprise comme sur mes projets persos.<br/><br/></p>
+        <!-- <p>Parmi eux, il y a Infranéo, une application de gestion de parc informatique que je développe actuellement avec des amis. C’est un vrai terrain d’expérimentation, et vous pouvez suivre l’évolution du projet sur ma page LinkedIn (cliquez sur le bouton juste en dessous ;)).<br/><br/></p> -->
         <div class="flex space-x-2">
           <Button href="/CV.pdf" download="CV_Arnaud_Royer.pdf">Télécharge mon CV !</Button>
           <Button variant="icon" icon="fa-brands fa-linkedin text-[#0e76a8]" href="http://linkedin.com/in/royer-arnaud/" />
@@ -96,7 +96,7 @@
       <p class="text-sm lg:text-base">Ma veille technologique porte sur la recherche et l'analyse des dernières tendances dans le développement web, l'intelligence artificielle et les frameworks. Pour ce faire, j'utilise surtout <a href="https://app.daily.dev/" class="text-light-purple hover:underline">Daily.dev</a> pour voir une multitude d'article dans ces sujets, les réseaux sociaux pour suivre des experts et des newsletters (sur l'IA par exemple) pour rester informé des évolutions et des découvertes dans ce secteur. J'utilise aussi YouTube pour regarder des vidéos de développeurs sur les nouveautés ou juste pour de l'apprentissage.</p>
     </div>
 
-    <h3 class="px-5 md:w-full md:px-20 xl:px-16 font-bold text-md mt-6 lg:text-lg xl:text-xl">Quelques articles intéressants :</h3>
+    <!-- <h3 class="px-5 md:w-full md:px-20 xl:px-16 font-bold text-md mt-6 lg:text-lg xl:text-xl">Quelques articles intéressants :</h3>
     <div class="px-5 md:w-full md:px-20 xl:px-16 grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
       <a href="https://tailwindcss.com/blog/tailwindcss-v4" target="_blank" class="block bg-white shadow-md rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
         <img src="/articles/tailwind4.jpg" alt="TailwindCSS v4" class="w-full h-48 object-cover">
@@ -116,7 +116,7 @@
           <h3 class="font-bold text-lg text-light-purple">Les 7 meilleures alternatives à Next.js en 2025</h3>
         </div>
       </a>
-    </div>
+    </div> -->
   </section>
 
   <section id="contact" class="relative">
