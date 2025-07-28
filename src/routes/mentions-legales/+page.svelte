@@ -1,5 +1,7 @@
 <svelte:head>
-  <title>Mentions Légales</title>
+  <title>Mentions Légales | Arnaud Royer - Portfolio</title>
+  <meta name="description" content="Mentions légales du portfolio d'Arnaud Royer, développeur fullstack. Informations sur l'éditeur, l'hébergement et la propriété intellectuelle." />
+  <link rel="canonical" href="https://arnaud-royer.fr/mentions-legales" />
 </svelte:head>
 
 <main class="flex flex-col p-4">

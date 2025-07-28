@@ -12,6 +12,17 @@
 
 <svelte:head>
   <title>Arnaud Royer - Portfolio</title>
+  <meta name="description" content="Portfolio d'Arnaud Royer, développeur fullstack en alternance chez Kollirama. Spécialisé en SvelteKit, React, Vue.js, Node.js et technologies web modernes. Découvrez mes 11+ projets et compétences." />
+  <meta name="keywords" content="Arnaud Royer, développeur fullstack, SvelteKit, React, Vue.js, JavaScript, TypeScript, Node.js, portfolio, développeur web, Montpellier, EPSI, alternance" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Arnaud Royer - Portfolio" />
+  <meta property="og:description" content="Portfolio d'Arnaud Royer, développeur fullstack en alternance chez Kollirama. Spécialisé en SvelteKit, React, Vue.js, Node.js et technologies web modernes." />
+  <meta property="og:url" content="https://arnaud-royer.fr" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:title" content="Arnaud Royer - Portfolio" />
+  <meta name="twitter:description" content="Portfolio d'Arnaud Royer, développeur fullstack en alternance chez Kollirama. Spécialisé en SvelteKit, React, Vue.js, Node.js et technologies web modernes." />
 </svelte:head>
 
 <!-- Blobs -->
@@ -27,22 +38,22 @@
       <h1 class="text-3xl font-bold sm:text-4xl lg:text-5xl xl:text-7xl">Arnaud Royer</h1>
       <h2 class="text-xl lg:text-2xl xl:text-4xl">Développeur Fullstack</h2>
       <Button href="#about" classes="mt-2 sm:mt-3 lg:text-lg xl:text-xl xl:mt-4">C'est parti !</Button>
-      <img src="/blobs/blob.gif" alt="blob1" class="absolute -top-1/2 -z-10 opacity-20 hidden lg:block">
+      <img src="/blobs/blob.gif" alt="Animation décorative" class="absolute -top-1/2 -z-10 opacity-20 hidden lg:block">
     </div>
 
-    <a href="#about"><i class="fa-solid fa-arrow-down-long text-light-purple animate-bounce mt-28 text-xl"></i></a>
+    <a href="#about" aria-label="Aller à la section À propos"><i class="fa-solid fa-arrow-down-long text-light-purple animate-bounce mt-28 text-xl"></i></a>
 
   </section>
 
-  <section id="about" class="relative">
+  <section id="about" class="relative" aria-labelledby="about-title">
 
     <!-- Blobs -->
-    <img src="/blobs/Blob4.png" alt="blob2" class="hidden absolute w-[800px] top-36 left-40 -z-10 select-none lg:block">
+    <img src="/blobs/Blob4.png" alt="" class="hidden absolute w-[800px] top-36 left-40 -z-10 select-none lg:block" aria-hidden="true">
 
-    <h2 class="text-light-purple font-bold px-3 mb-20 text-lg lg:text-xl xl:text-2xl xl:px-10">01 | À propos de moi</h2>
+    <h2 id="about-title" class="text-light-purple font-bold px-3 mb-20 text-lg lg:text-xl xl:text-2xl xl:px-10">01 | À propos de moi</h2>
 
     <div class="flex flex-col justify-center items-center gap-5 lg:gap-20 md:flex-row md:px-5 xl:px-16">
-      <img src="/portrait.JPEG" alt="Moi" class="w-[200px] sm:w-[300px] lg:w-[400px] xl:w-[500px] rounded-lg">
+      <img src="/portrait.JPEG" alt="Portrait d'Arnaud Royer" class="w-[200px] sm:w-[300px] lg:w-[400px] xl:w-[500px] rounded-lg">
       <div class="px-5 text-sm md:p-0 lg:text-base">
         <p>Salut, c’est Arnaud :) <br/><br/></p>
         <p>Je suis développeur fullstack en alternance chez Kollirama et actuellement en 1ère année de Master Expert en Informatique et SI à l'école EPSI de Montpellier.<br/><br/></p>

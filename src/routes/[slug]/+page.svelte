@@ -10,6 +10,26 @@
 
 <svelte:head>
   <title>Arnaud Royer - {project ? project.title.toUpperCase() : 'Projet inconnu'}</title>
+  {#if project}
+    <meta name="description" content="{project.description.replace(/<[^>]*>/g, '').substring(0, 160)}..." />
+    <meta name="keywords" content="Arnaud Royer, {project.title}, {project.technos.map(t => t.split('/').pop().split('.')[0]).join(', ')}, portfolio, projet" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Arnaud Royer - {project.title}" />
+    <meta property="og:description" content="{project.description.replace(/<[^>]*>/g, '').substring(0, 160)}..." />
+    <meta property="og:url" content="https://arnaud-royer.fr/{project.href}" />
+    <meta property="og:image" content="https://arnaud-royer.fr{project.img[0]}" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Arnaud Royer - {project.title}" />
+    <meta name="twitter:description" content="{project.description.replace(/<[^>]*>/g, '').substring(0, 160)}..." />
+    <meta name="twitter:image" content="https://arnaud-royer.fr{project.img[0]}" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://arnaud-royer.fr/{project.href}" />
+  {:else}
+    <meta name="description" content="Projet non trouvé sur le portfolio d'Arnaud Royer, développeur fullstack." />
+  {/if}
 </svelte:head>
 
 
