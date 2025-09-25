@@ -104,5 +104,5 @@ Le projet utilise `@sveltejs/adapter-auto` pour un déploiement automatique sur 
 ## 📞 Contact
 
 - **Email** : <arnaud.royer77@gmail.com>
-- **Portfolio** : [en ligne](https://arnaud-royer.fr)
+- **Portfolio** : [en ligne](https://arnaud-royer.xyz)
 - **GitHub** : [@itsarnaud](https://github.com/itsarnaud)
