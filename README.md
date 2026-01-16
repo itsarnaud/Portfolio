@@ -1,108 +1,36 @@
-# Portfolio Arnaud Royer
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Mon portfolio personnel développé avec **SvelteKit** et **Tailwind CSS**. Ce site présente mes projets, compétences et mon parcours en tant que développeur fullstack.
+## Getting Started
 
-## 🚀 Technologies utilisées
-
-- **Framework** : SvelteKit
-- **Styling** : Tailwind CSS
-- **Language** : JavaScript
-- **Bundler** : Vite
-- **Carrousel** : Swiper.js
-- **Icons** : Font Awesome
-- **Déploiement** : Vercel
-
-## 📁 Structure du projet
-
-```txt
-src/
-├── lib/
-│   ├── components/          # Composants réutilisables
-│   │   ├── Button.svelte
-│   │   ├── Navbar.svelte
-│   │   ├── Project.svelte
-│   │   └── ...
-│   └── config/              # Configuration et données
-│       ├── projects.js      # Liste des projets
-│       └── skills.js        # Compétences par catégorie
-├── routes/
-│   ├── +layout.svelte      # Layout principal
-│   ├── +page.svelte        # Page d'accueil
-│   ├── [slug]/             # Pages de détail des projets
-│   └── mentions-legales/   # Mentions légales
-└── static/                 # Assets statiques
-```
-
-## 🛠️ Installation et développement
-
-### Prérequis
-
-- Node.js 22 (voir `.nvmrc`)
-- npm, pnpm ou yarn
-
-### Installation
+First, run the development server:
 
 ```bash
-# Cloner le repository
-git clone https://github.com/itsarnaud/Portfolio.git
-cd Portfolio
-
-# Installer les dépendances
-npm install
-```
-
-### Développement
-
-```bash
-# Lancer le serveur de développement
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🎨 Fonctionnalités
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- **Design responsive** : Optimisé pour tous les écrans
-- **Carrousel d'images** : Galerie interactive pour les projets
-- **Animations** : Effets visuels avec Tailwind CSS
-- **Routing dynamique** : Pages de détail générées automatiquement
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 📱 Sections
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **À propos** : Présentation personnelle
-- **Compétences** : Technologies maîtrisées par catégorie
-- **Projets** : Portfolio de réalisations avec détails
-- **Veille technologique** : Ressources
-- **Contact** : Moyens de me contacter
+## Learn More
 
-## 🎯 Projets mis en avant
+To learn more about Next.js, take a look at the following resources:
 
-Le portfolio présente 11 projets couvrant diverses technologies :
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- **Stellarica** : Bot Discord (JavaScript, Prisma)
-- **Infranéo** : Gestion de parc informatique (Vue.js, Java Spring)
-- **Igotrack** : Gestion de projet (Svelte, Node.js)
-- **Foliode** : Générateur de portfolios (Next.js, Symfony)
-- Et bien d'autres...
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 🔧 Configuration
+## Deploy on Vercel
 
-### Tailwind CSS
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Le thème personnalisé inclut :
-
-- Couleur principale : `light-purple` (#7E30E1)
-- Configuration responsive complète
-- Utilities personnalisées
-
-### Adapter
-
-Le projet utilise `@sveltejs/adapter-auto` pour un déploiement automatique sur diverses plateformes.
-
-## 📄 Licence
-
-© 2025 Arnaud Royer. Tous droits réservés.
-
-## 📞 Contact
-
-- **Email** : <arnaud.royer77@gmail.com>
-- **Portfolio** : [en ligne](https://arnaud-royer.xyz)
-- **GitHub** : [@itsarnaud](https://github.com/itsarnaud)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
