@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist_Mono, Inter, Instrument_Serif } from 'next/font/google';
-import { SmoothScroll } from '../components/SmoothScroll';
-import { CustomCursor } from '../components/CustomCursor';
+import { SmoothScroll } from '../components/gsap/SmoothScroll';
+import { CustomCursor } from '../components/gsap/CustomCursor';
 import "./globals.css";
 
 const inter = Inter({
