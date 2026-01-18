@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter, Instrument_Serif } from "next/font/google";
+import { SmoothScroll } from "../components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,9 +32,11 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={`${inter.variable} ${instrumentSerif.variable} ${geistMono.variable} font-sans antialiased`}>
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <SmoothScroll>
+          <main className="min-h-screen">
+            {children}
+          </main>
+        </SmoothScroll>
       </body>
     </html>
   );
