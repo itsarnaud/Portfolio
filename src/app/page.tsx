@@ -6,6 +6,23 @@ import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
 
+const projects = [
+  {
+    title: 'Kollirama',
+    category: 'Fullstack',
+    description: 'Site vitrine de Kollirama',
+    image: '/images/projetcs/Logo_Kollirama.png',
+    url: '#'
+  },
+  {
+    title: 'Igotrack',
+    category: 'Fullstack',
+    description: 'Application web de gestion de projet',
+    image: '/images/projetcs/Igotrack.png',
+    url: '#'
+  }
+];
+
 const Home = () => {
   const heroRef     = useRef<HTMLDivElement>(null);
   const jobRef      = useRef<HTMLParagraphElement>(null);
@@ -104,11 +121,11 @@ const Home = () => {
               constamment de nouvelles technologies.
             </p>
             <Link
-              href="/a-propos"
-              className="inline-flex items-center gap-2 text-foreground hover:gap-4 transition-all"
+              href="/about"
+              className="inline-flex items-center gap-2 text-foreground group"
             >
               En savoir plus
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-all group-hover:translate-x-2">
                 <path
                   d="M3 8H13M13 8L8 3M13 8L8 13"
                   stroke="currentColor"
@@ -118,6 +135,56 @@ const Home = () => {
                 />
               </svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-6 md:px-12 lg:px-24 bg-secondary/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-end justify-between mb-16">
+            <div>
+              <p className="text-sm tracking-widest text-muted-foreground mb-2 font-mono">PROJETS SÉLECTIONNÉS</p>
+              <AnimatedText trigger className="text-3xl md:text-4xl font-display">
+                Travaux récents
+              </AnimatedText>
+            </div>
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 text-foreground group"
+            >
+              Tous les projets
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-all group-hover:translate-x-2">
+                <path
+                  d="M3 8H13M13 8L8 3M13 8L8 13"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, i) => (
+              <Link key={i} href={project.url} className="group block">
+                <div className="aspect-4/3 bg-muted mb-6 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */ }
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="text-xl font-medium mb-1">{project.title}</h3>
+                    <p className="text-muted-foreground">{project.description}</p>
+                  </div>
+                  <span className="text-xs tracking-widest text-muted-foreground font-mono">{project.category}</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

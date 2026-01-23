@@ -4,6 +4,7 @@ import { SmoothScroll }   from '../components/gsap/SmoothScroll';
 import { CustomCursor }   from '../components/gsap/CustomCursor';
 import { PageTransition } from '../components/gsap/PageTransition';
 import Navbar from '../components/global/Navbar';
+import Footer from '../components/global/Footer';
 import "./globals.css";
 
 const inter = Inter({
@@ -42,6 +43,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
+          <Footer />
         </SmoothScroll>
       </body>
     </html>
