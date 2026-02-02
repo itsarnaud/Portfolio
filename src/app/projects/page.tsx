@@ -1,9 +1,14 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import { projects } from '../../lib/data';
+import { projects }          from '../../lib/data';
+import { ScrollTrigger }     from "gsap/ScrollTrigger"
 import gsap   from 'gsap';
 import Link   from 'next/link';
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const Projects = () => {
   const headerRef       = useRef<HTMLDivElement>(null);
