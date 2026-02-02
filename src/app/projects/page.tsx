@@ -3,6 +3,8 @@
 import { useRef, useEffect } from 'react';
 import { projects }          from '../../lib/data';
 import { ScrollTrigger }     from "gsap/ScrollTrigger"
+import { MagneticButton }    from '@/src/components/ui/MagneticButton';
+import AnimatedText          from '@/src/components/gsap/AnimatedText';
 import gsap   from 'gsap';
 import Link   from 'next/link';
 
@@ -76,7 +78,7 @@ const Projects = () => {
               }}
               className="group"
             >
-              <Link href={`/projets/${project.slug}`} className="block">
+              <Link href={`/projects/${project.slug}`} className="block">
                 <div className="aspect-16/10 bg-muted mb-6 overflow-hidden relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */ }
                   <img
@@ -108,6 +110,36 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      <section className="mt-32 px-6 md:px-12 lg:px-24">
+        <div className="border-t border-border pt-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <AnimatedText trigger className="text-4xl md:text-5xl lg:text-6xl font-display mb-8">
+              Un projet en tête ?
+            </AnimatedText>
+            <p className="text-lg text-muted-foreground mb-12 max-w-xl mx-auto">
+              Je suis toujours ouvert à discuter de nouveaux projets :)
+            </p>
+            <MagneticButton>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-foreground text-background text-lg tracking-wide hover:opacity-90 transition-opacity"
+              >
+                Discutons ensemble !
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="none" className="ml-1">
+                  <path
+                    d="M6 3L11 8L6 13"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </MagneticButton>
+          </div>
+        </div>
+      </section>
     </div>
   )
 };
