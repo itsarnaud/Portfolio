@@ -11,14 +11,14 @@ const projects = [
     title: 'Kollirama',
     category: 'Fullstack',
     description: 'Site vitrine de Kollirama',
-    image: '/images/projetcs/Logo_Kollirama.png',
+    image: '/images/projects/Logo_Kollirama.png',
     url: '#'
   },
   {
     title: 'Igotrack',
     category: 'Fullstack',
     description: 'Application web de gestion de projet',
-    image: '/images/projetcs/Igotrack.png',
+    image: '/images/projects/Igotrack.png',
     url: '#'
   }
 ];

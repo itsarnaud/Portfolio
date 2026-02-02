@@ -1,0 +1,86 @@
+export const projects = [
+  {
+    id: 1,
+    title: 'Kollirama',
+    slug: 'kollirama',
+    year: '2026',
+    description: 'Site vitrine de Kollirama.',
+    longDescription: '',
+    challenge: '',
+    technologies: ['Astro', 'Express.js', 'Supabase', 'Tailwind'],
+    image: ['/images/projects/Logo_Kollirama.png'],
+    link: ''
+  },
+  {
+    id: 2,
+    title: 'Igotrack',
+    slug: 'igotrack',
+    year: '2025',
+    description: 'Application web de gestion de projet.',
+    longDescription: '',
+    challenge: '',
+    technologies: ['SvelteKit', 'Node.js', 'MySQL', 'Tailwind'],
+    image: ['/images/projects/Igotrack.png'],
+    link: 'https://igotrack.co'
+  },
+  {
+    id: 3,
+    title: 'Stellarica',
+    slug: 'stellarica',
+    year: '2025',
+    description: 'Bot de modération discord.',
+    longDescription: '',
+    challenge: '',
+    technologies: ['Discord.js', 'JavaScript', 'Prisma'],
+    image: ['/images/projects/Stellarica.png'],
+    link: 'https://github.com/itsarnaud/Stellarica'
+  },
+  {
+    id: 4,
+    title: 'Hermes HLine',
+    slug: 'hermes-hline',
+    year: '2025',
+    description: 'Gestion de file d\'attente en ligne. Application web & mobile.',
+    longDescription: '',
+    challenge: '',
+    technologies: ['Express.js', 'JavaScript', 'Bootstrap', 'React Native'],
+    image: ['/images/projects/Hermes.png'],
+    link: 'https://rendezvousparis.hermes.com/client/welcome'
+  },
+  {
+    id: 5,
+    title: 'Foliode',
+    slug: 'foliode',
+    year: '2025',
+    description: 'Générateur de Portfolio en ligne.',
+    longDescription: '',
+    challenge: '',
+    technologies: ['Next.js', 'TypeScript', 'Symfony', 'PostgreSQL', 'Docker', 'Tailwind'],
+    image: ['/images/projects/Foliode.png'],
+    link: 'https://github.com/itsarnaud/Foliode'
+  },
+  {
+    id: 6,
+    title: 'Igowall',
+    slug: 'igowall',
+    year: '2024',
+    description: 'Plateforme de création de site internet.',
+    longDescription: '',
+    challenge: '',
+    technologies: ['SvelteKit', 'Node.js', 'MySQL', 'Tailwind'],
+    image: ['/images/projects/Igowall.png'],
+    link: 'https://www.igowall.com/'
+  },
+  {
+    id: 7,
+    title: 'Template Engine Benchmark',
+    slug: 'benchmark',
+    year: '2024',
+    description: 'Benchmark de moteur de template.',
+    longDescription: '',
+    challenge: '',
+    technologies: ['JavaScript'],
+    image: ['/images/projects/benchmark.png'],
+    link: 'https://github.com/itsarnaud/template-engine-bench'
+  },
+]
