@@ -66,7 +66,7 @@ const Home = () => {
         <p ref={jobRef} className="uppercase text-sm tracking-widest mb-4 text-mono text-muted-foreground">Développeur Fullstack</p>
 
         <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-display leading-[1.1] mb-8 text-balance">
-          Je créer des expériences web <span className="italic">modernes</span> et performantes.
+          Je crée des expériences web <span className="italic">modernes</span> et performantes.
         </h1>
 
         <p ref={subtitleRef} className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-12">
