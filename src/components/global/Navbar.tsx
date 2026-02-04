@@ -6,11 +6,11 @@ import Link from 'next/link'
 import gsap from 'gsap'
 
 const navLinks = [
-  { href: "/",           label: "Accueil" },
-  { href: "/projects",   label: "Projets" },
-  { href: "/about",      label: "À propos" },
-  { href: "/experience", label: "Expérience" },
-  { href: "/contact",    label: "Contact" },
+  { href: "/",            label: "Accueil" },
+  { href: "/projects",    label: "Projets" },
+  { href: "/about",       label: "À propos" },
+  { href: "/experiences", label: "Expérience" },
+  { href: "/contact",     label: "Contact" },
 ]
 
 const Navbar = () => {

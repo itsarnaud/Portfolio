@@ -146,4 +146,71 @@ export const values = [
       "Un projet réussi passe par une communication claire. Je m'assure de comprendre vos besoins et de vous tenir informé à chaque étape.",
   },
 ]
+
+export const experiences = [
+  {
+    id: 1,
+    role: "Développeur Fullstack",
+    company: "Kollirama",
+    companyUrl: "https://kollirama.fr",
+    location: "Bernis, France",
+    period: "2025 — Présent",
+    description:
+      "Développement fullstack de projets internes et refonte complète du site vitrine de l'entreprise. Conception et développement en autonomie d'applications web sur mesure.",
+    achievements: [
+      "Refonte complète du site kollirama.fr en monorepo (site vitrine multilingue + back-office)",
+      "Développement en totale autonomie, de la conception à la mise en production",
+      "Création d'un back-office avec dashboard analytique, gestion des rôles et intégrations tierces",
+      "Montée en compétences sur de nouvelles technologies (Astro, Prisma, Supabase)",
+    ],
+    technologies: ['Astro', 'Svelte', 'Express.js', 'Prisma', 'Supabase', 'PostgreSQL', 'Tailwind', 'TypeScript'],
+  },
+  {
+    id: 2,
+    role: "Développeur Fullstack",
+    company: "Igocreate",
+    companyUrl: "https://igocreate.com",
+    location: "Paris, France",
+    period: "2024 — 2025",
+    description:
+      "Développement de projets internes et clients au sein d'une agence spécialisée dans les solutions web sur mesure. Contribution à la documentation technique des outils internes.",
+    achievements: [
+      "Développement de la plateforme no-code Igowall (création de sites web)",
+      "Contribution au développement d'Igotrack, outil de gestion de projet interne",
+      "Développement de l'application Hermès HLine (gestion de file d'attente web & mobile)",
+      "Rédaction de documentation pour le framework et le moteur de template internes",
+    ],
+    technologies: ["SvelteKit", "Node.js", "Express.js", "MySQL", "React Native", "Tailwind"],
+  },
+  {
+    id: 3,
+    role: "Graphiste",
+    company: "Olivier Nonis",
+    companyUrl: "https://graphevent.com",
+    location: "Quincy-Voisins, France",
+    period: "2023",
+    description:
+      "Stage en graphisme au sein d'un studio créatif. Création de supports de communication print et mise à jour de site web.",
+    achievements: [
+      "Création de logos, affiches et flyers",
+      "Utilisation de la suite Adobe (InDesign, Illustrator, Photoshop)",
+      "Mise à jour d'un site WordPress (Elementor)",
+    ],
+    technologies: ["InDesign", "Illustrator", "Photoshop", "WordPress", "Elementor"],
+  }
+];
+
+export const education = [
+  {
+    degree: "Mastère Expert en Informatique et SI",
+    school: "EPSI, Montpellier",
+    period: "2025 — 2027",
+    description: "Spécialité Développement",
+  },
+  {
+    degree: "BUT Métiers du Multimédia et de l'Internet",
+    school: "Université Gustave Eiffel, IUT Meaux",
+    period: "2022 — 2025",
+    description: "Parcours Développement Web",
+  },
 ]
