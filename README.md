@@ -8,7 +8,7 @@
 
 Portfolio personnel présentant mes projets, expériences et compétences en tant que développeur Fullstack.
 
-🌐 **[arnaud-royer.xyz](https://arnaud-royer.xyz)**
+**[arnaud-royer.xyz](https://arnaud-royer.xyz)**
 
 ![Portfolio Preview](public/images/og-image.png)
 
@@ -24,7 +24,7 @@ Portfolio personnel présentant mes projets, expériences et compétences en tan
 
 ---
 
-## 🛠️ Stack Technique
+## Stack Technique
 
 | Catégorie | Technologies |
 |-----------|-------------|
@@ -37,18 +37,18 @@ Portfolio personnel présentant mes projets, expériences et compétences en tan
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Prérequis
 
-- Node.js 18+
+- Node.js 18+ (.nvmrc)
 - npm, yarn ou pnpm
 
 ### Étapes
 
 ```bash
 # Cloner le repository
-git clone https://github.com/itsmusic/Portfolio.git
+git clone https://github.com/itsarnaud/Portfolio.git
 cd Portfolio
 
 # Installer les dépendances
@@ -65,7 +65,7 @@ Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
 ---
 
-## ⚙️ Variables d'environnement
+## Variables d'environnement
 
 Créer un fichier `.env` à la racine :
 
@@ -109,7 +109,7 @@ Portfolio/
 
 ---
 
-## 📜 Scripts
+## Scripts
 
 | Commande | Description |
 |----------|-------------|
@@ -117,14 +117,6 @@ Portfolio/
 | `npm run build` | Build de production |
 | `npm run start` | Lancer le build de production |
 | `npm run lint` | Vérifier le code avec ESLint |
-
----
-
-## 🌐 Déploiement
-
-Le site est déployé automatiquement sur **Vercel** à chaque push sur la branche `main`.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/itsmusic/Portfolio)
 
 ---
 
