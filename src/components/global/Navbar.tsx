@@ -60,7 +60,7 @@ const Navbar = () => {
       >
         <Link
           href="/"
-          className="text-lg font-medium tracking-tight text-primary-foreground hover:opacity-70 transition-opacity"
+          className="text-lg font-medium font-display tracking-wide text-primary-foreground hover:opacity-70 transition-opacity"
         >
           Arnaud Royer
         </Link>

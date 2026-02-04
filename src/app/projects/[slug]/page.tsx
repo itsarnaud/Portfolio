@@ -1,10 +1,11 @@
 'use client';
 
-import { useParams, notFound } from 'next/navigation';
-import { projects }            from '../../../lib/data';
-import { useRef, useEffect }   from 'react';
-import { ScrollTrigger }       from "gsap/ScrollTrigger"
-import { MagneticButton }      from '@/src/components/ui/MagneticButton';
+import { useParams, notFound }   from 'next/navigation';
+import { projects }              from '../../../lib/data';
+import { useRef, useEffect }     from 'react';
+import { ScrollTrigger }         from "gsap/ScrollTrigger"
+import { MagneticButton }        from '@/src/components/ui/MagneticButton';
+import { ProjectJsonLd, BreadcrumbJsonLd } from '@/src/components/seo/JsonLd';
 import gsap   from 'gsap';
 import Link   from 'next/link';
 
@@ -56,17 +57,26 @@ const Project = () => {
   const currentIndex = projects.findIndex((p) => p.slug === params.slug)
   const nextProject  = projects[(currentIndex + 1) % projects.length]
 
+  const breadcrumbItems = [
+    { name: 'Accueil', url: '/' },
+    { name: 'Projets', url: '/projects' },
+    { name: project.title, url: `/projects/${project.slug}` },
+  ];
+
   return (
-    <div className="min-h-screen pt-32 pb-24">
-      <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">
-        <Link
-          href="/projects"
-          className="animate-in inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M13 8H3M3 8L8 3M3 8L8 13"
-              stroke="currentColor"
+    <>
+      <ProjectJsonLd project={project} />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <div className="min-h-screen pt-32 pb-24">
+        <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">
+          <Link
+            href="/projects"
+            className="animate-in inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M13 8H3M3 8L8 3M3 8L8 13"
+                stroke="currentColor"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -163,7 +173,8 @@ const Project = () => {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 };
 
