@@ -86,7 +86,7 @@ export const projects = [
     longDescription: 'Outil de benchmark open-source permettant d\'évaluer et comparer les performances de rendu des principaux moteurs de templates JavaScript (Pug, EJS, Handlebars, Liquid, Eta, Dust, Igodust). Le projet exécute une série de tests sur différents scénarios (boucles, conditions, échappement HTML) et génère automatiquement un rapport de résultats dans le README. L\'architecture modulaire permet d\'ajouter facilement de nouveaux moteurs de templates à la suite de tests.',
     challenge: 'Le défi était de concevoir un système de benchmark fiable et reproductible, capable de mesurer équitablement les performances de moteurs aux syntaxes et fonctionnements très différents. Il fallait également rendre le projet extensible pour que d\'autres développeurs puissent contribuer en ajoutant leurs propres moteurs de templates. Le projet a attiré l\'attention de la communauté avec 10 stars et des contributions externes.',
     technologies: ['JavaScript'],
-    image: ['/images/projects/benchmark.png'],
+    image: ['/images/projects/Benchmark.png'],
     link: 'https://github.com/itsarnaud/template-engine-bench',
     category: 'Projet de stage'
   },
