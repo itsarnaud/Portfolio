@@ -103,4 +103,47 @@ export const projects = [
     link: 'https://github.com/itsarnaud/tiptap-fontsize-extension',
     category: 'Projet open-source'
   },
+];
+
+export const skills = {
+  frontend: [
+    { name: "Svelte / SvelteKit",      level: 90 },
+    { name: "React / Next.js",         level: 80 },
+    { name: "JavaScript / TypeScript", level: 85 },
+    { name: "Tailwind CSS",            level: 90 },
+    { name: "Astro",                   level: 70 },
+  ],
+  backend: [
+    { name: "Node.js / Express",  level: 90 },
+    { name: "PostgreSQL / MySQL", level: 85 },
+    { name: "REST API",           level: 85 },
+    { name: "Prisma",             level: 80 },
+    { name: "PHP / Symfony",      level: 60 },
+  ],
+  tools:    ["Git", "Docker", "Figma", "Illustrator", "Photoshop", "InDesign"],
+  learning: ["Vue.js", "Ruby", "Supabase"],
+}
+
+export const values = [
+  {
+    title: "Qualité du code",
+    description:
+      "Je crois fermement qu'un code propre et bien structuré est la base de tout projet réussi. Tests, documentation et maintenabilité sont mes priorités.",
+  },
+  {
+    title: "Design soigné",
+    description:
+      "L'attention aux détails fait la différence. Je travaille au pixel près pour créer des interfaces qui allient esthétique et fonctionnalité.",
+  },
+  {
+    title: "Performance",
+    description:
+      "Chaque milliseconde compte. J'optimise systématiquement mes applications pour offrir la meilleure expérience utilisateur possible.",
+  },
+  {
+    title: "Communication",
+    description:
+      "Un projet réussi passe par une communication claire. Je m'assure de comprendre vos besoins et de vous tenir informé à chaque étape.",
+  },
+]
 ]

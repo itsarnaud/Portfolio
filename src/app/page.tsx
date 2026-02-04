@@ -107,7 +107,7 @@ const Home = () => {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div>
             <AnimatedText trigger className="text-3xl md:text-4xl font-display leading-snug">
-              Un développeur passionné par la tech et l&apos;attention aux détails.
+              Un développeur passionné par le web et la tech.
             </AnimatedText>
           </div>
 
