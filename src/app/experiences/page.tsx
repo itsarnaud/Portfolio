@@ -12,7 +12,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-export default function ExperiencePage() {
+const ExperiencePage = () => {
   const headerRef          = useRef<HTMLDivElement>(null)
   const timelineRef        = useRef<HTMLDivElement>(null)
   const experienceCardsRef = useRef<HTMLDivElement[]>([])
@@ -225,3 +225,5 @@ export default function ExperiencePage() {
     </div>
   )
 }
+
+export default ExperiencePage;
