@@ -308,8 +308,8 @@ const ContactPage = () => {
             <div className="mb-12">
               <p className="text-sm tracking-widest text-muted-foreground mb-3 font-mono">DISPONIBILITÉ</p>
               <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-lg">Indisponible pour de nouveaux projets</span>
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-lg">Disponible pour de nouveaux projets</span>
               </div>
             </div>
 
