@@ -40,19 +40,6 @@ export const projects = [
   },
   {
     id: 4,
-    title: 'Hermes HLine',
-    slug: 'hermes-hline',
-    year: '2025',
-    description: 'Gestion de file d\'attente en ligne. Application web & mobile.',
-    longDescription: 'Application web et mobile de gestion de file d\'attente développée pour Hermès, permettant d\'organiser les rendez-vous clients via un système de tirage au sort quotidien. L\'application propose trois interfaces distinctes : une inscription simplifiée pour les clients souhaitant participer au tirage, un tableau de bord complet pour les vendeurs disponible en version web et mobile (suivi des présences, statut d\'achat, prise de rendez-vous en temps réel), et une interface d\'administration pour superviser l\'ensemble de la file d\'attente. Le cœur du système repose sur un algorithme de tirage au sort équitable intégrant des mécanismes anti-bot et anti-spam.',
-    challenge: 'Le défi majeur était de concevoir un algorithme de tirage au sort à la fois équitable et sécurisé, garantissant une chance réelle à chaque participant tout en bloquant les tentatives de fraude (bots, inscriptions multiples, spam). Le développement d\'une application mobile dédiée aux vendeurs ajoutait une couche de complexité, nécessitant une synchronisation en temps réel des données entre les interfaces web et mobile pour assurer une expérience fluide sur le terrain.',
-    technologies: ['Express.js', 'JavaScript', 'Bootstrap', 'React Native'],
-    image: ['/images/projects/Hermes.png'],
-    link: 'https://rendezvousparis.hermes.com/client/welcome',
-    category: 'Projet d\'alternance'
-  },
-  {
-    id: 5,
     title: 'Foliode',
     slug: 'foliode',
     year: '2025',
@@ -65,7 +52,7 @@ export const projects = [
     category: 'Projet de cours'
   },
   {
-    id: 6,
+    id: 5,
     title: 'Igowall',
     slug: 'igowall',
     year: '2024',
@@ -78,7 +65,7 @@ export const projects = [
     category: 'Projet d\'alternance'
   },
   {
-    id: 7,
+    id: 6,
     title: 'Template Engine Benchmark',
     slug: 'benchmark',
     year: '2024',
@@ -91,7 +78,7 @@ export const projects = [
     category: 'Projet de stage'
   },
   {
-    id: 8,
+    id: 7,
     title: 'Tiptap FontSize Extension',
     slug: 'tiptap-fontsize-extension',
     year: '2024',
@@ -177,7 +164,7 @@ export const experiences = [
     achievements: [
       "Développement de la plateforme no-code Igowall (création de sites web)",
       "Contribution au développement d'Igotrack, outil de gestion de projet interne",
-      "Développement de l'application Hermès HLine (gestion de file d'attente web & mobile)",
+      "Développement d'une application de gestion de file d'attente (web & mobile)",
       "Rédaction de documentation pour le framework et le moteur de template internes",
     ],
     technologies: ["SvelteKit", "Node.js", "Express.js", "MySQL", "React Native", "Tailwind"],
