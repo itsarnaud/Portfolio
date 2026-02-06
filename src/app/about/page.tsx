@@ -79,11 +79,11 @@ const About = () => {
 
       <section className="px-6 md:px-12 lg:px-24 mb-32">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="aspect-square bg-white overflow-hidden flex items-center justify-center">
+          <div className="aspect-square bg-white overflow-hidden flex items-center justify-center w-70 h-70 lg:h-auto lg:w-auto mx-auto">
             <Image
               src={ProfilePicture}
               alt="Portrait développeur"
-              className="w-1/2 h-1/2 object-cover"
+              className="lg:w-1/2 lg:h-1/2 object-cover"
             />
           </div>
 
