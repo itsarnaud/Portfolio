@@ -137,17 +137,17 @@ const Project = () => {
             </div>
           </div>
 
-          {project.link && (
-            <div className="content-block">
-              <MagneticButton>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background text-sm tracking-wide hover:opacity-90 transition-opacity"
-                >
-                  Voir le projet
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            {project.link ? (
+              <div className="content-block">
+                <MagneticButton>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background text-sm tracking-wide hover:opacity-90 transition-opacity"
+                  >
+                    Voir le projet
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path
                       d="M4 12L12 4M12 4H5M12 4V11"
                       stroke="currentColor"
@@ -155,11 +155,17 @@ const Project = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                  </svg>
-                </a>
-              </MagneticButton>
+                    </svg>
+                  </a>
+                </MagneticButton>
+              </div>
+            ) : (
+            <div className="content-block">
+              <span className="inline-block px-8 py-4 bg-muted text-muted-foreground text-sm tracking-wide">
+              Projet en cours
+              </span>
             </div>
-          )}
+            )}
         </div>
       </div>
 
