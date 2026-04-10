@@ -95,16 +95,6 @@ const AnimatedText = ({ children, className = "", delay = 0, trigger = false }: 
     }
 
     setupAnimation()
-
-    const handleResize = () => {
-      ScrollTrigger.refresh()
-    }
-
-    window.addEventListener('resize', handleResize)
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
   }, [setupAnimation])
 
   return (

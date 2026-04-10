@@ -7,6 +7,7 @@ import { ScrollTrigger }  from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP)
+ScrollTrigger.config({ ignoreMobileResize: true })
 
 
 export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
@@ -32,8 +33,8 @@ export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
 
 
   return (
-    <div id="smooth-wrapper" ref={main}>
-      <div id="smooth-content">
+    <div id="smooth-wrapper" ref={main} className="lg:fixed lg:inset-0 lg:overflow-hidden lg:z-1">
+      <div id="smooth-content" className="lg:w-full lg:will-change-transform">
         {children}
       </div>
     </div>
