@@ -8,18 +8,18 @@ import Link   from 'next/link';
 
 const projects = [
   {
-    title: 'Kollirama',
-    category: 'Fullstack',
-    description: 'Site vitrine de Kollirama',
-    image: '/images/projects/Logo_Kollirama.png',
-    url: '/projects/kollirama'
+    title: 'IDK Concept',
+    category: 'Frontend',
+    description: 'Site vitrine de IDK Concept',
+    image: '/images/projects/idk-concept.png',
+    url: '/projects/idk-concept'
   },
   {
-    title: 'Igotrack',
+    title: 'Kollirama',
     category: 'Fullstack',
-    description: 'Application web de gestion de projet',
-    image: '/images/projects/Igotrack.png',
-    url: '/projects/igotrack'
+    description: 'Site vitrine de Kollirama avec back-office',
+    image: '/images/projects/Logo_Kollirama.png',
+    url: '/projects/kollirama'
   }
 ];
 
