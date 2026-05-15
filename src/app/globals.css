@@ -159,3 +159,16 @@
   pointer-events: none;
 }
 
+.project-swiper-wrapper .swiper-button-prev,
+.project-swiper-wrapper .swiper-button-next {
+  color: var(--foreground);
+}
+
+.project-swiper-wrapper .swiper-pagination-bullet {
+  background: var(--foreground);
+  opacity: 0.4;
+}
+
+.project-swiper-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}

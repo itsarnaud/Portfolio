@@ -11,7 +11,7 @@ const projects = [
     title: "Atelier Maha",
     category: "Frontend",
     description: "Site vitrine pour un studio d’architecture d’intérieur.",
-    image: "/images/projects/Atelier_Maha.png",
+    image: "/images/projects/atelier-maha/Atelier_Maha.png",
     url: "/projects/atelier-maha",
   },
   {
