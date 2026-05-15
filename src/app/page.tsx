@@ -18,7 +18,7 @@ const projects = [
     title: "IDK Concept",
     category: "Frontend",
     description: "Site vitrine de IDK Concept",
-    image: "/images/projects/idk-concept.png",
+    image: "/images/projects/idk-concept/idk-concept.png",
     url: "/projects/idk-concept",
   },
 ];
