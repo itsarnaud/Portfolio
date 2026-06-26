@@ -130,7 +130,7 @@ export const projects = [
       "TypeScript",
     ],
     image: ["/images/projects/Logo_Kollirama.png"],
-    link: "",
+    link: "https://kollirama.fr",
     category: "Projet d'alternance",
   },
   {
