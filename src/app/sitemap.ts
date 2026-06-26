@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { projects } from '../lib/data';
+import { getProjects } from '../lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://arnaud-royer.xyz';
@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+  const projectPages: MetadataRoute.Sitemap = getProjects('fr').map((project) => ({
     url: `${siteUrl}/projects/${project.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

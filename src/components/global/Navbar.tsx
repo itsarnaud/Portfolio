@@ -1,47 +1,38 @@
-'use client'
+'use client';
 
-import { useEffect, useRef, useState } from 'react'
-import { usePathname } from 'next/navigation'
-import Link from 'next/link'
-import gsap from 'gsap'
-
-const navLinks = [
-  { href: "/",            label: "Accueil" },
-  { href: "/projects",    label: "Projets" },
-  { href: "/about",       label: "À propos" },
-  { href: "/experiences", label: "Expérience" },
-  { href: "/contact",     label: "Contact" },
-]
+import { useEffect, useRef, useState } from 'react';
+import { useTranslations }             from 'next-intl';
+import { Link, usePathname }           from '@/src/i18n/navigation';
+import LanguageSwitcher                from './LanguageSwitcher';
+import gsap from 'gsap';
 
 const Navbar = () => {
-  const navRef       = useRef<HTMLElement>(null)
-  const menuRef      = useRef<HTMLDivElement>(null)
-  const menuItemsRef = useRef<HTMLAnchorElement[]>([])
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const t       = useTranslations('nav');
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/",            label: t('home') },
+    { href: "/projects",    label: t('projects') },
+    { href: "/about",       label: t('about') },
+    { href: "/experiences", label: t('experiences') },
+    { href: "/contact",     label: t('contact') },
+  ];
+
+  const navRef       = useRef<HTMLElement>(null);
+  const menuRef      = useRef<HTMLDivElement>(null);
+  const menuItemsRef = useRef<HTMLAnchorElement[]>([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    gsap.fromTo(
-      navRef.current,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.8 },
-    )
-  }, [])
+    gsap.fromTo(navRef.current, { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.8 });
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
-      gsap.fromTo(
-        menuRef.current,
-        { clipPath: "circle(0% at calc(100% - 2rem) 2rem)" },
-        { clipPath: "circle(150% at calc(100% - 2rem) 2rem)", duration: 0.8, ease: "power4.inOut" },
-      )
-      gsap.fromTo(
-        menuItemsRef.current,
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power3.out", delay: 0.3 },
-      )
+      gsap.fromTo(menuRef.current, { clipPath: "circle(0% at calc(100% - 2rem) 2rem)" }, { clipPath: "circle(150% at calc(100% - 2rem) 2rem)", duration: 0.8, ease: "power4.inOut" });
+      gsap.fromTo(menuItemsRef.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power3.out", delay: 0.3 });
     }
-  }, [isMenuOpen])
+  }, [isMenuOpen]);
 
   const closeMenu = () => {
     gsap.to(menuRef.current, {
@@ -49,7 +40,7 @@ const Navbar = () => {
       duration: 0.6,
       ease: "power4.inOut",
       onComplete: () => setIsMenuOpen(false),
-    })
+    });
   };
 
   return (
@@ -58,10 +49,7 @@ const Navbar = () => {
         ref={navRef}
         className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 flex items-center justify-between mix-blend-difference"
       >
-        <Link
-          href="/"
-          className="text-lg font-medium font-display tracking-wide text-primary-foreground hover:opacity-70 transition-opacity"
-        >
+        <Link href="/" className="text-lg font-medium font-display tracking-wide text-primary-foreground hover:opacity-70 transition-opacity">
           Arnaud Royer
         </Link>
 
@@ -75,12 +63,13 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
+          <LanguageSwitcher />
         </div>
 
         <button
           onClick={() => setIsMenuOpen(true)}
           className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Ouvrir le menu"
+          aria-label={t('openMenu')}
         >
           <span className="w-6 h-px bg-primary-foreground" />
           <span className="w-6 h-px bg-primary-foreground" />
@@ -93,11 +82,7 @@ const Navbar = () => {
           className="fixed inset-0 z-60 bg-foreground flex flex-col items-center justify-center"
           style={{ clipPath: "circle(0% at calc(100% - 2rem) 2rem)" }}
         >
-          <button
-            onClick={closeMenu}
-            className="absolute top-6 right-6 p-2 text-background"
-            aria-label="Fermer le menu"
-          >
+          <button onClick={closeMenu} className="absolute top-6 right-6 p-2 text-background" aria-label={t('closeMenu')}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
@@ -107,21 +92,22 @@ const Navbar = () => {
             {navLinks.map((link, i) => (
               <Link
                 key={link.href}
-                ref={(el) => {
-                  if (el) menuItemsRef.current[i] = el
-                }}
+                ref={(el) => { if (el) menuItemsRef.current[i] = el; }}
                 href={link.href}
                 onClick={closeMenu}
-                className={`text-4xl font-display text-background hover:opacity-70 transition-opacity ${pathname === link.href ? 'opacity-50' : '' }`}
+                className={`text-4xl font-display text-background hover:opacity-70 transition-opacity ${pathname === link.href ? 'opacity-50' : ''}`}
               >
                 {link.label}
               </Link>
             ))}
+            <div className="mt-4">
+              <LanguageSwitcher />
+            </div>
           </nav>
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 export default Navbar;
