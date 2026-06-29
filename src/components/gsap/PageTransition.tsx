@@ -19,10 +19,6 @@ export const PageTransition = () => {
       )
       return
     }
-  }, [])
-
-  useEffect(() => {
-    if (isFirstMount.current) return
 
     const tl = gsap.timeline()
     tl.fromTo(
