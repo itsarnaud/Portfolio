@@ -10,6 +10,7 @@ import { ProjectJsonLd, BreadcrumbJsonLd } from "@/src/components/seo/JsonLd";
 import { Link }                        from "@/src/i18n/navigation";
 import { Swiper, SwiperSlide }         from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y, Autoplay } from "swiper/modules";
+import Image                           from "next/image";
 import gsap from "gsap";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -98,12 +99,14 @@ const Project = () => {
               className="h-full w-full"
             >
               {project.image.map((imagePath, index) => (
-                <SwiperSlide key={imagePath}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <SwiperSlide key={imagePath} className="relative">
+                  <Image
                     src={imagePath}
                     alt={`${project.title} - ${t("imageAlt")} ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="100vw"
+                    priority={index === 0}
                   />
                 </SwiperSlide>
               ))}

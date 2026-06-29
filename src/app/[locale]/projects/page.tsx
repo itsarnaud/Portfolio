@@ -7,6 +7,7 @@ import { ScrollTrigger }               from "gsap/ScrollTrigger";
 import { MagneticButton }              from '@/src/components/ui/MagneticButton';
 import AnimatedText                    from '@/src/components/gsap/AnimatedText';
 import { Link }                        from '@/src/i18n/navigation';
+import Image                           from 'next/image';
 import gsap from 'gsap';
 
 if (typeof window !== "undefined") {
@@ -66,11 +67,12 @@ const Projects = () => {
             >
               <Link href={`/projects/${project.slug}`} className="block">
                 <div className="aspect-16/10 bg-muted mb-6 overflow-hidden relative">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.image[0] || undefined}
+                  <Image
+                    src={project.image[0]}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300" />
                 </div>

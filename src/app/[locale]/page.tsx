@@ -6,6 +6,7 @@ import { useRef, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { getProjects } from "../../lib/data";
 import { Link } from "../../i18n/navigation";
+import Image from "next/image";
 import gsap from "gsap";
 
 const Home = () => {
@@ -22,10 +23,10 @@ const Home = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(jobRef.current, { y: 130, opacity: 0 }, { y: 0, opacity: 1, duration: 1.5, ease: "power3.out", delay: 0.7 });
-      gsap.fromTo(titleRef.current, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", delay: 1 });
-      gsap.fromTo(subtitleRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1.3 });
-      gsap.fromTo(ctaRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 1.5 });
+      gsap.fromTo(jobRef.current, { y: 130, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.3 });
+      gsap.fromTo(titleRef.current, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.4 });
+      gsap.fromTo(subtitleRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", delay: 0.5 });
+      gsap.fromTo(ctaRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.6 });
     }, heroRef);
     return () => ctx.revert();
   }, []);
@@ -106,17 +107,18 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {featuredProjects.map((project, i) => (
               <Link key={i} href={`/projects/${project.slug}`} className="group block">
-                <div className="aspect-4/3 bg-muted mb-6 overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <div className="aspect-4/3 bg-muted mb-6 overflow-hidden relative">
+                  <Image
                     src={project.image[0]}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
                 <div className="flex items-start justify-between">
                   <div>
-                    <h3 className="text-xl font-medium mb-1">{project.title}</h3>
+                    <h2 className="text-xl font-medium mb-1">{project.title}</h2>
                     <p className="text-muted-foreground">{project.description}</p>
                   </div>
                   <span className="text-xs tracking-widest text-muted-foreground font-mono">Frontend</span>

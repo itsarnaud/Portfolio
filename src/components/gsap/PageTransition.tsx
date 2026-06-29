@@ -15,7 +15,7 @@ export const PageTransition = () => {
       gsap.fromTo(
         overlayRef.current,
         { scaleY: 1, transformOrigin: "top" },
-        { scaleY: 0, duration: 0.8, ease: "power4.inOut", delay: 0.2 },
+        { scaleY: 0, duration: 0.5, ease: "power4.inOut", delay: 0 },
       )
       return
     }
