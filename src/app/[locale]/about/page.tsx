@@ -72,7 +72,7 @@ const About = () => {
             <Image src={ProfilePicture} alt="Portrait développeur" className="lg:w-1/2 lg:h-1/2 object-cover" />
           </div>
           <div className="lg:pt-12">
-            <AnimatedText trigger className="text-2xl md:text-3xl font-display leading-snug mb-8">
+            <AnimatedText trigger as="h2" className="text-2xl md:text-3xl font-display leading-snug mb-8">
               {t('intro')}
             </AnimatedText>
             <div className="space-y-6 text-muted-foreground leading-relaxed">

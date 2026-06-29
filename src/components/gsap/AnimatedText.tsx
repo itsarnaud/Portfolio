@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, type ReactNode, useCallback } from 'react'
+import React, { useEffect, useRef, type ReactNode, useCallback } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 
@@ -13,10 +13,11 @@ interface AnimatedTextProps {
   className?: string
   delay?: number
   trigger?: boolean
+  as?: React.ElementType
 }
 
-const AnimatedText = ({ children, className = "", delay = 0, trigger = false }: AnimatedTextProps) => {
-  const textRef = useRef<HTMLDivElement>(null)
+const AnimatedText = ({ children, className = "", delay = 0, trigger = false, as: Tag = 'div' }: AnimatedTextProps) => {
+  const textRef = useRef<HTMLElement>(null)
   const originalText = useRef<string>("")
   const hasAnimated = useRef(false)
 
@@ -98,9 +99,10 @@ const AnimatedText = ({ children, className = "", delay = 0, trigger = false }: 
   }, [setupAnimation])
 
   return (
-    <div ref={textRef} className={className}>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    <Tag ref={textRef as any} className={className}>
       {children}
-    </div>
+    </Tag>
   )
 }
 

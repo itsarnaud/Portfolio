@@ -122,7 +122,7 @@ const ExperiencePage = () => {
       <section className="px-6 md:px-12 lg:px-24 mb-32 py-24 bg-secondary/50">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('educationLabel')}</p>
-          <AnimatedText trigger className="text-3xl md:text-4xl font-display mb-16">
+          <AnimatedText trigger as="h2" className="text-3xl md:text-4xl font-display mb-16">
             {t('educationTitle')}
           </AnimatedText>
           <div className="space-y-8">

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Arnaud Royer - Portfolio',
     short_name: 'Arnaud Royer',
     description:
-      'Développeur Fullstack passionné, je crée des expériences web modernes et performantes.',
+      'Fullstack Developer passionate about creating modern and performant web experiences.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0a0a0a',

@@ -62,7 +62,7 @@ const Project = () => {
 
   return (
     <>
-      <ProjectJsonLd project={project} />
+      <ProjectJsonLd project={project} locale={locale} />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="min-h-screen pt-32 pb-24">
         <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">

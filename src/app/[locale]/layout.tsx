@@ -29,33 +29,48 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: { default: 'Arnaud Royer | Développeur Fullstack', template: '%s | Arnaud Royer' },
-  description: 'Développeur Fullstack passionné, je crée des expériences web modernes et performantes.',
-  keywords: ['Développeur Fullstack', 'Fullstack Developer', 'React', 'Next.js', 'Svelte', 'Node.js', 'TypeScript', 'Portfolio', 'Arnaud Royer'],
-  authors: [{ name: 'Arnaud Royer', url: siteUrl }],
-  openGraph: {
-    type: 'website', url: siteUrl, siteName: 'Arnaud Royer - Portfolio',
-    title: 'Arnaud Royer | Développeur Fullstack',
-    description: 'Développeur Fullstack passionné, je crée des expériences web modernes et performantes.',
-    images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'Arnaud Royer' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Arnaud Royer | Développeur Fullstack',
-    description: 'Développeur Fullstack passionné.',
-    images: ['/images/og-image.png'],
-    creator: '@cestarnaud',
-  },
-  robots: { index: true, follow: true },
-  alternates: { canonical: siteUrl },
-};
-
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const ogLocale = locale === 'en' ? 'en_US' : 'fr_FR';
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: { default: 'Arnaud Royer | Développeur Fullstack', template: '%s | Arnaud Royer' },
+    description: 'Développeur Fullstack passionné, je crée des expériences web modernes et performantes.',
+    keywords: ['Développeur Fullstack', 'Fullstack Developer', 'React', 'Next.js', 'Svelte', 'Node.js', 'TypeScript', 'Portfolio', 'Arnaud Royer'],
+    authors: [{ name: 'Arnaud Royer' }],
+    openGraph: {
+      type: 'website',
+      url: `${siteUrl}/${locale}`,
+      siteName: 'Arnaud Royer - Portfolio',
+      title: 'Arnaud Royer | Développeur Fullstack',
+      description: 'Développeur Fullstack passionné, je crée des expériences web modernes et performantes.',
+      locale: ogLocale,
+      images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'Arnaud Royer' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Arnaud Royer | Développeur Fullstack',
+      description: 'Développeur Fullstack passionné.',
+      images: ['/images/og-image.png'],
+      creator: '@cestarnaud',
+    },
+    robots: { index: true, follow: true },
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: {
+        'fr': `${siteUrl}/fr`,
+        'en': `${siteUrl}/en`,
+        'x-default': `${siteUrl}/fr`,
+      },
+    },
+  };
+}
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
@@ -64,7 +79,6 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  // Makes locale available to all server components in this subtree
   setRequestLocale(locale);
 
   const messages = await getMessages();
@@ -72,8 +86,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <PersonJsonLd />
-        <WebsiteJsonLd />
+        <PersonJsonLd locale={locale} />
+        <WebsiteJsonLd locale={locale} />
         <Analytics />
       </head>
       <body className={`${inter.variable} ${instrumentSerif.variable} ${geistMono.variable} font-sans antialiased`}>

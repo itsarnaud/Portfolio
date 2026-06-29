@@ -70,7 +70,7 @@ const Home = () => {
       <section className="px-6 md:px-12 lg:px-24 py-32 border-t border-border">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <AnimatedText trigger className="text-3xl md:text-4xl font-display leading-snug">
+            <AnimatedText trigger as="h2" className="text-3xl md:text-4xl font-display leading-snug">
               {t("aboutTitle")}
             </AnimatedText>
           </div>
@@ -92,7 +92,7 @@ const Home = () => {
           <div className="flex items-end justify-between mb-16">
             <div>
               <p className="text-sm tracking-widest text-muted-foreground mb-2 font-mono">{t("selectedProjects")}</p>
-              <AnimatedText trigger className="text-3xl md:text-4xl font-display">
+              <AnimatedText trigger as="h2" className="text-3xl md:text-4xl font-display">
                 {t("recentWork")}
               </AnimatedText>
             </div>
@@ -118,7 +118,7 @@ const Home = () => {
                 </div>
                 <div className="flex items-start justify-between">
                   <div>
-                    <h2 className="text-xl font-medium mb-1">{project.title}</h2>
+                    <h3 className="text-xl font-medium mb-1">{project.title}</h3>
                     <p className="text-muted-foreground">{project.description}</p>
                   </div>
                   <span className="text-xs tracking-widest text-muted-foreground font-mono">Frontend</span>
