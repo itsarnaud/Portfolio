@@ -1,4 +1,26 @@
 {
+  "meta": {
+    "home": {
+      "title": "Arnaud Royer | Développeur Fullstack",
+      "description": "Développeur Fullstack passionné, je crée des expériences web modernes et performantes."
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Découvrez mon parcours en tant que développeur Fullstack. Passionné par la création d'applications web modernes, je combine expertise technique et attention aux détails."
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Découvrez une sélection de mes travaux récents : applications web, sites vitrines, outils open-source."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Vous avez un projet en tête ? Contactez-moi pour discuter de votre projet web."
+    },
+    "experiences": {
+      "title": "Expériences",
+      "description": "Plus de 2 ans d'expérience en développement web. Découvrez mon parcours professionnel."
+    }
+  },
   "nav": {
     "home": "Accueil",
     "projects": "Projets",

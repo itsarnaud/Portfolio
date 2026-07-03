@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist_Mono, Inter, Instrument_Serif } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '../../i18n/routing';
 import { notFound } from 'next/navigation';
 import { SmoothScroll }   from '../../components/gsap/SmoothScroll';
@@ -37,26 +37,27 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const ogLocale = locale === 'en' ? 'en_US' : 'fr_FR';
+  const t = await getTranslations({ locale, namespace: 'meta.home' });
 
   return {
     metadataBase: new URL(siteUrl),
-    title: { default: 'Arnaud Royer | Développeur Fullstack', template: '%s | Arnaud Royer' },
-    description: 'Développeur Fullstack passionné, je crée des expériences web modernes et performantes.',
+    title: { default: t('title'), template: '%s | Arnaud Royer' },
+    description: t('description'),
     keywords: ['Développeur Fullstack', 'Fullstack Developer', 'React', 'Next.js', 'Svelte', 'Node.js', 'TypeScript', 'Portfolio', 'Arnaud Royer'],
     authors: [{ name: 'Arnaud Royer' }],
     openGraph: {
       type: 'website',
       url: `${siteUrl}/${locale}`,
       siteName: 'Arnaud Royer - Portfolio',
-      title: 'Arnaud Royer | Développeur Fullstack',
-      description: 'Développeur Fullstack passionné, je crée des expériences web modernes et performantes.',
+      title: t('title'),
+      description: t('description'),
       locale: ogLocale,
       images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'Arnaud Royer' }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Arnaud Royer | Développeur Fullstack',
-      description: 'Développeur Fullstack passionné.',
+      title: t('title'),
+      description: t('description'),
       images: ['/images/og-image.png'],
       creator: '@cestarnaud',
     },

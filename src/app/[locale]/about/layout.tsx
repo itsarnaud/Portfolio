@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 const siteUrl = 'https://arnaud-royer.xyz';
 
@@ -8,22 +9,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const ogLocale = locale === 'en' ? 'en_US' : 'fr_FR';
   const path = `/${locale}/about`;
+  const t = await getTranslations({ locale, namespace: 'meta.about' });
 
   return {
-    title: 'À propos',
-    description: "Découvrez mon parcours en tant que développeur Fullstack. Passionné par la création d'applications web modernes, je combine expertise technique et attention aux détails.",
+    title: t('title'),
+    description: t('description'),
     openGraph: {
-      title: 'À propos | Arnaud Royer',
-      description: "Découvrez mon parcours en tant que développeur Fullstack.",
+      title: `${t('title')} | Arnaud Royer`,
+      description: t('description'),
       url: path,
       type: 'profile',
       locale: ogLocale,
-      images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'Arnaud Royer - À propos' }],
+      images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'Arnaud Royer' }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'À propos | Arnaud Royer',
-      description: "Découvrez mon parcours en tant que développeur Fullstack.",
+      title: `${t('title')} | Arnaud Royer`,
+      description: t('description'),
       images: ['/images/og-image.png'],
       creator: '@cestarnaud',
     },

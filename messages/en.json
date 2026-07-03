@@ -1,4 +1,26 @@
 {
+  "meta": {
+    "home": {
+      "title": "Arnaud Royer | Fullstack Developer",
+      "description": "Fullstack Developer passionate about creating modern and performant web experiences."
+    },
+    "about": {
+      "title": "About",
+      "description": "Discover my journey as a Fullstack Developer. Passionate about building modern web applications, I combine technical expertise with attention to detail."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Discover a selection of my recent work: web applications, showcase sites, open-source tools."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Have a project in mind? Get in touch to discuss your web project."
+    },
+    "experiences": {
+      "title": "Experiences",
+      "description": "Over 2 years of experience in web development. Discover my professional journey."
+    }
+  },
   "nav": {
     "home": "Home",
     "projects": "Projects",
