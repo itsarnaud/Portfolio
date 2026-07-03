@@ -61,6 +61,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       creator: '@cestarnaud',
     },
     robots: { index: true, follow: true },
+    verification: {
+      google: 'LwvwuxH4t00ZYrf3QLNcFgRRC8AhZhLpJNk2QZfTrFQ',
+    },
     alternates: {
       canonical: `${siteUrl}/${locale}`,
       languages: {
