@@ -180,7 +180,14 @@ const projectsData = [
       en: "I was the sole developer on this project, which allowed me to manage the entire development cycle. The main challenge was upskilling on technologies I had never used before: Astro for the frontend, Prisma as ORM, Supabase for the database and storage, and MJML for email templates. I had to design a complete architecture from scratch while learning these new tools.",
     },
     technologies: ["Astro", "Svelte", "Express.js", "Prisma", "Supabase", "PostgreSQL", "Tailwind", "TypeScript"],
-    image: ["/images/projects/Logo_Kollirama.png"],
+    image: [
+      "/images/projects/kollirama/Logo_Kollirama.png",
+      "/images/projects/kollirama/KO-1.png",
+      "/images/projects/kollirama/KO-2.png",
+      "/images/projects/kollirama/KO-3.png",
+      "/images/projects/kollirama/KO-4.png",
+      "/images/projects/kollirama/KO-5.png"
+    ],
     link: "https://kollirama.fr",
     category: {
       fr: "Projet d'alternance",
