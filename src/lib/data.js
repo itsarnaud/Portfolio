@@ -256,6 +256,31 @@ const projectsData = [
       en: "Client project",
     },
   },
+  {
+    id: 10,
+    title: "FutureKawa",
+    slug: "futurekawa",
+    year: "2026",
+    description: {
+      fr: "API de suivi multi-pays de stocks de café avec surveillance IoT.",
+      en: "Multi-country coffee stock tracking API with IoT monitoring.",
+    },
+    longDescription: {
+      fr: "Backend d'une application de suivi de stocks de café vert répartis sur trois pays (Brésil, Équateur, Colombie), développée en équipe dans le cadre d'un projet scolaire (MSPR). J'ai été responsable de la partie API et de la documentation technique. L'architecture repose sur un backend conteneurisé par pays (base de données, broker MQTT, API REST et microservice d'alerting dédiés), avec un backend central qui agrège les données des trois pays pour le frontend. Les capteurs IoT publient les mesures de température et d'humidité via MQTT, ce qui déclenche des alertes automatiques par e-mail en cas de dépassement de seuil.",
+      en: "Backend for a green coffee stock tracking application spanning three countries (Brazil, Ecuador, Colombia), built as a team for a school project (MSPR). I was responsible for the API and the technical documentation. The architecture is built around a per-country containerized backend (dedicated database, MQTT broker, REST API and alerting microservice), with a central backend aggregating data from all three countries for the frontend. IoT sensors publish temperature and humidity readings over MQTT, automatically triggering email alerts when thresholds are exceeded.",
+    },
+    challenge: {
+      fr: "Le principal défi était de corriger un mélange de données entre pays causé par une base de données partagée, en migrant vers une base dédiée par pays sans casser l'agrégation côté backend central. J'ai également extrait la logique d'alerting dans un microservice indépendant pour rester conforme à l'architecture demandée par le sujet, et mis en place Docker Compose pour démarrer toute la stack backend (bases, brokers MQTT, APIs, alerting, Mailpit pour les tests d'e-mails) en une seule commande. J'ai enfin rédigé l'ensemble du dossier technique du projet.",
+      en: "The main challenge was fixing data bleed between countries caused by a shared database, by migrating to one dedicated database per country without breaking aggregation on the central backend. I also extracted the alerting logic into an independent microservice to stay aligned with the architecture required by the project brief, and set up Docker Compose to start the entire backend stack (databases, MQTT brokers, APIs, alerting, Mailpit for email testing) with a single command. I also wrote the project's full technical documentation.",
+    },
+    technologies: ["NestJS", "TypeScript", "Prisma", "PostgreSQL", "MQTT", "Docker"],
+    image: ["/images/projects/futurekawa/futurekawa.png"],
+    link: "https://github.com/itsarnaud/FutureKawa",
+    category: {
+      fr: "Projet de cours",
+      en: "School project",
+    },
+  },
 ];
 
 export const getProjects = (locale = 'fr') =>
