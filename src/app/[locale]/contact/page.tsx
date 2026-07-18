@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslations }             from 'next-intl';
 import { MagneticButton }              from '@/src/components/ui/MagneticButton';
 import AnimatedText                    from '@/src/components/gsap/AnimatedText';
-import emailjs from '@emailjs/browser';
 import gsap    from 'gsap';
 
 const socialLinks = [
@@ -69,23 +68,24 @@ const ContactPage = () => {
     };
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           from_name:  formState.name,
           from_email: formState.email,
           subject:    subjectLabels[formState.subject] || formState.subject,
           message:    formState.message,
-          date:       new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
-      );
+        }),
+      });
+
+      if (!response.ok) throw new Error('Erreur lors de la requête');
+
       setIsSubmitted(true);
       setFormState({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (err) {
-      console.error('Erreur EmailJS:', err);
+      console.error('Erreur envoi contact:', err);
       setError(t('error'));
     } finally {
       setIsSubmitting(false);
