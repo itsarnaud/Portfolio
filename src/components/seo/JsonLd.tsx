@@ -14,7 +14,7 @@ export function JsonLd({ data }: JsonLdProps) {
 type LocaleProps = { locale: string };
 
 export function PersonJsonLd({ locale }: LocaleProps) {
-  const siteUrl = 'https://arnaud-royer.xyz';
+  const siteUrl = 'https://arnaudroyer.fr';
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -47,7 +47,7 @@ export function PersonJsonLd({ locale }: LocaleProps) {
 }
 
 export function WebsiteJsonLd({ locale }: LocaleProps) {
-  const siteUrl = 'https://arnaud-royer.xyz';
+  const siteUrl = 'https://arnaudroyer.fr';
   const data = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -78,7 +78,7 @@ type ProjectJsonLdProps = {
 };
 
 export function ProjectJsonLd({ project, locale }: ProjectJsonLdProps) {
-  const siteUrl = 'https://arnaud-royer.xyz';
+  const siteUrl = 'https://arnaudroyer.fr';
   const data = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -105,7 +105,7 @@ type BreadcrumbJsonLdProps = {
 };
 
 export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
-  const siteUrl = 'https://arnaud-royer.xyz';
+  const siteUrl = 'https://arnaudroyer.fr';
   const data = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

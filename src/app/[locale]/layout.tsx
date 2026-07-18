@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-display" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
-const siteUrl = 'https://arnaud-royer.xyz';
+const siteUrl = 'https://arnaudroyer.fr';
 
 export const viewport: Viewport = {
   themeColor: [

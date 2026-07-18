@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getProjects } from '../lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = 'https://arnaud-royer.xyz';
+  const siteUrl = 'https://arnaudroyer.fr';
   const locales = ['fr', 'en'] as const;
 
   const staticRoutes = ['about', 'projects', 'experiences', 'contact'];

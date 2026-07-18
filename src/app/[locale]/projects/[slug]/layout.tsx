@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { getProjects } from '../../../../lib/data';
 
-const siteUrl = 'https://arnaud-royer.xyz';
+const siteUrl = 'https://arnaudroyer.fr';
 
 type Props = {
   params: Promise<{ slug: string; locale: string }>;

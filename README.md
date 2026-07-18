@@ -8,7 +8,7 @@
 
 Portfolio personnel présentant mes projets, expériences et compétences en tant que développeur Fullstack.
 
-**[arnaud-royer.xyz](https://arnaud-royer.xyz)**
+**[arnaudroyer.fr](https://arnaudroyer.fr)**
 
 ![Portfolio Preview](public/images/og-image.png)
 
@@ -71,7 +71,7 @@ Créer un fichier `.env` à la racine :
 
 ```env
 # URL du site (pour SEO et sitemap)
-NEXT_PUBLIC_SITE_URL=https://arnaud-royer.xyz
+NEXT_PUBLIC_SITE_URL=https://arnaudroyer.fr
 
 # EmailJS (formulaire de contact)
 NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
@@ -130,7 +130,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 **Arnaud Royer**
 
-- Portfolio : [arnaud-royer.xyz](https://arnaud-royer.xyz)
+- Portfolio : [arnaudroyer.fr](https://arnaudroyer.fr)
 - GitHub : [@itsarnaud](https://github.com/itsarnaud)
 - LinkedIn : [Arnaud Royer](https://www.linkedin.com/in/royer-arnaud/)
 - Email : arnaud.royer77@gmail.com

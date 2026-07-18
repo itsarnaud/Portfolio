@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
-const siteUrl = 'https://arnaud-royer.xyz';
+const siteUrl = 'https://arnaudroyer.fr';
 
 type Props = { params: Promise<{ locale: string }> };
 
