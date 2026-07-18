@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "2.1.0",
   "description": "Portfolio de Arnaud Royer - Développeur Fullstack",
-  "author": "Arnaud Royer <arnaud.royer77@gmail.com>",
+  "author": "Arnaud Royer <contact@arnaudroyer.fr>",
   "private": true,
   "scripts": {
     "dev": "next dev",

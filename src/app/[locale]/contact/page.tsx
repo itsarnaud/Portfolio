@@ -210,8 +210,8 @@ const ContactPage = () => {
           <div className="lg:pt-8">
             <div className="mb-12">
               <p className="text-sm tracking-widest text-muted-foreground mb-3 font-mono">{t('emailSectionLabel')}</p>
-              <a href="mailto:arnaud.royer77@gmail.com" className="text-2xl md:text-3xl font-display hover:opacity-70 transition-opacity">
-                arnaud.royer77@gmail.com
+              <a href="mailto:contact@arnaudroyer.fr" className="text-2xl md:text-3xl font-display hover:opacity-70 transition-opacity">
+                contact@arnaudroyer.fr
               </a>
             </div>
             <div className="mb-12">

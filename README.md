@@ -133,7 +133,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 - Portfolio : [arnaudroyer.fr](https://arnaudroyer.fr)
 - GitHub : [@itsarnaud](https://github.com/itsarnaud)
 - LinkedIn : [Arnaud Royer](https://www.linkedin.com/in/royer-arnaud/)
-- Email : arnaud.royer77@gmail.com
+- Email : contact@arnaudroyer.fr
 
 ---
 
