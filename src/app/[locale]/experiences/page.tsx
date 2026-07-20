@@ -81,7 +81,7 @@ const ExperiencePage = () => {
               <div className="timeline-dot hidden lg:block absolute left-1/2 top-8 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
               <div className={`${i % 2 === 0 ? "lg:pr-16 lg:text-right" : "lg:col-start-2 lg:pl-16"} ${i % 2 === 1 ? "lg:direction-ltr" : ""}`}>
                 <div className="p-8 border border-border hover:border-foreground transition-colors bg-background">
-                  <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground font-mono mb-4">
+                  <div className={`flex flex-wrap items-center gap-3 text-sm text-muted-foreground font-mono mb-4 ${i % 2 === 0 ? "lg:justify-end" : "lg:justify-start"}`}>
                     <span>{exp.period}</span>
                     <span className="w-1 h-1 rounded-full bg-muted-foreground" />
                     <span>{exp.location}</span>

@@ -352,6 +352,31 @@ export const getValues = (locale = 'fr') =>
 
 const experiencesData = [
   {
+    id: 0,
+    role: { fr: "Développeur Fullstack Indépendant", en: "Freelance Fullstack Developer" },
+    company: "Indépendant",
+    companyUrl: null,
+    location: "Montpellier, France",
+    period: "2026 — Présent",
+    description: {
+      fr: "Activité freelance menée en parallèle de l'alternance. Création d'applications web sur mesure de A à Z, de l'analyse des besoins à la mise en production.",
+      en: "Freelance activity carried out alongside the apprenticeship. Creation of custom web applications from A to Z, from needs analysis to production deployment.",
+    },
+    achievements: {
+      fr: [
+        "Analyse des besoins et conseil client",
+        "Conception et développement d'applications web sur mesure",
+        "Intégration UX/UI et responsive design",
+      ],
+      en: [
+        "Needs analysis and client advisory",
+        "Design and development of custom web applications",
+        "UX/UI integration and responsive design",
+      ],
+    },
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind"],
+  },
+  {
     id: 1,
     role: { fr: "Développeur Fullstack", en: "Fullstack Developer" },
     company: "Kollirama",
