@@ -12,6 +12,10 @@
       "title": "Projects",
       "description": "Discover a selection of my recent work: web applications, showcase sites, open-source tools."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Find my LinkedIn posts: thoughts, lessons learned and updates about web development."
+    },
     "contact": {
       "title": "Contact",
       "description": "Have a project in mind? Get in touch to discuss your web project."
@@ -24,6 +28,7 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
+    "blog": "Blog",
     "about": "About",
     "experiences": "Experience",
     "contact": "Contact",
@@ -92,6 +97,21 @@
     "breadcrumbHome": "Home",
     "breadcrumbProjects": "Projects",
     "imageAlt": "visual"
+  },
+  "blog": {
+    "label": "BLOG",
+    "title": "My LinkedIn posts",
+    "subtitle": "Thoughts, lessons learned and updates that I share on LinkedIn.",
+    "ctaTitle": "Let's connect on LinkedIn",
+    "ctaSubtitle": "Find all my posts and updates directly on my profile.",
+    "ctaButton": "View my LinkedIn profile"
+  },
+  "blogPost": {
+    "back": "Back to blog",
+    "tags": "Topics",
+    "viewOnLinkedin": "View on LinkedIn",
+    "breadcrumbHome": "Home",
+    "breadcrumbBlog": "Blog"
   },
   "experiences": {
     "label": "EXPERIENCE",

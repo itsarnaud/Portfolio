@@ -294,6 +294,95 @@ export const getProjects = (locale = 'fr') =>
     }))
     .reverse();
 
+const blogPostsData = [
+  {
+    id: 1,
+    title: {
+      fr: "Loi interdisant les réseaux sociaux aux moins de 15 ans : une bonne idée qui m'interroge",
+      en: "The new law banning social media for under-15s: good news, but it raises a question",
+    },
+    slug: "loi-reseaux-sociaux-mineurs-15-ans",
+    date: "2026-07-28",
+    excerpt: {
+      fr: "Le Parlement vient d'adopter la loi interdisant les réseaux sociaux aux moins de 15 ans. Une bonne nouvelle pour protéger les enfants, sauf qu'il y a un truc qui me turlupine.",
+      en: "Parliament just passed a law banning social media for under-15s. Great news to protect children, except there's something bugging me about it.",
+    },
+    content: {
+      fr: "Le Parlement vient d'adopter la loi interdisant les réseaux sociaux aux moins de 15 ans. Une bonne nouvelle pour protéger les enfants.\n\nSauf qu'il y a un truc qui me turlupine.\n\nPour vérifier l'âge des utilisateurs, les plateformes vont devoir mettre en place des systèmes d'identification. Concrètement, ça veut dire que tout le monde, pas seulement les mineurs, devra prouver son identité pour créer un compte.\n\nEt c'est là que ça coince.\n\nDepuis le début de l'année 2026, la France a cumulé plus de 300 services piratés et 250 millions de données exposées. La CNIL a recensé plus de 8 600 violations de données en un an, soit une fuite par heure. On est aujourd'hui le pays le plus attaqué d'Europe.\n\nAlors oui, protéger les enfants c'est essentiel. Mais confier ses documents d'identité à des plateformes dont la sécurité est loin d'être garantie, c'est un vrai sujet.\n\nLa question c'est pas \"faut-il protéger les mineurs ?\", bien sûr que oui. La question c'est \"comment on fait ça sans exposer tout le monde ?\"",
+      en: "Parliament just passed a law banning social media for under-15s. Great news to protect children.\n\nExcept there's something bugging me about it.\n\nTo verify users' age, platforms will have to set up identification systems. In practice, that means everyone, not just minors, will have to prove their identity to create an account.\n\nAnd that's where it gets tricky.\n\nSince the start of 2026, France has racked up over 300 hacked services and 250 million exposed records. The CNIL recorded more than 8,600 data breaches in a year, roughly one leak per hour. We're now the most attacked country in Europe.\n\nSo yes, protecting children is essential. But handing over ID documents to platforms whose security is far from guaranteed is a real issue.\n\nThe question isn't \"should we protect minors?\", of course we should. The question is \"how do we do it without exposing everyone?\"",
+    },
+    linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_le-parlement-vient-dadopter-la-loi-interdisant-activity-7487764636348469248-UuhV",
+    tags: ["RGPD", "Société", "Cybersécurité"],
+  },
+  {
+    id: 2,
+    title: {
+      fr: "WebDev Arena : le classement des IA n'a jamais été aussi serré",
+      en: "WebDev Arena: the AI rankings have never been this tight",
+    },
+    slug: "webdev-arena-classement-ia-juillet-2026",
+    date: "2026-07-25",
+    excerpt: {
+      fr: "La WebDev Arena c'est un classement où des modèles d'IA s'affrontent sur des tâches de dev web, notés à l'aveugle par des humains. Juillet 2026, c'est peut-être le plus serré depuis le début.",
+      en: "WebDev Arena is a leaderboard where AI models compete on web dev tasks, blind-rated by humans. July 2026 might be the tightest race yet.",
+    },
+    content: {
+      fr: "La WebDev Arena c'est un classement où des modèles d'IA s'affrontent sur des tâches de dev web, notés à l'aveugle par des humains. Chaque mois le classement bouge et juillet 2026 c'est peut-être le plus serré depuis le début !\n\nClaude Fable 5 reste en tête, mais GPT-5.6 revient fort et prend la première place sur React. Grok lui cartonne en HTML. Les modèles chinois comme GLM 5.2 progressent aussi et commencent à s'installer dans le top.\n\nCe qui m'intéresse là-dedans c'est que les résultats changent selon la techno. Il n'y a pas un seul modèle qui écrase tout partout. Ça veut dire que choisir son outil IA en fonction de ce sur quoi on bosse a vraiment du sens.\n\nEn React je teste GPT, pour le reste j'utilise surtout Claude. Et vous, vous utilisez quoi pour coder ?",
+      en: "WebDev Arena is a leaderboard where AI models compete on web dev tasks, blind-rated by humans. The ranking shifts every month, and July 2026 might be the tightest race yet!\n\nClaude Fable 5 stays on top, but GPT-5.6 is coming back strong and takes the lead on React. Grok is crushing it on HTML. Chinese models like GLM 5.2 are also progressing and starting to break into the top.\n\nWhat interests me here is that results shift depending on the tech stack. No single model dominates everywhere. That means choosing your AI tool based on what you're actually working on really makes sense.\n\nFor React I test GPT, for everything else I mostly use Claude. What about you, what do you use to code?",
+    },
+    linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_developpementweb-ia-react-activity-7486345639900028930-qsSG",
+    tags: ["IA", "React", "DeveloppementWeb"],
+  },
+  {
+    id: 3,
+    title: {
+      fr: "Lancement du nouveau site de l'Atelier Maha",
+      en: "Launching Atelier Maha's new website",
+    },
+    slug: "lancement-site-atelier-maha",
+    date: "2026-05-28",
+    excerpt: {
+      fr: "C'est avec beaucoup de plaisir que je vous présente le nouveau site de l'Atelier Maha, studio d'architecture d'intérieur. Ma première réalisation en tant que freelance.",
+      en: "I'm delighted to present the new website for Atelier Maha, an interior design studio, and my first freelance client project.",
+    },
+    content: {
+      fr: "C'est avec beaucoup de plaisir que je vous présente le nouveau site de l'Atelier Maha, studio d'architecture d'intérieur.\n\nPour cette première réalisation client, l'enjeu était de concevoir une vitrine entièrement sur mesure, en parfaite adéquation avec l'identité du studio.\n\nLe projet a été mené en étroite collaboration avec la cliente afin que chaque choix graphique et ergonomique reflète précisément son approche métier. L'ensemble du design, ainsi que la sélection des textes et des visuels, ont été pensés pour assurer une cohérence totale avec l'image de l'Atelier Maha.\n\nMon rôle a consisté à l'accompagner dans la traduction de son expertise en une expérience web fluide. De la présentation des prestations à la mise en valeur du portfolio, le site a été structuré pour offrir une navigation agréable et intuitive.\n\nJe remercie l'Atelier Maha pour la confiance accordée lors de cette belle collaboration créative et technique.\n\nLe site est consultable à l'adresse suivante : https://ateliermaha.fr",
+      en: "I'm delighted to present the new website for Atelier Maha, an interior design studio.\n\nFor this first client project, the challenge was to design a fully custom showcase site, in perfect alignment with the studio's identity.\n\nThe project was carried out in close collaboration with the client so that every graphic and UX choice precisely reflected her professional approach. The overall design, as well as the selection of copy and visuals, were crafted to ensure total consistency with Atelier Maha's image.\n\nMy role was to help translate her expertise into a smooth web experience. From presenting services to showcasing the portfolio, the site was structured to offer pleasant, intuitive navigation.\n\nThanks to Atelier Maha for the trust placed in me during this great creative and technical collaboration.\n\nThe site is live at: https://ateliermaha.fr",
+    },
+    linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_developpementweb-developpeur-freelance-activity-7465295802664611840-xE7M",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Freelance"],
+  },
+  {
+    id: 4,
+    title: {
+      fr: "\"Le métier de développeur est foutu, passe sur Replit\"",
+      en: "\"The developer job is dead, switch to Replit\"",
+    },
+    slug: "developpeur-foutu-ia-replit",
+    date: "2026-02-28",
+    excerpt: {
+      fr: "C'est une phrase que j'ai entendue récemment lors d'une discussion sur la refonte d'un projet web. On m'a suggéré le plus sérieusement du monde de tout supprimer et refaire avec Replit et l'IA.",
+      en: "A sentence I recently heard during a discussion about a web project revamp. I was seriously told to delete everything and rebuild it with Replit and AI.",
+    },
+    content: {
+      fr: "\"Le métier de développeur est foutu, passe sur Replit\" 🤯\n\nC'est une phrase que j'ai entendue récemment lors d'une discussion sur la refonte d'un projet web.\n\nUn peu de contexte : je travaille sur un projet de refonte d'un site avec un objectif de performance et de référencement.\n\nAlors que je m'attendais à débattre d'architecture ou de SEO, on m'a suggéré le plus sérieusement du monde :\n\n« Tu te compliques la vie. Le métier de dev est fini. Supprime tout et refais-le avec Replit et l'IA. »\n\nJ'ai cru à une blague.\n\nOn me suggère sérieusement de remplacer une architecture SSR optimisée, sécurisée et propriétaire… par un environnement de prototypage cloud généré par IA ?\n\nC'est comme demander à un architecte de raser une maison en briques pour la reconstruire en Lego « parce que c'est plus rapide ».\n\nL'IA est un outil formidable, Replit est super pour prototyper. Mais confondre « générer du code » et « construire une architecture », c'est la preuve qu'on a plus que jamais besoin de développeurs qui comprennent ce qu'ils font.\n\nLe « vieux monde » du code a encore de beaux jours devant lui. 🚀",
+      en: "\"The developer job is dead, switch to Replit\" 🤯\n\nA sentence I recently heard during a discussion about a web project revamp.\n\nSome context: I'm working on revamping a website with a performance and SEO goal.\n\nWhile I expected to debate architecture or SEO, I was told, dead serious:\n\n\"You're overcomplicating things. The dev job is over. Delete everything and rebuild it with Replit and AI.\"\n\nI thought it was a joke.\n\nI'm seriously being told to replace an optimized, secure, proprietary SSR architecture… with an AI-generated cloud prototyping environment?\n\nIt's like asking an architect to tear down a brick house to rebuild it in Lego \"because it's faster\".\n\nAI is a fantastic tool, Replit is great for prototyping. But confusing \"generating code\" with \"building an architecture\" is proof that we need developers who understand what they're doing more than ever.\n\nThe \"old world\" of code still has good days ahead. 🚀",
+    },
+    linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_developpementweb-ia-hype-share-7425695272032157696-ZM9Q",
+    tags: ["IA", "DeveloppementWeb"],
+  },
+];
+
+export const getBlogPosts = (locale = 'fr') =>
+  blogPostsData
+    .map((p) => ({
+      ...p,
+      title: p.title[locale] ?? p.title.fr,
+      excerpt: p.excerpt[locale] ?? p.excerpt.fr,
+      content: p.content[locale] ?? p.content.fr,
+    }))
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+
 export const skills = {
   frontend: [
     { name: "Svelte / SvelteKit", level: 90 },

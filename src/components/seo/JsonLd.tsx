@@ -100,6 +100,40 @@ export function ProjectJsonLd({ project, locale }: ProjectJsonLdProps) {
   return <JsonLd data={data} />;
 }
 
+type BlogPostingJsonLdProps = {
+  post: {
+    title: string;
+    excerpt: string;
+    content?: string;
+    date: string;
+    slug: string;
+    linkedinUrl?: string;
+  };
+  locale: string;
+};
+
+export function BlogPostingJsonLd({ post, locale }: BlogPostingJsonLdProps) {
+  const siteUrl = 'https://arnaudroyer.fr';
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    articleBody: post.content || post.excerpt,
+    datePublished: post.date,
+    url: `${siteUrl}/${locale}/blog/${post.slug}`,
+    author: {
+      '@type': 'Person',
+      name: 'Arnaud Royer',
+      url: siteUrl,
+    },
+    inLanguage: locale === 'en' ? 'en-US' : 'fr-FR',
+    ...(post.linkedinUrl && { sameAs: post.linkedinUrl }),
+  };
+
+  return <JsonLd data={data} />;
+}
+
 type BreadcrumbJsonLdProps = {
   items: Array<{ name: string; url: string }>;
 };

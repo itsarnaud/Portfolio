@@ -1,15 +1,16 @@
 import { MetadataRoute } from 'next';
-import { getProjects } from '../lib/data';
+import { getProjects, getBlogPosts } from '../lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://arnaudroyer.fr';
   const locales = ['fr', 'en'] as const;
 
-  const staticRoutes = ['about', 'projects', 'experiences', 'contact'];
+  const staticRoutes = ['about', 'projects', 'blog', 'experiences', 'contact'];
   const priorities: Record<string, number> = {
     '': 1,
     'about': 0.8,
     'projects': 0.9,
+    'blog': 0.8,
     'experiences': 0.7,
     'contact': 0.6,
   };
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '': 'monthly',
     'about': 'monthly',
     'projects': 'weekly',
+    'blog': 'weekly',
     'experiences': 'monthly',
     'contact': 'yearly',
   };
@@ -45,5 +47,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticPages, ...projectPages];
+  const blogPages: MetadataRoute.Sitemap = locales.flatMap((locale) =>
+    getBlogPosts(locale).map((post) => ({
+      url: `${siteUrl}/${locale}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  );
+
+  return [...staticPages, ...projectPages, ...blogPages];
 }

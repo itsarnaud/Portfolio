@@ -12,6 +12,10 @@
       "title": "Projets",
       "description": "Découvrez une sélection de mes travaux récents : applications web, sites vitrines, outils open-source."
     },
+    "blog": {
+      "title": "Blog",
+      "description": "Retrouvez mes posts LinkedIn : réflexions, retours d'expérience et actualités sur le développement web."
+    },
     "contact": {
       "title": "Contact",
       "description": "Vous avez un projet en tête ? Contactez-moi pour discuter de votre projet web."
@@ -24,6 +28,7 @@
   "nav": {
     "home": "Accueil",
     "projects": "Projets",
+    "blog": "Blog",
     "about": "À propos",
     "experiences": "Expérience",
     "contact": "Contact",
@@ -92,6 +97,21 @@
     "breadcrumbHome": "Accueil",
     "breadcrumbProjects": "Projets",
     "imageAlt": "visuel"
+  },
+  "blog": {
+    "label": "BLOG",
+    "title": "Mes posts LinkedIn",
+    "subtitle": "Réflexions, retours d'expérience et actualités que je partage sur LinkedIn.",
+    "ctaTitle": "Suivons-nous sur LinkedIn",
+    "ctaSubtitle": "Retrouvez tous mes posts et actualités directement sur mon profil.",
+    "ctaButton": "Voir mon profil LinkedIn"
+  },
+  "blogPost": {
+    "back": "Retour au blog",
+    "tags": "Sujets",
+    "viewOnLinkedin": "Voir sur LinkedIn",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbBlog": "Blog"
   },
   "experiences": {
     "label": "EXPÉRIENCE",
