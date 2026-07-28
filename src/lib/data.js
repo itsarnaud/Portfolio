@@ -281,6 +281,31 @@ const projectsData = [
       en: "School project",
     },
   },
+  {
+    id: 11,
+    title: "Quested",
+    slug: "quested",
+    year: "2026",
+    description: {
+      fr: "Tracker de jeux vidéo façon Letterboxd.",
+      en: "Letterboxd-style video game tracker.",
+    },
+    longDescription: {
+      fr: "Application façon Letterboxd pour suivre ses jeux vidéo. La recherche importe automatiquement les jeux depuis IGDB et RAWG (avec déduplication par titre et année), et chaque jeu peut être logué avec un statut (backlog, en cours, terminé, abandonné, wishlist), une note sur 10 et des notes personnelles. Chaque compte dispose d'un profil public listant les jeux logués, avec un système de follow pour voir l'activité des autres joueurs sur son fil. Disponible en français et en anglais, projet personnel toujours en développement actif.",
+      en: "Letterboxd-style app for tracking video games. Search automatically imports games from IGDB and RAWG (deduplicated by title and year), and each game can be logged with a status (backlog, playing, completed, dropped, wishlist), a rating out of 10, and personal notes. Every account has a public profile listing logged games, with a follow system to see other players' activity on the home feed. Available in French and English, a personal project still under active development.",
+    },
+    challenge: {
+      fr: "Le principal défi était de fiabiliser l'import de jeux depuis deux sources externes (IGDB et RAWG) en évitant les doublons, en les rapprochant par titre et année plutôt que par identifiant exact. J'ai aussi mis en place l'authentification via Google et Discord avec possibilité de lier les deux à un même compte, ainsi qu'un système de suivi et de fil d'activité. Le projet est déployé sur Vercel avec une base Postgres sur Neon, en veillant à garder la région du serveur alignée avec celle de la base pour éviter la latence réseau.",
+      en: "The main challenge was making game imports from two external sources (IGDB and RAWG) reliable while avoiding duplicates, matching games by title and year rather than exact ID. I also built authentication via Google and Discord with the ability to link both to the same account, plus a follow system and activity feed. The project is deployed on Vercel with a Postgres database on Neon, keeping the server region aligned with the database region to avoid network latency.",
+    },
+    technologies: ["Next.js", "TypeScript", "Prisma", "tRPC", "PostgreSQL", "Auth.js", "Tailwind"],
+    image: ["/images/projects/quested/Quested.png"],
+    link: "https://quested.cc",
+    category: {
+      fr: "Projet perso",
+      en: "Personal project",
+    },
+  },
 ];
 
 export const getProjects = (locale = 'fr') =>
