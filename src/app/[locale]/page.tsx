@@ -121,7 +121,7 @@ const Home = () => {
                     <h3 className="text-xl font-medium mb-1">{project.title}</h3>
                     <p className="text-muted-foreground">{project.description}</p>
                   </div>
-                  <span className="text-xs tracking-widest text-muted-foreground font-mono">Frontend</span>
+                  <span className="text-xs tracking-widest text-muted-foreground font-mono">{project.type}</span>
                 </div>
               </Link>
             ))}

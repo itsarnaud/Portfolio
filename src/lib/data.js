@@ -4,6 +4,7 @@ const projectsData = [
     title: "Tiptap FontSize Extension",
     slug: "tiptap-fontsize-extension",
     year: "2024",
+    type: "Frontend",
     description: {
       fr: "Extension Tiptap pour la gestion de la taille de police.",
       en: "Tiptap extension for font size management.",
@@ -29,6 +30,7 @@ const projectsData = [
     title: "Template Engine Benchmark",
     slug: "benchmark",
     year: "2024",
+    type: "Benchmark",
     description: {
       fr: "Benchmark de moteur de template.",
       en: "JavaScript template engine benchmark.",
@@ -54,6 +56,7 @@ const projectsData = [
     title: "Igowall",
     slug: "igowall",
     year: "2024",
+    type: "Frontend",
     description: {
       fr: "Plateforme de création de site internet.",
       en: "Website creation platform.",
@@ -86,6 +89,7 @@ const projectsData = [
     title: "Foliode",
     slug: "foliode",
     year: "2025",
+    type: "Fullstack",
     description: {
       fr: "Générateur de Portfolio en ligne.",
       en: "Online portfolio generator.",
@@ -111,6 +115,7 @@ const projectsData = [
     title: "Stellarica",
     slug: "stellarica",
     year: "2025",
+    type: "Discord",
     description: {
       fr: "Bot de modération discord.",
       en: "Discord moderation bot.",
@@ -136,6 +141,7 @@ const projectsData = [
     title: "Igotrack",
     slug: "igotrack",
     year: "2025",
+    type: "Fullstack",
     description: {
       fr: "Application web de gestion de projet.",
       en: "Project management web application.",
@@ -167,6 +173,7 @@ const projectsData = [
     title: "Kollirama",
     slug: "kollirama",
     year: "2026",
+    type: "Fullstack",
     description: {
       fr: "Site vitrine de Kollirama.",
       en: "Kollirama showcase website.",
@@ -199,6 +206,7 @@ const projectsData = [
     title: "IDK Concept",
     slug: "idk-concept",
     year: "2026",
+    type: "Frontend",
     description: {
       fr: "Site vitrine premium pour une entreprise d'agencement sur-mesure.",
       en: "Premium showcase website for a custom fitting company.",
@@ -230,6 +238,7 @@ const projectsData = [
     title: "Atelier Maha",
     slug: "atelier-maha",
     year: "2026",
+    type: "Frontend",
     description: {
       fr: "Site vitrine pour un studio d'architecture d'intérieur.",
       en: "Showcase website for an interior design studio.",
@@ -261,6 +270,7 @@ const projectsData = [
     title: "FutureKawa",
     slug: "futurekawa",
     year: "2026",
+    type: "Backend",
     description: {
       fr: "API de suivi multi-pays de stocks de café avec surveillance IoT.",
       en: "Multi-country coffee stock tracking API with IoT monitoring.",
@@ -286,6 +296,7 @@ const projectsData = [
     title: "Quested",
     slug: "quested",
     year: "2026",
+    type: "Fullstack",
     description: {
       fr: "Tracker de jeux vidéo façon Letterboxd.",
       en: "Letterboxd-style video game tracker.",
