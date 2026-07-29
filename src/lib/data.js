@@ -407,6 +407,25 @@ const blogPostsData = [
     linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_developpementweb-ia-hype-share-7425695272032157696-ZM9Q",
     tags: ["IA", "DeveloppementWeb"],
   },
+  {
+    id: 5,
+    title: {
+      fr: "Quested, mon tracker de jeux vidéo façon Letterboxd",
+      en: "Quested, my Letterboxd-style video game tracker",
+    },
+    slug: "lancement-quested",
+    date: "2026-07-29",
+    excerpt: {
+      fr: "Je viens de sortir un projet perso : Quested, un site pour suivre les jeux vidéo auxquels on joue. L'idée m'est venue en utilisant Letterboxd pour les films.",
+      en: "I just released a personal project: Quested, a site to track the video games you play. The idea came from using Letterboxd for movies.",
+    },
+    content: {
+      fr: "Je viens de sortir un projet perso : Quested, un site pour suivre les jeux vidéo auxquels on joue.\n\nL'idée m'est venue en utilisant Letterboxd pour les films. Il n'existait pas vraiment d'équivalent pour les jeux qui me convenait, alors j'ai construit le mien, à ma sauce, et surtout pour apprendre en le faisant de A à Z.\n\nConcrètement on peut logger ses jeux, les noter, écrire des avis et suivre d'autres joueurs pour voir ce qu'ils jouent. Il y a aussi des trucs plus sympa comme un système de recommandations ou un comparateur de goûts entre profils, et plein d'autres petits détails que j'ai pris plaisir à construire.\n\nCôté tech, c'est du Next.js, TypeScript, Prisma et tRPC. Gratuit, sans pub, open source.\n\nJe le développe encore activement, donc si vous voulez tester et me remonter ce qui manque ou ce qui casse, ça m'aide beaucoup !\n\nC'est par ici : quested.cc :D",
+      en: "I just released a personal project: Quested, a site to track the video games you play.\n\nThe idea came from using Letterboxd for movies. There wasn't really an equivalent for games that suited me, so I built my own, my way, and mostly to learn by doing it from A to Z.\n\nConcretely, you can log your games, rate them, write reviews and follow other players to see what they're playing. There are also some nicer touches like a recommendation system or a taste-compatibility comparator between profiles, plus plenty of other little details I enjoyed building.\n\nOn the tech side, it's Next.js, TypeScript, Prisma and tRPC. Free, ad-free, open source.\n\nI'm still actively developing it, so if you want to test it and report what's missing or broken, it helps a lot!\n\nIt's over here: quested.cc :D",
+    },
+    linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_quested-share-7488157952059629568-ZIox",
+    tags: ["Next.js", "DeveloppementWeb", "Projet perso"],
+  },
 ];
 
 export const getBlogPosts = (locale = 'fr') =>
