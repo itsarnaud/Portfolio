@@ -426,6 +426,25 @@ const blogPostsData = [
     linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_quested-share-7488157952059629568-ZIox",
     tags: ["Next.js", "DeveloppementWeb", "Projet perso"],
   },
+  {
+      id: 6,
+      title: {
+        fr: "Petit update sur Quested : liaison de compte Steam",
+        en: "Small update on Quested: Steam account linking",
+      },
+      slug: "update-quested-steam",
+      date: "2026-08-03",
+      excerpt: {
+        fr: "Nouvelle grosse feature sur Quested : la liaison de compte Steam. Importez automatiquement votre bibliothèque, votre temps de jeu et vos succès sans rien logger à la main !",
+        en: "New big feature on Quested: Steam account linking. Automatically import your library, playtime, and achievements without logging anything manually!",
+      },
+      content: {
+        fr: "Petit update sur Quested !\n\nJ'adore continuer à bricoler ce projet le soir. Dernier grosse feature : la liaison de compte Steam. Une fois connecté, ta bibliothèque et ton temps de jeu s'importent automatiquement, avec tes succès en plus ! Si tu joues sur Steam, tu peux commencer à utiliser Quested sans rien logger à la main, tout est déjà là.\n\nJ'aurais bien aimé faire pareil avec PSN, Xbox ou Epic Games, mais ça n'arrivera pas... Ces plateformes n'ont pas d'API publique pour ça. Il existe des méthodes non-officielles mais elles reposent sur du reverse engineering et ça met les comptes des joueurs en risque de ban. Pas question de faire prendre ce risque à qui que ce soit !\n\nSteam restera donc probablement la seule plateforme importable pour l'instant.\n\nSinon le site continue d'avancer, plein de petits ajustements toutes les semaines. Toujours gratuit, sans pub, open source.\n\nC'est par ici : quested.cc :D",
+        en: "Small update on Quested!\n\nI love continuing to tinker with this project in the evenings. Latest big feature: Steam account linking. Once connected, your library and playtime are imported automatically, along with your achievements! If you play on Steam, you can start using Quested without logging anything manually, everything is already there.\n\nI would have loved to do the same with PSN, Xbox or Epic Games, but that won't happen... These platforms don't have a public API for this. There are unofficial methods, but they rely on reverse engineering and that puts players' accounts at risk of being banned. No way I'm making anyone take that risk!\n\nSo Steam will probably remain the only importable platform for now.\n\nOtherwise the site keeps moving forward, lots of little tweaks every week. Still free, ad-free, open source.\n\nIt's over here: quested.cc :D",
+      },
+      linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_quested-share-7489953231771615232-jYLx",
+      tags: ["Quested", "Steam", "Projet perso"],
+    }
 ];
 
 export const getBlogPosts = (locale = 'fr') =>
