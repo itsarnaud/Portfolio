@@ -8,6 +8,7 @@ import { SmoothScroll }   from '../../components/gsap/SmoothScroll';
 import { CustomCursor }   from '../../components/gsap/CustomCursor';
 import { PageTransition } from '../../components/gsap/PageTransition';
 import { Analytics }      from "@vercel/analytics/next";
+import { SpeedInsights }  from "@vercel/speed-insights/next";
 import Navbar from '../../components/global/Navbar';
 import Footer from '../../components/global/Footer';
 import { PersonJsonLd, WebsiteJsonLd } from '../../components/seo/JsonLd';
@@ -93,6 +94,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <PersonJsonLd locale={locale} />
         <WebsiteJsonLd locale={locale} />
         <Analytics />
+        <SpeedInsights />
       </head>
       <body className={`${inter.variable} ${instrumentSerif.variable} ${geistMono.variable} font-sans antialiased`}>
         <NextIntlClientProvider messages={messages}>
