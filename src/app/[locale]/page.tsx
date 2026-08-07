@@ -34,9 +34,9 @@ const Home = () => {
       <section ref={heroRef} className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24">
         <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-display leading-[1.1] mb-8 text-balance">
           {locale === "fr" ? (
-            <>Je crée des expériences web modernes et performantes.</>
+            <>Je construis des sites et des applications web.</>
           ) : (
-            <>I craft modern and high-performance web experiences.</>
+            <>I build websites and web applications.</>
           )}
         </h1>
 

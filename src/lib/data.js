@@ -478,31 +478,31 @@ export const skills = {
 
 const valuesData = [
   {
-    title: { fr: "Qualité du code", en: "Code quality" },
+    title: { fr: "Durabilité", en: "Durability" },
     description: {
-      fr: "Je crois fermement qu'un code propre et bien structuré est la base de tout projet réussi. Tests, documentation et maintenabilité sont mes priorités.",
-      en: "I firmly believe that clean, well-structured code is the foundation of every successful project. Tests, documentation, and maintainability are my priorities.",
+      fr: "Je structure, teste et documente mon code pour qu'il tienne dans le temps.",
+      en: "I structure, test and document my code so it holds up over time.",
     },
   },
   {
-    title: { fr: "Design soigné", en: "Careful design" },
+    title: { fr: "Interface claire", en: "Clear interface" },
     description: {
-      fr: "L'attention aux détails fait la différence. Je travaille au pixel près pour créer des interfaces qui allient esthétique et fonctionnalité.",
-      en: "Attention to detail makes the difference. I work pixel-perfect to create interfaces that combine aesthetics and functionality.",
+      fr: "Je porte attention aux détails pour que l'interface reste simple à utiliser.",
+      en: "I pay attention to detail so the interface stays simple to use.",
     },
   },
   {
     title: { fr: "Performance", en: "Performance" },
     description: {
-      fr: "Chaque milliseconde compte. J'optimise systématiquement mes applications pour offrir la meilleure expérience utilisateur possible.",
-      en: "Every millisecond counts. I systematically optimize my applications to deliver the best possible user experience.",
+      fr: "J'optimise mes applications pour qu'elles restent rapides.",
+      en: "I optimize my applications so they stay fast.",
     },
   },
   {
     title: { fr: "Communication", en: "Communication" },
     description: {
-      fr: "Un projet réussi passe par une communication claire. Je m'assure de comprendre vos besoins et de vous tenir informé à chaque étape.",
-      en: "A successful project requires clear communication. I make sure to understand your needs and keep you informed at every step.",
+      fr: "Je m'assure de comprendre vos besoins et de vous tenir informé à chaque étape.",
+      en: "I make sure to understand your needs and keep you informed at every step.",
     },
   },
 ];
