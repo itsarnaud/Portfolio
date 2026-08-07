@@ -116,7 +116,7 @@ const About = () => {
                       <span className="text-sm text-muted-foreground">{skill.level}%</span>
                     </div>
                     <div ref={(el) => { if (el) skillBarsRef.current[i] = el; }} data-level={skill.level} className="h-1 bg-border overflow-hidden">
-                      <div className="skill-fill h-full bg-foreground" style={{ width: "0%" }} />
+                      <div className="skill-fill h-full bg-brand" style={{ width: "0%" }} />
                     </div>
                   </div>
                 ))}
@@ -132,7 +132,7 @@ const About = () => {
                       <span className="text-sm text-muted-foreground">{skill.level}%</span>
                     </div>
                     <div ref={(el) => { if (el) skillBarsRef.current[i + skills.frontend.length] = el; }} data-level={skill.level} className="h-1 bg-border overflow-hidden">
-                      <div className="skill-fill h-full bg-foreground" style={{ width: "0%" }} />
+                      <div className="skill-fill h-full bg-brand" style={{ width: "0%" }} />
                     </div>
                   </div>
                 ))}
@@ -167,7 +167,7 @@ const About = () => {
           <div className="grid sm:grid-cols-2 gap-8">
             {values.map((value, i) => (
               <div key={i} className="value-card p-8 border border-border hover:border-foreground transition-colors">
-                <span className="text-sm text-muted-foreground font-mono mb-4 block">0{i + 1}</span>
+                <span className="text-sm text-brand font-mono mb-4 block">0{i + 1}</span>
                 <h3 className="text-xl font-medium mb-4">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </div>

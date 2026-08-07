@@ -77,7 +77,7 @@ const Home = () => {
           <div className="space-y-6 text-muted-foreground">
             <p className="leading-relaxed">{t("aboutP1")}</p>
             <p className="leading-relaxed">{t("aboutP2")}</p>
-            <Link href="/about" className="inline-flex items-center gap-2 text-foreground group">
+            <Link href="/about" className="inline-flex items-center gap-2 text-foreground hover:text-brand transition-colors group">
               {t("learnMore")}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-all group-hover:translate-x-2">
                 <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -96,7 +96,7 @@ const Home = () => {
                 {t("recentWork")}
               </AnimatedText>
             </div>
-            <Link href="/projects" className="inline-flex items-center gap-2 text-foreground group">
+            <Link href="/projects" className="inline-flex items-center gap-2 text-foreground hover:text-brand transition-colors group">
               {t("allProjects")}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-all group-hover:translate-x-2">
                 <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

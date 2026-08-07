@@ -67,7 +67,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-wide text-foreground hover:opacity-70 transition-opacity relative ${pathname === link.href ? 'after:absolute after:-bottom-1 after:left-0 after:w-full after:h-px after:bg-current' : ''}`}
+              className={`text-sm tracking-wide text-foreground hover:text-brand transition-colors relative ${pathname === link.href ? 'text-brand after:absolute after:-bottom-1 after:left-0 after:w-full after:h-px after:bg-brand' : ''}`}
             >
               {link.label}
             </Link>
