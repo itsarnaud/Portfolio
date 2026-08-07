@@ -444,6 +444,25 @@ const blogPostsData = [
       },
       linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_quested-share-7489953231771615232-jYLx",
       tags: ["Quested", "Steam", "Projet perso"],
+    },
+    {
+      id: 7,
+      title: {
+        fr: "Figma, Canva Code 2.0... le no-code n'a jamais été aussi puissant",
+        en: "Figma, Canva Code 2.0... no-code has never been this powerful",
+      },
+      slug: "figma-canva-code-no-code-vs-sur-mesure",
+      date: "2026-08-04",
+      excerpt: {
+        fr: "Figma qui intègre du code natif, Canva Code 2.0 ouvert à tout le monde... les outils no-code n'ont jamais été aussi puissants. Mais est-ce que ça remplace vraiment le dev sur-mesure ?",
+        en: "Figma now integrates native code, Canva Code 2.0 is open to everyone... no-code tools have never been this powerful. But do they really replace custom development?",
+      },
+      content: {
+        fr: "Figma qui intègre du code natif, Canva Code 2.0 ouvert à tout le monde... les outils pour \"faire son site soi-même\" n'ont jamais été aussi puissants.\n\nEt franchement, c'est cool !\n\nQuand on lance une activité, un site Canva ou Squarespace fait très bien le job. C'est rapide, accessible et ça permet de tester son marché sans se ruiner.\n\nSauf qu'à un moment on touche le plafond. Identité visuelle trop générique, animations impossibles à personnaliser, perfs limitées, intégrations qui manquent... c'est là que le sur-mesure devient nécessaire.\n\nCes outils et le dev custom ne s'opposent pas vraiment. Ils répondent juste à des étapes différentes d'un projet :)",
+        en: "Figma now integrates native code, Canva Code 2.0 is open to everyone... the tools to \"build your own site\" have never been this powerful.\n\nAnd honestly, that's cool!\n\nWhen you're starting out, a Canva or Squarespace site does the job really well. It's fast, accessible, and lets you test your market without breaking the bank.\n\nExcept at some point you hit the ceiling. Generic visual identity, animations you can't customize, limited performance, missing integrations... that's when custom development becomes necessary.\n\nThese tools and custom dev aren't really opposed. They just answer different stages of a project :)",
+      },
+      linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_figma-qui-int%C3%A8gre-du-code-natif-canva-code-share-7486341657085464576-0cpC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD7_EsgBfzY7NLU0DItNG61B5goOYK8v51k",
+      tags: ["Figma", "Canva", "NoCode", "Freelance"],
     }
 ];
 
