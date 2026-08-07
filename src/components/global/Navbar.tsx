@@ -23,9 +23,17 @@ const Navbar = () => {
   const menuRef      = useRef<HTMLDivElement>(null);
   const menuItemsRef = useRef<HTMLAnchorElement[]>([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     gsap.fromTo(navRef.current, { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", delay: 0.3 });
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
@@ -48,9 +56,9 @@ const Navbar = () => {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 flex items-center justify-between mix-blend-difference"
+        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-background/85 backdrop-blur-md border-b border-border' : 'border-b border-transparent'}`}
       >
-        <Link href="/" className="text-lg font-medium font-display tracking-wide text-primary-foreground hover:opacity-70 transition-opacity">
+        <Link href="/" className="text-lg font-medium font-display tracking-wide text-foreground hover:opacity-70 transition-opacity">
           Arnaud Royer
         </Link>
 
@@ -59,7 +67,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-wide text-primary-foreground hover:opacity-70 transition-opacity relative ${pathname === link.href ? 'after:absolute after:-bottom-1 after:left-0 after:w-full after:h-px after:bg-current' : ''}`}
+              className={`text-sm tracking-wide text-foreground hover:opacity-70 transition-opacity relative ${pathname === link.href ? 'after:absolute after:-bottom-1 after:left-0 after:w-full after:h-px after:bg-current' : ''}`}
             >
               {link.label}
             </Link>
@@ -72,8 +80,8 @@ const Navbar = () => {
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label={t('openMenu')}
         >
-          <span className="w-6 h-px bg-primary-foreground" />
-          <span className="w-6 h-px bg-primary-foreground" />
+          <span className="w-6 h-px bg-foreground" />
+          <span className="w-6 h-px bg-foreground" />
         </button>
       </nav>
 

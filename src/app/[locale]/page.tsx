@@ -40,9 +40,9 @@ const Home = () => {
 
         <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-display leading-[1.1] mb-8 text-balance">
           {locale === "fr" ? (
-            <>Je crée des expériences web <span className="italic">modernes</span> et performantes.</>
+            <>Je crée des expériences web modernes et performantes.</>
           ) : (
-            <>I craft <span className="italic">modern</span> and high-performance web experiences.</>
+            <>I craft modern and high-performance web experiences.</>
           )}
         </h1>
 
