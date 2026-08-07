@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist_Mono, Inter, Instrument_Serif } from 'next/font/google';
+import { Karla, Bricolage_Grotesque } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '../../i18n/routing';
@@ -14,9 +14,8 @@ import Footer from '../../components/global/Footer';
 import { PersonJsonLd, WebsiteJsonLd } from '../../components/seo/JsonLd';
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "--font-display" });
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const karla = Karla({ subsets: ["latin"], variable: "--font-karla" });
+const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display" });
 
 const siteUrl = 'https://arnaudroyer.fr';
 
@@ -96,7 +95,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Analytics />
         <SpeedInsights />
       </head>
-      <body className={`${inter.variable} ${instrumentSerif.variable} ${geistMono.variable} font-sans antialiased`}>
+      <body className={`${karla.variable} ${bricolage.variable} font-sans antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <CustomCursor />
           <Navbar />

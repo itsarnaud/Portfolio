@@ -20,7 +20,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className={`flex items-center gap-1 text-xs font-mono tracking-widest text-primary-foreground transition-opacity ${isPending ? 'opacity-50' : ''}`}>
+    <div className={`flex items-center gap-1 text-xs tracking-widest text-primary-foreground transition-opacity ${isPending ? 'opacity-50' : ''}`}>
       <button
         onClick={() => switchLocale('fr')}
         className={`px-1 transition-opacity ${locale === 'fr' ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}

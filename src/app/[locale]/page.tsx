@@ -16,17 +16,15 @@ const Home = () => {
   const featuredProjects = allProjects.slice(0, 2);
 
   const heroRef    = useRef<HTMLDivElement>(null);
-  const jobRef     = useRef<HTMLParagraphElement>(null);
   const titleRef   = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef     = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(jobRef.current, { y: 130, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.3 });
-      gsap.fromTo(titleRef.current, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.4 });
-      gsap.fromTo(subtitleRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", delay: 0.5 });
-      gsap.fromTo(ctaRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.6 });
+      gsap.fromTo(titleRef.current, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.3 });
+      gsap.fromTo(subtitleRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", delay: 0.4 });
+      gsap.fromTo(ctaRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.5 });
     }, heroRef);
     return () => ctx.revert();
   }, []);
@@ -34,10 +32,6 @@ const Home = () => {
   return (
     <>
       <section ref={heroRef} className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24">
-        <p ref={jobRef} className="uppercase text-sm tracking-widest mb-4 text-mono text-muted-foreground">
-          {t("badge")}
-        </p>
-
         <h1 ref={titleRef} className="text-5xl md:text-7xl lg:text-8xl font-display leading-[1.1] mb-8 text-balance">
           {locale === "fr" ? (
             <>Je crée des expériences web modernes et performantes.</>
@@ -90,12 +84,9 @@ const Home = () => {
       <section className="py-32 px-6 md:px-12 lg:px-24 bg-secondary/50">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-16">
-            <div>
-              <p className="text-sm tracking-widest text-muted-foreground mb-2 font-mono">{t("selectedProjects")}</p>
-              <AnimatedText trigger as="h2" className="text-3xl md:text-4xl font-display">
-                {t("recentWork")}
-              </AnimatedText>
-            </div>
+            <AnimatedText trigger as="h2" className="text-3xl md:text-4xl font-display">
+              {t("recentWork")}
+            </AnimatedText>
             <Link href="/projects" className="inline-flex items-center gap-2 text-foreground hover:text-brand transition-colors group">
               {t("allProjects")}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-all group-hover:translate-x-2">
@@ -121,7 +112,7 @@ const Home = () => {
                     <h3 className="text-xl font-medium mb-1">{project.title}</h3>
                     <p className="text-muted-foreground">{project.description}</p>
                   </div>
-                  <span className="text-xs tracking-widest text-muted-foreground font-mono">{project.type}</span>
+                  <span className="text-xs tracking-widest text-muted-foreground">{project.type}</span>
                 </div>
               </Link>
             ))}

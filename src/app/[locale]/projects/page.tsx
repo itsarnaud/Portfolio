@@ -48,7 +48,6 @@ const Projects = () => {
   return (
     <div className="min-h-screen pt-32 pb-24">
       <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">
-        <p className="animate-in text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('label')}</p>
         <h1 className="animate-in text-4xl md:text-6xl lg:text-7xl font-display leading-tight mb-6 max-w-4xl text-balance">
           {t('title')}
         </h1>
@@ -78,7 +77,7 @@ const Projects = () => {
                 </div>
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <h2 className="text-2xl font-medium group-hover:opacity-70 transition-opacity">{project.title}</h2>
-                  <div className="flex items-center gap-3 text-xs tracking-widest text-muted-foreground font-mono shrink-0">
+                  <div className="flex items-center gap-3 text-xs tracking-widest text-muted-foreground shrink-0">
                     <span>{project.year}</span>
                   </div>
                 </div>

@@ -69,7 +69,7 @@ const BlogPost = () => {
             {t("back")}
           </Link>
 
-          <div className="animate-in flex flex-wrap items-center gap-4 text-sm text-muted-foreground font-mono mb-4">
+          <div className="animate-in flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
             <span>{formatDate(post.date, locale)}</span>
           </div>
 

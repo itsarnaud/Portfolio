@@ -99,7 +99,6 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen pt-32 pb-16">
       <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">
-        <p className="animate-in text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('label')}</p>
         <h1 className="animate-in text-4xl md:text-6xl lg:text-7xl font-display leading-tight mb-8 max-w-4xl text-balance">
           {t('title')}
         </h1>
@@ -209,25 +208,25 @@ const ContactPage = () => {
 
           <div className="lg:pt-8">
             <div className="mb-12">
-              <p className="text-sm tracking-widest text-muted-foreground mb-3 font-mono">{t('emailSectionLabel')}</p>
+              <p className="text-sm tracking-widest text-muted-foreground mb-3">{t('emailSectionLabel')}</p>
               <a href="mailto:contact@arnaudroyer.fr" className="text-2xl md:text-3xl font-display hover:opacity-70 transition-opacity">
                 contact@arnaudroyer.fr
               </a>
             </div>
             <div className="mb-12">
-              <p className="text-sm tracking-widest text-muted-foreground mb-3 font-mono">{t('locationLabel')}</p>
+              <p className="text-sm tracking-widest text-muted-foreground mb-3">{t('locationLabel')}</p>
               <p className="text-2xl md:text-3xl font-display">{t('location')}</p>
               <p className="text-muted-foreground mt-2">{t('remote')}</p>
             </div>
             <div className="mb-12">
-              <p className="text-sm tracking-widest text-muted-foreground mb-3 font-mono">{t('availabilityLabel')}</p>
+              <p className="text-sm tracking-widest text-muted-foreground mb-3">{t('availabilityLabel')}</p>
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-lg">{t('available')}</span>
               </div>
             </div>
             <div>
-              <p className="text-sm tracking-widest text-muted-foreground mb-6 font-mono">{t('socialLabel')}</p>
+              <p className="text-sm tracking-widest text-muted-foreground mb-6">{t('socialLabel')}</p>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
                   <MagneticButton key={link.name} strength={0.2}>

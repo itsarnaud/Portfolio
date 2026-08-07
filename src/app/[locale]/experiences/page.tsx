@@ -56,7 +56,6 @@ const ExperiencePage = () => {
   return (
     <div className="min-h-screen pt-32 pb-24">
       <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-24">
-        <p className="animate-in text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('label')}</p>
         <h1 className="animate-in text-4xl md:text-6xl lg:text-7xl font-display leading-tight mb-8 max-w-4xl text-balance">
           {t('title')}
         </h1>
@@ -81,7 +80,7 @@ const ExperiencePage = () => {
               <div className="timeline-dot hidden lg:block absolute left-1/2 top-8 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
               <div className={`${i % 2 === 0 ? "lg:pr-16 lg:text-right" : "lg:col-start-2 lg:pl-16"} ${i % 2 === 1 ? "lg:direction-ltr" : ""}`}>
                 <div className="p-8 border border-border hover:border-foreground transition-colors bg-background">
-                  <div className={`flex flex-wrap items-center gap-3 text-sm text-muted-foreground font-mono mb-4 ${i % 2 === 0 ? "lg:justify-end" : "lg:justify-start"}`}>
+                  <div className={`flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4 ${i % 2 === 0 ? "lg:justify-end" : "lg:justify-start"}`}>
                     <span>{exp.period}</span>
                     <span className="w-1 h-1 rounded-full bg-muted-foreground" />
                     <span>{exp.location}</span>
@@ -121,14 +120,13 @@ const ExperiencePage = () => {
 
       <section className="px-6 md:px-12 lg:px-24 mb-32 py-24 bg-secondary/50">
         <div className="max-w-4xl mx-auto">
-          <p className="text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('educationLabel')}</p>
           <AnimatedText trigger as="h2" className="text-3xl md:text-4xl font-display mb-16">
             {t('educationTitle')}
           </AnimatedText>
           <div className="space-y-8">
             {education.map((edu, i) => (
               <div key={i} className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8 pb-8 border-b border-border last:border-0">
-                <span className="text-sm text-muted-foreground font-mono shrink-0 md:w-32">{edu.period}</span>
+                <span className="text-sm text-muted-foreground shrink-0 md:w-32">{edu.period}</span>
                 <div>
                   <h3 className="text-xl font-medium mb-1">{edu.degree}</h3>
                   <p className="text-muted-foreground mb-2">{edu.school}</p>

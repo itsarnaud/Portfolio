@@ -8,7 +8,7 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-      <p className="text-sm tracking-widest text-muted-foreground mb-6 font-mono">{t('badge')}</p>
+      <p className="text-sm tracking-widest text-muted-foreground mb-6">{t('badge')}</p>
       <h1 className="text-4xl md:text-6xl font-display mb-6">{t('title')}</h1>
       <p className="text-lg text-muted-foreground mb-12 max-w-md">{t('subtitle')}</p>
       <Link

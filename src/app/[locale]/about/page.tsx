@@ -60,7 +60,6 @@ const About = () => {
   return (
     <div className="min-h-screen pt-32 pb-24">
       <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-24">
-        <p className="animate-in text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('label')}</p>
         <h1 className="animate-in text-4xl md:text-6xl lg:text-7xl font-display leading-tight mb-8 max-w-4xl text-balance">
           {t('title')}
         </h1>
@@ -101,7 +100,6 @@ const About = () => {
 
       <section className="px-6 md:px-12 lg:px-24 mb-32 py-24 bg-secondary/50">
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('skillsLabel')}</p>
           <AnimatedText trigger className="text-3xl md:text-4xl font-display mb-16">
             {t('skillsTitle')}
           </AnimatedText>
@@ -160,14 +158,13 @@ const About = () => {
 
       <section ref={valuesRef} className="px-6 md:px-12 lg:px-24 mb-32">
         <div className="max-w-6xl mx-auto">
-          <p className="text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('valuesLabel')}</p>
           <AnimatedText trigger className="text-3xl md:text-4xl font-display mb-16">
             {t('valuesTitle')}
           </AnimatedText>
           <div className="grid sm:grid-cols-2 gap-8">
             {values.map((value, i) => (
               <div key={i} className="value-card p-8 border border-border hover:border-foreground transition-colors">
-                <span className="text-sm text-brand font-mono mb-4 block">0{i + 1}</span>
+                <span className="text-sm text-brand mb-4 block">0{i + 1}</span>
                 <h3 className="text-xl font-medium mb-4">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </div>

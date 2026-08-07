@@ -73,7 +73,7 @@ const Project = () => {
             {t("back")}
           </Link>
 
-          <div className="animate-in flex flex-wrap items-center gap-4 text-sm text-muted-foreground font-mono mb-4">
+          <div className="animate-in flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
             <span>{project.category}</span>
             <span className="w-1 h-1 rounded-full bg-muted-foreground" />
             <span>{project.year}</span>
@@ -118,7 +118,7 @@ const Project = () => {
           <div className="max-w-4xl mx-auto">
             <div className="content-block grid sm:grid-cols-3 gap-8 mb-16 pb-16 border-b border-border">
               <div>
-                <p className="text-sm text-muted-foreground mb-2 font-mono">{t("year")}</p>
+                <p className="text-sm text-muted-foreground mb-2">{t("year")}</p>
                 <p className="font-medium">{project.year}</p>
               </div>
             </div>
@@ -165,7 +165,7 @@ const Project = () => {
 
         <section className="mt-32 px-6 md:px-12 lg:px-24">
           <div className="border-t border-border pt-16">
-            <p className="text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t("nextProject")}</p>
+            <p className="text-sm tracking-widest text-muted-foreground mb-4">{t("nextProject")}</p>
             <Link href={`/projects/${nextProject.slug}`} className="group block">
               <h2 className="text-4xl md:text-5xl font-display group-hover:opacity-70 transition-opacity">
                 {nextProject.title}

@@ -52,7 +52,6 @@ const Blog = () => {
   return (
     <div className="min-h-screen pt-32 pb-24">
       <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">
-        <p className="animate-in text-sm tracking-widest text-muted-foreground mb-4 font-mono">{t('label')}</p>
         <h1 className="animate-in text-4xl md:text-6xl lg:text-7xl font-display leading-tight mb-6 max-w-4xl text-balance">
           {t('title')}
         </h1>
@@ -70,7 +69,7 @@ const Blog = () => {
               className="group border-t border-border pt-10 first:border-t-0 first:pt-0"
             >
               <Link href={`/blog/${post.slug}`} className="block">
-                <p className="text-xs tracking-widest text-muted-foreground font-mono mb-3">
+                <p className="text-xs tracking-widest text-muted-foreground mb-3">
                   {formatDate(post.date, locale)}
                 </p>
                 <h2 className="text-2xl md:text-3xl font-medium group-hover:opacity-70 transition-opacity mb-3">
