@@ -54,7 +54,7 @@ const ExperiencePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-32 pb-24">
+    <div className="min-h-screen pt-32">
       <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-24">
         <h1 className="animate-in text-4xl md:text-6xl lg:text-7xl font-display leading-tight mb-8 max-w-4xl text-balance">
           {t('title')}
@@ -138,16 +138,18 @@ const ExperiencePage = () => {
         </div>
       </section>
 
-      <section className="py-32 px-6 md:px-12 lg:px-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <AnimatedText trigger className="text-4xl md:text-5xl lg:text-6xl font-display mb-8">
-            {t('ctaTitle')}
-          </AnimatedText>
-          <p className="text-lg text-muted-foreground mb-12 max-w-xl mx-auto">{t('ctaSubtitle')}</p>
+      <section className="mt-16 px-6 md:px-12 lg:px-24 py-12 border-t border-border">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <div>
+            <AnimatedText trigger as="p" className="text-2xl md:text-3xl font-display mb-2">
+              {t('ctaTitle')}
+            </AnimatedText>
+            <p className="text-muted-foreground">{t('ctaSubtitle')}</p>
+          </div>
           <MagneticButton>
-            <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-foreground text-background text-lg tracking-wide hover:opacity-90 transition-opacity">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background text-sm tracking-wide hover:opacity-90 transition-opacity shrink-0">
               {t('ctaButton')}
-              <svg width="20" height="20" viewBox="0 0 16 16" fill="none" className="ml-1">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-1">
                 <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>

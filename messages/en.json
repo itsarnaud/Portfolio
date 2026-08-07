@@ -73,16 +73,16 @@
     "learning": "Currently learning",
     "valuesLabel": "APPROACH",
     "valuesTitle": "What guides my work",
-    "ctaTitle": "Have a project in mind?",
-    "ctaSubtitle": "I'm always open to discussing new projects :)",
-    "ctaButton": "Let's talk!"
+    "ctaTitle": "Let's work together?",
+    "ctaSubtitle": "I'm available for new opportunities :D",
+    "ctaButton": "Get in touch"
   },
   "projects": {
     "label": "PROJECTS",
     "title": "A selection of my recent work",
     "subtitle": "Every project is an opportunity to learn and push boundaries. Here are some achievements I'm particularly proud of.",
-    "ctaTitle": "Have a project in mind?",
-    "ctaSubtitle": "I'm always open to discussing new projects :)",
+    "ctaTitle": "Let's build the next one together?",
+    "ctaSubtitle": "Always up for a new challenge :)",
     "ctaButton": "Let's talk!"
   },
   "project": {
@@ -119,9 +119,9 @@
     "subtitle": "Over 2 years of experience in web development.",
     "educationLabel": "EDUCATION",
     "educationTitle": "Academic background",
-    "ctaTitle": "Have a project in mind?",
-    "ctaSubtitle": "I'm always open to discussing new projects :)",
-    "ctaButton": "Let's talk!"
+    "ctaTitle": "Questions about my background?",
+    "ctaSubtitle": "Feel free to reach out :)",
+    "ctaButton": "Get in touch"
   },
   "contact": {
     "label": "CONTACT",

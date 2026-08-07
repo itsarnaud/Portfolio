@@ -72,7 +72,7 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <LanguageSwitcher />
+          <LanguageSwitcher className="text-foreground" />
         </div>
 
         <button
@@ -110,7 +110,7 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="mt-4">
-              <LanguageSwitcher />
+              <LanguageSwitcher className="text-background" />
             </div>
           </nav>
         </div>
