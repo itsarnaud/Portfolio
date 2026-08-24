@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslations }             from 'next-intl';
 import { Link, usePathname }           from '@/src/i18n/navigation';
 import LanguageSwitcher                from './LanguageSwitcher';
+import { usePrefersReducedMotion }     from '@/src/hooks/usePrefersReducedMotion';
 import gsap from 'gsap';
 
 const Navbar = () => {
@@ -24,10 +25,15 @@ const Navbar = () => {
   const menuItemsRef = useRef<HTMLAnchorElement[]>([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      gsap.fromTo(navRef.current, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" });
+      return;
+    }
     gsap.fromTo(navRef.current, { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", delay: 0.3 });
-  }, []);
+  }, [prefersReducedMotion]);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 40);
@@ -37,17 +43,27 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      gsap.fromTo(menuRef.current, { clipPath: "circle(0% at calc(100% - 2rem) 2rem)" }, { clipPath: "circle(150% at calc(100% - 2rem) 2rem)", duration: 0.8, ease: "power4.inOut" });
-      gsap.fromTo(menuItemsRef.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power3.out", delay: 0.3 });
+    if (!isMenuOpen) return;
+
+    if (prefersReducedMotion) {
+      gsap.fromTo(menuRef.current, { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "power1.out" });
+      gsap.set(menuItemsRef.current, { y: 0, opacity: 1 });
+      return;
     }
-  }, [isMenuOpen]);
+
+    gsap.fromTo(menuRef.current, { clipPath: "circle(0% at calc(100% - 2rem) 2rem)" }, { clipPath: "circle(150% at calc(100% - 2rem) 2rem)", duration: 0.5, ease: "power3.out" });
+    gsap.fromTo(menuItemsRef.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: "power3.out", delay: 0.2 });
+  }, [isMenuOpen, prefersReducedMotion]);
 
   const closeMenu = () => {
+    if (prefersReducedMotion) {
+      gsap.to(menuRef.current, { opacity: 0, duration: 0.1, ease: "power1.out", onComplete: () => setIsMenuOpen(false) });
+      return;
+    }
     gsap.to(menuRef.current, {
       clipPath: "circle(0% at calc(100% - 2rem) 2rem)",
-      duration: 0.6,
-      ease: "power4.inOut",
+      duration: 0.25,
+      ease: "power2.out",
       onComplete: () => setIsMenuOpen(false),
     });
   };
@@ -58,7 +74,7 @@ const Navbar = () => {
         ref={navRef}
         className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-background/85 backdrop-blur-md border-b border-border' : 'border-b border-transparent'}`}
       >
-        <Link href="/" className="text-lg font-medium font-display tracking-wide text-foreground hover:opacity-70 transition-opacity">
+        <Link href="/" className="text-lg font-medium font-display tracking-wide text-foreground hover:opacity-70 active:opacity-50 transition-opacity">
           Arnaud Royer
         </Link>
 
@@ -77,7 +93,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setIsMenuOpen(true)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col gap-1.5 p-2 transition-transform active:scale-90"
           aria-label={t('openMenu')}
         >
           <span className="w-6 h-px bg-foreground" />
@@ -91,7 +107,7 @@ const Navbar = () => {
           className="fixed inset-0 z-60 bg-foreground flex flex-col items-center justify-center"
           style={{ clipPath: "circle(0% at calc(100% - 2rem) 2rem)" }}
         >
-          <button onClick={closeMenu} className="absolute top-6 right-6 p-2 text-background" aria-label={t('closeMenu')}>
+          <button onClick={closeMenu} className="absolute top-6 right-6 p-2 text-background transition-transform active:scale-90" aria-label={t('closeMenu')}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />

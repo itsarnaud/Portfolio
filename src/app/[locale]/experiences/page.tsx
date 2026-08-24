@@ -87,7 +87,7 @@ const ExperiencePage = () => {
                   </div>
                   <h2 className="text-2xl font-display mb-2">{exp.role}</h2>
                   {exp.companyUrl ? (
-                    <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors mb-4">
+                    <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground active:opacity-60 transition-[color,opacity] mb-4">
                       {exp.company}
                       <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                         <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

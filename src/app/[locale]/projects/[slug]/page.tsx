@@ -66,7 +66,7 @@ const Project = () => {
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="min-h-screen pt-32 pb-24">
         <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">
-          <Link href="/projects" className="animate-in inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+          <Link href="/projects" className="animate-in inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground active:opacity-60 transition-[color,opacity] mb-8">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M13 8H3M3 8L8 3M3 8L8 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -166,7 +166,7 @@ const Project = () => {
         <section className="mt-32 px-6 md:px-12 lg:px-24">
           <div className="border-t border-border pt-16">
             <p className="text-sm tracking-widest text-muted-foreground mb-4">{t("nextProject")}</p>
-            <Link href={`/projects/${nextProject.slug}`} className="group block">
+            <Link href={`/projects/${nextProject.slug}`} className="group block transition-transform active:scale-[0.99]">
               <h2 className="text-4xl md:text-5xl font-display group-hover:opacity-70 transition-opacity">
                 {nextProject.title}
               </h2>

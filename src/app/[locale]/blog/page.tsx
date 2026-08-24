@@ -68,7 +68,7 @@ const Blog = () => {
               ref={(el) => { if (el) postCardsRef.current[index] = el; }}
               className="group border-t border-border pt-10 first:border-t-0 first:pt-0"
             >
-              <Link href={`/blog/${post.slug}`} className="block">
+              <Link href={`/blog/${post.slug}`} className="block transition-transform active:scale-[0.98]">
                 <p className="text-xs tracking-widest text-muted-foreground mb-3">
                   {formatDate(post.date, locale)}
                 </p>

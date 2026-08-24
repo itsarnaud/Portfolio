@@ -62,7 +62,7 @@ const BlogPost = () => {
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <div className="min-h-screen pt-32 pb-24">
         <header ref={headerRef} className="px-6 md:px-12 lg:px-24 mb-16">
-          <Link href="/blog" className="animate-in inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+          <Link href="/blog" className="animate-in inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground active:opacity-60 transition-[color,opacity] mb-8">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M13 8H3M3 8L8 3M3 8L8 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

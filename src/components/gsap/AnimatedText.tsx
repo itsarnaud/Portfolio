@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, type ReactNode, useCallback } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion'
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -51,7 +52,12 @@ const AnimatedText = ({ children, className = "", delay = 0, trigger = false, as
     // Only animate on first setup
     if (!hasAnimated.current) {
       hasAnimated.current = true
-      
+
+      if (getPrefersReducedMotion()) {
+        gsap.set(innerSpans, { y: 0, opacity: 1 })
+        return
+      }
+
       if (trigger) {
         gsap.fromTo(
           innerSpans,

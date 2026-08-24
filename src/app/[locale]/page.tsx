@@ -71,9 +71,9 @@ const Home = () => {
           <div className="space-y-6 text-muted-foreground">
             <p className="leading-relaxed">{t("aboutP1")}</p>
             <p className="leading-relaxed">{t("aboutP2")}</p>
-            <Link href="/about" className="inline-flex items-center gap-2 text-foreground hover:text-brand transition-colors group">
+            <Link href="/about" className="inline-flex items-center gap-2 text-foreground hover:text-brand active:opacity-60 transition-[color,opacity] group">
               {t("learnMore")}
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-all group-hover:translate-x-2">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-200 ease-out group-hover:translate-x-2">
                 <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
@@ -87,9 +87,9 @@ const Home = () => {
             <AnimatedText trigger as="h2" className="text-3xl md:text-4xl font-display">
               {t("recentWork")}
             </AnimatedText>
-            <Link href="/projects" className="inline-flex items-center gap-2 text-foreground hover:text-brand transition-colors group">
+            <Link href="/projects" className="inline-flex items-center gap-2 text-foreground hover:text-brand active:opacity-60 transition-[color,opacity] group">
               {t("allProjects")}
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-all group-hover:translate-x-2">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform duration-200 ease-out group-hover:translate-x-2">
                 <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
@@ -97,13 +97,13 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {featuredProjects.map((project, i) => (
-              <Link key={i} href={`/projects/${project.slug}`} className="group block">
+              <Link key={i} href={`/projects/${project.slug}`} className="group block transition-transform active:scale-[0.98]">
                 <div className="aspect-4/3 bg-muted mb-6 overflow-hidden relative">
                   <Image
                     src={project.image[0]}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>

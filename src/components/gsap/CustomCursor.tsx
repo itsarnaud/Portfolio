@@ -12,12 +12,13 @@ export const CustomCursor = () => {
 
     const ctx = gsap.context(() => {
       const isFinePointer = window.matchMedia('(pointer: fine)').matches
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
       const dot = dotRef.current
       const outline = outlineRef.current
 
       if (!dot || !outline) return
 
-      if (!isFinePointer) {
+      if (!isFinePointer || prefersReducedMotion) {
         gsap.set([dot, outline], { display: 'none' })
         return
       }

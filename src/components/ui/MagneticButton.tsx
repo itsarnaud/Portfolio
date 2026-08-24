@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useRef, type ReactNode } from "react"
 import gsap from "gsap"
+import { usePrefersReducedMotion } from "@/src/hooks/usePrefersReducedMotion"
 
 interface MagneticButtonProps {
   children: ReactNode
@@ -14,8 +15,11 @@ interface MagneticButtonProps {
 export const MagneticButton = ({ children, className = "", strength = 0.3 }: MagneticButtonProps) => {
   const buttonRef = useRef<HTMLDivElement>(null)
   const textRef   = useRef<HTMLSpanElement>(null)
+  const prefersReducedMotion = usePrefersReducedMotion()
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (prefersReducedMotion) return
+
     const button = buttonRef.current
     if (!button) return
 
@@ -41,6 +45,8 @@ export const MagneticButton = ({ children, className = "", strength = 0.3 }: Mag
   }
 
   const handleMouseLeave = () => {
+    if (prefersReducedMotion) return
+
     gsap.to(buttonRef.current, {
       x: 0,
       y: 0,
@@ -58,12 +64,22 @@ export const MagneticButton = ({ children, className = "", strength = 0.3 }: Mag
     }
   }
 
+  const handlePointerDown = () => {
+    gsap.to(buttonRef.current, { scale: 0.97, duration: 0.1, ease: "power2.out", overwrite: "auto" })
+  }
+
+  const handlePointerUp = () => {
+    gsap.to(buttonRef.current, { scale: 1, duration: 0.2, ease: "power2.out", overwrite: "auto" })
+  }
+
   return (
     <div
       ref={buttonRef}
       className={`magnetic-wrap ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
     >
       <span ref={textRef} className="inline-block">
         {children}

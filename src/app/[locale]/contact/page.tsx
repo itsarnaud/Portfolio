@@ -209,7 +209,7 @@ const ContactPage = () => {
           <div className="lg:pt-8">
             <div className="mb-12">
               <p className="text-sm tracking-widest text-muted-foreground mb-3">{t('emailSectionLabel')}</p>
-              <a href="mailto:contact@arnaudroyer.fr" className="text-2xl md:text-3xl font-display hover:opacity-70 transition-opacity">
+              <a href="mailto:contact@arnaudroyer.fr" className="text-2xl md:text-3xl font-display hover:opacity-70 active:opacity-50 transition-opacity">
                 contact@arnaudroyer.fr
               </a>
             </div>
@@ -230,7 +230,7 @@ const ContactPage = () => {
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link) => (
                   <MagneticButton key={link.name} strength={0.2}>
-                    <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-14 h-14 border border-border hover:border-foreground hover:bg-foreground hover:text-background transition-all" aria-label={link.name}>
+                    <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-14 h-14 border border-border hover:border-foreground hover:bg-foreground hover:text-background transition-[background-color,border-color,color] duration-200 ease-out" aria-label={link.name}>
                       {link.icon}
                     </a>
                   </MagneticButton>

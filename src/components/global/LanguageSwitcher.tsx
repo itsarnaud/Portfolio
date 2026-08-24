@@ -23,7 +23,7 @@ const LanguageSwitcher = ({ className = "text-foreground" }: { className?: strin
     <div className={`flex items-center gap-1 text-xs tracking-widest transition-opacity ${className} ${isPending ? 'opacity-50' : ''}`}>
       <button
         onClick={() => switchLocale('fr')}
-        className={`px-1 transition-opacity ${locale === 'fr' ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
+        className={`px-1 transition-[opacity,transform] active:scale-90 ${locale === 'fr' ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
         aria-label="Passer en français"
       >
         FR
@@ -31,7 +31,7 @@ const LanguageSwitcher = ({ className = "text-foreground" }: { className?: strin
       <span className="opacity-30">|</span>
       <button
         onClick={() => switchLocale('en')}
-        className={`px-1 transition-opacity ${locale === 'en' ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
+        className={`px-1 transition-[opacity,transform] active:scale-90 ${locale === 'en' ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
         aria-label="Switch to English"
       >
         EN
