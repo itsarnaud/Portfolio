@@ -463,6 +463,25 @@ const blogPostsData = [
       },
       linkedinUrl: "https://www.linkedin.com/posts/royer-arnaud_figma-qui-int%C3%A8gre-du-code-natif-canva-code-share-7486341657085464576-0cpC/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD7_EsgBfzY7NLU0DItNG61B5goOYK8v51k",
       tags: ["Figma", "Canva", "NoCode", "Freelance"],
+    },
+    {
+      id: 8,
+      title: {
+        fr: "Réseaux sociaux et mineurs : le Conseil constitutionnel censure la loi",
+        en: "Social media and minors: the Constitutional Council strikes down the law",
+      },
+      slug: "loi-reseaux-sociaux-mineurs-censuree-conseil-constitutionnel",
+      date: "2026-08-26",
+      excerpt: {
+        fr: "Le 14 août, le Conseil constitutionnel a censuré la loi interdisant les réseaux sociaux aux moins de 15 ans, faute de garanties claires sur la vie privée. La suite de mon post sur le sujet.",
+        en: "On August 14th, the Constitutional Council struck down the law banning social media for under-15s, citing a lack of clear privacy guarantees. A follow-up to my earlier post on the topic.",
+      },
+      content: {
+        fr: "Il y a quelques semaines je publiais un post sur cette loi en me demandant comment vérifier l'âge des utilisateurs sans exposer les données de tout le monde.\n\nLe 14 août, le Conseil constitutionnel a censuré la loi interdisant les réseaux sociaux aux moins de 15 ans. Pas parce qu'il était contre la protection des enfants, il a d'ailleurs reconnu que l'objectif était tout à fait légitime. Mais parce que l'interdiction était jugée disproportionnée et que la loi ne prévoyait aucune garantie claire sur la vie privée pour le système de vérification d'âge.\n\nC'est exactement la question que je posais.\n\nL'exécutif a demandé un nouveau texte qui devra cette fois intégrer un cadre légal clair sur la protection des données. Le sujet n'est pas enterré, il repart juste sur de meilleures bases.\n\nProtéger les mineurs sur internet, c'est ok ! Mais comment on fait ça sans créer de nouveaux risques pour tout le monde ?",
+        en: "A few weeks ago I published a post about this law, wondering how to verify users' age without exposing everyone's data.\n\nOn August 14th, the Constitutional Council struck down the law banning social media for under-15s. Not because it opposed protecting children, it actually acknowledged that the goal was entirely legitimate. But because the ban was deemed disproportionate and the law provided no clear privacy guarantees for the age verification system.\n\nThat's exactly the question I was asking.\n\nThe government has requested a new text that will this time need to include a clear legal framework for data protection. The topic isn't buried, it's just starting over on better foundations.\n\nProtecting minors online, that's fine! But how do we do it without creating new risks for everyone?",
+      },
+      linkedinUrl: "https://lnkd.in/p/emX2_nXN",
+      tags: ["RGPD", "Société", "Cybersécurité"],
     }
 ];
 
