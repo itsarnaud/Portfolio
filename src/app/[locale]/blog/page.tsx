@@ -8,6 +8,7 @@ import { MagneticButton }              from '@/src/components/ui/MagneticButton'
 import AnimatedText                    from '@/src/components/gsap/AnimatedText';
 import { Link }                        from '@/src/i18n/navigation';
 import gsap from 'gsap';
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -29,6 +30,10 @@ const Blog = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (getPrefersReducedMotion()) {
+        gsap.set(headerRef.current?.querySelectorAll(".animate-in") ?? [], { y: 0, opacity: 1 });
+        return;
+      }
       gsap.fromTo(
         headerRef.current?.querySelectorAll(".animate-in") ?? [],
         { y: 60, opacity: 0 },
@@ -39,6 +44,10 @@ const Blog = () => {
   }, []);
 
   useEffect(() => {
+    if (getPrefersReducedMotion()) {
+      gsap.set(postCardsRef.current.filter(Boolean), { y: 0, opacity: 1 });
+      return;
+    }
     postCardsRef.current.forEach((card) => {
       if (!card) return;
       gsap.fromTo(card, { y: 60, opacity: 0 }, {

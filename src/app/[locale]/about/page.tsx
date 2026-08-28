@@ -9,6 +9,7 @@ import AnimatedText          from '@/src/components/gsap/AnimatedText';
 import { Link }              from '@/src/i18n/navigation';
 import gsap   from 'gsap';
 import Image  from 'next/image';
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 
 import ProfilePicture from '@/public/images/pfp.png';
 
@@ -27,6 +28,19 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const reducedMotion = getPrefersReducedMotion();
+
+      if (reducedMotion) {
+        gsap.set(headerRef.current?.querySelectorAll(".animate-in") ?? [], { y: 0, opacity: 1 });
+        gsap.set(valuesRef.current?.querySelectorAll(".value-card") ?? [], { y: 0, opacity: 1 });
+        skillBarsRef.current.forEach((bar) => {
+          if (!bar) return;
+          const fill = bar.querySelector(".skill-fill");
+          gsap.set(fill, { width: `${bar.dataset.level || "0"}%` });
+        });
+        return;
+      }
+
       gsap.fromTo(
         headerRef.current?.querySelectorAll(".animate-in") ?? [],
         { y: 60, opacity: 0 },

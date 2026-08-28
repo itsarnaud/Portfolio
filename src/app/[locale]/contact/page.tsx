@@ -6,6 +6,7 @@ import { useTranslations }             from 'next-intl';
 import { MagneticButton }              from '@/src/components/ui/MagneticButton';
 import AnimatedText                    from '@/src/components/gsap/AnimatedText';
 import gsap    from 'gsap';
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 
 const socialLinks = [
   {
@@ -41,6 +42,11 @@ const ContactPage = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (getPrefersReducedMotion()) {
+        gsap.set(headerRef.current?.querySelectorAll(".animate-in") || [], { y: 0, opacity: 1 });
+        gsap.set(formRef.current?.querySelectorAll(".form-field") || [], { y: 0, opacity: 1 });
+        return;
+      }
       gsap.fromTo(
         headerRef.current?.querySelectorAll(".animate-in") || [],
         { y: 60, opacity: 0 },

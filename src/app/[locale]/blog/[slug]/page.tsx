@@ -9,6 +9,7 @@ import { MagneticButton }              from "@/src/components/ui/MagneticButton"
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/src/components/seo/JsonLd";
 import { Link }                        from "@/src/i18n/navigation";
 import gsap from "gsap";
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -32,6 +33,11 @@ const BlogPost = () => {
   useEffect(() => {
     if (!post) return;
     const ctx = gsap.context(() => {
+      if (getPrefersReducedMotion()) {
+        gsap.set(headerRef.current?.querySelectorAll(".animate-in") ?? [], { y: 0, opacity: 1 });
+        gsap.set(contentRef.current?.querySelectorAll(".content-block") ?? [], { y: 0, opacity: 1 });
+        return;
+      }
       gsap.fromTo(
         headerRef.current?.querySelectorAll(".animate-in") ?? [],
         { y: 60, opacity: 0 },

@@ -9,6 +9,7 @@ import AnimatedText                    from '@/src/components/gsap/AnimatedText'
 import { Link }                        from '@/src/i18n/navigation';
 import Image                           from 'next/image';
 import gsap from 'gsap';
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -25,6 +26,10 @@ const Projects = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (getPrefersReducedMotion()) {
+        gsap.set(headerRef.current?.querySelectorAll(".animate-in") ?? [], { y: 0, opacity: 1 });
+        return;
+      }
       gsap.fromTo(
         headerRef.current?.querySelectorAll(".animate-in") ?? [],
         { y: 60, opacity: 0 },
@@ -35,6 +40,10 @@ const Projects = () => {
   }, []);
 
   useEffect(() => {
+    if (getPrefersReducedMotion()) {
+      gsap.set(projectCardsRef.current.filter(Boolean), { y: 0, opacity: 1 });
+      return;
+    }
     projectCardsRef.current.forEach((card) => {
       if (!card) return;
       gsap.fromTo(card, { y: 60, opacity: 0 }, {

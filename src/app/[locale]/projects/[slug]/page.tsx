@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide }         from "swiper/react";
 import { Navigation, Pagination, Keyboard, A11y, Autoplay } from "swiper/modules";
 import Image                           from "next/image";
 import gsap from "gsap";
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -33,6 +34,11 @@ const Project = () => {
   useEffect(() => {
     if (!project) return;
     const ctx = gsap.context(() => {
+      if (getPrefersReducedMotion()) {
+        gsap.set(headerRef.current?.querySelectorAll(".animate-in") ?? [], { y: 0, opacity: 1 });
+        gsap.set(contentRef.current?.querySelectorAll(".content-block") ?? [], { y: 0, opacity: 1 });
+        return;
+      }
       gsap.fromTo(
         headerRef.current?.querySelectorAll(".animate-in") ?? [],
         { y: 60, opacity: 0 },

@@ -8,6 +8,7 @@ import { getProjects } from "../../lib/data";
 import { Link } from "../../i18n/navigation";
 import Image from "next/image";
 import gsap from "gsap";
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 
 const Home = () => {
   const t = useTranslations("home");
@@ -22,6 +23,10 @@ const Home = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (getPrefersReducedMotion()) {
+        gsap.set([titleRef.current, subtitleRef.current, ctaRef.current], { y: 0, opacity: 1 });
+        return;
+      }
       gsap.fromTo(titleRef.current, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.3 });
       gsap.fromTo(subtitleRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", delay: 0.4 });
       gsap.fromTo(ctaRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.5 });

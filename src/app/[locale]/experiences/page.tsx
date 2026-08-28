@@ -8,6 +8,7 @@ import { MagneticButton }                       from '@/src/components/ui/Magnet
 import AnimatedText from '@/src/components/gsap/AnimatedText';
 import { Link }     from '@/src/i18n/navigation';
 import gsap         from 'gsap';
+import { getPrefersReducedMotion } from '@/src/hooks/usePrefersReducedMotion';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -26,6 +27,19 @@ const ExperiencePage = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const reducedMotion = getPrefersReducedMotion();
+
+      if (reducedMotion) {
+        gsap.set(headerRef.current?.querySelectorAll(".animate-in") || [], { y: 0, opacity: 1 });
+        gsap.set(timelineLineRef.current, { scaleY: 1 });
+        experienceCardsRef.current.forEach((card) => {
+          if (!card) return;
+          gsap.set(card, { x: 0, opacity: 1 });
+          gsap.set(card.querySelector(".timeline-dot"), { scale: 1 });
+        });
+        return;
+      }
+
       gsap.fromTo(
         headerRef.current?.querySelectorAll(".animate-in") || [],
         { y: 60, opacity: 0 },
