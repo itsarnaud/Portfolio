@@ -1,0 +1,50 @@
+# Arnaud Royer
+
+> Portfolio personnel d'Arnaud Royer, développeur Fullstack basé à Montpellier, France. Alternant chez Kollirama, freelance en parallèle. Stack principale : Next.js, React, TypeScript, SvelteKit, Node.js, Tailwind CSS, PostgreSQL/MySQL, Prisma. Site en français (défaut) et anglais, disponible aux préfixes `/fr` et `/en`.
+
+Ce site présente mes projets (open-source, clients, alternance, personnels), mon parcours (expériences, formation), mes compétences techniques et un blog sur le développement web et la tech.
+
+## Pages principales
+
+- [Accueil](https://arnaudroyer.fr/fr): Présentation générale, résumé du profil et des valeurs.
+- [À propos](https://arnaudroyer.fr/fr/about): Parcours, compétences (frontend, backend, outils) et valeurs professionnelles.
+- [Projets](https://arnaudroyer.fr/fr/projects): Liste complète des projets réalisés.
+- [Expériences](https://arnaudroyer.fr/fr/experiences): Expériences professionnelles et formation.
+- [Blog](https://arnaudroyer.fr/fr/blog): Articles courts sur le développement web, l'IA et la tech.
+- [Contact](https://arnaudroyer.fr/fr/contact): Formulaire de contact.
+- [CV (PDF)](https://arnaudroyer.fr/files): Curriculum vitae téléchargeable.
+
+## Projets
+
+- [Quested](https://quested.cc) — Tracker de jeux vidéo façon Letterboxd, gratuit et open source (Next.js, TypeScript, Prisma, tRPC, PostgreSQL, Auth.js). Projet personnel toujours en développement actif.
+- [Kollirama](https://kollirama.fr) — Plateforme B2B monorepo : site vitrine multilingue + back-office (Astro, Svelte, Express.js, Prisma, Supabase, PostgreSQL). Développé en solo en alternance.
+- [Atelier Maha](https://ateliermaha.fr) — Site vitrine premium pour un studio d'architecture d'intérieur (Next.js, React, TypeScript, GSAP, EmailJS). Premier projet client freelance.
+- [IDK Concept](https://www.idk-concept.fr) — Site vitrine premium pour une entreprise d'agencement sur-mesure (Next.js, GSAP, Brevo).
+- [Igowall](https://www.igowall.com/) — Plateforme SaaS no-code de création de sites web (SvelteKit, Node.js, MySQL). Projet en alternance chez Igocreate.
+- [Igotrack](https://igotrack.co) — Application web de gestion de projet développée en équipe (SvelteKit, Node.js, MySQL).
+- [Foliode](https://github.com/itsarnaud/Foliode) — Générateur de portfolios en ligne développé en équipe de 5 (Next.js, Symfony, PostgreSQL, Docker). Rôle de chef de projet / Scrum Master.
+- [FutureKawa](https://github.com/itsarnaud/FutureKawa) — API de suivi multi-pays de stocks de café avec surveillance IoT via MQTT (NestJS, TypeScript, Prisma, PostgreSQL).
+- [Tiptap FontSize Extension](https://github.com/itsarnaud/tiptap-fontsize-extension) — Extension open-source npm pour l'éditeur Tiptap (JavaScript).
+- [Template Engine Benchmark](https://github.com/itsarnaud/template-engine-bench) — Benchmark open-source de moteurs de templates JavaScript.
+- [Stellarica](https://github.com/itsarnaud/Stellarica) — Bot Discord de modération (Discord.js, Prisma, MySQL).
+
+## Expériences
+
+- Développeur Fullstack Indépendant, freelance (2026 — présent) — Applications web sur mesure de A à Z.
+- Développeur Fullstack, [Kollirama](https://kollirama.fr) (2025 — présent) — Refonte complète du site, développement en autonomie.
+- Développeur Fullstack, Igocreate (2024 — 2025) — Plateforme no-code Igowall, outil interne Igotrack.
+- Graphiste, Olivier Nonis / Graphevent (2023) — Stage en communication print et web.
+- Mastère Expert en Informatique et SI, EPSI Montpellier (2025 — 2027).
+- BUT Métiers du Multimédia et de l'Internet, IUT Meaux (2022 — 2025).
+
+## Compétences
+
+- Frontend : SvelteKit, React/Next.js, JavaScript/TypeScript, Tailwind CSS, Astro.
+- Backend : Node.js/Express, PostgreSQL/MySQL, REST API, Prisma, PHP/Symfony.
+- Outils : Git, Docker, Figma, Illustrator, Photoshop, InDesign.
+
+## Notes
+
+- Contenu disponible en français (`/fr`, langue par défaut) et en anglais (`/en`) via next-intl.
+- [Sitemap](https://arnaudroyer.fr/sitemap.xml): Liste exhaustive de toutes les URLs (pages, projets, articles de blog) dans les deux langues.
+- Contact : contact@arnaudroyer.fr — [LinkedIn](https://www.linkedin.com/in/royer-arnaud/) — [GitHub](https://github.com/itsarnaud)
