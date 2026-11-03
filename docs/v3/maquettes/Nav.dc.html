@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Navigation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>body{margin:0}</style>
+</helmet>
+<header class="navin" style="width: 100%; box-sizing: border-box; padding: 20px 16px 0; display: flex; justify-content: center; font-family: 'Karla', system-ui, sans-serif; color: #121212">
+<nav aria-label="Navigation principale" style="max-width: 1200px; width: 100%; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; background: #FFFFFF; border: 2px solid #121212; border-radius: 28px; box-shadow: 4px 4px 0 #121212; padding: 10px 12px 10px 18px">
+<a href="Main.dc.html" aria-label="Arnaud Royer, accueil" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #121212; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.03em">
+<span aria-hidden="true" style="position: relative; width: 30px; height: 37px; flex: 0 0 auto">
+<span class="logo-c" style="position: absolute; inset: 0; background: #6B3CF0; border: 2px solid #121212; border-radius: 8px; box-shadow: 2px 2px 0 #121212; transform: rotate(-6deg); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 17px; letter-spacing: -0.07em">ar</span>
+<svg class="spin" viewBox="0 0 24 24" style="position: absolute; right: -7px; top: -7px; width: 15px; height: 15px"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#C8F54A" stroke="#121212" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+</span>
+arnaud royer
+</a>
+<div style="display: flex; flex-wrap: wrap; gap: 2px; font-size: 15px; font-weight: 500">
+<sc-for list="{{links}}" as="l" hint-placeholder-count="6">
+<a href="{{l.href}}" class="navl" style="padding: 10px 14px; border-radius: 999px; text-decoration: none; background: {{l.bg}}; color: {{l.fg}}">{{l.label}}</a>
+</sc-for>
+</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<button type="button" aria-label="Passer le site en anglais" style="min-height: 44px; padding: 0 14px; border: 2px solid #121212; border-radius: 999px; background: #FFFFFF; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600; color: #121212; cursor: pointer">FR / EN</button>
+</div>
+</nav>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"active":{"editor":"enum","options":["home","projets","blog","apropos","parcours","contact"],"default":"home"},"$preview":{"width":1440,"height":110}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var active = this.props.active || "home";
+    var defs = [
+      { id: "home", label: "Accueil", href: "Main.dc.html" },
+      { id: "projets", label: "Projets", href: "Projets.dc.html" },
+      { id: "blog", label: "Blog", href: "Blog.dc.html" },
+      { id: "apropos", label: "À propos", href: "APropos.dc.html" },
+      { id: "parcours", label: "Parcours", href: "Parcours.dc.html" },
+      { id: "contact", label: "Contact", href: "Contact.dc.html" }
+    ];
+    return {
+      links: defs.map(function (d) {
+        var on = d.id === active;
+        return { label: d.label, href: d.href, bg: on ? "#121212" : "transparent", fg: on ? "#F7F7F2" : "#121212" };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

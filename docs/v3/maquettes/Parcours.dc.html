@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Parcours Arnaud Royer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#121212}a:hover{color:#6B3CF0}
+.s4{box-shadow:4px 4px 0 #121212}
+.s6{box-shadow:6px 6px 0 #121212}
+.btn{transition:translate .12s ease,box-shadow .12s ease}
+.btn:hover{translate:-2px -2px;box-shadow:6px 6px 0 #121212}
+.btn:active{translate:2px 2px;box-shadow:0 0 0 #121212}
+.lift{transition:translate .22s ease,rotate .22s ease,box-shadow .22s ease;box-shadow:6px 6px 0 #121212}
+.lift:hover{translate:-5px -5px;rotate:-.6deg;box-shadow:11px 11px 0 #121212}
+.nudge{transition:translate .25s cubic-bezier(.3,1.6,.5,1)}
+a:hover .nudge{translate:0 3px}
+.navl{position:relative}
+.navl::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:2px;background:currentColor;scale:0 1;transform-origin:0 50%;transition:scale .25s ease}
+.navl:hover::after{scale:1 1}
+.logo-c{transition:rotate .35s cubic-bezier(.3,1.6,.5,1)}
+a:hover .logo-c{rotate:10deg}
+.tog{transition:background .2s,color .2s}
+.tog:hover{background:#121212;color:#F7F7F2}
+.chev{transition:rotate .3s cubic-bezier(.3,1.6,.5,1)}
+@keyframes navin{from{translate:0 -110%}to{translate:0 0}}
+.navin{animation:navin .7s cubic-bezier(.2,1.2,.4,1) both}
+@keyframes pop{from{opacity:0;translate:0 .55em;rotate:7deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.pop{display:inline-block;animation:pop .7s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes rise{from{opacity:0;translate:0 30px}to{opacity:1;translate:0 0}}
+.rise{animation:rise .8s cubic-bezier(.2,1,.3,1) both}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.bob{animation:bob 2.2s ease-in-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(18,18,18,.5)}100%{box-shadow:0 0 0 10px rgba(18,18,18,0)}}
+.pulse{animation:pulse 1.6s ease-out infinite}
+@keyframes jig{0%,100%{rotate:0deg}25%{rotate:-7deg}75%{rotate:7deg}}
+.jig:hover{animation:jig .35s ease-in-out 2}
+@keyframes open{from{opacity:0;translate:0 -8px}to{opacity:1;translate:0 0}}
+.open{animation:open .35s ease both}
+@supports (animation-timeline: view()){
+.rv{animation:rv linear both;animation-timeline:view();animation-range:entry 5% cover 28%}
+@keyframes rv{from{opacity:0;translate:0 70px;scale:.94}to{opacity:1;translate:0 0;scale:1}}
+.rv-r{animation:rvr linear both;animation-timeline:view();animation-range:entry 5% cover 30%}
+@keyframes rvr{from{opacity:0;translate:90px 0;rotate:3deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.growy{animation:growy linear both;animation-timeline:view();animation-range:cover 12% cover 80%}
+@keyframes growy{from{scale:1 0}to{scale:1 1}}
+.dotpop{animation:dotpop linear both;animation-timeline:view();animation-range:entry 40% cover 35%}
+@keyframes dotpop{from{scale:0}70%{scale:1.4}to{scale:1}}
+.progress{animation:grow linear both;animation-timeline:scroll(root)}
+@keyframes grow{from{scale:0 1}to{scale:1 1}}
+}
+#ar-cursor{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;translate:-200px -200px;opacity:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:999px;background:#121212;border:2px solid #121212;box-sizing:border-box;display:flex;align-items:center;justify-content:center;transition:opacity .2s,width .25s cubic-bezier(.3,1.4,.5,1),height .25s cubic-bezier(.3,1.4,.5,1),margin .25s,padding .25s,background .2s}
+#ar-cursor[data-on="1"]{width:auto;height:42px;margin:-21px 0 0 14px;padding:0 16px;box-shadow:3px 3px 0 #121212}
+#ar-cursor-label{display:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:600;color:#121212;white-space:nowrap}
+#ar-cursor[data-on="1"] #ar-cursor-label{display:block}
+@media (pointer: fine){.nocur,.nocur a,.nocur button{cursor:none}}
+@media (pointer: coarse){#ar-cursor{display:none}}
+@media (prefers-reduced-motion: reduce){
+.navin,.pop,.rise,.bob,.pulse,.jig:hover,.open,.rv,.rv-r,.growy,.dotpop,.progress{animation:none !important}
+.btn,.lift,.nudge,.tog,.chev{transition:none}
+}
+</style>
+</helmet>
+<div class="nocur" style="width: 100%; min-height: 100vh; background: #F7F7F2; color: #121212; font-family: 'Karla', system-ui, sans-serif; overflow-x: clip">
+<div aria-hidden="true" class="progress" style="position: fixed; left: 0; top: 0; width: 100%; height: 5px; background: #2E5BFF; transform-origin: 0 50%; z-index: 60"></div>
+<div id="ar-cursor" aria-hidden="true"><span id="ar-cursor-label"></span></div>
+
+<dc-import name="Nav" active="parcours" hint-size="100%,96px"></dc-import>
+
+<header style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 80px 24px 48px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 720px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: clamp(52px, 7vw, 104px); letter-spacing: -0.04em; line-height: 0.95"><span class="pop" style="animation-delay: 150ms">Mon</span> <span class="pop" style="animation-delay: 260ms"><span class="bob" style="display: inline-block; background: #2E5BFF; color: #FFFFFF; border: 2px solid #121212; border-radius: 999px; padding: 0 0.22em">parcours</span></span></h1>
+<p class="rise" style="margin: 0; font-size: 19px; line-height: 1.55; color: #3A3A35; animation-delay: 400ms">En alternance depuis 2024 et en freelance depuis 2026. Avant ça, un stage en graphisme, d'où mon goût pour le design.</p>
+</div>
+<a href="CV.dc.html" class="btn s4 rise" data-cursor="PDF" data-cursor-color="#FFFFFF" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px; background: #FFCB3D; color: #121212; border: 2px solid #121212; border-radius: 14px; font-weight: 700; font-size: 16px; text-decoration: none; animation-delay: 500ms">Mon CV en PDF
+<svg aria-hidden="true" class="nudge" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"></path></svg>
+</a>
+</header>
+
+<section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 0 24px; display: flex; flex-direction: column; gap: 28px">
+<h2 class="rise" style="margin: 0; align-self: flex-start; padding: 6px 18px; background: #6B3CF0; color: #FFFFFF; border: 2px solid #121212; border-radius: 999px; box-shadow: 4px 4px 0 #121212; rotate: -1.5deg; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 26px; animation-delay: 600ms">Expériences</h2>
+<div style="position: relative; margin-left: 10px">
+<div aria-hidden="true" class="growy" style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #121212; transform-origin: 50% 0"></div>
+<sc-for list="{{jobs}}" as="j" hint-placeholder-count="4">
+<div style="position: relative; padding: 0 0 36px 38px">
+<span aria-hidden="true" class="dotpop" style="position: absolute; left: -10px; top: 6px; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #121212; background: {{j.color}}"></span>
+<div class="rv-r">
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin-bottom: 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600">
+<span>{{j.period}}</span><span style="color: #4A4A44; font-weight: 400">{{j.place}}</span>
+<sc-if value="{{j.current}}" hint-placeholder-val="{{false}}">
+<span style="display: inline-flex; align-items: center; gap: 7px; padding: 3px 10px; background: #C8F54A; border: 1.5px solid #121212; border-radius: 999px; font-size: 12px"><span aria-hidden="true" class="pulse" style="width: 7px; height: 7px; border-radius: 50%; background: #121212"></span>En cours</span>
+</sc-if>
+</div>
+<div class="lift" style="background: #FFFFFF; border: 2px solid #121212; border-radius: 22px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">{{j.role}}</h3>
+<span class="jig" style="display: inline-block; padding: 5px 12px; border: 2px solid #121212; border-radius: 999px; font-weight: 700; background: {{j.color}}; color: {{j.fg}}">{{j.company}}</span>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3A3A35">{{j.desc}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px">
+<sc-for list="{{j.stack}}" as="s" hint-placeholder-count="4">
+<span class="jig" style="display: inline-block; padding: 4px 10px; border: 1.5px solid #121212; border-radius: 999px">{{s}}</span>
+</sc-for>
+</div>
+<button type="button" class="tog" onClick="{{j.toggle}}" aria-expanded="{{j.expanded}}" data-cursor="{{j.cursor}}" data-cursor-color="{{j.color}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border: 2px solid #121212; border-radius: 999px; background: #FFFFFF; color: #121212; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 14px">Ce que j'y ai fait
+<svg aria-hidden="true" class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="rotate: {{j.chev}}"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<sc-if value="{{j.isOpen}}" hint-placeholder-val="{{false}}">
+<ul class="open" style="margin: 0; padding-left: 20px; font-size: 16px; line-height: 1.6">
+<sc-for list="{{j.points}}" as="pt" hint-placeholder-count="3">
+<li>{{pt}}</li>
+</sc-for>
+</ul>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 56px 24px 0; display: flex; flex-direction: column; gap: 28px">
+<h2 class="rv" style="margin: 0; align-self: flex-start; padding: 6px 18px; background: #C8F54A; border: 2px solid #121212; border-radius: 999px; box-shadow: 4px 4px 0 #121212; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 26px">Formation</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 22px">
+<sc-for list="{{schools}}" as="e" hint-placeholder-count="3">
+<div class="rv" style="display: flex; animation-range: {{e.range}}">
+<div class="lift" style="flex: 1; border: 2px solid #121212; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 10px; background: {{e.bg}}; color: {{e.fg}}">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600">{{e.period}}</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.02em; line-height: 1.15">{{e.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.5">{{e.school}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,760px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2500}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    var self = this;
+    var cur = document.getElementById("ar-cursor");
+    var lab = document.getElementById("ar-cursor-label");
+    if (!cur || !lab || !(window.matchMedia && window.matchMedia("(pointer: fine)").matches)) { return; }
+    var x = -200, y = -200, tx = -200, ty = -200;
+    this.onMove = function (e) {
+      tx = e.clientX; ty = e.clientY; cur.style.opacity = "1";
+      var t = e.target && e.target.closest ? e.target.closest("[data-cursor]") : null;
+      if (t) { lab.textContent = t.getAttribute("data-cursor"); cur.setAttribute("data-on", "1"); cur.style.background = t.getAttribute("data-cursor-color") || "#C8F54A"; }
+      else { cur.setAttribute("data-on", "0"); cur.style.background = "#121212"; }
+    };
+    this.onLeave = function () { cur.style.opacity = "0"; };
+    var loop = function () { x += (tx - x) * 0.22; y += (ty - y) * 0.22; cur.style.translate = x + "px " + y + "px"; self.raf = requestAnimationFrame(loop); };
+    window.addEventListener("mousemove", this.onMove);
+    document.addEventListener("mouseleave", this.onLeave);
+    loop();
+  }
+  componentWillUnmount() {
+    if (this.raf) { cancelAnimationFrame(this.raf); }
+    if (this.onMove) { window.removeEventListener("mousemove", this.onMove); }
+    if (this.onLeave) { document.removeEventListener("mouseleave", this.onLeave); }
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state || {};
+    var opened = s.opened || { freelance: true };
+    var ink = "#121212";
+    var jobs = [
+      { id: "freelance", current: true, period: "Depuis février 2026", place: "Montpellier", role: "Développeur fullstack indépendant", company: "Freelance", color: "#FF5B37", fg: ink,
+        desc: "En parallèle de l'alternance, je crée des sites et des applis web sur mesure, du premier rendez-vous à la mise en ligne.",
+        points: ["Analyse des besoins et conseil client", "Intégration UX/UI et responsive", "Premier client : l'Atelier Maha, studio d'architecture d'intérieur"],
+        stack: ["Next.js", "React", "TypeScript", "Tailwind"] },
+      { id: "kollirama", current: true, period: "Depuis septembre 2025", place: "Bernis", role: "Alternant développeur fullstack", company: "Kollirama", color: "#2E5BFF", fg: "#FFFFFF",
+        desc: "Je m'occupe seul des sites et des outils web de l'entreprise, de la conception à la mise en production.",
+        points: ["Refonte de kollirama.fr en monorepo : site en trois langues et back-office", "Back-office avec tableau de bord, gestion des rôles et OAuth", "Montée en compétences sur Astro, Prisma et Supabase"],
+        stack: ["Astro", "Svelte", "Express", "Prisma", "Supabase", "PostgreSQL"] },
+      { id: "igocreate", current: false, period: "Avril 2024 à septembre 2025", place: "Paris", role: "Alternant développeur fullstack", company: "Igocreate", color: "#FF9BD0", fg: ink,
+        desc: "Une agence qui fait des solutions web sur mesure. J'y ai travaillé sur des projets internes et clients.",
+        points: ["Développement d'Igowall, une plateforme no-code de création de sites", "Contribution à Igotrack, l'outil de gestion de projet interne", "Appli de gestion de file d'attente, en web et en mobile", "Documentation du framework et du moteur de template maison"],
+        stack: ["SvelteKit", "Node.js", "Express", "MySQL", "React Native", "Tailwind"] },
+      { id: "nonis", current: false, period: "2023", place: "Quincy-Voisins", role: "Stagiaire graphiste", company: "Olivier Nonis", color: "#FFCB3D", fg: ink,
+        desc: "Un stage dans un studio créatif, entre print et web.",
+        points: ["Création de logos, d'affiches et de flyers", "Suite Adobe : InDesign, Illustrator, Photoshop", "Mise à jour d'un site WordPress"],
+        stack: ["InDesign", "Illustrator", "Photoshop", "WordPress"] }
+    ].map(function (j) {
+      var isOpen = !!opened[j.id];
+      return Object.assign({}, j, {
+        isOpen: isOpen,
+        expanded: isOpen ? "true" : "false",
+        chev: isOpen ? "180deg" : "0deg",
+        cursor: isOpen ? "Replier" : "Déplier",
+        toggle: function () { var o = Object.assign({}, opened); o[j.id] = !isOpen; self.setState({ opened: o }); }
+      });
+    });
+    var schools = [
+      { period: "2025 - 2027", title: "Mastère Expert en Informatique et SI", school: "EPSI Montpellier, spécialité développement", bg: "#6B3CF0", fg: "#FFFFFF" },
+      { period: "2022 - 2025", title: "BUT Métiers du Multimédia et de l'Internet", school: "IUT de Meaux, Université Gustave Eiffel, parcours développement web", bg: "#C8F54A", fg: ink },
+      { period: "2022", title: "Bac général avec mention", school: "Lycée Henri Moissan, Meaux", bg: "#FFFFFF", fg: ink }
+    ].map(function (e, i) { return Object.assign({}, e, { range: "entry " + (5 + i * 8) + "% cover " + (28 + i * 8) + "%" }); });
+    return { jobs: jobs, schools: schools };
+  }
+}
+</script>
+</body>
+</html>

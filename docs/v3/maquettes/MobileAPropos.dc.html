@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>À propos mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#121212}
+.press{transition:translate .12s ease,box-shadow .12s ease}
+.press:active{translate:3px 3px;box-shadow:0 0 0 #121212 !important}
+@keyframes pop{from{opacity:0;translate:0 .55em;rotate:7deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.pop{display:inline-block;animation:pop .7s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes rise{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+.rise{animation:rise .8s cubic-bezier(.2,1,.3,1) both}
+@keyframes wobble{0%,100%{rotate:-3deg}50%{rotate:2deg}}
+.wobble{animation:wobble 2.6s ease-in-out infinite}
+@keyframes swing{0%,100%{rotate:3deg}50%{rotate:-2deg}}
+.swing{transform-origin:50% 0;animation:swing 4s ease-in-out infinite}
+@keyframes spin{to{rotate:360deg}}
+.spin{animation:spin 6s linear infinite}
+.spin-slow{animation:spin 16s linear infinite}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.fl{animation:float 3.4s ease-in-out infinite}
+@keyframes hint{0%,70%,100%{rotate:0deg}80%{rotate:-25deg}90%{rotate:20deg}}
+.hint{animation:hint 2.4s ease-in-out infinite}
+@keyframes menuin{from{clip-path:circle(0% at 352px 38px)}to{clip-path:circle(150% at 352px 38px)}}
+.menuin{animation:menuin .55s cubic-bezier(.6,0,.2,1) both}
+@keyframes linkin{from{opacity:0;translate:0 30px;rotate:-4deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.linkin{animation:linkin .5s cubic-bezier(.2,1.4,.4,1) both}
+.flip{perspective:900px;height:220px}
+.flip-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.3,1.3,.4,1)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-sizing:border-box;border:2px solid #121212;border-radius:20px;box-shadow:5px 5px 0 #121212;padding:20px;display:flex;flex-direction:column;gap:10px}
+.back{transform:rotateY(180deg)}
+.facebtn{all:unset;position:absolute;inset:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+@media (prefers-reduced-motion: reduce){.pop,.rise,.wobble,.swing,.spin,.spin-slow,.fl,.hint,.menuin,.linkin{animation:none !important}.press,.flip-in{transition:none}}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 3800px; overflow: hidden; background: #F7F7F2; color: #121212; font-family: 'Karla', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<dc-import name="MobileNav" active="apropos" hint-size="390px,64px"></dc-import>
+
+<section style="padding: 36px 16px 0; display: flex; flex-direction: column; gap: 20px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.04em; line-height: 0.95"><span class="pop" style="animation-delay: 150ms">Moi,</span> <span class="pop" style="animation-delay: 230ms">c'est</span> <span class="pop" style="animation-delay: 330ms"><span class="wobble" style="display: inline-block; background: #FFCB3D; border: 2px solid #121212; border-radius: 0.2em; padding: 0 0.12em">Arnaud</span>.</span></h1>
+<div class="rise" style="position: relative; align-self: center; width: 260px; padding: 30px 0 10px; animation-delay: 300ms">
+<div class="swing" style="position: relative; background: #FFFFFF; border: 2px solid #121212; border-radius: 20px; box-shadow: 6px 6px 0 #121212; padding: 12px 12px 16px; display: flex; flex-direction: column; gap: 10px">
+<span aria-hidden="true" style="position: absolute; left: 50%; top: -16px; width: 90px; height: 28px; margin-left: -45px; background: #C8F54A; border: 2px solid #121212; opacity: 0.92; rotate: -4deg"></span>
+<img src="/_blob/30a4be755a9ab211ca60487daf97ea4e" alt="Photo d'Arnaud" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 2px solid #121212; border-radius: 12px; display: block">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600; text-align: center">Montpellier, 2026</span>
+</div>
+<span class="fl" style="position: absolute; left: -26px; top: 70px; display: inline-block"><span style="display: inline-block; padding: 8px 13px; background: #C8F54A; border: 2px solid #121212; border-radius: 999px; box-shadow: 3px 3px 0 #121212; rotate: -8deg; font-weight: 700; font-size: 14px">Dev fullstack</span></span>
+<span class="fl" style="position: absolute; right: -30px; bottom: 70px; display: inline-block; animation-delay: -1.5s"><span style="display: inline-block; padding: 8px 13px; background: #FF9BD0; border: 2px solid #121212; border-radius: 999px; box-shadow: 3px 3px 0 #121212; rotate: 6deg; font-weight: 700; font-size: 14px">Joueur à mes heures</span></span>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6">Je suis développeur fullstack. J'ai commencé à coder en 2022, pendant mon BUT MMI à Meaux. Aujourd'hui je suis en alternance chez Kollirama, à Bernis, et en Mastère à l'EPSI Montpellier.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6">Je fais aussi du freelance depuis février 2026. Mon premier client a été l'Atelier Maha, un studio d'architecture d'intérieur.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6">Le soir, je bosse sur mes projets perso, comme Quested ou Tengo!. Et quand je ne code pas, je joue aux jeux vidéo :)</p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<a href="CV.dc.html" class="press" style="display: flex; align-items: center; justify-content: center; min-height: 52px; background: #6B3CF0; color: #FFFFFF; border: 2px solid #121212; border-radius: 14px; box-shadow: 4px 4px 0 #121212; font-weight: 700; font-size: 16px; text-decoration: none">Télécharger mon CV</a>
+<a href="MobileContact.dc.html" class="press" style="display: flex; align-items: center; justify-content: center; min-height: 52px; background: #FFFFFF; color: #121212; border: 2px solid #121212; border-radius: 14px; box-shadow: 4px 4px 0 #121212; font-weight: 700; font-size: 16px; text-decoration: none">M'écrire</a>
+</div>
+</section>
+
+<section style="padding: 48px 16px 0; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.03em; line-height: 1">Ce que je peux faire pour toi</h2>
+<p style="margin: 0; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; color: #3A3A35">Touche une carte pour la retourner
+<svg aria-hidden="true" class="hint" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"></path></svg>
+</p>
+<sc-for list="{{services}}" as="c" hint-placeholder-count="4">
+<div class="flip">
+<div class="flip-in" style="transform: {{c.transform}}">
+<div class="face" style="background: {{c.bg}}; color: {{c.fg}}">
+<button type="button" class="facebtn" onClick="{{c.toggle}}" aria-label="Voir des exemples : {{c.title}}"></button>
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600">{{c.n}}</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em; line-height: 1.05">{{c.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.5">{{c.desc}}</p>
+</div>
+<div class="face back" style="background: #121212; color: #F7F7F2">
+<span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600; color: {{c.accent}}">{{c.n}} · Exemples</span>
+<sc-for list="{{c.ex}}" as="e" hint-placeholder-count="2">
+<a href="MobileProjet.dc.html" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border: 2px solid {{c.accent}}; border-radius: 14px; color: #F7F7F2; text-decoration: none; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 21px">{{e}}
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</sc-for>
+<button type="button" onClick="{{c.toggle}}" style="margin-top: auto; align-self: flex-start; min-height: 40px; padding: 0 14px; border: 2px solid #F7F7F2; border-radius: 999px; background: transparent; color: #F7F7F2; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 14px">Retourner</button>
+</div>
+</div>
+</div>
+</sc-for>
+</section>
+
+<section style="padding: 48px 16px 0; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.03em; line-height: 1">Comment je travaille</h2>
+<div style="position: relative; display: flex; flex-direction: column; gap: 22px">
+<div aria-hidden="true" style="position: absolute; left: 21px; top: 22px; bottom: 22px; width: 0; border-left: 3px dashed #121212"></div>
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<div style="position: relative; display: flex; gap: 16px; align-items: flex-start">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #121212; display: inline-flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 20px; box-shadow: 3px 3px 0 #121212; background: {{s.bg}}; color: {{s.fg}}">{{s.n}}</span>
+<div style="display: flex; flex-direction: column; gap: 4px; padding-top: 6px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 22px">{{s.title}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5">{{s.desc}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 48px 16px 0; display: flex; flex-direction: column; gap: 24px">
+<sc-for list="{{toolGroups}}" as="g" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 22px">{{g.label}}</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{g.items}}" as="t" hint-placeholder-count="6">
+<span class="fl" style="display: inline-block; animation-delay: {{t.delay}}"><span style="display: inline-block; padding: 7px 13px; border: 2px solid #121212; border-radius: 999px; font-weight: 700; font-size: 15px; rotate: {{t.rot}}; background: {{t.bg}}; color: {{t.fg}}">{{t.name}}</span></span>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</section>
+
+<div style="margin-top: auto">
+<dc-import name="MobileFooter" hint-size="390px,640px"></dc-import>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var self = this;
+    var s = this.state || {};
+    var flipped = s.flipped || {};
+    var ink = "#121212";
+    var services = [
+      { n: "01", title: "Un site vitrine", desc: "Un site rapide, bien référencé, que tu peux mettre à jour toi-même.", ex: ["Atelier Maha", "IDK Concept"], bg: "#FFCB3D", fg: ink, accent: "#FFCB3D" },
+      { n: "02", title: "Une appli web", desc: "Un outil sur mesure, avec des comptes, une base de données et un tableau de bord.", ex: ["Quested", "Igotrack"], bg: "#6B3CF0", fg: "#FFFFFF", accent: "#C8F54A" },
+      { n: "03", title: "Un back-office", desc: "Pour gérer ton contenu, tes utilisateurs et tes stats au même endroit.", ex: ["Kollirama"], bg: "#C8F54A", fg: ink, accent: "#C8F54A" },
+      { n: "04", title: "Une appli mobile", desc: "Une appli pour iPhone et Android, simple à prendre en main.", ex: ["Tengo!"], bg: "#FF5B37", fg: ink, accent: "#FF5B37" }
+    ].map(function (c) {
+      var on = !!flipped[c.n];
+      return Object.assign({}, c, { transform: on ? "rotateY(180deg)" : "rotateY(0deg)", toggle: function () { var f = Object.assign({}, flipped); f[c.n] = !on; self.setState({ flipped: f }); } });
+    });
+    var steps = [
+      { n: "1", title: "On discute", desc: "Je te pose des questions pour bien comprendre ce dont tu as besoin.", bg: "#FFCB3D", fg: ink },
+      { n: "2", title: "Je te montre une maquette", desc: "Tu vois à quoi ça va ressembler avant que je code quoi que ce soit.", bg: "#FF9BD0", fg: ink },
+      { n: "3", title: "Je développe", desc: "Tu as accès à une version en ligne pour suivre l'avancée et me faire tes retours.", bg: "#C8F54A", fg: ink },
+      { n: "4", title: "On met en ligne", desc: "Je m'occupe de la mise en prod et je reste dispo si tu as besoin après :)", bg: "#2E5BFF", fg: "#FFFFFF" }
+    ];
+    var rots = ["-2deg", "1deg", "-1deg", "2deg", "-2deg", "1deg", "2deg", "-1deg"];
+    function chips(list) { return list.map(function (t, i) { return { name: t[0], bg: t[1], fg: t[2] || ink, rot: rots[i % rots.length], delay: (-i * 0.45).toFixed(2) + "s" }; }); }
+    var toolGroups = [
+      { label: "Front et mobile", items: chips([["SvelteKit", "#FF5B37"], ["React / Next.js", "#2E5BFF", "#FFFFFF"], ["React Native", "#FF9BD0"], ["TypeScript", "#FFFFFF"], ["Tailwind", "#6B3CF0", "#FFFFFF"], ["Astro", "#FFFFFF"], ["GSAP", "#FFFFFF"]]) },
+      { label: "Back", items: chips([["Node.js / Express", "#C8F54A"], ["Python", "#FFCB3D"], ["NestJS", "#FFFFFF"], ["PostgreSQL", "#2E5BFF", "#FFFFFF"], ["MySQL", "#FFFFFF"], ["Prisma", "#FF9BD0"], ["Supabase", "#C8F54A"], ["PHP / Symfony", "#FFFFFF"]]) },
+      { label: "Outils et design", items: chips([["Git", "#FFFFFF"], ["Docker", "#C8F54A"], ["Figma", "#FF5B37"], ["Illustrator", "#FFFFFF"], ["Photoshop", "#FFFFFF"]]) },
+      { label: "J'apprends", items: chips([["Java", "#FFFFFF"], ["Spring", "#FFFFFF"], ["Payload CMS", "#FFFFFF"]]) }
+    ];
+    return { services: services, steps: steps, toolGroups: toolGroups };
+  }
+}
+</script>
+</body>
+</html>

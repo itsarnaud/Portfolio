@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Blog Arnaud Royer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#121212}a:hover{color:#6B3CF0}
+.lift{transition:translate .22s ease,rotate .22s ease,box-shadow .22s ease;box-shadow:6px 6px 0 #121212}
+.lift:hover{translate:-5px -5px;rotate:-.6deg;box-shadow:11px 11px 0 #121212}
+.nudge{transition:translate .25s cubic-bezier(.3,1.6,.5,1)}
+a:hover .nudge{translate:4px -4px}
+.read{background-image:linear-gradient(currentColor,currentColor);background-size:0% 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s ease}
+a:hover .read{background-size:100% 2px}
+.navl{position:relative}
+.navl::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:2px;background:currentColor;scale:0 1;transform-origin:0 50%;transition:scale .25s ease}
+.navl:hover::after{scale:1 1}
+.logo-c{transition:rotate .35s cubic-bezier(.3,1.6,.5,1)}
+a:hover .logo-c{rotate:10deg}
+@keyframes navin{from{translate:0 -110%}to{translate:0 0}}
+.navin{animation:navin .7s cubic-bezier(.2,1.2,.4,1) both}
+@keyframes pop{from{opacity:0;translate:0 .55em;rotate:7deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.pop{display:inline-block;animation:pop .7s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes rise{from{opacity:0;translate:0 30px}to{opacity:1;translate:0 0}}
+.rise{animation:rise .8s cubic-bezier(.2,1,.3,1) both}
+@keyframes cin-a{from{opacity:0;translate:0 50px;scale:.92;rotate:2deg}to{opacity:1;translate:0 0;scale:1;rotate:0deg}}
+@keyframes cin-b{from{opacity:0;translate:0 50px;scale:.92;rotate:-2deg}to{opacity:1;translate:0 0;scale:1;rotate:0deg}}
+.cin-a{animation:cin-a .6s cubic-bezier(.2,1.3,.4,1) both}
+.cin-b{animation:cin-b .6s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes wobble{0%,100%{rotate:-3deg}50%{rotate:2deg}}
+.wobble{animation:wobble 2.6s ease-in-out infinite}
+@keyframes spin{to{rotate:360deg}}
+.spin-slow{animation:spin 14s linear infinite}
+@keyframes jig{0%,100%{rotate:0deg}25%{rotate:-7deg}75%{rotate:7deg}}
+.jig:hover{animation:jig .35s ease-in-out 2}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(18,18,18,.5)}100%{box-shadow:0 0 0 9px rgba(18,18,18,0)}}
+.pulse{animation:pulse 1.6s ease-out infinite}
+@supports (animation-timeline: view()){
+.progress{animation:grow linear both;animation-timeline:scroll(root)}
+@keyframes grow{from{scale:0 1}to{scale:1 1}}
+}
+#ar-cursor{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;translate:-200px -200px;opacity:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:999px;background:#121212;border:2px solid #121212;box-sizing:border-box;display:flex;align-items:center;justify-content:center;transition:opacity .2s,width .25s cubic-bezier(.3,1.4,.5,1),height .25s cubic-bezier(.3,1.4,.5,1),margin .25s,padding .25s,background .2s}
+#ar-cursor[data-on="1"]{width:auto;height:42px;margin:-21px 0 0 14px;padding:0 16px;box-shadow:3px 3px 0 #121212}
+#ar-cursor-label{display:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:600;color:#121212;white-space:nowrap}
+#ar-cursor[data-on="1"] #ar-cursor-label{display:block}
+@media (pointer: fine){.nocur,.nocur a,.nocur button{cursor:none}}
+@media (pointer: coarse){#ar-cursor{display:none}}
+@media (prefers-reduced-motion: reduce){
+.navin,.pop,.rise,.cin-a,.cin-b,.wobble,.spin-slow,.jig:hover,.pulse,.progress{animation:none !important}
+.lift,.nudge,.read{transition:none}
+}
+</style>
+</helmet>
+<div class="nocur" style="width: 100%; min-height: 100vh; background: #F7F7F2; color: #121212; font-family: 'Karla', system-ui, sans-serif; overflow-x: clip">
+<div aria-hidden="true" class="progress" style="position: fixed; left: 0; top: 0; width: 100%; height: 5px; background: #C8F54A; border-bottom: 1px solid #121212; transform-origin: 0 50%; z-index: 60"></div>
+<div id="ar-cursor" aria-hidden="true"><span id="ar-cursor-label"></span></div>
+
+<dc-import name="Nav" active="blog" hint-size="100%,96px"></dc-import>
+
+<header style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 80px 24px 40px; display: flex; flex-direction: column; gap: 20px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: clamp(52px, 7vw, 104px); letter-spacing: -0.04em; line-height: 0.95"><span class="pop" style="animation-delay: 150ms">Le</span> <span class="pop" style="animation-delay: 260ms"><span class="wobble" style="display: inline-block; background: #C8F54A; border: 2px solid #121212; border-radius: 0.2em; padding: 0 0.12em">blog</span></span></h1>
+<p class="rise" style="margin: 0; max-width: 640px; font-size: 19px; line-height: 1.55; color: #3A3A35; animation-delay: 400ms">J'écris surtout sur LinkedIn. Je range mes posts ici pour les retrouver : mes projets, l'IA dans le métier de dev, et parfois un peu d'actu ;)</p>
+</header>
+
+<section style="max-width: 1200px; margin: 0 auto; box-sizing: border-box; padding: 0 24px 24px; display: flex; flex-direction: column; gap: 32px">
+<div class="rise" role="group" aria-label="Filtrer par sujet" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; animation-delay: 500ms">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+<button type="button" class="jig" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" data-cursor="Filtrer" data-cursor-color="{{f.cursor}}" style="min-height: 44px; padding: 0 18px; border: 2px solid #121212; border-radius: 999px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600; transition: background .2s, color .2s; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+</sc-for>
+<span style="margin-left: 8px; display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #4A4A44"><span aria-hidden="true" class="pulse" style="width: 8px; height: 8px; border-radius: 50%; background: #C8F54A; border: 1px solid #121212"></span>{{countLabel}}</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 28px">
+<sc-for list="{{visible}}" as="p" hint-placeholder-count="6">
+<div class="{{p.cin}}" style="display: flex; grid-column: {{p.span}}; animation-delay: {{p.delay}}">
+<a href="{{p.url}}" class="lift" data-cursor="Lire sur LinkedIn" data-cursor-color="{{p.cursor}}" style="position: relative; flex: 1; display: flex; flex-direction: column; gap: 16px; padding: {{p.pad}}; border: 2px solid #121212; border-radius: 24px; text-decoration: none; background: {{p.bg}}; color: {{p.fg}}">
+<sc-if value="{{p.first}}" hint-placeholder-val="{{false}}">
+<span aria-hidden="true" style="position: absolute; right: 28px; top: -34px; width: 104px; height: 104px">
+<svg class="spin-slow" viewBox="0 0 200 200" style="width: 100%; height: 100%">
+<defs><path id="blog-ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"></path></defs>
+<circle cx="100" cy="100" r="97" fill="#FFFFFF" stroke="#121212" stroke-width="3"></circle>
+<text style="font-family: 'JetBrains Mono', monospace; font-size: 19px; font-weight: 600; letter-spacing: 3px" fill="#121212"><textPath href="#blog-ring" textLength="440" lengthAdjust="spacing">DERNIER POST · DERNIER POST · </textPath></text>
+</svg>
+</span>
+</sc-if>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; font-weight: 600">
+<span>{{p.date}}</span>
+<span class="jig" style="display: inline-block; padding: 3px 10px; border: 1.5px solid currentColor; border-radius: 999px">{{p.cat}}</span>
+</div>
+<h2 style="margin: 0; max-width: 820px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; font-size: {{p.titleSize}}">{{p.title}}</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 760px">{{p.excerpt}}</p>
+<span style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; padding-top: 12px; border-top: 2px dashed currentColor; font-weight: 700"><span class="read">Lire sur LinkedIn</span>
+<svg aria-hidden="true" class="nudge" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"></path></svg>
+</span>
+</a>
+</div>
+</sc-for>
+</div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,760px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2300}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    var self = this;
+    var cur = document.getElementById("ar-cursor");
+    var lab = document.getElementById("ar-cursor-label");
+    if (!cur || !lab || !(window.matchMedia && window.matchMedia("(pointer: fine)").matches)) { return; }
+    var x = -200, y = -200, tx = -200, ty = -200;
+    this.onMove = function (e) {
+      tx = e.clientX; ty = e.clientY; cur.style.opacity = "1";
+      var t = e.target && e.target.closest ? e.target.closest("[data-cursor]") : null;
+      if (t) { lab.textContent = t.getAttribute("data-cursor"); cur.setAttribute("data-on", "1"); cur.style.background = t.getAttribute("data-cursor-color") || "#C8F54A"; }
+      else { cur.setAttribute("data-on", "0"); cur.style.background = "#121212"; }
+    };
+    this.onLeave = function () { cur.style.opacity = "0"; };
+    var loop = function () { x += (tx - x) * 0.22; y += (ty - y) * 0.22; cur.style.translate = x + "px " + y + "px"; self.raf = requestAnimationFrame(loop); };
+    window.addEventListener("mousemove", this.onMove);
+    document.addEventListener("mouseleave", this.onLeave);
+    loop();
+  }
+  componentWillUnmount() {
+    if (this.raf) { cancelAnimationFrame(this.raf); }
+    if (this.onMove) { window.removeEventListener("mousemove", this.onMove); }
+    if (this.onLeave) { document.removeEventListener("mouseleave", this.onLeave); }
+  }
+  renderVals() {
+    var st = this.state || {};
+    var filter = st.filter || "all";
+    var anim = st.anim || 0;
+    var self = this;
+    var ink = "#121212";
+    var cats = {
+      societe: { label: "Société", bg: "#FFCB3D", fg: ink, cursor: "#FFCB3D" },
+      ia: { label: "IA", bg: "#2E5BFF", fg: "#FFFFFF", cursor: "#FFFFFF" },
+      projets: { label: "Mes projets", bg: "#6B3CF0", fg: "#FFFFFF", cursor: "#C8F54A" },
+      freelance: { label: "Freelance", bg: "#C8F54A", fg: ink, cursor: "#C8F54A" }
+    };
+    var li = "https://www.linkedin.com/in/royer-arnaud/";
+    var posts = [
+      { cat: "societe", date: "26 août 2026", title: "Réseaux sociaux et mineurs : le Conseil constitutionnel censure la loi", excerpt: "Le 14 août, le Conseil constitutionnel a censuré la loi interdisant les réseaux sociaux aux moins de 15 ans, faute de garanties claires sur la vie privée. La suite de mon post sur le sujet." },
+      { cat: "freelance", date: "4 août 2026", title: "Figma, Canva Code 2.0... le no-code n'a jamais été aussi puissant", excerpt: "Les outils pour faire son site soi-même n'ont jamais été aussi bons. Mais est-ce qu'ils remplacent vraiment un site sur mesure ?" },
+      { cat: "projets", date: "3 août 2026", title: "Petit update sur Quested : liaison de compte Steam", excerpt: "Nouvelle grosse feature : on peut lier son compte Steam et importer sa bibliothèque, son temps de jeu et ses succès sans rien logger à la main." },
+      { cat: "projets", date: "29 juillet 2026", title: "Quested, mon tracker de jeux vidéo façon Letterboxd", excerpt: "Je viens de sortir un projet perso : Quested, un site pour suivre les jeux vidéo auxquels on joue. L'idée m'est venue en utilisant Letterboxd pour les films." },
+      { cat: "societe", date: "28 juillet 2026", title: "Loi interdisant les réseaux sociaux aux moins de 15 ans : une bonne idée qui m'interroge", excerpt: "Une bonne nouvelle pour protéger les enfants, sauf qu'il y a un truc qui me turlupine : comment vérifier l'âge de tout le monde sans exposer les données de tout le monde ?" },
+      { cat: "ia", date: "25 juillet 2026", title: "WebDev Arena : le classement des IA n'a jamais été aussi serré", excerpt: "Un classement où des modèles d'IA s'affrontent sur des tâches de dev web, notés à l'aveugle par des humains. Juillet 2026, c'est peut-être le plus serré depuis le début." },
+      { cat: "freelance", date: "28 mai 2026", title: "Lancement du nouveau site de l'Atelier Maha", excerpt: "Le nouveau site de l'Atelier Maha, un studio d'architecture d'intérieur, est en ligne. C'est mon premier projet en freelance." },
+      { cat: "ia", date: "28 février 2026", title: "« Le métier de développeur est foutu, passe sur Replit »", excerpt: "Une phrase que j'ai entendue pendant une discussion sur la refonte d'un site. On m'a conseillé, très sérieusement, de tout supprimer et de tout refaire avec Replit et l'IA." }
+    ];
+    var defs = [{ id: "all", label: "Tout" }, { id: "projets", label: "Mes projets" }, { id: "ia", label: "IA" }, { id: "freelance", label: "Freelance" }, { id: "societe", label: "Société" }];
+    var filters = defs.map(function (d) {
+      var on = d.id === filter;
+      var c = cats[d.id];
+      return { label: d.label, pressed: on ? "true" : "false", cursor: c ? c.cursor : "#FFCB3D", bg: on ? ink : "#FFFFFF", fg: on ? "#F7F7F2" : ink, pick: function () { if (!on) { self.setState({ filter: d.id, anim: anim + 1 }); } } };
+    });
+    var cin = anim % 2 ? "cin-b" : "cin-a";
+    var list = filter === "all" ? posts : posts.filter(function (p) { return p.cat === filter; });
+    var visible = list.map(function (p, i) {
+      var c = cats[p.cat];
+      var first = i === 0;
+      return {
+        date: p.date, title: p.title, excerpt: p.excerpt, url: li, first: first,
+        cat: c.label, cursor: c.cursor, cin: cin, delay: (i * 70) + "ms",
+        bg: first ? c.bg : "#FFFFFF",
+        fg: first ? c.fg : ink,
+        span: first ? "1 / -1" : "auto",
+        pad: first ? "clamp(24px, 4vw, 44px)" : "24px",
+        titleSize: first ? "clamp(32px, 4vw, 52px)" : "26px"
+      };
+    });
+    return {
+      filters: filters,
+      visible: visible,
+      countLabel: visible.length + (visible.length > 1 ? " posts" : " post")
+    };
+  }
+}
+</script>
+</body>
+</html>

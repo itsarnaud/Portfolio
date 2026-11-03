@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Contact mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#121212}
+.press{transition:translate .12s ease,box-shadow .12s ease}
+.press:active{translate:3px 3px;box-shadow:0 0 0 #121212 !important}
+.field{transition:box-shadow .15s ease,translate .15s ease,background .15s ease}
+.field:focus{outline:none;box-shadow:4px 4px 0 #6B3CF0;translate:-2px -2px;background:#FFFFFF}
+.fw label{transition:color .15s ease}
+.fw:focus-within label{color:#6B3CF0}
+.plane{transition:translate .6s cubic-bezier(.6,-0.3,.7,1),rotate .6s ease,opacity .6s ease}
+.plane.fly{translate:200px -140px;rotate:20deg;opacity:0}
+@keyframes pop{from{opacity:0;translate:0 .55em;rotate:7deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.pop{display:inline-block;animation:pop .7s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes rise{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+.rise{animation:rise .8s cubic-bezier(.2,1,.3,1) both}
+@keyframes wobble{0%,100%{rotate:-3deg}50%{rotate:2deg}}
+.wobble{animation:wobble 2.6s ease-in-out infinite}
+@keyframes boing{0%{scale:1}40%{scale:1.15;rotate:-4deg}70%{scale:.95;rotate:2deg}100%{scale:1;rotate:0deg}}
+.chip-on{animation:boing .45s cubic-bezier(.3,1.6,.5,1)}
+@keyframes zoom{from{opacity:0;scale:.7;rotate:-4deg}to{opacity:1;scale:1;rotate:0deg}}
+.zoom{animation:zoom .55s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes burst{0%{translate:0 0;scale:.3;opacity:1}100%{translate:var(--tx) var(--ty);scale:1;opacity:0;rotate:var(--r)}}
+.bit{position:absolute;left:50%;top:50%;animation:burst 1s cubic-bezier(.1,.8,.3,1) both}
+@keyframes spin{to{rotate:360deg}}
+.spin{animation:spin 6s linear infinite}
+.spin-slow{animation:spin 16s linear infinite}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.fl{animation:float 3.4s ease-in-out infinite}
+@keyframes menuin{from{clip-path:circle(0% at 352px 38px)}to{clip-path:circle(150% at 352px 38px)}}
+.menuin{animation:menuin .55s cubic-bezier(.6,0,.2,1) both}
+@keyframes linkin{from{opacity:0;translate:0 30px;rotate:-4deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.linkin{animation:linkin .5s cubic-bezier(.2,1.4,.4,1) both}
+@media (prefers-reduced-motion: reduce){.pop,.rise,.wobble,.chip-on,.zoom,.bit,.spin,.spin-slow,.fl,.menuin,.linkin{animation:none !important}.press,.field,.plane{transition:none}.bit{display:none}}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 1800px; overflow: hidden; background: #F7F7F2; color: #121212; font-family: 'Karla', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<dc-import name="MobileNav" active="contact" hint-size="390px,64px"></dc-import>
+
+<header style="padding: 36px 16px 20px; display: flex; flex-direction: column; gap: 14px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.04em; line-height: 0.95"><span class="pop" style="animation-delay: 150ms">Écris-</span><span class="pop" style="animation-delay: 260ms"><span class="wobble" style="display: inline-block; background: #FF5B37; border: 2px solid #121212; border-radius: 0.2em; padding: 0 0.12em">moi</span></span></h1>
+<p class="rise" style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3A35; animation-delay: 400ms">Un projet, une question, une offre d'alternance ? Dis-m'en un peu plus et je te réponds dès que possible.</p>
+</header>
+
+<section style="padding: 0 16px">
+<sc-if value="{{showForm}}" hint-placeholder-val="{{true}}">
+<form class="rise" onSubmit="{{send}}" style="background: #FFFFFF; border: 2px solid #121212; border-radius: 22px; box-shadow: 5px 5px 0 #121212; padding: 20px; display: flex; flex-direction: column; gap: 18px; animation-delay: 500ms">
+<div class="fw" style="display: flex; flex-direction: column; gap: 7px">
+<label for="m-name" style="font-size: 15px; font-weight: 700">Ton nom</label>
+<input id="m-name" type="text" class="field" placeholder="Camille Martin" style="min-height: 52px; padding: 0 14px; border: 2px solid #121212; border-radius: 14px; background: #F7F7F2; font-family: 'Karla', system-ui, sans-serif; font-size: 17px; color: #121212">
+</div>
+<div class="fw" style="display: flex; flex-direction: column; gap: 7px">
+<label for="m-mail" style="font-size: 15px; font-weight: 700">Ton email</label>
+<input id="m-mail" type="email" class="field" placeholder="camille@exemple.fr" style="min-height: 52px; padding: 0 14px; border: 2px solid #121212; border-radius: 14px; background: #F7F7F2; font-family: 'Karla', system-ui, sans-serif; font-size: 17px; color: #121212">
+</div>
+<fieldset style="margin: 0; padding: 0; border: 0">
+<legend style="padding: 0; margin-bottom: 10px; font-size: 15px; font-weight: 700">C'est pour</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{topics}}" as="t" hint-placeholder-count="5">
+<button type="button" class="{{t.cls}}" onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="min-height: 44px; padding: 0 14px; border: 2px solid #121212; border-radius: 999px; font-weight: 700; font-size: 15px; transition: background .2s, color .2s, box-shadow .2s; background: {{t.bg}}; color: {{t.fg}}; box-shadow: {{t.shadow}}">{{t.label}}</button>
+</sc-for>
+</div>
+</fieldset>
+<div class="fw" style="display: flex; flex-direction: column; gap: 7px">
+<label for="m-msg" style="font-size: 15px; font-weight: 700">Ton message</label>
+<textarea id="m-msg" class="field" rows="5" onInput="{{typed}}" placeholder="Raconte-moi ton projet, tes délais, ce que tu as déjà..." style="padding: 12px 14px; border: 2px solid #121212; border-radius: 14px; background: #F7F7F2; font-family: 'Karla', system-ui, sans-serif; font-size: 17px; line-height: 1.5; color: #121212; resize: vertical"></textarea>
+<span aria-live="polite" style="align-self: flex-end; font-size: 14px; color: #4A4A44">{{hint}}</span>
+</div>
+<button type="submit" class="press" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; background: #6B3CF0; color: #FFFFFF; border: 2px solid #121212; border-radius: 14px; box-shadow: 4px 4px 0 #121212; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 17px">{{sendLabel}}
+<svg aria-hidden="true" class="{{planeCls}}" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+</button>
+<span style="font-size: 13px; color: #4A4A44; text-align: center">Ton email sert seulement à te répondre.</span>
+</form>
+</sc-if>
+<sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+<div class="zoom" style="position: relative; background: #C8F54A; border: 2px solid #121212; border-radius: 22px; box-shadow: 5px 5px 0 #121212; padding: 28px 22px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<sc-for list="{{bits}}" as="b" hint-placeholder-count="10">
+<span class="bit" style="width: {{b.size}}; height: {{b.size}}; margin: -7px 0 0 -7px; border: 2px solid #121212; border-radius: {{b.radius}}; background: {{b.color}}; --tx: {{b.tx}}; --ty: {{b.ty}}; --r: {{b.r}}"></span>
+</sc-for>
+</div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 38px; letter-spacing: -0.03em">C'est envoyé !</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">Merci pour ton message, je te réponds par mail très vite :)</p>
+<button type="button" class="press" onClick="{{reset}}" style="min-height: 48px; padding: 0 18px; border: 2px solid #121212; border-radius: 14px; background: #FFFFFF; box-shadow: 3px 3px 0 #121212; font-weight: 700; font-size: 16px; color: #121212">Écrire un autre message</button>
+</div>
+</sc-if>
+</section>
+
+<section style="padding: 40px 16px 0; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">Ou directement</h2>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #FFCB3D; border: 2px solid #121212; border-radius: 18px; box-shadow: 4px 4px 0 #121212">
+<span style="font-size: 14px; font-weight: 700">Email</span>
+<a href="mailto:contact@arnaudroyer.fr" style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 21px; text-decoration: none">contact@arnaudroyer.fr</a>
+<button type="button" class="press" onClick="{{copy}}" style="align-self: flex-start; min-height: 44px; padding: 0 14px; border: 2px solid #121212; border-radius: 999px; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 14px; transition: background .2s; background: {{copyBg}}; color: #121212">{{copyLabel}}</button>
+</div>
+<div style="display: flex; gap: 12px">
+<a href="https://www.linkedin.com/in/royer-arnaud/" class="press" style="flex: 1; display: flex; flex-direction: column; gap: 4px; padding: 16px; background: #2E5BFF; color: #FFFFFF; border: 2px solid #121212; border-radius: 18px; box-shadow: 4px 4px 0 #121212; text-decoration: none">
+<span style="font-size: 13px; font-weight: 700">LinkedIn</span>
+<span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 18px">royer-arnaud</span>
+</a>
+<a href="https://github.com/itsarnaud" class="press" style="flex: 1; display: flex; flex-direction: column; gap: 4px; padding: 16px; background: #FFFFFF; color: #121212; border: 2px solid #121212; border-radius: 18px; box-shadow: 4px 4px 0 #121212; text-decoration: none">
+<span style="font-size: 13px; font-weight: 700">GitHub</span>
+<span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 18px">itsarnaud</span>
+</a>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 2px dashed #121212; border-radius: 18px; font-size: 16px">
+<svg aria-hidden="true" class="spin" viewBox="0 0 24 24" style="width: 22px; height: 22px; flex: 0 0 auto"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#FF5B37" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+<span>Il est <strong>{{clock}}</strong> à Montpellier</span>
+</div>
+</section>
+
+<p style="margin: auto 16px 0; padding: 32px 0; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; color: #4A4A44">
+<span>© 2026 Arnaud Royer</span><a href="https://github.com/itsarnaud" style="color: #4A4A44">Code sur GitHub</a>
+</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1800}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    var self = this;
+    this.tick = function () {
+      var t = "";
+      try { t = new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" }); } catch (e) { t = ""; }
+      self.setState({ clock: t });
+    };
+    this.tick();
+    this.clockTimer = setInterval(this.tick, 20000);
+  }
+  componentWillUnmount() { clearInterval(this.clockTimer); clearTimeout(this.sendTimer); clearTimeout(this.copyTimer); }
+  renderVals() {
+    var st = this.state || {};
+    var topic = st.topic || "site";
+    var phase = st.phase || "form";
+    var len = st.len || 0;
+    var self = this;
+    var ink = "#121212";
+    var defs = [
+      { id: "site", label: "Un site vitrine", color: "#FFCB3D", fg: ink },
+      { id: "app", label: "Une appli", color: "#6B3CF0", fg: "#FFFFFF" },
+      { id: "alt", label: "Une alternance", color: "#C8F54A", fg: ink },
+      { id: "renfort", label: "Un renfort", color: "#2E5BFF", fg: "#FFFFFF" },
+      { id: "autre", label: "Autre chose", color: "#FF9BD0", fg: ink }
+    ];
+    var hint = len === 0 ? "Quelques lignes suffisent" : (len < 40 ? "Continue, c'est bien parti" : (len < 200 ? "Parfait, j'ai de quoi comprendre" : "Super détaillé, merci :D"));
+    var colors = ["#FF5B37", "#6B3CF0", "#FFCB3D", "#2E5BFF", "#FF9BD0", "#FFFFFF"];
+    var bits = [];
+    for (var i = 0; i < 12; i++) {
+      var a = (i / 12) * Math.PI * 2;
+      var d = 110 + (i % 3) * 40;
+      bits.push({ color: colors[i % colors.length], size: (10 + (i % 3) * 4) + "px", radius: i % 2 ? "50%" : "3px", tx: Math.round(Math.cos(a) * d) + "px", ty: Math.round(Math.sin(a) * d) + "px", r: (i * 47) + "deg" });
+    }
+    return {
+      showForm: phase !== "sent",
+      sent: phase === "sent",
+      sendLabel: phase === "sending" ? "Envoi..." : "Envoyer",
+      planeCls: phase === "sending" ? "plane fly" : "plane",
+      hint: hint,
+      typed: function (e) { var v = e && e.target ? e.target.value.length : 0; self.setState({ len: v }); },
+      topics: defs.map(function (d) {
+        var on = d.id === topic;
+        return { label: d.label, on: on ? "true" : "false", cls: on ? "chip-on" : "", bg: on ? d.color : "#FFFFFF", fg: on ? d.fg : ink, shadow: on ? "3px 3px 0 #121212" : "none", pick: function () { self.setState({ topic: d.id }); } };
+      }),
+      bits: bits,
+      send: function (e) {
+        if (e && e.preventDefault) { e.preventDefault(); }
+        if (phase !== "form") { return; }
+        self.setState({ phase: "sending" });
+        self.sendTimer = setTimeout(function () { self.setState({ phase: "sent" }); }, 650);
+      },
+      reset: function () { self.setState({ phase: "form", len: 0 }); },
+      copy: function () {
+        try { if (navigator.clipboard) { navigator.clipboard.writeText("contact@arnaudroyer.fr"); } } catch (e) {}
+        self.setState({ copied: true });
+        clearTimeout(self.copyTimer);
+        self.copyTimer = setTimeout(function () { self.setState({ copied: false }); }, 1600);
+      },
+      copyLabel: st.copied ? "Copié !" : "Copier l'adresse",
+      copyBg: st.copied ? "#C8F54A" : "#FFFFFF",
+      clock: st.clock || "--:--"
+    };
+  }
+}
+</script>
+</body>
+</html>
