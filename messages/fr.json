@@ -1,16 +1,367 @@
 {
   "meta": {
-    "home": { "title": "Accueil" },
-    "projects": { "title": "Projets" },
-    "project": { "title": "Projet" },
-    "blog": { "title": "Blog" },
-    "blogPost": { "title": "Article" },
-    "about": { "title": "À propos" },
-    "experiences": { "title": "Parcours" },
-    "contact": { "title": "Contact" }
+    "siteName": "Arnaud Royer",
+    "home": {
+      "title": "Arnaud Royer, développeur fullstack à Montpellier",
+      "description": "Je fabrique des sites, des applis et des outils. Dev fullstack à Montpellier, en alternance chez Kollirama et en freelance à côté."
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Mes projets d'alternance, de cours, pour des clients et pour moi : sites vitrines, applis web, appli mobile et outils open source."
+    },
+    "project": {
+      "title": "Projet"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Mes posts LinkedIn rangés au même endroit : mes projets, l'IA dans le métier de dev, le freelance et un peu d'actu."
+    },
+    "blogPost": {
+      "title": "Article"
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Qui je suis, ce que je peux faire pour toi (site vitrine, appli web, back-office, appli mobile) et comment je travaille."
+    },
+    "experiences": {
+      "title": "Parcours",
+      "description": "Mon parcours : alternance chez Kollirama et Igocreate, freelance depuis 2026, et mes études à l'EPSI Montpellier et à l'IUT de Meaux."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Un projet, une question, une offre d'alternance ? Écris-moi, je te réponds dès que possible."
+    },
+    "notFound": {
+      "title": "Page introuvable"
+    },
+    "error": {
+      "title": "Erreur du serveur"
+    }
   },
+
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "blog": "Blog",
+    "about": "À propos",
+    "experiences": "Parcours",
+    "contact": "Contact",
+    "label": "Navigation principale",
+    "pagesLabel": "Pages du site",
+    "homeLabel": "Arnaud Royer, accueil",
+    "brand": "arnaud royer",
+    "menu": "Menu",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "switchLocale": "Passer le site en anglais",
+    "otherLocale": "EN",
+    "locales": "FR / EN"
+  },
+
+  "footer": {
+    "title": "On en parle <swing>?</swing>",
+    "email": "contact@arnaudroyer.fr",
+    "form": "Remplir le formulaire",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "rights": "© {year} Arnaud Royer",
+    "source": "Le code du site est sur GitHub",
+    "sourceShort": "Code sur GitHub"
+  },
+
+  "cursor": {
+    "viewProject": "Voir le projet",
+    "nextProject": "Projet suivant",
+    "writeMe": "Écris-moi",
+    "write": "Écrire",
+    "send": "Envoyer",
+    "letsGo": "Let's go",
+    "go": "Go",
+    "goThere": "Y aller",
+    "hello": "Salut !",
+    "pdf": "PDF",
+    "shuffle": "Mélanger",
+    "flip": "Retourner",
+    "read": "Lire",
+    "readOnLinkedin": "Lire sur LinkedIn",
+    "learnMore": "En savoir plus",
+    "filter": "Filtrer",
+    "choose": "Choisir",
+    "copy": "Copier",
+    "home": "Accueil",
+    "projects": "Projets",
+    "back": "Retour",
+    "view": "Voir",
+    "seeAll": "Tout voir",
+    "open": "Ouvrir",
+    "zoom": "Agrandir",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "catchIt": "Attrape-la",
+    "now": "Maintenant !",
+    "bravo": "Bravo",
+    "squash": "Écraser",
+    "retry": "Relancer",
+    "fix": "Réparer"
+  },
+
+  "home": {
+    "hero": {
+      "title": "Je fabrique des <swing>sites</swing>, des <float>applis</float> et des <wave>outils</wave>.",
+      "intro": "Moi c'est Arnaud, dev fullstack à Montpellier. En alternance chez Kollirama, et en freelance à côté. En ce moment je bosse sur",
+      "ctaProjects": "Voir mes projets",
+      "ctaContact": "M'écrire",
+      "deckLabel": "Montrer le projet suivant",
+      "deckHint": "Clique sur le paquet pour mélanger",
+      "deckHintTouch": "Touche le paquet pour mélanger",
+      "stamp": "DÉVELOPPEUR FULLSTACK · MONTPELLIER · "
+    },
+    "latest": {
+      "title": "Mes derniers <mark>projets</mark>",
+      "seeAll": "Voir les {count} projets"
+    },
+    "who": {
+      "title": "Qui c'est ?",
+      "p1": "Je code depuis 2022. Aujourd'hui je suis en alternance chez Kollirama et en Mastère à l'EPSI Montpellier. Je prends aussi des missions en freelance.",
+      "p2": "Ce que je préfère, c'est partir d'un besoin pas très clair et en faire un outil que les gens utilisent. Et quand je ne code pas, je joue aux jeux vidéo :)",
+      "more": "En savoir plus",
+      "cv": "Mon CV (PDF)",
+      "cvShort": "Mon CV"
+    },
+    "now": {
+      "title": "En ce moment",
+      "building": "Je construis",
+      "learning": "J'apprends",
+      "playing": "Je joue à",
+      "lastPost": "Dernier post"
+    },
+    "toolbox": {
+      "title": "Ma boîte à outils",
+      "learning": "J'apprends : {list}"
+    }
+  },
+
+  "projects": {
+    "title": "Tous mes <mark>projets</mark>",
+    "intro": "Des projets d'alternance, de cours, pour des clients et pour moi. Clique sur une carte pour voir comment je l'ai construit ;)",
+    "introTouch": "Des projets d'alternance, de cours, pour des clients et pour moi. Touche une carte pour voir comment je l'ai construit ;)",
+    "filterLabel": "Filtrer les projets",
+    "viewLabel": "Affichage",
+    "views": {
+      "grid": "Cartes",
+      "list": "Liste"
+    },
+    "all": "Tout",
+    "count": "{count, plural, one {# projet} other {# projets}}",
+    "number": "N°{number}",
+    "screenshot": "Capture de {title}",
+    "kinds": {
+      "mobile": "Mobile",
+      "fullstack": "Fullstack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "bot": "Bot Discord",
+      "open-source": "Open source"
+    },
+    "categories": {
+      "personal": "Projet perso",
+      "school": "Projet de cours",
+      "work-study": "Alternance",
+      "client": "Client",
+      "open-source": "Open source",
+      "internship": "Projet de stage"
+    }
+  },
+
+  "project": {
+    "back": "Retour aux projets",
+    "visit": "Voir le site",
+    "visitCode": "Voir le code",
+    "type": "Type",
+    "team": "Équipe",
+    "stack": "Stack",
+    "about": "Le projet",
+    "challenge": "Le plus dur",
+    "gallery": "En images",
+    "zoom": "Agrandir : {caption}",
+    "close": "Fermer",
+    "previousImage": "Image précédente",
+    "nextImage": "Image suivante",
+    "next": "Projet suivant"
+  },
+
+  "about": {
+    "title": "Moi, c'est <mark>Arnaud</mark>.",
+    "p1": "Je suis développeur fullstack. J'ai commencé à coder en 2022, pendant mon BUT MMI à Meaux. Aujourd'hui je suis en alternance chez Kollirama, à Bernis, et en Mastère à l'EPSI Montpellier.",
+    "p2": "Je fais aussi du freelance depuis février 2026. Mon premier client a été l'Atelier Maha, un studio d'architecture d'intérieur.",
+    "p3": "Le soir, je bosse sur mes projets perso, comme Quested ou Tengo!. Et quand je ne code pas, je joue aux jeux vidéo :)",
+    "cv": "Télécharger mon CV",
+    "contact": "M'écrire",
+    "photoAlt": "Arnaud Royer",
+    "photoCaption": "Montpellier, 2026",
+    "stickers": {
+      "job": "Dev fullstack",
+      "gamer": "Joueur à mes heures"
+    },
+    "services": {
+      "title": "Ce que je peux faire pour toi",
+      "hint": "Survole une carte pour la retourner",
+      "hintTouch": "Touche une carte pour la retourner",
+      "examples": "Voir des exemples",
+      "examplesLabel": "Voir des exemples : {service}",
+      "examplesTitle": "{number} · Exemples"
+    },
+    "process": {
+      "title": "Comment je travaille"
+    },
+    "toolbox": {
+      "title": "Ma boîte à outils",
+      "groups": {
+        "front": "Front et mobile",
+        "back": "Back",
+        "tools": "Outils et design",
+        "learning": "J'apprends"
+      }
+    }
+  },
+
+  "experiences": {
+    "title": "Mon <mark>parcours</mark>",
+    "intro": "En alternance depuis 2024 et en freelance depuis 2026. Avant ça, un stage en graphisme, d'où mon goût pour le design.",
+    "cv": "Mon CV en PDF",
+    "jobs": "Expériences",
+    "current": "En cours",
+    "whatIDid": "Ce que j'y ai fait",
+    "education": "Formation"
+  },
+
+  "blog": {
+    "title": "Le <mark>blog</mark>",
+    "intro": "J'écris surtout sur LinkedIn. Je range mes posts ici pour les retrouver : mes projets, l'IA dans le métier de dev, et parfois un peu d'actu ;)",
+    "filterLabel": "Filtrer par sujet",
+    "all": "Tout",
+    "count": "{count, plural, one {# post} other {# posts}}",
+    "readOnLinkedin": "Lire sur LinkedIn",
+    "categories": {
+      "projects": "Mes projets",
+      "ai": "IA",
+      "freelance": "Freelance",
+      "society": "Société"
+    }
+  },
+
+  "blogPost": {
+    "back": "Retour au blog",
+    "readOnLinkedin": "Lire sur LinkedIn",
+    "tags": "Sujets",
+    "newer": "Post plus récent",
+    "older": "Post plus ancien"
+  },
+
+  "contact": {
+    "title": "Écris-<mark>moi</mark>",
+    "intro": "Un projet, une question, une offre d'alternance ? Dis-m'en un peu plus et je te réponds dès que possible.",
+    "name": "Ton nom",
+    "email": "Ton email",
+    "topic": "C'est pour",
+    "topics": {
+      "website": "Un site vitrine",
+      "webApp": "Une appli web",
+      "workStudy": "Une alternance",
+      "reinforcement": "Un renfort sur un projet",
+      "other": "Autre chose"
+    },
+    "message": "Ton message",
+    "hints": {
+      "empty": "Quelques lignes suffisent",
+      "short": "Continue, c'est bien parti",
+      "good": "Parfait, j'ai de quoi comprendre",
+      "long": "Super détaillé, merci :D"
+    },
+    "privacy": "Ton email sert seulement à te répondre.",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "sentTitle": "C'est envoyé !",
+    "sentText": "Merci pour ton message, je te réponds par mail très vite :)",
+    "again": "Écrire un autre message",
+    "errors": {
+      "name": "Dis-moi comment tu t'appelles",
+      "email": "Cet email n'a pas l'air valide",
+      "topic": "Choisis un sujet",
+      "message": "Écris-moi au moins quelques mots",
+      "server": "Oups, le message n'est pas parti. Réessaie, ou écris-moi directement à contact@arnaudroyer.fr."
+    },
+    "direct": "Ou directement",
+    "emailLabel": "Email",
+    "copy": "Copier l'adresse",
+    "copied": "Copié !",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "clock": "Il est <time></time> à Montpellier"
+  },
+
   "notFound": {
-    "title": "Page introuvable",
-    "back": "Retour à l'accueil"
+    "badge": "Erreur 404",
+    "title": "Cette page s'est <mark>perdue</mark>",
+    "text": "Le lien est peut-être cassé, ou j'ai déplacé la page. Pas de panique, le reste du site est toujours là :)",
+    "home": "Retour à l'accueil",
+    "projects": "Voir mes projets",
+    "maybe": "Tu cherchais peut-être",
+    "card": {
+      "number": "N°404",
+      "title": "Carte perdue",
+      "text": "Elle n'est pas dans le paquet :/",
+      "textShort": "Pas dans le paquet :/",
+      "hintTouch": "Touche la carte pour la retourner"
+    },
+    "game": {
+      "meanwhile": "Bon, en attendant...",
+      "title": "Attrape l'étoile",
+      "start": "Elle est juste là, vas-y.",
+      "missed": "Raté ! Elle est rapide.",
+      "almost": "Presque...",
+      "tired": "Ok, elle est fatiguée. C'est le moment !",
+      "caught": "Bien joué ! Attrapée en {tries, plural, one {# essai} other {# essais}} :D",
+      "star": "Attraper l'étoile",
+      "starCaught": "Étoile attrapée",
+      "replay": "Rejouer"
+    },
+    "ticker": {
+      "one": "Page introuvable",
+      "two": "Erreur 404",
+      "three": "Elle a dû partir en vacances"
+    }
+  },
+
+  "error": {
+    "badge": "Erreur 500",
+    "title": "Oups, ça a <mark>planté</mark>",
+    "text": "Le souci vient de mon côté, pas du tien. Réessaie dans un instant. Si ça continue, préviens-moi et je répare ça vite.",
+    "retry": "Réessayer",
+    "retrying": "Je relance...",
+    "home": "Retour à l'accueil",
+    "report": "Me prévenir par mail",
+    "withCode": "avec ce code :",
+    "copied": "Copié !",
+    "mailSubject": "Bug sur arnaudroyer.fr",
+    "mailBody": "Code : {code}",
+    "card": {
+      "fixed": "Réparé... presque",
+      "hintTouch": "Touche la carte pour la recoller"
+    },
+    "game": {
+      "meanwhile": "Pendant que je répare...",
+      "title": "Écrase quelques bugs",
+      "start": "Clique sur les bugs pour les écraser",
+      "few": "{count, plural, one {bug écrasé} other {bugs écrasés}}",
+      "many": "bugs écrasés. Plus efficace que mes tests ;)",
+      "lots": "bugs ! Je t'embauche quand tu veux :D",
+      "squash": "Écraser ce bug"
+    },
+    "ticker": {
+      "one": "Erreur 500",
+      "two": "Ça arrive même aux meilleurs",
+      "three": "Je répare"
+    }
   }
 }

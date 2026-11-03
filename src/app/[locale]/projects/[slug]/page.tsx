@@ -1,17 +1,23 @@
-import { getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { getProject, getProjects } from '@/content/projects';
+import { routing } from '@/i18n/routing';
 import { resolveLocale } from '@/i18n/locale';
 
-// generateStaticParams et le vrai contenu arrivent avec le contenu typé (étape 3).
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) => getProjects().map(({ slug }) => ({ locale, slug })));
+}
+
+// Page provisoire : la vraie page détail arrive à l'étape 7.
 export default async function ProjectPage({ params }: PageProps<'/[locale]/projects/[slug]'>) {
-  await resolveLocale(params);
+  const locale = await resolveLocale(params);
   const { slug } = await params;
-  const t = await getTranslations('meta.project');
+  const project = getProject(slug);
+  if (!project) notFound();
 
   return (
     <main>
-      <h1>
-        {t('title')} : {slug}
-      </h1>
+      <h1>{project.title}</h1>
+      <p>{project.tagline[locale]}</p>
     </main>
   );
 }

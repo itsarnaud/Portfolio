@@ -1,16 +1,367 @@
 {
   "meta": {
-    "home": { "title": "Home" },
-    "projects": { "title": "Projects" },
-    "project": { "title": "Project" },
-    "blog": { "title": "Blog" },
-    "blogPost": { "title": "Post" },
-    "about": { "title": "About" },
-    "experiences": { "title": "Journey" },
-    "contact": { "title": "Contact" }
+    "siteName": "Arnaud Royer",
+    "home": {
+      "title": "Arnaud Royer, fullstack developer in Montpellier",
+      "description": "I build websites, apps and tools. Fullstack dev in Montpellier, work-study at Kollirama and freelancing on the side."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "My work-study, school, client and personal projects: showcase sites, web apps, a mobile app and open source tools."
+    },
+    "project": {
+      "title": "Project"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "My LinkedIn posts in one place: my projects, AI in the dev job, freelancing and a bit of news."
+    },
+    "blogPost": {
+      "title": "Post"
+    },
+    "about": {
+      "title": "About",
+      "description": "Who I am, what I can do for you (showcase site, web app, back-office, mobile app) and how I work."
+    },
+    "experiences": {
+      "title": "Journey",
+      "description": "My journey: work-study at Kollirama and Igocreate, freelancing since 2026, and my studies at EPSI Montpellier and IUT de Meaux."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "A project, a question, a work-study offer? Write to me and I'll get back to you as soon as I can."
+    },
+    "notFound": {
+      "title": "Page not found"
+    },
+    "error": {
+      "title": "Server error"
+    }
   },
+
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About",
+    "experiences": "Journey",
+    "contact": "Contact",
+    "label": "Main navigation",
+    "pagesLabel": "Site pages",
+    "homeLabel": "Arnaud Royer, home",
+    "brand": "arnaud royer",
+    "menu": "Menu",
+    "openMenu": "Open the menu",
+    "closeMenu": "Close the menu",
+    "switchLocale": "Switch the site to French",
+    "otherLocale": "FR",
+    "locales": "FR / EN"
+  },
+
+  "footer": {
+    "title": "Let's talk <swing>?</swing>",
+    "email": "contact@arnaudroyer.fr",
+    "form": "Fill in the form",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "rights": "© {year} Arnaud Royer",
+    "source": "The site's code is on GitHub",
+    "sourceShort": "Code on GitHub"
+  },
+
+  "cursor": {
+    "viewProject": "See the project",
+    "nextProject": "Next project",
+    "writeMe": "Write to me",
+    "write": "Write",
+    "send": "Send",
+    "letsGo": "Let's go",
+    "go": "Go",
+    "goThere": "Go there",
+    "hello": "Hi!",
+    "pdf": "PDF",
+    "shuffle": "Shuffle",
+    "flip": "Flip",
+    "read": "Read",
+    "readOnLinkedin": "Read on LinkedIn",
+    "learnMore": "Learn more",
+    "filter": "Filter",
+    "choose": "Pick",
+    "copy": "Copy",
+    "home": "Home",
+    "projects": "Projects",
+    "back": "Back",
+    "view": "View",
+    "seeAll": "See all",
+    "open": "Open",
+    "zoom": "Zoom",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "catchIt": "Catch it",
+    "now": "Now!",
+    "bravo": "Nice",
+    "squash": "Squash",
+    "retry": "Retry",
+    "fix": "Fix"
+  },
+
+  "home": {
+    "hero": {
+      "title": "I build <swing>websites</swing>, <float>apps</float> and <wave>tools</wave>.",
+      "intro": "I'm Arnaud, a fullstack dev in Montpellier. Work-study at Kollirama, and freelancing on the side. Right now I'm working on",
+      "ctaProjects": "See my projects",
+      "ctaContact": "Write to me",
+      "deckLabel": "Show the next project",
+      "deckHint": "Click the deck to shuffle",
+      "deckHintTouch": "Tap the deck to shuffle",
+      "stamp": "FULLSTACK DEVELOPER · MONTPELLIER · "
+    },
+    "latest": {
+      "title": "My latest <mark>projects</mark>",
+      "seeAll": "See all {count} projects"
+    },
+    "who": {
+      "title": "Who's this?",
+      "p1": "I've been coding since 2022. Today I'm a work-study student at Kollirama and doing a Master's at EPSI Montpellier. I also take on freelance work.",
+      "p2": "What I like best is starting from a fuzzy need and turning it into a tool people actually use. And when I'm not coding, I play video games :)",
+      "more": "Learn more",
+      "cv": "My resume (PDF)",
+      "cvShort": "My resume"
+    },
+    "now": {
+      "title": "Right now",
+      "building": "I'm building",
+      "learning": "I'm learning",
+      "playing": "I'm playing",
+      "lastPost": "Latest post"
+    },
+    "toolbox": {
+      "title": "My toolbox",
+      "learning": "Learning: {list}"
+    }
+  },
+
+  "projects": {
+    "title": "All my <mark>projects</mark>",
+    "intro": "Work-study projects, school projects, client work and things I made for myself. Click a card to see how I built it ;)",
+    "introTouch": "Work-study projects, school projects, client work and things I made for myself. Tap a card to see how I built it ;)",
+    "filterLabel": "Filter the projects",
+    "viewLabel": "View",
+    "views": {
+      "grid": "Cards",
+      "list": "List"
+    },
+    "all": "All",
+    "count": "{count, plural, one {# project} other {# projects}}",
+    "number": "N°{number}",
+    "screenshot": "Screenshot of {title}",
+    "kinds": {
+      "mobile": "Mobile",
+      "fullstack": "Fullstack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "bot": "Discord bot",
+      "open-source": "Open source"
+    },
+    "categories": {
+      "personal": "Personal project",
+      "school": "School project",
+      "work-study": "Work-study",
+      "client": "Client",
+      "open-source": "Open source",
+      "internship": "Internship project"
+    }
+  },
+
+  "project": {
+    "back": "Back to projects",
+    "visit": "Visit the site",
+    "visitCode": "See the code",
+    "type": "Type",
+    "team": "Team",
+    "stack": "Stack",
+    "about": "The project",
+    "challenge": "The hard part",
+    "gallery": "In pictures",
+    "zoom": "Zoom in: {caption}",
+    "close": "Close",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "next": "Next project"
+  },
+
+  "about": {
+    "title": "I'm <mark>Arnaud</mark>.",
+    "p1": "I'm a fullstack developer. I started coding in 2022, during my BUT MMI in Meaux. Today I'm a work-study student at Kollirama, in Bernis, and doing a Master's at EPSI Montpellier.",
+    "p2": "I've also been freelancing since February 2026. My first client was Atelier Maha, an interior design studio.",
+    "p3": "In the evenings, I work on my own projects, like Quested or Tengo!. And when I'm not coding, I play video games :)",
+    "cv": "Download my resume",
+    "contact": "Write to me",
+    "photoAlt": "Arnaud Royer",
+    "photoCaption": "Montpellier, 2026",
+    "stickers": {
+      "job": "Fullstack dev",
+      "gamer": "Part-time gamer"
+    },
+    "services": {
+      "title": "What I can do for you",
+      "hint": "Hover a card to flip it",
+      "hintTouch": "Tap a card to flip it",
+      "examples": "See examples",
+      "examplesLabel": "See examples: {service}",
+      "examplesTitle": "{number} · Examples"
+    },
+    "process": {
+      "title": "How I work"
+    },
+    "toolbox": {
+      "title": "My toolbox",
+      "groups": {
+        "front": "Front and mobile",
+        "back": "Back",
+        "tools": "Tools and design",
+        "learning": "Learning"
+      }
+    }
+  },
+
+  "experiences": {
+    "title": "My <mark>journey</mark>",
+    "intro": "Work-study since 2024 and freelancing since 2026. Before that, a graphic design internship, which is where my taste for design comes from.",
+    "cv": "My resume as a PDF",
+    "jobs": "Experience",
+    "current": "Current",
+    "whatIDid": "What I did there",
+    "education": "Education"
+  },
+
+  "blog": {
+    "title": "The <mark>blog</mark>",
+    "intro": "I mostly write on LinkedIn. I keep my posts here so I can find them again: my projects, AI in the dev job, and sometimes a bit of news ;)",
+    "filterLabel": "Filter by topic",
+    "all": "All",
+    "count": "{count, plural, one {# post} other {# posts}}",
+    "readOnLinkedin": "Read on LinkedIn",
+    "categories": {
+      "projects": "My projects",
+      "ai": "AI",
+      "freelance": "Freelance",
+      "society": "Society"
+    }
+  },
+
+  "blogPost": {
+    "back": "Back to the blog",
+    "readOnLinkedin": "Read on LinkedIn",
+    "tags": "Topics",
+    "newer": "Newer post",
+    "older": "Older post"
+  },
+
+  "contact": {
+    "title": "Write to <mark>me</mark>",
+    "intro": "A project, a question, a work-study offer? Tell me a bit more and I'll get back to you as soon as I can.",
+    "name": "Your name",
+    "email": "Your email",
+    "topic": "It's about",
+    "topics": {
+      "website": "A showcase website",
+      "webApp": "A web app",
+      "workStudy": "A work-study position",
+      "reinforcement": "Extra hands on a project",
+      "other": "Something else"
+    },
+    "message": "Your message",
+    "hints": {
+      "empty": "A few lines are enough",
+      "short": "Keep going, good start",
+      "good": "Perfect, I've got enough to understand",
+      "long": "Super detailed, thanks :D"
+    },
+    "privacy": "Your email is only used to reply to you.",
+    "send": "Send",
+    "sending": "Sending...",
+    "sentTitle": "It's sent!",
+    "sentText": "Thanks for your message, I'll get back to you by email very soon :)",
+    "again": "Write another message",
+    "errors": {
+      "name": "Tell me your name",
+      "email": "This email doesn't look right",
+      "topic": "Pick a topic",
+      "message": "Write me at least a few words",
+      "server": "Oops, the message didn't go through. Try again, or email me directly at contact@arnaudroyer.fr."
+    },
+    "direct": "Or directly",
+    "emailLabel": "Email",
+    "copy": "Copy the address",
+    "copied": "Copied!",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "clock": "It's <time></time> in Montpellier"
+  },
+
   "notFound": {
-    "title": "Page not found",
-    "back": "Back to home"
+    "badge": "Error 404",
+    "title": "This page got <mark>lost</mark>",
+    "text": "The link might be broken, or I moved the page. Don't panic, the rest of the site is still here :)",
+    "home": "Back to home",
+    "projects": "See my projects",
+    "maybe": "Maybe you were looking for",
+    "card": {
+      "number": "N°404",
+      "title": "Lost card",
+      "text": "It's not in the deck :/",
+      "textShort": "Not in the deck :/",
+      "hintTouch": "Tap the card to flip it"
+    },
+    "game": {
+      "meanwhile": "Well, in the meantime...",
+      "title": "Catch the star",
+      "start": "It's right there, go for it.",
+      "missed": "Missed! It's fast.",
+      "almost": "Almost...",
+      "tired": "Ok, it's tired. Now's your chance!",
+      "caught": "Nice! Caught in {tries, plural, one {# try} other {# tries}} :D",
+      "star": "Catch the star",
+      "starCaught": "Star caught",
+      "replay": "Play again"
+    },
+    "ticker": {
+      "one": "Page not found",
+      "two": "Error 404",
+      "three": "It must be on vacation"
+    }
+  },
+
+  "error": {
+    "badge": "Error 500",
+    "title": "Oops, it <mark>crashed</mark>",
+    "text": "The problem is on my end, not yours. Try again in a moment. If it keeps happening, let me know and I'll fix it fast.",
+    "retry": "Try again",
+    "retrying": "Retrying...",
+    "home": "Back to home",
+    "report": "Let me know by email",
+    "withCode": "with this code:",
+    "copied": "Copied!",
+    "mailSubject": "Bug on arnaudroyer.fr",
+    "mailBody": "Code: {code}",
+    "card": {
+      "fixed": "Fixed... almost",
+      "hintTouch": "Tap the card to stick it back together"
+    },
+    "game": {
+      "meanwhile": "While I fix it...",
+      "title": "Squash a few bugs",
+      "start": "Click the bugs to squash them",
+      "few": "{count, plural, one {bug squashed} other {bugs squashed}}",
+      "many": "bugs squashed. More efficient than my tests ;)",
+      "lots": "bugs! I'd hire you anytime :D",
+      "squash": "Squash this bug"
+    },
+    "ticker": {
+      "one": "Error 500",
+      "two": "Happens to the best of us",
+      "three": "Fixing it"
+    }
   }
 }
