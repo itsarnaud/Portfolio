@@ -86,12 +86,22 @@ export function Cursor() {
       dot.style.opacity = '0';
     };
 
+    // Après un clic, l'élément survolé a pu disparaître (un bouton remplacé par un message) :
+    // on regarde à nouveau ce qu'il y a sous la souris.
+    const onClick = () =>
+      requestAnimationFrame(() => {
+        const under = document.elementFromPoint(targetX, targetY);
+        setTarget(under ? under.closest('[data-cursor]') : null);
+      });
+
     window.addEventListener('pointermove', onMove, { passive: true });
+    window.addEventListener('click', onClick);
     document.addEventListener('mouseleave', onLeave);
 
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('click', onClick);
       document.removeEventListener('mouseleave', onLeave);
       delete root.dataset.customCursor;
     };

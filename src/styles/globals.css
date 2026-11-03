@@ -88,6 +88,124 @@
   --animate-swing: swing 4s ease-in-out infinite; /* polaroïd accroché par le haut */
   --animate-unfold: unfold 0.35s ease both; /* liste qui se déplie */
 
+  /* Contact et pages d'erreur */
+  --animate-burst: burst 1s cubic-bezier(0.1, 0.8, 0.3, 1) both; /* confettis */
+  --animate-boing: boing 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); /* chip choisie */
+  --animate-drop: drop 0.9s cubic-bezier(0.3, 1.3, 0.5, 1) both; /* carte 404 qui tombe */
+  --animate-caught: caught 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both; /* étoile attrapée */
+  --animate-shake-l: shake-l 2.4s ease-in-out infinite; /* carte 500 cassée */
+  --animate-shake-r: shake-r 2.4s ease-in-out infinite;
+  --animate-crawl: crawl var(--crawl-duration, 7s) linear infinite; /* bugs qui traversent */
+  --animate-wiggle: wiggle 0.3s ease-in-out infinite alternate; /* pattes des bugs */
+  --animate-splat: splat 0.35s cubic-bezier(0.3, 1.6, 0.5, 1) both; /* bug écrasé */
+  --animate-plus-one: plus-one 0.9s ease-out both; /* « +1 » qui monte */
+
+  @keyframes burst {
+    0% {
+      translate: 0 0;
+      scale: 0.3;
+      opacity: 1;
+    }
+    100% {
+      translate: var(--tx) var(--ty);
+      scale: 1;
+      opacity: 0;
+      rotate: var(--r);
+    }
+  }
+
+  @keyframes boing {
+    40% {
+      scale: 1.15;
+      rotate: -3deg;
+    }
+  }
+
+  @keyframes drop {
+    0% {
+      opacity: 0;
+      translate: 0 -120px;
+      rotate: -30deg;
+    }
+    60% {
+      opacity: 1;
+      translate: 0 12px;
+      rotate: -2deg;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+      rotate: -6deg;
+    }
+  }
+
+  @keyframes caught {
+    40% {
+      scale: 1.6;
+      rotate: 20deg;
+    }
+    100% {
+      scale: 1.3;
+      rotate: 0deg;
+    }
+  }
+
+  @keyframes shake-l {
+    0%,
+    100% {
+      translate: 0 0;
+      rotate: -5deg;
+    }
+    50% {
+      translate: -4px 3px;
+      rotate: -7deg;
+    }
+  }
+
+  @keyframes shake-r {
+    0%,
+    100% {
+      translate: 0 0;
+      rotate: 4deg;
+    }
+    50% {
+      translate: 4px -3px;
+      rotate: 6deg;
+    }
+  }
+
+  /* De la gauche du terrain (hors champ) à sa droite (hors champ). 100cqw = largeur du terrain. */
+  @keyframes crawl {
+    from {
+      translate: -60px 0;
+    }
+    to {
+      translate: 100cqw 0;
+    }
+  }
+
+  @keyframes wiggle {
+    from {
+      rotate: -5deg;
+    }
+    to {
+      rotate: 5deg;
+    }
+  }
+
+  @keyframes splat {
+    from {
+      scale: 0;
+    }
+  }
+
+  @keyframes plus-one {
+    to {
+      opacity: 0;
+      translate: 0 -40px;
+    }
+  }
+
   @keyframes swing {
     0%,
     100% {
@@ -440,6 +558,11 @@
 }
 .snap-carousel > * {
   scroll-snap-align: center;
+}
+
+/* Pages d'erreur : le bloc « On en parle ? » du pied de page laisse la place à leur propre contenu */
+body:has([data-hide-footer-cta]) .footer-cta {
+  display: none;
 }
 
 /* Pas de scroll de la page derrière le menu ouvert */

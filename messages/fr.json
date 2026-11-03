@@ -310,7 +310,12 @@
     "copied": "Copié !",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "clock": "Il est <time></time> à Montpellier"
+    "clock": "Il est <time></time> à Montpellier",
+    "namePlaceholder": "Camille Martin",
+    "emailPlaceholder": "camille@exemple.fr",
+    "messagePlaceholder": "Raconte-moi ton projet, tes délais, ce que tu as déjà...",
+    "honeypot": "Laisse ce champ vide",
+    "clockLabel": "Heure à Montpellier"
   },
 
   "notFound": {

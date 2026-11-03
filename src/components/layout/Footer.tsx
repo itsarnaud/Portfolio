@@ -19,7 +19,7 @@ export function Footer() {
   return (
     <footer className="site-container">
       <HideOnPaths paths={['/contact']}>
-        <PauseOffscreen>
+        <PauseOffscreen className="footer-cta">
           <Reveal className="pt-12 md:pt-18">
             <div className="relative flex flex-col gap-4.5 overflow-hidden rounded-[28px] border-2 bg-violet px-5.5 py-8 text-blanc shadow-[5px_5px_0_var(--color-encre)] md:gap-6 md:rounded-[32px] md:p-[clamp(32px,6vw,72px)] md:shadow-dure-md">
               <div aria-hidden="true" className="absolute -top-10 -right-10 size-32.5 animate-float rounded-full border-2 bg-soleil md:size-50" />
