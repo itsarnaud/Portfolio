@@ -55,6 +55,89 @@
   /* Largeurs : max-w-site, max-w-lecture */
   --container-site: 1200px;
   --container-lecture: 680px;
+
+  /* Courbes : « rebond » pour ce qui arrive ou réagit, « douce » pour le reste */
+  --ease-rebond: cubic-bezier(0.3, 1.6, 0.5, 1);
+  --ease-douce: cubic-bezier(0.2, 1, 0.3, 1);
+
+  /*
+   * Animations en boucle, très légères. Uniquement transform/opacity (rotate, translate),
+   * jamais de JavaScript. Toutes coupées en mode « animations réduites » (voir plus bas).
+   */
+  --animate-wobble: wobble 2.6s ease-in-out infinite; /* mot surligné qui se balance */
+  --animate-bob: bob 2.2s ease-in-out infinite; /* petite pill qui flotte (6px) */
+  --animate-float: float 3.4s ease-in-out infinite; /* sticker ou carte qui flotte (8px) */
+  --animate-spin-star: spin 6s linear infinite; /* étoiles */
+  --animate-spin-slow: spin 16s linear infinite; /* tampons */
+  --animate-pulse-ring: pulse-ring 1.6s ease-out infinite; /* pastille « en cours » */
+  --animate-jig: jig 0.35s ease-in-out 2; /* sticker au survol */
+  --animate-marquee: marquee 34s linear infinite;
+
+  @keyframes wobble {
+    0%,
+    100% {
+      rotate: -3deg;
+    }
+    50% {
+      rotate: 2deg;
+    }
+  }
+
+  @keyframes bob {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -6px;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 -8px;
+    }
+  }
+
+  @keyframes spin {
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      box-shadow: 0 0 0 0 rgb(18 18 18 / 0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 9px rgb(18 18 18 / 0);
+    }
+  }
+
+  /* Part de la rotation de l'élément (--rot) pour ne pas le redresser d'un coup */
+  @keyframes jig {
+    0%,
+    100% {
+      rotate: var(--rot, 0deg);
+    }
+    25% {
+      rotate: calc(var(--rot, 0deg) - 7deg);
+    }
+    75% {
+      rotate: calc(var(--rot, 0deg) + 7deg);
+    }
+  }
+
+  /* Le contenu est rendu deux fois : on décale d'une moitié pour boucler sans saut */
+  @keyframes marquee {
+    to {
+      translate: -50% 0;
+    }
+  }
 }
 
 /* Conteneur des sections : 1200px, marges 16px en mobile et 24px en desktop */
@@ -121,5 +204,29 @@
   ::selection {
     background-color: var(--color-citron);
     color: var(--color-encre);
+  }
+}
+
+/* Les boucles d'une zone sortie de l'écran se mettent en pause (composant PauseOffscreen) */
+[data-offscreen],
+[data-offscreen] * {
+  animation-play-state: paused !important;
+}
+
+/*
+ * Mode « animations réduites » : plus aucune boucle, apparitions instantanées.
+ * Les animations finissent tout de suite sur leur état final, les transitions aussi.
+ * Les animations GSAP lisent usePrefersReducedMotion de leur côté.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
   }
 }
