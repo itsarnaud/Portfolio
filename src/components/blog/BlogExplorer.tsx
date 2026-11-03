@@ -71,8 +71,7 @@ export function BlogExplorer({ items }: { items: BlogItem[] }) {
             );
           })}
         </div>
-        <p aria-live="polite" className="mb-3 inline-flex items-center gap-2 font-mono text-[13px] text-encre-pale md:mb-0 md:ml-2">
-          <span aria-hidden="true" className="size-2 animate-pulse-ring rounded-full border border-encre bg-citron" />
+        <p aria-live="polite" className="sr-only">
           {t('count', { count: visible.length })}
         </p>
       </div>

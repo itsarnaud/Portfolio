@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { gsap } from '@/lib/gsap';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { routing } from '@/i18n/routing';
+import { scrollToTop } from '@/lib/utils';
 import { navLinks } from './navLinks';
 
 const BANDS = ['bg-violet', 'bg-citron', 'bg-tomate', 'bg-soleil'];
@@ -28,7 +29,7 @@ function stripLocale(pathname: string): string {
  * l'écran d'abord, puis naviguer. Les clics avec Cmd/Ctrl, les liens externes,
  * les téléchargements et les ancres de la même page passent normalement.
  * Le nom affiché vient de data-transition-label sur le lien, sinon de la section.
- * Coupé en mode « animations réduites ».
+ * En mode « animations réduites », la navigation passe par le même chemin, sans les bandes.
  */
 export function PageTransition() {
   const t = useTranslations('nav');
@@ -50,6 +51,9 @@ export function PageTransition() {
     if (!overlay || phase.current !== 'covered') return;
     clearTimeout(safety.current);
     phase.current = 'revealing';
+    // Dernière remontée avant de découvrir la nouvelle page (les bandes ne couvrent
+    // l'écran qu'après un clic sur un lien, jamais avec le bouton retour).
+    scrollToTop();
     gsap
       .timeline({
         onComplete: () => {
@@ -75,7 +79,8 @@ export function PageTransition() {
         onComplete: () => {
           phase.current = 'covered';
           safety.current = setTimeout(reveal, SAFETY_MS);
-          router.push(href);
+          // Le retour en haut est géré par RouteChange (Next ne remonte pas toujours tout en haut).
+          router.push(href, { scroll: false });
           if (arrived.current) reveal();
         },
       })
@@ -85,8 +90,6 @@ export function PageTransition() {
 
   // Interception des clics sur les liens internes.
   useEffect(() => {
-    if (reduced) return;
-
     const sectionLabel = (path: string) => {
       const first = `/${stripLocale(path).split('/')[1] ?? ''}`;
       const link = navLinks.find(({ href }) => href === first);
@@ -106,6 +109,11 @@ export function PageTransition() {
       if (/\.[a-z0-9]+$/i.test(url.pathname)) return; // un fichier (PDF…)
 
       event.preventDefault();
+      // Animations réduites : même navigation, sans les bandes. RouteChange remonte en haut.
+      if (reduced) {
+        router.push(url.pathname + url.search + url.hash, { scroll: false });
+        return;
+      }
       if (phase.current !== 'idle') return;
       const label = anchor.dataset.transitionLabel ?? sectionLabel(url.pathname);
       cover(url.pathname + url.search + url.hash, label);

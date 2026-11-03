@@ -81,8 +81,7 @@ export function ProjectsExplorer({ items }: { items: ExplorerItem[] }) {
             );
           })}
         </div>
-        <p aria-live="polite" className="inline-flex items-center gap-2 font-mono text-[13px] text-encre-pale md:ml-2">
-          <span aria-hidden="true" className="size-2 animate-pulse-ring rounded-full bg-violet" />
+        <p aria-live="polite" className="sr-only">
           {t('count', { count: visible.length })}
         </p>
 

@@ -149,6 +149,7 @@ const projects: Project[] = [
     technologies: ['SvelteKit', 'Node.js', 'MySQL', 'Tailwind'],
     media: {
       poster: img('igowall', 'poster'),
+      phone: img('igowall', 'home-mobile'),
       gallery: [
         { src: img('igowall', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('igowall', 'gallery-1'), alt: { fr: "Le choix d'un modèle", en: 'Picking a template' } },
@@ -348,6 +349,7 @@ const projects: Project[] = [
     technologies: ['Astro', 'Svelte', 'TypeScript', 'Express', 'Prisma', 'Supabase', 'PostgreSQL', 'MJML', 'Tailwind'],
     media: {
       poster: img('kollirama', 'poster'),
+      phone: img('kollirama', 'home-mobile'),
       gallery: [
         { src: img('kollirama', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('kollirama', 'gallery-1'), alt: { fr: 'Les pages par métier', en: 'The pages for each trade' } },
@@ -404,6 +406,7 @@ const projects: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'GSAP', 'Brevo'],
     media: {
       poster: img('idk-concept', 'poster'),
+      phone: img('idk-concept', 'home-mobile'),
       gallery: [
         { src: img('idk-concept', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('idk-concept', 'gallery-1'), alt: { fr: 'La fabrication sur mesure', en: 'Custom manufacturing' } },
@@ -459,6 +462,7 @@ const projects: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'GSAP', 'Swiper', 'EmailJS'],
     media: {
       poster: img('atelier-maha', 'poster'),
+      phone: img('atelier-maha', 'home-mobile'),
       gallery: [
         { src: img('atelier-maha', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('atelier-maha', 'gallery-1'), alt: { fr: 'Les prestations du studio', en: "The studio's services" } },
@@ -565,6 +569,7 @@ const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'tRPC', 'Prisma', 'PostgreSQL', 'Auth.js', 'Upstash Redis', 'Tailwind'],
     media: {
       poster: img('quested', 'poster'),
+      phone: img('quested', 'home-mobile'),
       gallery: [
         { src: img('quested', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('quested', 'game-desktop'), alt: { fr: "La fiche d'un jeu, avec les notes des joueurs", en: 'A game page, with the player ratings' } },
@@ -635,6 +640,7 @@ const projects: Project[] = [
     ],
     media: {
       poster: img('tengo', 'poster'),
+      phone: img('tengo', 'app-1'),
       gallery: [
         { src: img('tengo', 'app-1'), portrait: true, alt: { fr: "L'accueil de l'appli", en: "The app's home screen" } },
         { src: img('tengo', 'app-2'), portrait: true, alt: { fr: 'Créer une partie', en: 'Creating a game' } },

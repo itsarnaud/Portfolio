@@ -5,7 +5,7 @@ import { Link } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
 import { Reveal } from '@/components/motion/Reveal';
 
-/** Grande carte vers le projet suivant, dans sa couleur, avec une flèche qui pousse vers la droite. */
+/** Grande carte vers le projet suivant, dans sa couleur, avec une flèche dans un rond. */
 export function NextProject({ project }: { project: Project }) {
   const locale = useLocale();
   const t = useTranslations('project');
@@ -36,7 +36,7 @@ export function NextProject({ project }: { project: Project }) {
           aria-hidden="true"
           className="inline-flex size-16 items-center justify-center rounded-full border-2 border-encre bg-encre text-citron transition-colors duration-200 group-hover/next:bg-citron group-hover/next:text-encre md:size-20"
         >
-          <svg viewBox="0 0 24 24" className="size-7 animate-nudge md:size-8" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+          <svg viewBox="0 0 24 24" className="size-7 md:size-8" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
         </span>

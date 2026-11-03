@@ -11,6 +11,7 @@ import { Footer } from '@/components/layout/Footer';
 import { MobileNav } from '@/components/layout/MobileNav';
 import { Nav } from '@/components/layout/Nav';
 import { PageTransition } from '@/components/layout/PageTransition';
+import { RouteChange } from '@/components/layout/RouteChange';
 import { ScrollProgress } from '@/components/layout/ScrollProgress';
 import { Cursor } from '@/components/motion/Cursor';
 import '@/styles/globals.css';
@@ -48,6 +49,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
             {children}
           </main>
           <Footer />
+          {/* RouteChange avant PageTransition : son écouteur de clic doit passer en premier. */}
+          <RouteChange />
           <PageTransition />
           <Cursor />
         </NextIntlClientProvider>

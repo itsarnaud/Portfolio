@@ -85,7 +85,6 @@
   --animate-cascade-a: cascade-a 0.6s cubic-bezier(0.2, 1.3, 0.4, 1) both; /* cartes après un filtre */
   --animate-cascade-b: cascade-b 0.6s cubic-bezier(0.2, 1.3, 0.4, 1) both; /* idem, nom différent pour rejouer */
   --animate-zoom-in: zoom-in 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both; /* image agrandie */
-  --animate-nudge: nudge 1.4s ease-in-out infinite; /* flèche « Projet suivant » */
   --animate-swing: swing 4s ease-in-out infinite; /* polaroïd accroché par le haut */
   --animate-unfold: unfold 0.35s ease both; /* liste qui se déplie */
 
@@ -129,16 +128,6 @@
       opacity: 0;
       scale: 0.85;
       rotate: -3deg;
-    }
-  }
-
-  @keyframes nudge {
-    0%,
-    100% {
-      translate: 0 0;
-    }
-    50% {
-      translate: 8px 0;
     }
   }
 
@@ -283,6 +272,12 @@
   html {
     color-scheme: light;
     -webkit-text-size-adjust: 100%;
+    /*
+     * Rien ne doit faire défiler la page à l'horizontale (bandeau croisé, blocs qui arrivent
+     * de côté…). Safari ignore cette règle sur <body> seul : on la met aussi sur <html>.
+     * « clip » (et pas « hidden ») pour ne pas casser les éléments en position: sticky.
+     */
+    overflow-x: clip;
   }
 
   body {

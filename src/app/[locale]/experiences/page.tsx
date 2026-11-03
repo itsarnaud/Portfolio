@@ -64,9 +64,8 @@ export default async function ExperiencesPage({ params }: PageProps<'/[locale]/e
                     <span>{job.period[locale]}</span>
                     <span className="font-normal text-encre-pale">{job.place}</span>
                     {job.current && (
-                      <span className="inline-flex items-center gap-1.75 rounded-full border-[1.5px] bg-citron px-2.5 py-0.75 text-xs">
-                        <span aria-hidden="true" className="size-1.75 animate-pulse-ring rounded-full bg-encre" />
-                        {t('current')}
+                      <span className="rounded-full border-[1.5px] bg-citron px-2.5 py-0.75 text-xs">
+                          {t('current')}
                       </span>
                     )}
                   </p>

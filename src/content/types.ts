@@ -66,10 +66,12 @@ export type Project = {
   /**
    * Images. `poster` est l'affiche du projet (son logo), montrée sur les cartes et en haut
    * de la page détail. Sans affiche, une couverture est générée (composant ProjectCover).
+   * `phone` est la capture montrée dans un téléphone en haut de la page détail, sur mobile.
    * `gallery` contient les captures, montrées dans « En images ».
    */
   media: {
     poster?: string;
+    phone?: string;
     gallery: ProjectImage[];
   };
 };

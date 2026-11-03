@@ -7,6 +7,7 @@ import { cx } from '@/lib/utils';
 import { Reveal } from '@/components/motion/Reveal';
 import { ProjectCover } from '@/components/projects/ProjectCover';
 import { Button } from '@/components/ui/Button';
+import { PhoneFrame } from '@/components/ui/PhoneFrame';
 import { Star } from '@/components/ui/Star';
 
 /** Formes décoratives : deux couleurs qui tranchent avec celle du projet. */
@@ -117,15 +118,28 @@ export function ProjectHero({ project }: { project: Project }) {
           </div>
         </Reveal>
 
-        {/* Mobile : l'affiche dans un cadre qui flotte */}
-        <div
-          className={cx(
-            'relative mt-2 aspect-16/9 animate-bob overflow-hidden rounded-[18px] border-2 border-encre shadow-dure md:hidden @container',
-            !project.media.poster && bgClass[project.color],
-          )}
-        >
-          {poster('90vw')}
-        </div>
+        {/* Mobile : la capture mobile dans un téléphone qui flotte, sinon l'affiche */}
+        {project.media.phone ? (
+          <PhoneFrame className="relative mt-2 w-52.5 animate-bob self-center md:hidden">
+            <Image
+              src={project.media.phone}
+              alt={tProjects('screenshot', { title: project.title })}
+              fill
+              priority
+              sizes="200px"
+              className="object-cover object-top"
+            />
+          </PhoneFrame>
+        ) : (
+          <div
+            className={cx(
+              'relative mt-2 aspect-16/9 animate-bob overflow-hidden rounded-[18px] border-2 border-encre shadow-dure md:hidden @container',
+              !project.media.poster && bgClass[project.color],
+            )}
+          >
+            {poster('90vw')}
+          </div>
+        )}
       </div>
     </section>
   );

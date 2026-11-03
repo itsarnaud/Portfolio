@@ -30,7 +30,6 @@ export function WhoAndNow() {
   const t = useTranslations('home');
   const tCursor = useTranslations('cursor');
   const lastPost = getPosts()[0];
-  const month = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(new Date(`${now.updatedAt}-01`));
 
   return (
     <section className="site-container grid gap-4.5 pt-12 pb-2 md:grid-cols-2 md:gap-7 md:pt-20 md:pb-10">
@@ -66,10 +65,6 @@ export function WhoAndNow() {
         <article className="flex h-full flex-col rounded-3xl border-2 bg-blanc p-5.5 shadow-[5px_5px_0_var(--color-encre)] md:rounded-[26px] md:p-8 md:shadow-dure-md">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-3 md:mb-3.5">
             <h2 className="text-3xl tracking-titre md:text-[44px]">{t('now.title')}</h2>
-            <span className="inline-flex items-center gap-2 font-mono text-xs text-encre-pale">
-              <span aria-hidden="true" className="size-2.25 animate-pulse-ring rounded-full bg-tomate md:size-2" />
-              <span className="hidden md:inline">{month}</span>
-            </span>
           </div>
           <NowRow label={t('now.building')} labelClass="text-violet">
             {now.building[locale]}
