@@ -73,6 +73,15 @@
   --animate-jig: jig 0.35s ease-in-out 2; /* sticker au survol */
   --animate-marquee: marquee 34s linear infinite;
 
+  /* Arrivées (une seule fois) */
+  --animate-nav-in: nav-in 0.7s cubic-bezier(0.2, 1.2, 0.4, 1) both; /* la nav descend au chargement */
+
+  @keyframes nav-in {
+    from {
+      translate: 0 -110%;
+    }
+  }
+
   @keyframes wobble {
     0%,
     100% {
@@ -205,6 +214,63 @@
     background-color: var(--color-citron);
     color: var(--color-encre);
   }
+}
+
+/*
+ * Menu mobile (<dialog>) : il s'ouvre en cercle depuis le bouton menu (--menu-x, --menu-y),
+ * les liens arrivent un par un, et il se referme en cercle.
+ */
+.mobile-menu[open] {
+  animation: menu-in 0.55s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+
+.mobile-menu[open][data-closing] {
+  animation: menu-out 0.4s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+
+.mobile-menu[open] .menu-link {
+  animation: link-in 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+
+@keyframes menu-in {
+  from {
+    clip-path: circle(0% at var(--menu-x, 100%) var(--menu-y, 0%));
+  }
+  to {
+    clip-path: circle(150% at var(--menu-x, 100%) var(--menu-y, 0%));
+  }
+}
+
+@keyframes menu-out {
+  from {
+    clip-path: circle(150% at var(--menu-x, 100%) var(--menu-y, 0%));
+  }
+  to {
+    clip-path: circle(0% at var(--menu-x, 100%) var(--menu-y, 0%));
+  }
+}
+
+@keyframes link-in {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+    rotate: -4deg;
+  }
+}
+
+/* Pas de scroll de la page derrière le menu ouvert */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* Curseur custom actif (souris, sans « animations réduites ») : on cache le curseur natif */
+html[data-custom-cursor='on'],
+html[data-custom-cursor='on'] * {
+  cursor: none;
+}
+
+html[data-custom-cursor='on'] :is(input, textarea, select) {
+  cursor: text;
 }
 
 /* Les boucles d'une zone sortie de l'écran se mettent en pause (composant PauseOffscreen) */

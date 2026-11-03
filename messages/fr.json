@@ -40,6 +40,7 @@
   },
 
   "nav": {
+    "skip": "Aller au contenu",
     "home": "Accueil",
     "projects": "Projets",
     "blog": "Blog",

@@ -41,6 +41,7 @@ export function ProjectCard({ project, headingLevel = 'h2', priority = false, cl
     <Link
       href={`/projects/${project.slug}`}
       aria-labelledby={`${id}-title`}
+      data-transition-label={project.title}
       aria-describedby={`${id}-desc`}
       data-cursor={tCursor('viewProject')}
       data-cursor-color={CITRON_CURSOR.has(project.color) ? hex.citron : hex.blanc}
