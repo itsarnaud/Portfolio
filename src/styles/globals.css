@@ -1,3 +1,125 @@
 @import 'tailwindcss';
 
-/* Couleurs, polices et formes de la D.A. : étape 2. */
+/*
+ * D.A. v3 : néo-brutal coloré. Fond papier, encre noire, bordures de 2px,
+ * ombres dures décalées, couleurs franches.
+ * Les noms reprennent ceux du tableau de la D.A. : bg-violet, text-encre, border-citron…
+ */
+@theme {
+  /* Couleurs de base. La palette Tailwind par défaut est retirée : on n'utilise que la D.A.
+     (bg-transparent et bg-current restent disponibles). */
+  --color-*: initial;
+  --color-blanc: #ffffff;
+  --color-encre: #121212; /* texte dessus : papier */
+  --color-papier: #f7f7f2; /* fond du site, texte dessus : encre */
+
+  /* Couleurs franches */
+  --color-violet: #6b3cf0; /* marque et actions, texte dessus : blanc */
+  --color-cobalt: #2e5bff; /* texte dessus : blanc */
+  --color-citron: #c8f54a; /* texte dessus : encre */
+  --color-tomate: #ff5b37; /* texte dessus : encre */
+  --color-soleil: #ffcb3d; /* texte dessus : encre */
+  --color-rose: #ff9bd0; /* texte dessus : encre */
+
+  /* Textes secondaires sur papier ou blanc */
+  --color-encre-douce: #3a3a35; /* paragraphes */
+  --color-encre-pale: #4a4a44; /* légendes, étiquettes */
+
+  /* Versions foncées pour du texte coloré lisible sur fond clair.
+     text-tomate sur papier ne passe pas (2.9:1) : utiliser text-tomate-fonce (5.1:1). */
+  --color-cobalt-fonce: #1e44d8;
+  --color-tomate-fonce: #c2361a;
+
+  /* Polices (chargées par next/font, voir src/styles/fonts.ts) */
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-karla), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* Interlettrage des titres (Bricolage 800 : entre -0.02em et -0.05em) */
+  --tracking-titre-carte: -0.02em;
+  --tracking-titre: -0.03em;
+  --tracking-display: -0.04em;
+
+  /* Rayons : rounded-bouton, rounded-carte… (rounded-full pour les pills) */
+  --radius-ecran: 12px; /* capture dans une carte */
+  --radius-bouton: 14px;
+  --radius-carte: 22px;
+  --radius-carte-lg: 26px;
+
+  /* Ombres dures : shadow-dure, shadow-dure-md… */
+  --shadow-dure-sm: 3px 3px 0 var(--color-encre); /* petites chips, curseur */
+  --shadow-dure: 4px 4px 0 var(--color-encre); /* boutons, petits blocs */
+  --shadow-dure-md: 6px 6px 0 var(--color-encre); /* cartes */
+  --shadow-dure-lg: 10px 10px 0 var(--color-encre); /* carte au survol */
+
+  /* Largeurs : max-w-site, max-w-lecture */
+  --container-site: 1200px;
+  --container-lecture: 680px;
+}
+
+/* Conteneur des sections : 1200px, marges 16px en mobile et 24px en desktop */
+@utility site-container {
+  width: 100%;
+  max-width: var(--container-site);
+  margin-inline: auto;
+  padding-inline: 16px;
+
+  @media (width >= 48rem) {
+    padding-inline: 24px;
+  }
+}
+
+/* Titre de l'accueil : Bricolage un peu plus serrée */
+@utility font-etroite {
+  font-variation-settings: 'wdth' 88;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-papier);
+    color: var(--color-encre);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  /* Les bordures sont noires partout, quelle que soit la couleur du texte */
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-encre);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: var(--tracking-titre);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Focus visible : contour pointillé violet sur tout ce qui est cliquable */
+  :focus-visible {
+    outline: 3px dashed var(--color-violet);
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background-color: var(--color-citron);
+    color: var(--color-encre);
+  }
+}

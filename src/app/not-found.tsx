@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { fontVariables } from '@/styles/fonts';
 import '@/styles/globals.css';
 
 // 404 hors de /fr et /en (pas de langue connue). La version dans la D.A. arrive plus tard.
 export default function GlobalNotFound() {
   return (
-    <html lang="fr">
+    <html lang="fr" className={fontVariables}>
       <body>
         <main>
           <h1>Page introuvable</h1>
