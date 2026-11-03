@@ -1,17 +1,13 @@
 import { useId } from 'react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { bgClass, hex } from '@/content/colors';
+import { bgClass, cursorColorOn, screenClass } from '@/content/colors';
 import type { Project } from '@/content/types';
 import { Link } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
 import { BrowserFrame } from '@/components/ui/BrowserFrame';
 import { Chip } from '@/components/ui/Chip';
 import { ProjectCover } from './ProjectCover';
-
-/** Couleurs de carte foncées (ou blanche) : l'étiquette du curseur passe en citron pour ressortir. */
-const CITRON_CURSOR = new Set(['violet', 'cobalt', 'blanc']);
-const DARK_CARDS = new Set(['violet', 'cobalt']);
 
 type ProjectCardProps = {
   project: Project;
@@ -35,7 +31,6 @@ export function ProjectCard({ project, headingLevel = 'h2', priority = false, cl
   const id = useId();
   const Heading = headingLevel;
   const badge = project.badge?.[locale] ?? t(`categories.${project.category}`);
-  const screen = DARK_CARDS.has(project.color) ? 'bg-blanc/15' : 'bg-encre/7';
 
   return (
     <Link
@@ -44,7 +39,7 @@ export function ProjectCard({ project, headingLevel = 'h2', priority = false, cl
       data-transition-label={project.title}
       aria-describedby={`${id}-desc`}
       data-cursor={tCursor('viewProject')}
-      data-cursor-color={CITRON_CURSOR.has(project.color) ? hex.citron : hex.blanc}
+      data-cursor-color={cursorColorOn(project.color)}
       className={cx(
         'group/card flex flex-col gap-3.5 rounded-carte border-2 p-4.5 shadow-dure-md',
         'transition-[translate,rotate,box-shadow] duration-200 ease-out',
@@ -60,7 +55,7 @@ export function ProjectCard({ project, headingLevel = 'h2', priority = false, cl
         <span>{project.year}</span>
       </div>
 
-      <BrowserFrame className="aspect-16/10 @container" screenClassName={screen}>
+      <BrowserFrame className="aspect-16/10 @container" screenClassName={screenClass(project.color)}>
         {project.media.desktop ? (
           <Image
             src={project.media.desktop}

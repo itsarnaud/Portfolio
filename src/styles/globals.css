@@ -73,8 +73,61 @@
   --animate-jig: jig 0.35s ease-in-out 2; /* sticker au survol */
   --animate-marquee: marquee 34s linear infinite;
 
+  --animate-wave: wave 1.6s linear infinite; /* soulignement en vague */
+  --animate-tick: tick 7.5s cubic-bezier(0.7, 0, 0.2, 1) infinite; /* mot qui change dans le hero */
+  --animate-blink: blink 1s steps(1) infinite; /* caret */
+
   /* Arrivées (une seule fois) */
   --animate-nav-in: nav-in 0.7s cubic-bezier(0.2, 1.2, 0.4, 1) both; /* la nav descend au chargement */
+  --animate-pop: pop 0.7s cubic-bezier(0.2, 1.5, 0.4, 1) both; /* titres, mot par mot */
+  --animate-rise: rise 0.8s cubic-bezier(0.2, 1, 0.3, 1) both; /* textes et blocs */
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+      translate: 0 0.55em;
+      rotate: 7deg;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      translate: 0 30px;
+    }
+  }
+
+  @keyframes wave {
+    to {
+      translate: -50% 0;
+    }
+  }
+
+  /* 3 mots + le premier répété à la fin, pour boucler sans saut */
+  @keyframes tick {
+    0%,
+    22% {
+      translate: 0 0;
+    }
+    25%,
+    47% {
+      translate: 0 -1.3em;
+    }
+    50%,
+    72% {
+      translate: 0 -2.6em;
+    }
+    75%,
+    100% {
+      translate: 0 -3.9em;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
 
   @keyframes nav-in {
     from {
@@ -256,6 +309,76 @@
     translate: 0 30px;
     rotate: -4deg;
   }
+}
+
+/*
+ * Paquet de cartes de l'accueil (ProjectDeck). Chaque carte a un rang (0 = dessus),
+ * changé par le JavaScript sans re-render React. Au survol (souris), le paquet s'étale en éventail.
+ */
+.deck-card {
+  transition: transform 0.55s cubic-bezier(0.3, 1.35, 0.5, 1);
+}
+.deck-card[data-rank='0'] {
+  z-index: 10;
+  transform: translate(0, 0) rotate(-3deg);
+}
+.deck-card[data-rank='1'] {
+  z-index: 9;
+  transform: translate(26px, -16px) rotate(5deg);
+}
+.deck-card[data-rank='2'] {
+  z-index: 8;
+  transform: translate(-28px, -28px) rotate(-9deg);
+}
+.deck-card[data-rank='3'] {
+  z-index: 7;
+  transform: translate(8px, -40px) rotate(10deg);
+}
+.deck-card[data-flying] {
+  z-index: 20;
+  transform: translate(115%, -60px) rotate(24deg);
+}
+
+@media (hover: hover) {
+  .deck:hover .deck-card[data-rank='0']:not([data-flying]) {
+    transform: translate(0, 6px) rotate(-1deg);
+  }
+  .deck:hover .deck-card[data-rank='1']:not([data-flying]) {
+    transform: translate(140px, -6px) rotate(9deg);
+  }
+  .deck:hover .deck-card[data-rank='2']:not([data-flying]) {
+    transform: translate(-140px, -6px) rotate(-9deg);
+  }
+  .deck:hover .deck-card[data-rank='3']:not([data-flying]) {
+    transform: translate(0, -70px) rotate(3deg);
+  }
+}
+
+@media (width < 48rem) {
+  .deck-card[data-rank='1'] {
+    transform: translate(22px, -14px) rotate(5deg);
+  }
+  .deck-card[data-rank='2'] {
+    transform: translate(-24px, -24px) rotate(-9deg);
+  }
+  .deck-card[data-rank='3'] {
+    transform: translate(6px, -34px) rotate(9deg);
+  }
+  .deck-card[data-flying] {
+    transform: translate(130%, -50px) rotate(26deg);
+  }
+}
+
+/* Carrousel horizontal (mobile) : une carte à la fois, sans barre de défilement */
+.snap-carousel {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.snap-carousel::-webkit-scrollbar {
+  display: none;
+}
+.snap-carousel > * {
+  scroll-snap-align: center;
 }
 
 /* Pas de scroll de la page derrière le menu ouvert */

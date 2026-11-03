@@ -2,7 +2,7 @@ import type { Project } from '@/content/types';
 import { Star } from '@/components/ui/Star';
 
 type ProjectCoverProps = {
-  project: Project;
+  project: Pick<Project, 'title' | 'number' | 'stack'>;
 };
 
 /**

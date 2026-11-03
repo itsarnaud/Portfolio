@@ -59,6 +59,8 @@ export const homeTools: Tool[] = [
   { name: 'React Native', color: 'rose' },
   { name: 'Supabase', color: 'citron' },
   { name: 'Python', color: 'soleil' },
+  { name: 'Astro', color: 'blanc' },
+  { name: 'Docker', color: 'cobalt' },
 ];
 
 /** Ce que j'apprends en ce moment (accueil et page À propos). */

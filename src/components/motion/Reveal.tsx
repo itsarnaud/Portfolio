@@ -39,7 +39,8 @@ export function Reveal({ from = 'up', className, children }: RevealProps) {
           scale: 1,
           rotate: 0,
           ease: 'none',
-          scrollTrigger: { trigger: ref.current, start: 'top 95%', end: 'top 70%', scrub: 0.4 },
+          // clamp() : sur une page courte, le bloc finit quand même entièrement visible.
+          scrollTrigger: { trigger: ref.current, start: 'clamp(top 95%)', end: 'clamp(top 70%)', scrub: 0.4 },
         },
       );
     },

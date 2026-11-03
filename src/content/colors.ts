@@ -28,6 +28,16 @@ export const bgClass: Record<ColorName, string> = {
   blanc: 'bg-blanc text-encre',
 };
 
+/** Fond de l'écran d'une capture dans une carte : légèrement plus clair sur les cartes foncées. */
+export function screenClass(color: ColorName): string {
+  return color === 'violet' || color === 'cobalt' ? 'bg-blanc/15' : 'bg-encre/7';
+}
+
+/** Couleur de l'étiquette du curseur sur une carte : citron sur les fonds foncés ou blancs. */
+export function cursorColorOn(color: ColorName): string {
+  return color === 'violet' || color === 'cobalt' || color === 'blanc' ? hex.citron : hex.blanc;
+}
+
 /** Valeurs hexadécimales, pour les rares cas hors Tailwind (image de partage, SVG, styles inline). */
 export const hex: Record<ColorName | 'encre' | 'papier', string> = {
   encre: '#121212',

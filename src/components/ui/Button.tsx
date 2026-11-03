@@ -6,6 +6,7 @@ const variants = {
   violet: 'bg-violet text-blanc',
   blanc: 'bg-blanc text-encre',
   citron: 'bg-citron text-encre',
+  encre: 'bg-encre text-papier',
 } as const;
 
 type CommonProps = {
@@ -44,8 +45,8 @@ export function Button(props: ButtonProps) {
   const { variant = 'violet', arrow = false, cursor, cursorColor, className, children } = props;
 
   const classes = cx(
-    'group/btn inline-flex min-h-13 items-center justify-center gap-2.5 rounded-bouton border-2 px-6',
-    'font-bold text-base leading-none shadow-dure select-none',
+    'group/btn inline-flex min-h-13 items-center justify-center gap-2.5 rounded-bouton border-2 px-4 sm:px-6',
+    'font-bold text-base leading-none whitespace-nowrap shadow-dure select-none',
     'transition-[translate,box-shadow] duration-150 ease-out',
     'hover:-translate-0.5 hover:shadow-dure-md',
     'active:translate-0.5 active:shadow-none active:duration-75',
