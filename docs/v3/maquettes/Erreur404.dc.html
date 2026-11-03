@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Page introuvable</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#121212}
+.s4{box-shadow:4px 4px 0 #121212}
+.s6{box-shadow:6px 6px 0 #121212}
+.btn{transition:translate .12s ease,box-shadow .12s ease}
+.btn:hover{translate:-2px -2px;box-shadow:6px 6px 0 #121212}
+.btn:active{translate:2px 2px;box-shadow:0 0 0 #121212}
+.btn .arr{transition:translate .2s ease}
+.btn:hover .arr{translate:4px 0}
+.chipl{transition:background .2s ease,color .2s ease,translate .15s ease,box-shadow .15s ease}
+.chipl:hover{background:var(--c);color:var(--f);translate:-2px -2px;box-shadow:3px 3px 0 #121212}
+@keyframes pop{from{opacity:0;translate:0 .55em;rotate:7deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.pop{display:inline-block;animation:pop .7s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes rise{from{opacity:0;translate:0 30px}to{opacity:1;translate:0 0}}
+.rise{animation:rise .8s cubic-bezier(.2,1,.3,1) both}
+@keyframes drop{0%{opacity:0;translate:0 -120px;rotate:-30deg}60%{opacity:1;translate:0 12px;rotate:-2deg}100%{opacity:1;translate:0 0;rotate:-6deg}}
+.drop{animation:drop .9s cubic-bezier(.3,1.3,.5,1) both}
+@keyframes wobble{0%,100%{rotate:-3deg}50%{rotate:2deg}}
+.wobble{animation:wobble 2.6s ease-in-out infinite}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.fl{animation:float 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{translate:0 0;rotate:6deg}50%{translate:0 -8px;rotate:-4deg}}
+.bob{animation:bob 2.8s ease-in-out infinite}
+@keyframes spin{to{rotate:360deg}}
+.spin{animation:spin 6s linear infinite}
+@keyframes mq{to{translate:-50% 0}}
+.mq{display:flex;width:max-content;animation:mq 26s linear infinite}
+@keyframes burst{0%{translate:0 0;scale:.3;opacity:1}100%{translate:var(--tx) var(--ty);scale:1;opacity:0;rotate:var(--r)}}
+.bit{position:absolute;left:50%;top:50%;animation:burst 1s cubic-bezier(.1,.8,.3,1) both}
+@keyframes caught{0%{scale:1}40%{scale:1.6;rotate:20deg}100%{scale:1.3;rotate:0deg}}
+.caught{animation:caught .6s cubic-bezier(.3,1.6,.5,1) both}
+.flip{perspective:1200px}
+.flip-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:rotate .7s cubic-bezier(.3,1.4,.5,1)}
+.flip:hover .flip-in,.flip-in.on{rotate:y 180deg}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.back{transform:rotateY(180deg)}
+.star-btn{transition:left .35s cubic-bezier(.3,1.5,.5,1),top .35s cubic-bezier(.3,1.5,.5,1),rotate .35s ease}
+#ar-cursor{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;translate:-200px -200px;opacity:0;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:999px;background:#121212;border:2px solid #121212;box-sizing:border-box;display:flex;align-items:center;justify-content:center;transition:opacity .2s,width .25s cubic-bezier(.3,1.4,.5,1),height .25s cubic-bezier(.3,1.4,.5,1),margin .25s,padding .25s,background .2s}
+#ar-cursor[data-on="1"]{width:auto;height:42px;margin:-21px 0 0 14px;padding:0 16px;box-shadow:3px 3px 0 #121212}
+#ar-cursor-label{display:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;font-weight:600;color:#121212;white-space:nowrap}
+#ar-cursor[data-on="1"] #ar-cursor-label{display:block}
+@media (pointer: fine){.nocur,.nocur a,.nocur button{cursor:none}}
+@media (pointer: coarse){#ar-cursor{display:none}}
+@media (prefers-reduced-motion: reduce){
+.pop,.rise,.drop,.wobble,.fl,.bob,.spin,.mq,.bit,.caught{animation:none !important}
+.drop{rotate:-6deg}
+.btn,.chipl,.flip-in,.star-btn,.btn .arr{transition:none}
+.bit{display:none}
+}
+</style>
+</helmet>
+<div class="nocur" style="width: 100%; min-height: 100vh; background: #F7F7F2; color: #121212; font-family: 'Karla', system-ui, sans-serif; overflow-x: clip; display: flex; flex-direction: column">
+<div id="ar-cursor" aria-hidden="true"><span id="ar-cursor-label"></span></div>
+
+<dc-import name="Nav" active="none" hint-size="100%,96px"></dc-import>
+
+<section style="position: relative; max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box; padding: 40px 24px 0; display: flex; justify-content: center">
+<div aria-hidden="true" style="position: relative; display: flex; align-items: center; gap: 18px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 300px; line-height: 0.85; letter-spacing: -0.05em">
+<span class="pop" style="animation-delay: 100ms">4</span>
+<div class="drop" style="animation-delay: 300ms">
+<div class="fl">
+<div class="flip" onClick="{{flipCard}}" data-cursor="Retourner" data-cursor-color="#C8F54A" style="width: 210px; height: 270px">
+<div class="{{flipCls}}">
+<div class="face s6" style="background: #6B3CF0; border: 3px solid #121212; border-radius: 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #FFFFFF; letter-spacing: 0">
+<svg class="spin" viewBox="0 0 24 24" style="position: absolute; top: 16px; right: 16px; width: 38px; height: 38px"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#C8F54A" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+<span style="font-size: 170px; line-height: 1">?</span>
+<span style="position: absolute; left: 18px; bottom: 16px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; font-weight: 600">N°404</span>
+</div>
+<div class="face back s6" style="background: #C8F54A; border: 3px solid #121212; border-radius: 26px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 22px; box-sizing: border-box; text-align: center; letter-spacing: -0.02em">
+<span style="font-size: 40px; line-height: 1">Carte perdue</span>
+<span style="font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 17px; line-height: 1.35; letter-spacing: 0">Elle n'est pas dans le paquet :/</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span class="pop" style="animation-delay: 200ms">4</span>
+<span class="bob" style="position: absolute; left: -110px; top: 30px; display: inline-flex; padding: 8px 16px; background: #FF9BD0; border: 2px solid #121212; border-radius: 999px; box-shadow: 3px 3px 0 #121212; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0; line-height: 1.2">Erreur 404</span>
+<svg class="spin" viewBox="0 0 24 24" style="position: absolute; right: -80px; bottom: 20px; width: 56px; height: 56px; animation-duration: 9s"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#2E5BFF" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+<svg class="fl" viewBox="0 0 24 24" style="position: absolute; right: -40px; top: 0; width: 30px; height: 30px; animation-delay: -1.2s"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#FFCB3D" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+</div>
+</section>
+
+<section style="max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box; padding: 48px 24px 56px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: clamp(48px, 6vw, 80px); letter-spacing: -0.04em; line-height: 0.95"><span class="pop" style="animation-delay: 450ms">Cette page</span> <span class="pop" style="animation-delay: 540ms">s'est</span> <span class="pop" style="animation-delay: 630ms"><span class="wobble" style="display: inline-block; background: #FFCB3D; border: 2px solid #121212; border-radius: 0.2em; padding: 0 0.12em">perdue</span></span></h1>
+<p class="rise" style="margin: 0; max-width: 540px; font-size: 19px; line-height: 1.55; color: #3A3A35; animation-delay: 700ms">Le lien est peut-être cassé, ou j'ai déplacé la page. Pas de panique, le reste du site est toujours là :)</p>
+<div class="rise" style="display: flex; flex-wrap: wrap; gap: 14px; animation-delay: 780ms">
+<a href="Main.dc.html" class="btn s4" data-cursor="Accueil" data-cursor-color="#C8F54A" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; background: #6B3CF0; color: #FFFFFF; border: 2px solid #121212; border-radius: 14px; font-weight: 700; font-size: 17px; text-decoration: none">Retour à l'accueil
+<svg aria-hidden="true" class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+<a href="Projets.dc.html" class="btn s4" data-cursor="Projets" data-cursor-color="#FFCB3D" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 24px; background: #FFFFFF; color: #121212; border: 2px solid #121212; border-radius: 14px; font-weight: 700; font-size: 17px; text-decoration: none">Voir mes projets</a>
+</div>
+<div class="rise" style="display: flex; flex-direction: column; gap: 12px; padding-top: 8px; animation-delay: 860ms">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Tu cherchais peut-être</h2>
+<nav aria-label="Pages du site" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{links}}" as="l" hint-placeholder-count="5">
+<a href="{{l.href}}" class="chipl" data-cursor="Y aller" data-cursor-color="{{l.c}}" style="--c: {{l.c}}; --f: {{l.f}}; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: #FFFFFF; border: 2px solid #121212; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; color: #121212">{{l.label}}</a>
+</sc-for>
+</nav>
+</div>
+</div>
+
+<div class="rise s6" style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border: 2px solid #121212; border-radius: 26px; padding: 24px; display: flex; flex-direction: column; gap: 14px; animation-delay: 650ms">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 15px; color: #4A4A44">Bon, en attendant...</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -0.02em">Attrape l'étoile</h2>
+</div>
+<div style="position: relative; height: 260px; border: 2px dashed #121212; border-radius: 18px; background: #F7F7F2; overflow: hidden">
+<button type="button" class="star-btn" onMouseEnter="{{flee}}" onClick="{{grab}}" aria-label="{{starLabel}}" data-cursor="{{starCursor}}" data-cursor-color="#FFCB3D" style="position: absolute; left: {{sx}}; top: {{sy}}; width: 64px; height: 64px; margin: -32px 0 0 -32px; padding: 0; border: 0; background: transparent; rotate: {{sr}}">
+<sc-if value="{{caught}}" hint-placeholder-val="{{false}}">
+<span aria-hidden="true" style="position: absolute; inset: 0; overflow: visible; pointer-events: none">
+<sc-for list="{{bits}}" as="b" hint-placeholder-count="10">
+<span class="bit" style="width: {{b.size}}; height: {{b.size}}; margin: -6px 0 0 -6px; border: 2px solid #121212; border-radius: {{b.radius}}; background: {{b.color}}; --tx: {{b.tx}}; --ty: {{b.ty}}; --r: {{b.r}}"></span>
+</sc-for>
+</span>
+</sc-if>
+<svg aria-hidden="true" class="{{starCls}}" viewBox="0 0 24 24" style="width: 100%; height: 100%; overflow: visible"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#FFCB3D" stroke="#121212" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px">
+<p aria-live="polite" style="margin: 0; font-size: 16px; font-weight: 700">{{status}}</p>
+<sc-if value="{{caught}}" hint-placeholder-val="{{false}}">
+<button type="button" class="btn s4" onClick="{{replay}}" style="flex: 0 0 auto; min-height: 44px; padding: 0 16px; border: 2px solid #121212; border-radius: 12px; background: #C8F54A; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 15px; color: #121212">Rejouer</button>
+</sc-if>
+</div>
+</div>
+</section>
+
+<div aria-hidden="true" style="margin-top: auto; padding: 10px 0; background: #FF5B37; border-block: 2px solid #121212; rotate: -1.5deg; scale: 1.04; overflow: hidden">
+<div class="mq">
+<sc-for list="{{ticker}}" as="t" hint-placeholder-count="12">
+<span style="display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 30px; letter-spacing: -0.02em; white-space: nowrap; color: #121212">{{t}}<svg viewBox="0 0 24 24" style="width: 24px; height: 24px"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#F7F7F2" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg></span>
+</sc-for>
+</div>
+</div>
+
+<footer style="max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #4A4A44">
+<span>© 2026 Arnaud Royer</span>
+<a href="https://github.com/itsarnaud" style="color: #4A4A44">Le code du site est sur GitHub</a>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1150}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    var self = this;
+    var cur = document.getElementById("ar-cursor");
+    var lab = document.getElementById("ar-cursor-label");
+    if (!cur || !lab || !(window.matchMedia && window.matchMedia("(pointer: fine)").matches)) { return; }
+    var x = -200, y = -200, tx = -200, ty = -200;
+    this.onMove = function (e) {
+      tx = e.clientX; ty = e.clientY; cur.style.opacity = "1";
+      var t = e.target && e.target.closest ? e.target.closest("[data-cursor]") : null;
+      if (t) { lab.textContent = t.getAttribute("data-cursor"); cur.setAttribute("data-on", "1"); cur.style.background = t.getAttribute("data-cursor-color") || "#C8F54A"; }
+      else { cur.setAttribute("data-on", "0"); cur.style.background = "#121212"; }
+    };
+    this.onLeave = function () { cur.style.opacity = "0"; };
+    var loop = function () { x += (tx - x) * 0.22; y += (ty - y) * 0.22; cur.style.translate = x + "px " + y + "px"; self.raf = requestAnimationFrame(loop); };
+    window.addEventListener("mousemove", this.onMove);
+    document.addEventListener("mouseleave", this.onLeave);
+    loop();
+  }
+  componentWillUnmount() {
+    if (this.raf) { cancelAnimationFrame(this.raf); }
+    if (this.onMove) { window.removeEventListener("mousemove", this.onMove); }
+    if (this.onLeave) { document.removeEventListener("mouseleave", this.onLeave); }
+  }
+  renderVals() {
+    var st = this.state || {};
+    var self = this;
+    var ink = "#121212";
+    var MAX = 6;
+    var tries = st.tries || 0;
+    var caught = !!st.caught;
+    var tired = tries >= MAX;
+    var move = function () {
+      var nx, ny, px = st.x || 50, py = st.y || 50;
+      do { nx = 10 + Math.round(Math.random() * 80); ny = 16 + Math.round(Math.random() * 68); } while (Math.abs(nx - px) < 25 && Math.abs(ny - py) < 25);
+      self.setState({ x: nx, y: ny, r: Math.round(Math.random() * 90 - 45), tries: tries + 1 });
+    };
+    var status;
+    if (caught) { status = "Bien joué ! Attrapée en " + (tries + 1) + (tries ? " essais" : " essai") + " :D"; }
+    else if (tired) { status = "Ok, elle est fatiguée. C'est le moment !"; }
+    else if (tries === 0) { status = "Elle est juste là, vas-y."; }
+    else if (tries < 3) { status = "Raté ! Elle est rapide."; }
+    else { status = "Presque..."; }
+    var colors = ["#FF5B37", "#6B3CF0", "#C8F54A", "#2E5BFF", "#FF9BD0", "#FFFFFF"];
+    var bits = [];
+    for (var i = 0; i < 10; i++) {
+      var a = (i / 10) * Math.PI * 2;
+      var d = 70 + (i % 3) * 30;
+      bits.push({ color: colors[i % colors.length], size: (10 + (i % 3) * 4) + "px", radius: i % 2 ? "50%" : "3px", tx: Math.round(Math.cos(a) * d) + "px", ty: Math.round(Math.sin(a) * d) + "px", r: (i * 53) + "deg" });
+    }
+    var defs = [
+      { label: "Projets", href: "Projets.dc.html", c: "#6B3CF0", f: "#FFFFFF" },
+      { label: "Blog", href: "Blog.dc.html", c: "#C8F54A", f: ink },
+      { label: "À propos", href: "APropos.dc.html", c: "#FFCB3D", f: ink },
+      { label: "Parcours", href: "Parcours.dc.html", c: "#2E5BFF", f: "#FFFFFF" },
+      { label: "Contact", href: "Contact.dc.html", c: "#FF9BD0", f: ink }
+    ];
+    var words = ["Page introuvable", "Erreur 404", "Elle a dû partir en vacances", "Page introuvable", "Erreur 404", "Elle a dû partir en vacances"];
+    return {
+      links: defs,
+      ticker: words.concat(words),
+      flipCls: st.flipped ? "flip-in on" : "flip-in",
+      flipCard: function () { self.setState({ flipped: !st.flipped }); },
+      sx: (st.x || 50) + "%",
+      sy: (st.y || 50) + "%",
+      sr: (st.r || 0) + "deg",
+      caught: caught,
+      bits: bits,
+      starCls: caught ? "caught" : "spin",
+      starLabel: caught ? "Étoile attrapée" : "Attraper l'étoile",
+      starCursor: caught ? "Bravo" : (tired ? "Maintenant !" : "Attrape-la"),
+      status: status,
+      flee: function () { if (!caught && !tired) { move(); } },
+      grab: function (e) {
+        if (caught) { return; }
+        var pointer = e && e.detail > 0;
+        if (pointer && !tired) { move(); return; }
+        self.setState({ caught: true });
+      },
+      replay: function () { self.setState({ caught: false, tries: 0, x: 50, y: 50, r: 0 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Page introuvable mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Karla:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#121212}
+.press{transition:translate .12s ease,box-shadow .12s ease}
+.press:active{translate:3px 3px;box-shadow:0 0 0 #121212 !important}
+@keyframes pop{from{opacity:0;translate:0 .55em;rotate:7deg}to{opacity:1;translate:0 0;rotate:0deg}}
+.pop{display:inline-block;animation:pop .7s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes rise{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+.rise{animation:rise .8s cubic-bezier(.2,1,.3,1) both}
+@keyframes drop{0%{opacity:0;translate:0 -90px;rotate:-30deg}60%{opacity:1;translate:0 8px;rotate:-2deg}100%{opacity:1;translate:0 0;rotate:-6deg}}
+.drop{animation:drop .9s cubic-bezier(.3,1.3,.5,1) both}
+@keyframes wobble{0%,100%{rotate:-3deg}50%{rotate:2deg}}
+.wobble{animation:wobble 2.6s ease-in-out infinite}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.fl{animation:float 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{translate:0 0;rotate:6deg}50%{translate:0 -6px;rotate:-4deg}}
+.bob{animation:bob 2.8s ease-in-out infinite}
+@keyframes spin{to{rotate:360deg}}
+.spin{animation:spin 6s linear infinite}
+@keyframes mq{to{translate:-50% 0}}
+.mq{display:flex;width:max-content;animation:mq 20s linear infinite}
+@keyframes burst{0%{translate:0 0;scale:.3;opacity:1}100%{translate:var(--tx) var(--ty);scale:1;opacity:0;rotate:var(--r)}}
+.bit{position:absolute;left:50%;top:50%;animation:burst 1s cubic-bezier(.1,.8,.3,1) both}
+@keyframes caught{0%{scale:1}40%{scale:1.6;rotate:20deg}100%{scale:1.3;rotate:0deg}}
+.caught{animation:caught .6s cubic-bezier(.3,1.6,.5,1) both}
+.flip{perspective:900px}
+.flip-in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:rotate .7s cubic-bezier(.3,1.4,.5,1)}
+.flip-in.on{rotate:y 180deg}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.back{transform:rotateY(180deg)}
+.star-btn{transition:left .35s cubic-bezier(.3,1.5,.5,1),top .35s cubic-bezier(.3,1.5,.5,1),rotate .35s ease}
+@media (prefers-reduced-motion: reduce){
+.pop,.rise,.drop,.wobble,.fl,.bob,.spin,.mq,.bit,.caught{animation:none !important}
+.drop{rotate:-6deg}
+.press,.flip-in,.star-btn{transition:none}
+.bit{display:none}
+}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; min-height: 1460px; overflow-x: clip; background: #F7F7F2; color: #121212; font-family: 'Karla', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<dc-import name="MobileNav" active="none" hint-size="390px,64px"></dc-import>
+
+<div aria-hidden="true" style="position: relative; margin: 46px auto 0; display: flex; align-items: center; gap: 10px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 150px; line-height: 0.85; letter-spacing: -0.05em">
+<span class="pop" style="animation-delay: 100ms">4</span>
+<div class="drop" style="animation-delay: 300ms">
+<div class="fl">
+<div class="flip" onClick="{{flipCard}}" style="width: 104px; height: 136px">
+<div class="{{flipCls}}">
+<div class="face" style="background: #6B3CF0; border: 2.5px solid #121212; border-radius: 16px; box-shadow: 4px 4px 0 #121212; display: flex; align-items: center; justify-content: center; color: #FFFFFF; letter-spacing: 0">
+<svg class="spin" viewBox="0 0 24 24" style="position: absolute; top: 9px; right: 9px; width: 22px; height: 22px"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#C8F54A" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+<span style="font-size: 88px; line-height: 1">?</span>
+</div>
+<div class="face back" style="background: #C8F54A; border: 2.5px solid #121212; border-radius: 16px; box-shadow: 4px 4px 0 #121212; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px; box-sizing: border-box; text-align: center; letter-spacing: -0.02em">
+<span style="font-size: 22px; line-height: 1">Carte perdue</span>
+<span style="font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 12px; line-height: 1.3; letter-spacing: 0">Pas dans le paquet :/</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span class="pop" style="animation-delay: 200ms">4</span>
+<span class="bob" style="position: absolute; left: -14px; top: -30px; display: inline-flex; padding: 5px 12px; background: #FF9BD0; border: 2px solid #121212; border-radius: 999px; box-shadow: 2px 2px 0 #121212; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0; line-height: 1.2">Erreur 404</span>
+<svg class="spin" viewBox="0 0 24 24" style="position: absolute; right: -26px; bottom: 4px; width: 30px; height: 30px; animation-duration: 9s"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#2E5BFF" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+</div>
+<p class="rise" style="margin: 14px 0 0; text-align: center; font-size: 13px; color: #4A4A44; animation-delay: 900ms">Touche la carte pour la retourner</p>
+
+<section style="padding: 28px 16px 8px; display: flex; flex-direction: column; gap: 16px">
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 46px; letter-spacing: -0.04em; line-height: 0.98"><span class="pop" style="animation-delay: 450ms">Cette page</span> <span class="pop" style="animation-delay: 540ms">s'est</span> <span class="pop" style="animation-delay: 630ms"><span class="wobble" style="display: inline-block; background: #FFCB3D; border: 2px solid #121212; border-radius: 0.2em; padding: 0 0.12em">perdue</span></span></h1>
+<p class="rise" style="margin: 0; font-size: 16px; line-height: 1.55; color: #3A3A35; animation-delay: 700ms">Le lien est peut-être cassé, ou j'ai déplacé la page. Pas de panique, le reste du site est toujours là :)</p>
+<div class="rise" style="display: flex; flex-direction: column; gap: 10px; animation-delay: 780ms">
+<a href="Main.dc.html" class="press" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; background: #6B3CF0; color: #FFFFFF; border: 2px solid #121212; border-radius: 14px; box-shadow: 4px 4px 0 #121212; font-weight: 700; font-size: 17px; text-decoration: none">Retour à l'accueil
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+<a href="Projets.dc.html" class="press" style="display: flex; align-items: center; justify-content: center; min-height: 52px; background: #FFFFFF; color: #121212; border: 2px solid #121212; border-radius: 14px; box-shadow: 4px 4px 0 #121212; font-weight: 700; font-size: 17px; text-decoration: none">Voir mes projets</a>
+</div>
+<div class="rise" style="display: flex; flex-direction: column; gap: 10px; padding-top: 6px; animation-delay: 860ms">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Tu cherchais peut-être</h2>
+<nav aria-label="Pages du site" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{links}}" as="l" hint-placeholder-count="5">
+<a href="{{l.href}}" class="press" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: {{l.c}}; color: {{l.f}}; border: 2px solid #121212; border-radius: 999px; box-shadow: 2px 2px 0 #121212; font-weight: 700; font-size: 15px; text-decoration: none">{{l.label}}</a>
+</sc-for>
+</nav>
+</div>
+</section>
+
+<section style="padding: 20px 16px 40px">
+<div class="rise" style="background: #FFFFFF; border: 2px solid #121212; border-radius: 22px; box-shadow: 4px 4px 0 #121212; padding: 18px; display: flex; flex-direction: column; gap: 12px; animation-delay: 650ms">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 14px; color: #4A4A44">Bon, en attendant...</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">Attrape l'étoile</h2>
+</div>
+<div style="position: relative; height: 220px; border: 2px dashed #121212; border-radius: 16px; background: #F7F7F2; overflow: hidden">
+<button type="button" class="star-btn" onClick="{{grab}}" aria-label="{{starLabel}}" style="position: absolute; left: {{sx}}; top: {{sy}}; width: 60px; height: 60px; margin: -30px 0 0 -30px; padding: 0; border: 0; background: transparent; rotate: {{sr}}">
+<sc-if value="{{caught}}" hint-placeholder-val="{{false}}">
+<span aria-hidden="true" style="position: absolute; inset: 0; overflow: visible; pointer-events: none">
+<sc-for list="{{bits}}" as="b" hint-placeholder-count="10">
+<span class="bit" style="width: {{b.size}}; height: {{b.size}}; margin: -6px 0 0 -6px; border: 2px solid #121212; border-radius: {{b.radius}}; background: {{b.color}}; --tx: {{b.tx}}; --ty: {{b.ty}}; --r: {{b.r}}"></span>
+</sc-for>
+</span>
+</sc-if>
+<svg aria-hidden="true" class="{{starCls}}" viewBox="0 0 24 24" style="width: 100%; height: 100%; overflow: visible"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#FFCB3D" stroke="#121212" stroke-width="1.4" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px">
+<p aria-live="polite" style="margin: 0; font-size: 15px; font-weight: 700">{{status}}</p>
+<sc-if value="{{caught}}" hint-placeholder-val="{{false}}">
+<button type="button" class="press" onClick="{{replay}}" style="flex: 0 0 auto; min-height: 44px; padding: 0 14px; border: 2px solid #121212; border-radius: 12px; box-shadow: 3px 3px 0 #121212; background: #C8F54A; font-family: 'Karla', system-ui, sans-serif; font-weight: 700; font-size: 15px; color: #121212">Rejouer</button>
+</sc-if>
+</div>
+</div>
+</section>
+
+<div aria-hidden="true" style="margin-top: auto; padding: 8px 0; background: #FF5B37; border-block: 2px solid #121212; rotate: -2deg; scale: 1.08; overflow: hidden">
+<div class="mq">
+<sc-for list="{{ticker}}" as="t" hint-placeholder-count="8">
+<span style="display: inline-flex; align-items: center; gap: 14px; padding-right: 14px; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; white-space: nowrap">{{t}}<svg viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z" fill="#F7F7F2" stroke="#121212" stroke-width="1.5" stroke-linejoin="round"></path></svg></span>
+</sc-for>
+</div>
+</div>
+
+<footer style="padding: 32px 16px; display: flex; flex-direction: column; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; color: #4A4A44">
+<span>© 2026 Arnaud Royer</span>
+<a href="https://github.com/itsarnaud" style="color: #4A4A44">Le code du site est sur GitHub</a>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1460}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var st = this.state || {};
+    var self = this;
+    var ink = "#121212";
+    var MAX = 3;
+    var tries = st.tries || 0;
+    var caught = !!st.caught;
+    var tired = tries >= MAX;
+    var status;
+    if (caught) { status = "Bien joué ! Attrapée en " + (tries + 1) + " essais :D"; }
+    else if (tired) { status = "Elle est fatiguée. Maintenant !"; }
+    else if (tries === 0) { status = "Tape dessus, vas-y."; }
+    else if (tries < 2) { status = "Raté ! Elle est rapide."; }
+    else { status = "Presque..."; }
+    var colors = ["#FF5B37", "#6B3CF0", "#C8F54A", "#2E5BFF", "#FF9BD0", "#FFFFFF"];
+    var bits = [];
+    for (var i = 0; i < 10; i++) {
+      var a = (i / 10) * Math.PI * 2;
+      var d = 60 + (i % 3) * 24;
+      bits.push({ color: colors[i % colors.length], size: (10 + (i % 3) * 4) + "px", radius: i % 2 ? "50%" : "3px", tx: Math.round(Math.cos(a) * d) + "px", ty: Math.round(Math.sin(a) * d) + "px", r: (i * 53) + "deg" });
+    }
+    var words = ["Page introuvable", "Erreur 404", "Page introuvable", "Erreur 404"];
+    return {
+      links: [
+        { label: "Projets", href: "MobileProjets.dc.html", c: "#6B3CF0", f: "#FFFFFF" },
+        { label: "Blog", href: "MobileBlog.dc.html", c: "#C8F54A", f: ink },
+        { label: "À propos", href: "MobileAPropos.dc.html", c: "#FFCB3D", f: ink },
+        { label: "Parcours", href: "MobileParcours.dc.html", c: "#2E5BFF", f: "#FFFFFF" },
+        { label: "Contact", href: "MobileContact.dc.html", c: "#FF9BD0", f: ink }
+      ],
+      ticker: words.concat(words),
+      flipCls: st.flipped ? "flip-in on" : "flip-in",
+      flipCard: function () { self.setState({ flipped: !st.flipped }); },
+      sx: (st.x || 50) + "%",
+      sy: (st.y || 50) + "%",
+      sr: (st.r || 0) + "deg",
+      caught: caught,
+      bits: bits,
+      starCls: caught ? "caught" : "spin",
+      starLabel: caught ? "Étoile attrapée" : "Attraper l'étoile",
+      status: status,
+      grab: function () {
+        if (caught) { return; }
+        if (!tired) {
+          var nx, ny, px = st.x || 50, py = st.y || 50;
+          do { nx = 14 + Math.round(Math.random() * 72); ny = 18 + Math.round(Math.random() * 64); } while (Math.abs(nx - px) < 25 && Math.abs(ny - py) < 25);
+          self.setState({ x: nx, y: ny, r: Math.round(Math.random() * 90 - 45), tries: tries + 1 });
+          return;
+        }
+        self.setState({ caught: true });
+      },
+      replay: function () { self.setState({ caught: false, tries: 0, x: 50, y: 50, r: 0 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

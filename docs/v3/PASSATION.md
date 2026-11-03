@@ -43,6 +43,8 @@ Ce document décrit la nouvelle direction artistique (D.A.) validée en maquette
 | Contact | `Contact.dc.html` | `MobileContact.dc.html` |
 | Navigation | `Nav.dc.html` | `MobileNav.dc.html` (barre et menu plein écran, props `active` et `menuOpen`) |
 | Bloc contact et pied de page | `Footer.dc.html` | `MobileFooter.dc.html` |
+| Page 404 | `Erreur404.dc.html` | `MobileErreur404.dc.html` |
+| Page d'erreur (500) | `Erreur500.dc.html` | `MobileErreur500.dc.html` |
 
 Autres fichiers :
 - `Interactions.dc.html` : le curseur custom (ses états) et les deux variantes de transition entre pages ;
@@ -59,6 +61,30 @@ Comment lire un `.dc.html` :
 - les classes d'animation (`pop`, `rise`, `wobble`, `fl`, `spin`, `pulse`, `cin-a`/`cin-b`…) sont définies dans le `<style>` du `<helmet>`.
 
 La page d'articles du blog n'a pas de maquette dédiée : la reprendre du détail projet (en-tête coloré, texte en colonne lisible de 680px environ, tags en chips, lien « Lire sur LinkedIn », articles suivant et précédent).
+
+### Pages d'erreur
+
+**404 (`not-found.tsx`)**
+- Le « 0 » de 404 est une carte violette qui se retourne au survol (au toucher sur mobile) et affiche « Carte perdue ».
+- Deux boutons (accueil, projets) et des chips vers les autres pages.
+- Un mini-jeu « Attrape l'étoile » : sur desktop, l'étoile fuit le curseur 6 fois puis se laisse attraper ; sur mobile, elle saute 3 fois au toucher. Au clavier, elle s'attrape directement (pas de piège pour l'accessibilité). Confettis à la fin.
+- À faire en deux endroits :
+  - `app/[locale]/not-found.tsx`, avec la nav et les traductions ;
+  - le `app/not-found.tsx` global (son propre `<html>`, en FR), pour les URLs hors locale.
+- Les pages `projects/[slug]` et `blog/[slug]` appellent `notFound()` quand le slug n'existe pas.
+
+**Erreur (`error.tsx`)**
+- C'est un composant client.
+- Une carte « 500 » cassée en deux qui tremble, et qui se recolle au survol (au toucher sur mobile).
+- Le bouton « Réessayer » appelle le `reset()` de Next.
+- « Me prévenir par mail » ouvre un mail prérempli vers contact@arnaudroyer.fr, avec le code de l'erreur (`error.digest`), que l'on peut aussi copier.
+- Un mini-jeu « Écrase quelques bugs » : des bugs traversent la zone, on clique pour les écraser et un compteur avance.
+- Prévoir aussi un `app/global-error.tsx` minimal (même D.A., sans animations lourdes, avec son propre `<html>`), au cas où le layout lui-même plante.
+
+**Pour les deux**
+- `robots: { index: false }` dans les métadonnées.
+- En prod, les bugs se déplacent avec `transform` plutôt qu'avec `left`.
+- Tout s'arrête en mode « animations réduites » : les bugs restent immobiles mais restent cliquables.
 
 ## Repartir de zéro (v3)
 
@@ -249,7 +275,7 @@ Les maquettes font foi. Ce résumé sert à ne rien oublier. Le desktop est flui
 
 **Contact** : formulaire (nom, email, sujet en chips, message avec petit texte qui réagit, envoi animé, confirmation avec confettis), puis les contacts directs (copier l'email, LinkedIn, GitHub) et l'heure de Montpellier.
 
-**404** : non maquettée. Proposer une page dans la D.A., par exemple une carte « N°404 » avec un bouton de retour à l'accueil.
+**404 et erreur** : voir « Pages d'erreur » et les maquettes `Erreur404` et `Erreur500`.
 
 ## Accessibilité
 
@@ -417,7 +443,7 @@ Clés v2 existantes : `meta.*`, `nav.*`, `footer.rights`, `home.*`, `about.*`, `
 - `meta.*` : nouveaux titres et descriptions, toujours sous 60 et 155 caractères ;
 - `about.*` : retirer Hermès, les valeurs et les barres de compétences ;
 - `contact.*` : remplacer les options de sujet (`subjectProject`, `subjectCollaboration`, `subjectJob`, `subjectOther`) par les chips de la maquette, et retirer « Disponible pour du remote ». Arnaud doit valider la phrase sur le délai de réponse (la v2 dit « je réponds généralement sous 24h ») ;
-- `notFound.*` : nouvelle 404 dans la D.A., avec un petit clin d'œil, à proposer à Arnaud.
+- `notFound.*` : reprendre les textes de `Erreur404.dc.html`, et ajouter un bloc `error.*` pour `Erreur500.dc.html`.
 
 ## Captures des projets (étape 1)
 
@@ -476,4 +502,3 @@ Depuis le canvas (Partager › Exporter) :
 - Le dossier vide `src/app/wrapped/` de la v2 : Arnaud prévoyait peut-être une page `/wrapped`. Lui demander s'il faut la réserver.
 - Retirer Swiper des dépendances (remplacé par du `scroll-snap`) : à confirmer.
 - Le classement des articles du blog dans les catégories (Mes projets, IA, Freelance, Société).
-- Le texte de la 404.
