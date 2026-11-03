@@ -74,5 +74,5 @@ export const now: {
     fr: 'Java, Spring et Payload (le CMS)',
     en: 'Java, Spring and Payload (the CMS)',
   },
-  playing: undefined,
+  playing: 'Valorant',
 };

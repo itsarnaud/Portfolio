@@ -320,12 +320,12 @@ const projects: Project[] = [
     about: {
       fr: [
         "Kollirama aménage des magasins et des entrepôts. J'y suis en alternance et je suis le seul dev, donc j'ai refait leur site de A à Z.",
-        "C'est un monorepo avec le site vitrine et un back-office. Le site a des formulaires de contact, de rappel et de téléchargement de catalogues, avec des mails envoyés automatiquement.",
+        "C'est un monorepo avec le site vitrine en trois langues et un back-office. Le site a des formulaires de contact, de rappel et de téléchargement de catalogues, avec des mails envoyés automatiquement.",
         "Le back-office a un tableau de bord avec les stats, la gestion des utilisateurs et des rôles, la synchro des posts LinkedIn, un générateur de signatures mail et l'export des contacts en CSV.",
       ],
       en: [
         "Kollirama fits out shops and warehouses. I'm a work-study student there and the only dev, so I rebuilt their website from A to Z.",
-        "It's a monorepo with the showcase site and a back-office. The site has contact, callback and catalog download forms, with emails sent automatically.",
+        "It's a monorepo with the showcase site in three languages and a back-office. The site has contact, callback and catalog download forms, with emails sent automatically.",
         'The back-office has a stats dashboard, user and role management, LinkedIn post sync, an email signature generator and a CSV export of the contacts.',
       ],
     },
