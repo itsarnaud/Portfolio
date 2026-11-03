@@ -1,11 +1,12 @@
-import type { Viewport } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { getProjects } from '@/content/projects';
 import { routing } from '@/i18n/routing';
-import { resolveLocale } from '@/i18n/locale';
+import { metadataLocale, resolveLocale } from '@/i18n/locale';
+import { SITE_NAME, SITE_URL } from '@/lib/seo';
 import { fontVariables } from '@/styles/fonts';
 import { Footer } from '@/components/layout/Footer';
 import { MobileNav } from '@/components/layout/MobileNav';
@@ -14,12 +15,45 @@ import { PageTransition } from '@/components/layout/PageTransition';
 import { RouteChange } from '@/components/layout/RouteChange';
 import { ScrollProgress } from '@/components/layout/ScrollProgress';
 import { Cursor } from '@/components/motion/Cursor';
+import { SiteJsonLd } from '@/components/seo/JsonLd';
 import '@/styles/globals.css';
 
 export const viewport: Viewport = {
   themeColor: '#f7f7f2',
   colorScheme: 'light',
 };
+
+/**
+ * Ce qui vaut pour tout le site. Chaque page ajoute son titre, sa description, sa canonique,
+ * ses hreflang et son image de partage (lib/seo.ts).
+ */
+export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
+  const locale = await metadataLocale(params);
+  const t = await getTranslations({ locale, namespace: 'meta.home' });
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: { default: t('title'), template: `%s | ${SITE_NAME}` },
+    description: t('description'),
+    applicationName: SITE_NAME,
+    authors: [{ name: SITE_NAME, url: SITE_URL }],
+    creator: SITE_NAME,
+    keywords: [
+      'Arnaud Royer',
+      locale === 'en' ? 'Fullstack developer' : 'Développeur fullstack',
+      'Montpellier',
+      'Freelance',
+      'Next.js',
+      'React',
+      'SvelteKit',
+      'React Native',
+      'Node.js',
+      'TypeScript',
+    ],
+    verification: { google: 'LwvwuxH4t00ZYrf3QLNcFgRRC8AhZhLpJNk2QZfTrFQ' },
+    formatDetection: { telephone: false },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -35,6 +69,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   return (
     <html lang={locale} className={fontVariables}>
       <body>
+        <SiteJsonLd locale={locale} />
         <NextIntlClientProvider>
           <a
             href="#contenu"

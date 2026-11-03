@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { hex } from '@/content/colors';
 import { resolveLocale } from '@/i18n/locale';
+import { staticPageMetadata } from '@/lib/seo';
 import { cx } from '@/lib/utils';
 import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
 import { TextPop } from '@/components/motion/TextPop';
@@ -10,6 +12,10 @@ import { CopyButton } from '@/components/ui/CopyButton';
 
 const card =
   'flex flex-col gap-1.5 rounded-[20px] border-2 p-5 shadow-dure transition-[translate,rotate,box-shadow] duration-200 ease-out hover:-translate-1 hover:-rotate-[0.6deg] hover:shadow-dure-lg';
+
+export function generateMetadata({ params }: PageProps<'/[locale]/contact'>): Promise<Metadata> {
+  return staticPageMetadata(params, 'contact');
+}
 
 export default async function ContactPage({ params }: PageProps<'/[locale]/contact'>) {
   await resolveLocale(params);

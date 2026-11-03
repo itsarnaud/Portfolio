@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { bgClass, hex } from '@/content/colors';
@@ -6,8 +7,9 @@ import { getAdjacentPosts, getPost, getPosts } from '@/content/posts';
 import type { Post } from '@/content/types';
 import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
-import { resolveLocale } from '@/i18n/locale';
+import { metadataLocale, resolveLocale } from '@/i18n/locale';
 import type { Locale } from '@/i18n/routing';
+import { pageMetadata, SITE_NAME } from '@/lib/seo';
 import { cx, formatDate } from '@/lib/utils';
 import { categoryColor } from '@/components/blog/categories';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
@@ -16,9 +18,28 @@ import { TextPop } from '@/components/motion/TextPop';
 import { Button } from '@/components/ui/Button';
 import { Chip } from '@/components/ui/Chip';
 import { Star } from '@/components/ui/Star';
+import { BlogPostingJsonLd } from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => getPosts().map(({ slug }) => ({ locale, slug })));
+}
+
+export async function generateMetadata({ params }: PageProps<'/[locale]/blog/[slug]'>): Promise<Metadata> {
+  const locale = await metadataLocale(params);
+  const post = getPost((await params).slug);
+  if (!post) return {};
+  const title = post.title[locale];
+  return pageMetadata({
+    locale,
+    path: `/blog/${post.slug}`,
+    title,
+    description: post.excerpt[locale],
+    type: 'article',
+    // Les titres de post sont longs : on ne leur ajoute « | Arnaud Royer » que s'il reste de la place.
+    absoluteTitle: `${title} | ${SITE_NAME}`.length > 60,
+    publishedTime: post.date,
+    keywords: [...post.tags, 'Arnaud Royer'],
+  });
 }
 
 /** Rend cliquables les adresses web écrites dans le texte du post. */
@@ -60,11 +81,13 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
   const t = await getTranslations('blogPost');
   const tBlog = await getTranslations('blog');
   const tCursor = await getTranslations('cursor');
+  const tNav = await getTranslations('nav');
   const color = categoryColor[post.category];
   const { newer, older } = getAdjacentPosts(post.slug);
 
   return (
     <article>
+      <BlogPostingJsonLd post={post} locale={locale} crumbs={{ home: tNav('home'), section: tNav('blog') }} />
       <div className="site-container pt-5 md:pt-10">
         <Link
           href="/blog"

@@ -14,6 +14,10 @@ import '@/styles/globals.css';
  * (contrairement à un notFound() appelé depuis une page, que Next 16 laisse au navigateur).
  * La langue vient de l'adresse, lue par le proxy next-intl : /en/... donne la 404 en anglais.
  * Elle reprend la nav et le pied de page du site.
+ *
+ * C'est un global-not-found et pas un app/not-found : un app/not-found fait partie de l'arbre
+ * de chaque page, et sa lecture de la langue (getLocale lit les en-têtes) rendait tout le site
+ * dynamique. Next sert ce fichier à part, sans toucher au rendu statique des pages.
  */
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('meta.notFound');

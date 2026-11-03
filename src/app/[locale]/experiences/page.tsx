@@ -1,7 +1,9 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { bgClass, hex } from '@/content/colors';
 import { education, experiences } from '@/content/experiences';
 import { resolveLocale } from '@/i18n/locale';
+import { staticPageMetadata } from '@/lib/seo';
 import { cx } from '@/lib/utils';
 import { GrowLine } from '@/components/motion/GrowLine';
 import { Reveal } from '@/components/motion/Reveal';
@@ -10,6 +12,10 @@ import { JobCard } from '@/components/sections/experiences/JobCard';
 import { Button } from '@/components/ui/Button';
 
 const sectionTitle = 'self-start rounded-full border-2 px-4.5 py-1.5 font-display text-2xl font-extrabold shadow-dure md:text-[28px]';
+
+export function generateMetadata({ params }: PageProps<'/[locale]/experiences'>): Promise<Metadata> {
+  return staticPageMetadata(params, 'experiences', 'profile');
+}
 
 export default async function ExperiencesPage({ params }: PageProps<'/[locale]/experiences'>) {
   const locale = await resolveLocale(params);

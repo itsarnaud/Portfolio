@@ -1,19 +1,36 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { hex } from '@/content/colors';
 import { getNextProject, getProject, getProjects } from '@/content/projects';
 import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
-import { resolveLocale } from '@/i18n/locale';
+import { metadataLocale, resolveLocale } from '@/i18n/locale';
+import { pageMetadata } from '@/lib/seo';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { NextProject } from '@/components/sections/project/NextProject';
 import { ProjectGallery } from '@/components/sections/project/ProjectGallery';
 import { ProjectHero } from '@/components/sections/project/ProjectHero';
 import { ProjectInfo } from '@/components/sections/project/ProjectInfo';
 import { ProjectStory } from '@/components/sections/project/ProjectStory';
+import { ProjectJsonLd } from '@/components/seo/JsonLd';
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => getProjects().map(({ slug }) => ({ locale, slug })));
+}
+
+export async function generateMetadata({ params }: PageProps<'/[locale]/projects/[slug]'>): Promise<Metadata> {
+  const locale = await metadataLocale(params);
+  const project = getProject((await params).slug);
+  if (!project) return {};
+  return pageMetadata({
+    locale,
+    path: `/projects/${project.slug}`,
+    title: project.title,
+    description: project.description[locale],
+    type: 'article',
+    keywords: [project.title, ...project.technologies, 'Arnaud Royer'],
+  });
 }
 
 export default async function ProjectPage({ params }: PageProps<'/[locale]/projects/[slug]'>) {
@@ -24,10 +41,12 @@ export default async function ProjectPage({ params }: PageProps<'/[locale]/proje
 
   const t = await getTranslations('project');
   const tCursor = await getTranslations('cursor');
+  const tNav = await getTranslations('nav');
   const gallery = project.media.gallery.map(({ src, alt, portrait }) => ({ src, alt: alt[locale], portrait }));
 
   return (
     <article>
+      <ProjectJsonLd project={project} locale={locale} crumbs={{ home: tNav('home'), section: tNav('projects') }} />
       <div className="site-container pt-5 md:pt-10">
         <Link
           href="/projects"

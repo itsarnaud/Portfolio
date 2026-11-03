@@ -13,3 +13,12 @@ export async function resolveLocale(params: Promise<{ locale: string }>): Promis
   setRequestLocale(locale);
   return locale;
 }
+
+/**
+ * La langue de l'URL pour generateMetadata, sans déclencher de 404 :
+ * c'est la page qui s'en charge. Langue inconnue = français.
+ */
+export async function metadataLocale(params: Promise<{ locale: string }>): Promise<Locale> {
+  const { locale } = await params;
+  return hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+}

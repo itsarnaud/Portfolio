@@ -1,12 +1,18 @@
+import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { getProjects } from '@/content/projects';
 import { resolveLocale } from '@/i18n/locale';
+import { staticPageMetadata } from '@/lib/seo';
 import { TextPop } from '@/components/motion/TextPop';
 import { filterOfKind } from '@/components/projects/filters';
 import { ProjectCard } from '@/components/projects/ProjectCard';
 import { ProjectCompactCard } from '@/components/projects/ProjectCompactCard';
 import { ProjectRow } from '@/components/projects/ProjectRow';
 import { ProjectsExplorer, type ExplorerItem } from '@/components/projects/ProjectsExplorer';
+
+export function generateMetadata({ params }: PageProps<'/[locale]/projects'>): Promise<Metadata> {
+  return staticPageMetadata(params, 'projects');
+}
 
 export default async function ProjectsPage({ params }: PageProps<'/[locale]/projects'>) {
   await resolveLocale(params);

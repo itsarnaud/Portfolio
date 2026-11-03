@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
   },
   allowedDevOrigins: ['192.168.1.75'],
+  experimental: {
+    // app/global-not-found.tsx : la 404 des adresses inconnues, dans la langue de l'adresse,
+    // sans rendre tout le site dynamique (voir ce fichier).
+    globalNotFound: true,
+  },
 };
 
 export default withNextIntl(nextConfig);
