@@ -28,7 +28,7 @@ export function DrawUnderline({ stroke = 'stroke-violet', className, children }:
         {
           strokeDashoffset: 0,
           ease: 'none',
-          scrollTrigger: { trigger: ref.current, start: 'clamp(top 90%)', end: 'clamp(top 60%)', scrub: 0.4 },
+          scrollTrigger: { trigger: ref.current, start: 'top 90%', end: 'clamp(top 60%)', scrub: 0.4 },
         },
       );
     },

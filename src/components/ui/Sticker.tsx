@@ -14,7 +14,9 @@ type StickerProps = {
    * d'une même rangée un rythme différent.
    */
   floatOffset?: number;
-  size?: 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg';
+  /** Sans ombre dure (boîte à outils de la page À propos). */
+  flat?: boolean;
   className?: string;
   children: ReactNode;
 };
@@ -29,6 +31,7 @@ export function Sticker({
   float = true,
   floatOffset = 0,
   size = 'md',
+  flat = false,
   className,
   children,
 }: StickerProps) {
@@ -40,9 +43,10 @@ export function Sticker({
       <span
         style={{ '--rot': `${rotate}deg`, rotate: `${rotate}deg` } as CSSProperties}
         className={cx(
-          'inline-block rounded-full border-2 font-bold whitespace-nowrap shadow-dure',
+          'inline-block rounded-full border-2 font-bold whitespace-nowrap',
           'hover:animate-jig',
-          size === 'lg' ? 'px-5 py-3 text-lg' : 'px-4.5 py-2.5 text-base',
+          !flat && 'shadow-dure',
+          { sm: 'px-3.5 py-2 text-[15px]', md: 'px-4.5 py-2.5 text-base', lg: 'px-5 py-3 text-lg' }[size],
           bgClass[color],
           className,
         )}

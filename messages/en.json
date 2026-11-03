@@ -103,7 +103,8 @@
     "bravo": "Nice",
     "squash": "Squash",
     "retry": "Retry",
-    "fix": "Fix"
+    "fix": "Fix",
+    "close": "Close"
   },
 
   "home": {
@@ -218,7 +219,8 @@
       "hintTouch": "Tap a card to flip it",
       "examples": "See examples",
       "examplesLabel": "See examples: {service}",
-      "examplesTitle": "{number} · Examples"
+      "examplesTitle": "{number} · Examples",
+      "flipBack": "Flip back"
     },
     "process": {
       "title": "How I work"
@@ -256,7 +258,9 @@
       "ai": "AI",
       "freelance": "Freelance",
       "society": "Society"
-    }
+    },
+    "read": "Read the post",
+    "latestStamp": "LATEST POST · LATEST POST · "
   },
 
   "blogPost": {

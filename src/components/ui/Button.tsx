@@ -6,6 +6,7 @@ const variants = {
   violet: 'bg-violet text-blanc',
   blanc: 'bg-blanc text-encre',
   citron: 'bg-citron text-encre',
+  soleil: 'bg-soleil text-encre',
   encre: 'bg-encre text-papier',
 } as const;
 

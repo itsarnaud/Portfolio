@@ -103,7 +103,8 @@
     "bravo": "Bravo",
     "squash": "Écraser",
     "retry": "Relancer",
-    "fix": "Réparer"
+    "fix": "Réparer",
+    "close": "Fermer"
   },
 
   "home": {
@@ -218,7 +219,8 @@
       "hintTouch": "Touche une carte pour la retourner",
       "examples": "Voir des exemples",
       "examplesLabel": "Voir des exemples : {service}",
-      "examplesTitle": "{number} · Exemples"
+      "examplesTitle": "{number} · Exemples",
+      "flipBack": "Retourner"
     },
     "process": {
       "title": "Comment je travaille"
@@ -256,7 +258,9 @@
       "ai": "IA",
       "freelance": "Freelance",
       "society": "Société"
-    }
+    },
+    "read": "Lire l'article",
+    "latestStamp": "DERNIER POST · DERNIER POST · "
   },
 
   "blogPost": {

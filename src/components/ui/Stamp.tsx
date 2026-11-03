@@ -15,6 +15,8 @@ type StampProps = {
   color?: ColorName;
   /** Classe de remplissage de l'étoile du centre. */
   starFill?: string;
+  /** Étoile au centre (le tampon « Dernier post » du blog n'en a pas). */
+  star?: boolean;
   className?: string;
 };
 
@@ -23,7 +25,7 @@ type StampProps = {
  * Le texte est espacé par lengthAdjust="spacing" pour remplir le cercle sans se chevaucher.
  * Décoratif : le texte est déjà dit ailleurs sur la page.
  */
-export function Stamp({ text, color = 'soleil', starFill = 'fill-tomate', className }: StampProps) {
+export function Stamp({ text, color = 'soleil', starFill = 'fill-tomate', star = true, className }: StampProps) {
   const pathId = `stamp-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`;
 
   return (
@@ -42,12 +44,9 @@ export function Stamp({ text, color = 'soleil', starFill = 'fill-tomate', classN
           </textPath>
         </text>
       </svg>
-      <Star
-        outlined
-        spin
-        fill={starFill}
-        className="absolute top-1/2 left-1/2 size-[31%] -translate-1/2"
-      />
+      {star && (
+        <Star outlined spin fill={starFill} className="absolute top-1/2 left-1/2 size-[31%] -translate-1/2" />
+      )}
     </div>
   );
 }
