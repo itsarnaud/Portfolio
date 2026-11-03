@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "home": { "title": "Accueil" },
+    "projects": { "title": "Projets" },
+    "project": { "title": "Projet" },
+    "blog": { "title": "Blog" },
+    "blogPost": { "title": "Article" },
+    "about": { "title": "À propos" },
+    "experiences": { "title": "Parcours" },
+    "contact": { "title": "Contact" }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "back": "Retour à l'accueil"
+  }
+}

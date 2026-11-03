@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "version": "3.0.0",
+  "description": "Portfolio d'Arnaud Royer, développeur fullstack à Montpellier",
+  "author": "Arnaud Royer <contact@arnaudroyer.fr>",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "gsap": "^3.15.0",
+    "next": "16.4.4",
+    "next-intl": "^4.14.9",
+    "nodemailer": "^10.3.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.4",
+    "@types/node": "^25.9.9",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.4",
+    "playwright": "^1.64.1",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^5.9.3"
+  }
+}
