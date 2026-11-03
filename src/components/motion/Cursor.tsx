@@ -114,8 +114,9 @@ export function Cursor() {
       aria-hidden="true"
       data-on="false"
       className={[
-        'pointer-events-none fixed top-0 left-0 z-100 flex items-center justify-center opacity-0',
-        'rounded-full border-2 bg-encre',
+        'custom-cursor pointer-events-none fixed top-0 left-0 z-100 flex items-center justify-center opacity-0',
+        // Le contour papier garde le point visible sur les fonds noirs.
+        'rounded-full border-2 bg-encre shadow-[0_0_0_2px_var(--color-papier)]',
         'h-4 w-4 -mt-2 -ml-2',
         'data-[on=true]:mt-[-21px] data-[on=true]:ml-3.5 data-[on=true]:h-10.5 data-[on=true]:w-auto data-[on=true]:px-4 data-[on=true]:shadow-dure-sm',
         'transition-[opacity,height,margin] duration-250 ease-rebond',

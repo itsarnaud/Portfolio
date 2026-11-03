@@ -25,6 +25,8 @@ export type ProjectCategory =
 export type ProjectImage = {
   src: string;
   alt: Localized;
+  /** Capture verticale (écran de téléphone) : affichée en entier, sans être recadrée. */
+  portrait?: boolean;
 };
 
 export type Project = {
@@ -62,12 +64,12 @@ export type Project = {
   technologies: string[];
 
   /**
-   * Captures. Sans `desktop` ni `mobile`, la carte affiche une couverture générée
-   * dans la couleur du projet (composant ProjectCover).
+   * Images. `poster` est l'affiche du projet (son logo), montrée sur les cartes et en haut
+   * de la page détail. Sans affiche, une couverture est générée (composant ProjectCover).
+   * `gallery` contient les captures, montrées dans « En images ».
    */
   media: {
-    desktop?: string;
-    mobile?: string;
+    poster?: string;
     gallery: ProjectImage[];
   };
 };

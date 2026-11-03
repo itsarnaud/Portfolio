@@ -53,7 +53,7 @@ const projects: Project[] = [
     },
     stack: ['JavaScript', 'Tiptap'],
     technologies: ['JavaScript', 'Tiptap'],
-    media: { gallery: [] },
+    media: { poster: img('tiptap-fontsize-extension', 'poster'), gallery: [] },
   },
   {
     number: 2,
@@ -100,7 +100,7 @@ const projects: Project[] = [
     },
     stack: ['JavaScript'],
     technologies: ['JavaScript', 'Node.js'],
-    media: { gallery: [] },
+    media: { poster: img('benchmark', 'poster'), gallery: [] },
   },
   {
     number: 3,
@@ -148,12 +148,13 @@ const projects: Project[] = [
     stack: ['SvelteKit', 'Node.js', 'MySQL'],
     technologies: ['SvelteKit', 'Node.js', 'MySQL', 'Tailwind'],
     media: {
-      desktop: img('igowall', 'home-desktop'),
-      mobile: img('igowall', 'home-mobile'),
+      poster: img('igowall', 'poster'),
       gallery: [
+        { src: img('igowall', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('igowall', 'gallery-1'), alt: { fr: "Le choix d'un modèle", en: 'Picking a template' } },
         { src: img('igowall', 'gallery-2'), alt: { fr: "L'éditeur", en: 'The editor' } },
         { src: img('igowall', 'gallery-3'), alt: { fr: "Un site en cours d'édition", en: 'A site being edited' } },
+        { src: img('igowall', 'home-mobile'), portrait: true, alt: { fr: 'Sur mobile', en: 'On mobile' } },
       ],
     },
   },
@@ -202,7 +203,7 @@ const projects: Project[] = [
     },
     stack: ['Next.js', 'Symfony', 'PostgreSQL'],
     technologies: ['Next.js', 'TypeScript', 'Symfony', 'PostgreSQL', 'Three.js', 'Docker', 'Tailwind'],
-    media: { gallery: [] },
+    media: { poster: img('foliode', 'poster'), gallery: [] },
   },
   {
     number: 5,
@@ -249,7 +250,7 @@ const projects: Project[] = [
     },
     stack: ['Discord.js', 'Prisma'],
     technologies: ['Discord.js', 'JavaScript', 'Prisma', 'MySQL'],
-    media: { gallery: [] },
+    media: { poster: img('stellarica', 'poster'), gallery: [] },
   },
   {
     number: 6,
@@ -296,7 +297,7 @@ const projects: Project[] = [
     },
     stack: ['SvelteKit', 'Node.js', 'MySQL'],
     technologies: ['SvelteKit', 'Node.js', 'MySQL', 'Tailwind'],
-    media: { gallery: [] },
+    media: { poster: img('igotrack', 'poster'), gallery: [] },
   },
   {
     number: 7,
@@ -346,12 +347,13 @@ const projects: Project[] = [
     stack: ['Astro', 'Svelte', 'Prisma', 'Supabase'],
     technologies: ['Astro', 'Svelte', 'TypeScript', 'Express', 'Prisma', 'Supabase', 'PostgreSQL', 'MJML', 'Tailwind'],
     media: {
-      desktop: img('kollirama', 'home-desktop'),
-      mobile: img('kollirama', 'home-mobile'),
+      poster: img('kollirama', 'poster'),
       gallery: [
+        { src: img('kollirama', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('kollirama', 'gallery-1'), alt: { fr: 'Les pages par métier', en: 'The pages for each trade' } },
         { src: img('kollirama', 'gallery-2'), alt: { fr: 'Le téléchargement des catalogues', en: 'The catalog download' } },
         { src: img('kollirama', 'gallery-3'), alt: { fr: 'Les prestations', en: 'The services' } },
+        { src: img('kollirama', 'home-mobile'), portrait: true, alt: { fr: 'Sur mobile', en: 'On mobile' } },
       ],
     },
   },
@@ -401,11 +403,12 @@ const projects: Project[] = [
     stack: ['Next.js', 'GSAP', 'Brevo'],
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'GSAP', 'Brevo'],
     media: {
-      desktop: img('idk-concept', 'home-desktop'),
-      mobile: img('idk-concept', 'home-mobile'),
+      poster: img('idk-concept', 'poster'),
       gallery: [
+        { src: img('idk-concept', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('idk-concept', 'gallery-1'), alt: { fr: 'La fabrication sur mesure', en: 'Custom manufacturing' } },
         { src: img('idk-concept', 'gallery-2'), alt: { fr: "Le processus, de l'idée à la pose", en: 'The process, from idea to install' } },
+        { src: img('idk-concept', 'home-mobile'), portrait: true, alt: { fr: 'Sur mobile', en: 'On mobile' } },
       ],
     },
   },
@@ -455,11 +458,12 @@ const projects: Project[] = [
     stack: ['Next.js', 'GSAP', 'Swiper'],
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind', 'GSAP', 'Swiper', 'EmailJS'],
     media: {
-      desktop: img('atelier-maha', 'home-desktop'),
-      mobile: img('atelier-maha', 'home-mobile'),
+      poster: img('atelier-maha', 'poster'),
       gallery: [
+        { src: img('atelier-maha', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
         { src: img('atelier-maha', 'gallery-1'), alt: { fr: 'Les prestations du studio', en: "The studio's services" } },
         { src: img('atelier-maha', 'gallery-2'), alt: { fr: 'Les réalisations', en: 'Past projects' } },
+        { src: img('atelier-maha', 'home-mobile'), portrait: true, alt: { fr: 'Sur mobile', en: 'On mobile' } },
       ],
     },
   },
@@ -510,7 +514,7 @@ const projects: Project[] = [
     },
     stack: ['NestJS', 'MQTT', 'PostgreSQL', 'Docker'],
     technologies: ['NestJS', 'TypeScript', 'Prisma', 'PostgreSQL', 'MQTT', 'Docker'],
-    media: { gallery: [] },
+    media: { poster: img('futurekawa', 'poster'), gallery: [] },
   },
   {
     number: 11,
@@ -560,17 +564,12 @@ const projects: Project[] = [
     stack: ['Next.js', 'tRPC', 'Prisma', 'Redis'],
     technologies: ['Next.js', 'TypeScript', 'tRPC', 'Prisma', 'PostgreSQL', 'Auth.js', 'Upstash Redis', 'Tailwind'],
     media: {
-      desktop: img('quested', 'home-desktop'),
-      mobile: img('quested', 'home-mobile'),
+      poster: img('quested', 'poster'),
       gallery: [
-        {
-          src: img('quested', 'game-desktop'),
-          alt: { fr: "La fiche d'un jeu, avec les notes des joueurs", en: 'A game page, with the player ratings' },
-        },
-        {
-          src: img('quested', 'profile-desktop'),
-          alt: { fr: 'Un profil public, rangé par statut', en: 'A public profile, sorted by status' },
-        },
+        { src: img('quested', 'home-desktop'), alt: { fr: "La page d'accueil", en: 'The home page' } },
+        { src: img('quested', 'game-desktop'), alt: { fr: "La fiche d'un jeu, avec les notes des joueurs", en: 'A game page, with the player ratings' } },
+        { src: img('quested', 'profile-desktop'), alt: { fr: 'Un profil public, rangé par statut', en: 'A public profile, sorted by status' } },
+        { src: img('quested', 'home-mobile'), portrait: true, alt: { fr: 'Sur mobile', en: 'On mobile' } },
       ],
     },
   },
@@ -635,12 +634,13 @@ const projects: Project[] = [
       'Better Auth',
     ],
     media: {
-      desktop: img('tengo', 'home-desktop'),
-      mobile: img('tengo', 'app-1'),
+      poster: img('tengo', 'poster'),
       gallery: [
-        { src: img('tengo', 'app-2'), alt: { fr: 'Créer une partie', en: 'Creating a game' } },
-        { src: img('tengo', 'app-3'), alt: { fr: "La salle d'attente, avec le code de la partie", en: 'The waiting room, with the game code' } },
-        { src: img('tengo', 'app-4'), alt: { fr: 'Choisir son pseudo', en: 'Picking a nickname' } },
+        { src: img('tengo', 'app-1'), portrait: true, alt: { fr: "L'accueil de l'appli", en: "The app's home screen" } },
+        { src: img('tengo', 'app-2'), portrait: true, alt: { fr: 'Créer une partie', en: 'Creating a game' } },
+        { src: img('tengo', 'app-3'), portrait: true, alt: { fr: "La salle d'attente, avec le code de la partie", en: 'The waiting room, with the game code' } },
+        { src: img('tengo', 'app-4'), portrait: true, alt: { fr: 'Choisir son pseudo', en: 'Picking a nickname' } },
+        { src: img('tengo', 'home-desktop'), alt: { fr: 'Le site playtengo.app', en: 'The playtengo.app website' } },
       ],
     },
   },

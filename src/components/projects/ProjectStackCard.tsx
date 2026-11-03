@@ -62,13 +62,13 @@ export function ProjectStackCard({ project, rotate }: ProjectStackCardProps) {
         className="min-h-70 min-w-0 flex-[1.2_1_380px] rounded-[18px] @container"
         screenClassName={screenClass(project.color)}
       >
-        {project.media.desktop ? (
+        {project.media.poster ? (
           <Image
-            src={project.media.desktop}
-            alt={t('screenshot', { title: project.title })}
+            src={project.media.poster}
+            alt=""
             fill
             sizes="(min-width: 1200px) 600px, 50vw"
-            className="object-cover object-top"
+            className="object-cover"
           />
         ) : (
           <ProjectCover project={project} />

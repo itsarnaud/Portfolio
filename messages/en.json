@@ -153,6 +153,13 @@
       "list": "List"
     },
     "all": "All",
+    "filters": {
+      "fullstack": "Fullstack",
+      "frontend": "Front",
+      "backend": "Back",
+      "mobile": "Mobile",
+      "openSource": "Open source"
+    },
     "count": "{count, plural, one {# project} other {# projects}}",
     "number": "N°{number}",
     "screenshot": "Screenshot of {title}",
@@ -188,7 +195,8 @@
     "close": "Close",
     "previousImage": "Previous image",
     "nextImage": "Next image",
-    "next": "Next project"
+    "next": "Next project",
+    "domain": "The site: {domain}"
   },
 
   "about": {

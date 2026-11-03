@@ -33,13 +33,13 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
         <span className="rounded-full border-2 border-current px-2.25 py-0.75">{t(`kinds.${project.kind}`)}</span>
       </div>
       <div className={cx('relative aspect-16/10 overflow-hidden rounded-ecran border-2 border-encre @container', screenClass(project.color))}>
-        {project.media.desktop ? (
+        {project.media.poster ? (
           <Image
-            src={project.media.desktop}
-            alt={t('screenshot', { title: project.title })}
+            src={project.media.poster}
+            alt=""
             fill
             sizes="300px"
-            className="object-cover object-top"
+            className="object-cover"
           />
         ) : (
           <ProjectCover project={project} />

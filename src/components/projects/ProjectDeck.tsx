@@ -145,7 +145,7 @@ export function ProjectDeck({ cards, label, cursor, hint, hintTouch }: ProjectDe
                       fill
                       priority={index === 0}
                       sizes="(min-width: 768px) 290px, 230px"
-                      className="object-cover object-top"
+                      className="object-cover"
                     />
                   ) : (
                     <ProjectCover project={card} />

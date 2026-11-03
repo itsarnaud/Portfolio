@@ -56,14 +56,14 @@ export function ProjectCard({ project, headingLevel = 'h2', priority = false, cl
       </div>
 
       <BrowserFrame className="aspect-16/10 @container" screenClassName={screenClass(project.color)}>
-        {project.media.desktop ? (
+        {project.media.poster ? (
           <Image
-            src={project.media.desktop}
-            alt={t('screenshot', { title: project.title })}
+            src={project.media.poster}
+            alt=""
             fill
             priority={priority}
             sizes="(min-width: 1200px) 380px, (min-width: 768px) 45vw, 92vw"
-            className="object-cover object-top"
+            className="object-cover"
           />
         ) : (
           <ProjectCover project={project} />

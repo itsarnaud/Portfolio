@@ -8,10 +8,20 @@ const FROM = {
   up: { y: 70, scale: 0.94 },
   left: { x: -80, rotate: -2 },
   right: { x: 80, rotate: 2 },
+  /** Grande capture qui remonte en se redressant, sur une plus longue distance. */
+  parallax: { y: 120, rotate: 3, scale: 0.92 },
 } as const;
 
+/** Début et fin de l'apparition, en position du haut du bloc dans l'écran. */
+const RANGE: Record<keyof typeof FROM, [string, string]> = {
+  up: ['top 95%', 'top 70%'],
+  left: ['top 95%', 'top 70%'],
+  right: ['top 95%', 'top 70%'],
+  parallax: ['top bottom', 'top 45%'],
+};
+
 type RevealProps = {
-  /** D'où arrive le bloc : du bas (avec un léger zoom), de la gauche ou de la droite. */
+  /** D'où arrive le bloc : du bas (avec un léger zoom), de la gauche, de la droite, ou en parallaxe. */
   from?: keyof typeof FROM;
   className?: string;
   children: ReactNode;
@@ -31,7 +41,8 @@ export function Reveal({ from = 'up', className, children }: RevealProps) {
       if (reduced || !ref.current) return;
       gsap.fromTo(
         ref.current,
-        { opacity: 0, ...FROM[from] },
+        // La parallaxe ne joue que sur le mouvement : la capture reste visible dès le départ.
+        { opacity: from === 'parallax' ? 1 : 0, ...FROM[from] },
         {
           opacity: 1,
           x: 0,
@@ -40,7 +51,12 @@ export function Reveal({ from = 'up', className, children }: RevealProps) {
           rotate: 0,
           ease: 'none',
           // clamp() : sur une page courte, le bloc finit quand même entièrement visible.
-          scrollTrigger: { trigger: ref.current, start: 'clamp(top 95%)', end: 'clamp(top 70%)', scrub: 0.4 },
+          scrollTrigger: {
+            trigger: ref.current,
+            start: `clamp(${RANGE[from][0]})`,
+            end: `clamp(${RANGE[from][1]})`,
+            scrub: 0.4,
+          },
         },
       );
     },

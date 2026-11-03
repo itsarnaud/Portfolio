@@ -33,7 +33,7 @@ export function Hero() {
       badge: badge?.[locale] ?? project.badge?.[locale] ?? tProjects(`categories.${project.category}`),
       color: project.color,
       stack: project.stack,
-      image: project.media.desktop,
+      image: project.media.poster,
     };
   });
 
