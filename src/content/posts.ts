@@ -2,6 +2,37 @@ import type { Post, PostCategory } from './types';
 
 const posts: Post[] = [
   {
+    slug: 'nouveau-portfolio',
+    date: '2026-11-06',
+    category: 'projects',
+    title: {
+      fr: 'Mon portfolio a changé de tête :D',
+      en: 'My portfolio got a new look :D',
+    },
+    excerpt: {
+      fr: "Adieu le noir et blanc et bonjour les couleurs ! J'ai refait mon site de zéro avec une seule idée en tête, qu'il me ressemble et qu'on ait envie d'y rester un peu plus :)",
+      en: 'Goodbye black and white, hello colours! I rebuilt my site from scratch with one idea in mind: that it looks like me and makes you want to stay a little longer :)',
+    },
+    content: {
+      fr: [
+        'Mon portfolio a changé de tête :D',
+        "Adieu le noir et blanc et bonjour les couleurs ! J'ai refait mon site de zéro avec une seule idée en tête, qu'il me ressemble et qu'on ait envie d'y rester un peu plus :)",
+        'Au programme : des projets, des animations à chaque coin de page, un curseur custom et un nouveau logo (et un CV assorti 👀)',
+        'https://arnaudroyer.fr',
+        "Petit défi : trouvez la page 404 et attrapez l'étoile ;)",
+      ],
+      en: [
+        'My portfolio got a new look :D',
+        'Goodbye black and white, hello colours! I rebuilt my site from scratch with one idea in mind: that it looks like me and makes you want to stay a little longer :)',
+        'On the menu: projects, animations in every corner of the page, a custom cursor and a new logo (and a matching CV 👀)',
+        'https://arnaudroyer.fr',
+        'Little challenge: find the 404 page and catch the star ;)',
+      ],
+    },
+    linkedinUrl: 'https://lnkd.in/p/e9ixE3Vs',
+    tags: ['Portfolio', 'Next.js', 'Projet perso'],
+  },
+  {
     slug: 'quested-letterboxd-jeux-video-coulisses',
     date: '2026-10-16',
     category: 'projects',
