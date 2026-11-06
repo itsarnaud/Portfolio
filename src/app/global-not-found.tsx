@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Footer } from '@/components/layout/Footer';
+import { FullPageLinks } from '@/components/layout/FullPageLinks';
 import { MobileNav } from '@/components/layout/MobileNav';
 import { Nav } from '@/components/layout/Nav';
 import { Cursor } from '@/components/motion/Cursor';
@@ -27,6 +28,7 @@ export default async function GlobalNotFound() {
             <NotFoundView />
           </main>
           <Footer />
+          <FullPageLinks />
           <Cursor />
         </NextIntlClientProvider>
       </body>
