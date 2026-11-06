@@ -45,7 +45,7 @@ export function SiteJsonLd({ locale }: { locale: Locale }) {
         '@graph': [
           {
             ...person,
-            image: `${SITE_URL}/images/pfp.webp`,
+            image: `${SITE_URL}/images/photo.webp`,
             email: `mailto:${EMAIL}`,
             ...personText[locale],
             address: { '@type': 'PostalAddress', addressLocality: 'Montpellier', addressCountry: 'FR' },

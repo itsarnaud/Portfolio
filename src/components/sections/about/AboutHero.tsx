@@ -47,7 +47,7 @@ export function AboutHero() {
         >
           <span aria-hidden="true" className="absolute -top-4.5 left-1/2 h-8 w-27.5 -translate-x-1/2 -rotate-4 border-2 bg-citron opacity-92" />
           <Image
-            src="/images/pfp.webp"
+            src="/images/photo.webp"
             alt={t('photoAlt')}
             width={448}
             height={448}

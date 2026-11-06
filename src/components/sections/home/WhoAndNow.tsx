@@ -37,7 +37,7 @@ export function WhoAndNow() {
         <article className="flex h-full flex-col gap-4 rounded-3xl border-2 bg-soleil p-5.5 shadow-[5px_5px_0_var(--color-encre)] md:gap-5 md:rounded-[26px] md:p-8 md:shadow-dure-md">
           <div className="flex flex-wrap items-center gap-3.5 md:gap-4.5">
             <Image
-              src="/images/pfp.webp"
+              src="/images/photo.webp"
               alt="Arnaud Royer"
               width={112}
               height={112}
