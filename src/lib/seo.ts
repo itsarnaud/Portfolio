@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { metadataLocale } from '@/i18n/locale';
 import { routing, type Locale } from '@/i18n/routing';
 
-export const SITE_URL = 'https://arnaudroyer.fr';
+export const SITE_URL = 'https://www.arnaudroyer.fr';
 export const SITE_NAME = 'Arnaud Royer';
 const TWITTER_HANDLE = '@cestarnaud';
 
