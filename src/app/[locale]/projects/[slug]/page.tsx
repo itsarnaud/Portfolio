@@ -29,6 +29,8 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/projects
     title: project.title,
     description: project.description[locale],
     type: 'article',
+    // Image générée par scripts/visuals.mjs, dans la couleur du projet.
+    image: { url: `/images/og/${project.slug}.png`, alt: project.title },
     keywords: [project.title, ...project.technologies, 'Arnaud Royer'],
   });
 }
