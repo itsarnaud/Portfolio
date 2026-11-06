@@ -2,16 +2,11 @@ import type { ReactNode } from 'react';
 import { cx } from '@/lib/utils';
 
 type BrowserFrameProps = {
-  /** Fond de la zone d'écran (visible tant que la capture charge, ou derrière une couverture). */
   screenClassName?: string;
   className?: string;
   children: ReactNode;
 };
 
-/**
- * Faux navigateur : une barre avec trois points, puis l'écran.
- * Dans une carte (.group/card), les points se colorent au survol.
- */
 export function BrowserFrame({ screenClassName, className, children }: BrowserFrameProps) {
   const dot = 'size-2.25 rounded-full border-[1.5px] border-encre transition-colors duration-200';
 

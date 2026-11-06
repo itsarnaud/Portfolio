@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import { Star } from '@/components/ui/Star';
 import { hex } from '@/content/colors';
 import { cx } from '@/lib/utils';
-import { Star } from '@/components/ui/Star';
 
 const LEFT = 'polygon(0 0,54% 0,47% 22%,56% 41%,44% 63%,52% 80%,46% 100%,0 100%)';
 const RIGHT = 'polygon(54% 0,100% 0,100% 100%,46% 100%,52% 80%,44% 63%,56% 41%,47% 22%)';
@@ -12,10 +12,6 @@ const RIGHT = 'polygon(54% 0,100% 0,100% 100%,46% 100%,52% 80%,44% 63%,56% 41%,4
 const half =
   'absolute inset-0 flex items-center justify-center rounded-[26px] border-[3px] border-encre bg-cobalt font-display text-[110px] leading-none font-extrabold tracking-[-0.05em] text-blanc shadow-dure-md transition-[translate,rotate] duration-450 ease-rebond md:text-[150px]';
 
-/**
- * La carte « 500 » cassée en deux, qui tremble. Elle se recolle au survol (au toucher sur mobile),
- * avec l'étiquette « Réparé... presque ». Décorative, mais cliquable pour le jeu.
- */
 export function BrokenCard() {
   const t = useTranslations('error');
   const tCursor = useTranslations('cursor');

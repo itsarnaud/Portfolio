@@ -1,15 +1,13 @@
+import { hex } from '@/content/colors';
 import { cx } from '@/lib/utils';
 
 type StarProps = {
-  /** Couleur de remplissage (classe Tailwind fill-*). */
   fill?: string;
-  /** Contour encre, comme sur les tampons. */
   outlined?: boolean;
   spin?: boolean;
   className?: string;
 };
 
-/** L'étoile à 4 branches, motif récurrent de la D.A. Toujours décorative. */
 export function Star({ fill = 'fill-current', outlined = false, spin = false, className }: StarProps) {
   return (
     <svg
@@ -19,7 +17,7 @@ export function Star({ fill = 'fill-current', outlined = false, spin = false, cl
     >
       <path
         d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"
-        stroke={outlined ? '#121212' : undefined}
+        stroke={outlined ? hex.encre : undefined}
         strokeWidth={outlined ? 1.3 : undefined}
         strokeLinejoin="round"
       />

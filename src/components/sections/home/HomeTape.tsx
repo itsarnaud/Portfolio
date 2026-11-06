@@ -1,15 +1,11 @@
 import { useLocale } from 'next-intl';
-import { marquee } from '@/content/home';
 import { Marquee } from '@/components/motion/Marquee';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { Star } from '@/components/ui/Star';
+import { marquee } from '@/content/home';
 
 const STAR_COLORS = ['fill-citron', 'fill-tomate', 'fill-soleil', 'fill-rose', 'fill-cobalt'];
 
-/**
- * Le double bandeau croisé : les technos sur fond encre, les offres sur fond citron
- * dans l'autre sens. S'arrête au survol, et quand il sort de l'écran.
- */
 export function HomeTape() {
   const locale = useLocale();
 

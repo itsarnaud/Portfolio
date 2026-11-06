@@ -1,13 +1,11 @@
 import { useTranslations } from 'next-intl';
-import { homeTools, learning } from '@/content/skills';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { Reveal } from '@/components/motion/Reveal';
 import { Sticker } from '@/components/ui/Sticker';
+import { homeTools, learning } from '@/content/skills';
 
-/** Inclinaison de chaque sticker, dans l'ordre. */
 const ROTATIONS = [-3, 2, -1, 3, -2, 1, -2, 2, -1, 3, -2, 1];
 
-/** « Ma boîte à outils » : les technos en stickers qui flottent, et ce que j'apprends en pointillés. */
 export function HomeToolbox() {
   const t = useTranslations('home.toolbox');
 

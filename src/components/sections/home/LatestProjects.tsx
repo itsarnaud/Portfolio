@@ -1,25 +1,20 @@
 import { useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
-import { featuredProjects } from '@/content/home';
-import { getProject, getProjects } from '@/content/projects';
-import type { Project } from '@/content/types';
-import { Link } from '@/i18n/navigation';
 import { DrawUnderline } from '@/components/motion/DrawUnderline';
 import { Reveal } from '@/components/motion/Reveal';
 import { Carousel } from '@/components/projects/Carousel';
 import { ProjectSlide } from '@/components/projects/ProjectSlide';
 import { ProjectStackCard } from '@/components/projects/ProjectStackCard';
+import { hex } from '@/content/colors';
+import { featuredProjects } from '@/content/home';
+import { getProject, getProjects } from '@/content/projects';
+import type { Project } from '@/content/types';
+import { stripMarks } from '@/lib/utils';
+import { Link } from '@/i18n/navigation';
 
-/** Inclinaison de chaque carte de la pile. */
 const ROTATIONS = [-1.2, 1, -0.6, 1.4, -1];
-/** Hauteur où la première carte se fige, puis décalage pour chaque carte suivante. */
 const STICKY_TOP = 120;
 const STICKY_STEP = 26;
 
-/**
- * « Mes derniers projets ». Desktop : les cartes s'empilent au scroll (position: sticky,
- * chaque carte se fige 26px plus bas que la précédente). Mobile : carrousel horizontal avec des points.
- */
 export function LatestProjects() {
   const t = useTranslations('home.latest');
   const tCursor = useTranslations('cursor');
@@ -42,7 +37,6 @@ export function LatestProjects() {
         </Link>
       </Reveal>
 
-      {/* Desktop : la pile */}
       <ul className="site-container hidden flex-col gap-12 md:flex">
         {projects.map((project, index) => (
           <li
@@ -55,9 +49,8 @@ export function LatestProjects() {
         ))}
       </ul>
 
-      {/* Mobile : le carrousel */}
       <div className="md:hidden">
-        <Carousel label={(t.raw('title') as string).replace(/<\/?mark>/g, '')}>
+        <Carousel label={stripMarks(t.raw('title'))}>
           {projects.map((project) => (
             <ProjectSlide key={project.slug} project={project} />
           ))}

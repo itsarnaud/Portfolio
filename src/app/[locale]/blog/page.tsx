@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { BlogExplorer, type BlogItem } from '@/components/blog/BlogExplorer';
+import { PostCard } from '@/components/blog/PostCard';
+import { TextPop } from '@/components/motion/TextPop';
 import { getPosts } from '@/content/posts';
 import { resolveLocale } from '@/i18n/locale';
 import { staticPageMetadata } from '@/lib/seo';
-import { TextPop } from '@/components/motion/TextPop';
-import { BlogExplorer, type BlogItem } from '@/components/blog/BlogExplorer';
-import { PostCard } from '@/components/blog/PostCard';
 
 export function generateMetadata({ params }: PageProps<'/[locale]/blog'>): Promise<Metadata> {
   return staticPageMetadata(params, 'blog');

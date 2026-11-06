@@ -2,10 +2,7 @@ import type { Project } from './types';
 
 const img = (slug: string, file: string) => `/images/projects/${slug}/${file}.webp`;
 
-/**
- * Les projets, du N°1 (le plus ancien) au N°12.
- * L'ordre du tableau n'a pas d'importance : getProjects() trie par numéro décroissant.
- */
+// L'ordre du tableau n'a pas d'importance : getProjects() trie par numéro décroissant.
 const projects: Project[] = [
   {
     number: 1,
@@ -652,7 +649,6 @@ const projects: Project[] = [
   },
 ];
 
-/** Tous les projets, du plus récent (N°12) au plus ancien. */
 export function getProjects(): Project[] {
   return [...projects].sort((a, b) => b.number - a.number);
 }
@@ -661,7 +657,6 @@ export function getProject(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }
 
-/** Le projet affiché en « Projet suivant » : le numéro d'en dessous, et on boucle après le N°1. */
 export function getNextProject(slug: string): Project {
   const sorted = getProjects();
   const index = sorted.findIndex((project) => project.slug === slug);

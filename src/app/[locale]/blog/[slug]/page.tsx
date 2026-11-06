@@ -1,24 +1,24 @@
-import { Fragment } from 'react';
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { bgClass, hex } from '@/content/colors';
-import { getAdjacentPosts, getPost, getPosts } from '@/content/posts';
-import type { Post } from '@/content/types';
-import { Link } from '@/i18n/navigation';
-import { routing } from '@/i18n/routing';
-import { metadataLocale, resolveLocale } from '@/i18n/locale';
-import type { Locale } from '@/i18n/routing';
-import { pageMetadata, SITE_NAME } from '@/lib/seo';
-import { cx, formatDate } from '@/lib/utils';
+import { notFound } from 'next/navigation';
+import { Fragment } from 'react';
 import { categoryColor } from '@/components/blog/categories';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { Reveal } from '@/components/motion/Reveal';
 import { TextPop } from '@/components/motion/TextPop';
+import { BlogPostingJsonLd } from '@/components/seo/JsonLd';
+import { BackLink } from '@/components/ui/BackLink';
 import { Button } from '@/components/ui/Button';
 import { Chip } from '@/components/ui/Chip';
 import { Star } from '@/components/ui/Star';
-import { BlogPostingJsonLd } from '@/components/seo/JsonLd';
+import { bgClass, hex } from '@/content/colors';
+import { getAdjacentPosts, getPost, getPosts } from '@/content/posts';
+import type { Post } from '@/content/types';
+import { metadataLocale, resolveLocale } from '@/i18n/locale';
+import { Link } from '@/i18n/navigation';
+import { type Locale, routing } from '@/i18n/routing';
+import { pageMetadata, SITE_NAME } from '@/lib/seo';
+import { cx, formatDate, stripMarks } from '@/lib/utils';
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => getPosts().map(({ slug }) => ({ locale, slug })));
@@ -38,11 +38,10 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/blog/[sl
     // Les titres de post sont longs : on ne leur ajoute « | Arnaud Royer » que s'il reste de la place.
     absoluteTitle: `${title} | ${SITE_NAME}`.length > 60,
     publishedTime: post.date,
-    keywords: [...post.tags, 'Arnaud Royer'],
+    keywords: [...post.tags, SITE_NAME],
   });
 }
 
-/** Rend cliquables les adresses web écrites dans le texte du post. */
 function linkify(text: string) {
   return text.split(/(https?:\/\/[^\s)]+)/g).map((part, index) =>
     /^https?:\/\//.test(part) ? (
@@ -88,21 +87,8 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
   return (
     <article>
       <BlogPostingJsonLd post={post} locale={locale} crumbs={{ home: tNav('home'), section: tNav('blog') }} />
-      <div className="site-container pt-5 md:pt-10">
-        <Link
-          href="/blog"
-          data-cursor={tCursor('back')}
-          data-cursor-color={hex.blanc}
-          className="inline-flex min-h-11 animate-rise items-center gap-2 font-mono text-sm font-semibold hover:text-violet"
-        >
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5M11 6l-6 6 6 6" />
-          </svg>
-          {t('back')}
-        </Link>
-      </div>
+      <BackLink href="/blog" label={t('back')} />
 
-      {/* En-tête dans la couleur de la catégorie */}
       <PauseOffscreen className="site-container pt-2 md:pt-4">
         <header
           className={cx(
@@ -129,7 +115,6 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
         </header>
       </PauseOffscreen>
 
-      {/* Le post */}
       <Reveal className="site-container">
         <div className="mx-auto flex max-w-lecture flex-col gap-5 pt-10 text-[17px] leading-[1.7] md:pt-16 md:text-lg">
           {post.content[locale].map((paragraph) => (
@@ -152,10 +137,9 @@ export default async function BlogPostPage({ params }: PageProps<'/[locale]/blog
         </div>
       </Reveal>
 
-      {/* Posts autour */}
       {(newer || older) && (
         <Reveal className="site-container">
-          <nav aria-label={(tBlog.raw('title') as string).replace(/<\/?mark>/g, '')} className="mx-auto flex max-w-225 flex-col gap-4 pt-12 md:flex-row md:gap-6 md:pt-20">
+          <nav aria-label={stripMarks(tBlog.raw('title'))} className="mx-auto flex max-w-225 flex-col gap-4 pt-12 md:flex-row md:gap-6 md:pt-20">
             {older && <AdjacentPost post={older} label={t('older')} locale={locale} align="start" />}
             {newer && <AdjacentPost post={newer} label={t('newer')} locale={locale} align="end" />}
           </nav>

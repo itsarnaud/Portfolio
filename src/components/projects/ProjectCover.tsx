@@ -1,15 +1,10 @@
-import type { Project } from '@/content/types';
 import { Star } from '@/components/ui/Star';
+import type { Project } from '@/content/types';
 
 type ProjectCoverProps = {
   project: Pick<Project, 'title' | 'number' | 'stack'>;
 };
 
-/**
- * Couverture générée pour les projets sans capture (pas de site en ligne) :
- * le numéro de la carte en très grand, le nom et la stack, dans la couleur de la carte.
- * Décorative : la carte affiche déjà ces infos.
- */
 export function ProjectCover({ project }: ProjectCoverProps) {
   return (
     <div aria-hidden="true" className="absolute inset-0 flex flex-col justify-between p-4">

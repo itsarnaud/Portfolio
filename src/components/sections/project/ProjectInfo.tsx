@@ -1,17 +1,13 @@
 import { useLocale, useTranslations } from 'next-intl';
+import { Reveal } from '@/components/motion/Reveal';
 import { bgClass } from '@/content/colors';
 import type { Project } from '@/content/types';
 import { cx } from '@/lib/utils';
-import { Reveal } from '@/components/motion/Reveal';
 
 const box = 'flex h-full flex-col gap-1 rounded-2xl border-2 bg-blanc p-3.5 md:gap-1.5 md:rounded-[18px] md:px-5 md:py-4.5';
 const label = 'text-[13px] font-bold text-encre-pale md:text-sm';
 const value = 'font-display text-[19px] leading-[1.1] font-extrabold md:text-2xl';
 
-/**
- * Les trois blocs sous le hero : type, équipe et stack complète.
- * Dans la stack, les technos principales (celles des cartes) ressortent dans la couleur du projet.
- */
 export function ProjectInfo({ project }: { project: Project }) {
   const locale = useLocale();
   const t = useTranslations('project');

@@ -1,17 +1,12 @@
 import { useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { Reveal } from '@/components/motion/Reveal';
 import { Button } from '@/components/ui/Button';
 import { Star } from '@/components/ui/Star';
+import { hex } from '@/content/colors';
 import { HideOnPaths } from './HideOnPaths';
 import { EMAIL, GITHUB_URL, LINKEDIN_URL } from './navLinks';
 
-/**
- * Pied de page : le bloc violet « On en parle ? » (le point d'interrogation se balance),
- * l'email en grand et les boutons, puis la ligne © et le lien vers le code.
- * Le bloc violet est masqué sur la page Contact, qui fait déjà ce travail.
- */
 export function Footer() {
   const t = useTranslations('footer');
   const tCursor = useTranslations('cursor');

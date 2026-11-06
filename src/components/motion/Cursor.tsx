@@ -1,23 +1,14 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 import { hex } from '@/content/colors';
 import { useFinePointer } from '@/hooks/useMediaQuery';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 
-/** Part du chemin parcourue à chaque image : plus c'est petit, plus le point traîne. */
 const FOLLOW = 0.22;
 
-/**
- * Curseur custom : un point qui suit la souris avec un léger retard, puis devient
- * une étiquette (« Voir le projet », « Écris-moi »…) sur les éléments qui ont data-cursor.
- * La couleur de l'étiquette vient de data-cursor-color.
- *
- * Monté une seule fois dans le layout : il survit aux navigations sans doubler ses écouteurs.
- * La boucle d'animation s'arrête quand le point a rejoint la souris.
- * Désactivé sur tactile et en mode « animations réduites ».
- */
+// Monté une fois dans le layout : il survit aux navigations sans doubler ses écouteurs.
 export function Cursor() {
   const finePointer = useFinePointer();
   const reduced = usePrefersReducedMotion();
@@ -25,7 +16,6 @@ export function Cursor() {
 
   const dotRef = useRef<HTMLDivElement>(null);
   const labelRef = useRef<HTMLSpanElement>(null);
-  /** L'élément data-cursor survolé, partagé avec l'effet de navigation. */
   const targetRef = useRef<Element | null>(null);
   const pathname = usePathname();
 
@@ -86,8 +76,7 @@ export function Cursor() {
       dot.style.opacity = '0';
     };
 
-    // Après un clic, l'élément survolé a pu disparaître (un bouton remplacé par un message) :
-    // on regarde à nouveau ce qu'il y a sous la souris.
+    // Après un clic, l'élément survolé a pu disparaître : on regarde à nouveau ce qu'il y a sous la souris.
     const onClick = () =>
       requestAnimationFrame(() => {
         const under = document.elementFromPoint(targetX, targetY);

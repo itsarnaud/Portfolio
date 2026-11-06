@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { bgClass, hex } from '@/content/colors';
-import { education, experiences } from '@/content/experiences';
-import { resolveLocale } from '@/i18n/locale';
-import { staticPageMetadata } from '@/lib/seo';
-import { cx } from '@/lib/utils';
 import { GrowLine } from '@/components/motion/GrowLine';
 import { Reveal } from '@/components/motion/Reveal';
 import { TextPop } from '@/components/motion/TextPop';
 import { JobCard } from '@/components/sections/experiences/JobCard';
 import { Button } from '@/components/ui/Button';
+import { bgClass, hex } from '@/content/colors';
+import { education, experiences } from '@/content/experiences';
+import { resolveLocale } from '@/i18n/locale';
+import { staticPageMetadata } from '@/lib/seo';
+import { cx } from '@/lib/utils';
 
 const sectionTitle = 'self-start rounded-full border-2 px-4.5 py-1.5 font-display text-2xl font-extrabold shadow-dure md:text-[28px]';
 
@@ -46,7 +46,6 @@ export default async function ExperiencesPage({ params }: PageProps<'/[locale]/e
         </div>
       </header>
 
-      {/* Expériences : la frise */}
       <section aria-labelledby="jobs-title" className="flex flex-col gap-7">
         <h2 id="jobs-title" className={cx(sectionTitle, '-rotate-2 animate-rise bg-violet text-blanc')}>
           {t('jobs')}
@@ -91,7 +90,6 @@ export default async function ExperiencesPage({ params }: PageProps<'/[locale]/e
         </div>
       </section>
 
-      {/* Formation */}
       <section aria-labelledby="education-title" className="flex flex-col gap-7 pt-10 md:pt-14">
         <Reveal className="self-start">
           <h2 id="education-title" className={cx(sectionTitle, 'rotate-2 bg-citron')}>

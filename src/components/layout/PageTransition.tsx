@@ -1,36 +1,25 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { gsap } from '@/lib/gsap';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { routing } from '@/i18n/routing';
+import { gsap } from '@/lib/gsap';
 import { scrollToTop } from '@/lib/utils';
 import { navLinks } from './navLinks';
 
 const BANDS = ['bg-violet', 'bg-citron', 'bg-tomate', 'bg-soleil'];
-/** Si la page met trop de temps à arriver, on découvre quand même l'écran. */
 const SAFETY_MS = 5000;
 
 type Phase = 'idle' | 'covering' | 'covered' | 'revealing';
 
-/** Le chemin sans la langue : /fr/projects/quested devient /projects/quested. */
 function stripLocale(pathname: string): string {
   const [, first, ...rest] = pathname.split('/');
   return (routing.locales as readonly string[]).includes(first) ? `/${rest.join('/')}` : pathname;
 }
 
-/**
- * Transition entre pages : quatre bandes de couleur montent en cascade avec le nom
- * de la page d'arrivée, la page change dessous, puis les bandes repartent vers le haut.
- *
- * Le clic sur un lien interne est intercepté (avant le <Link> de Next) pour couvrir
- * l'écran d'abord, puis naviguer. Les clics avec Cmd/Ctrl, les liens externes,
- * les téléchargements et les ancres de la même page passent normalement.
- * Le nom affiché vient de data-transition-label sur le lien, sinon de la section.
- * En mode « animations réduites », la navigation passe par le même chemin, sans les bandes.
- */
+// Clics interceptés avant le <Link> de Next, pour couvrir l'écran avant de naviguer.
 export function PageTransition() {
   const t = useTranslations('nav');
   const router = useRouter();
@@ -40,7 +29,6 @@ export function PageTransition() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const labelRef = useRef<HTMLSpanElement>(null);
   const phase = useRef<Phase>('idle');
-  /** La page est arrivée pendant que les bandes montaient encore. */
   const arrived = useRef(false);
   const safety = useRef<ReturnType<typeof setTimeout>>(undefined);
 
@@ -51,8 +39,7 @@ export function PageTransition() {
     if (!overlay || phase.current !== 'covered') return;
     clearTimeout(safety.current);
     phase.current = 'revealing';
-    // Dernière remontée avant de découvrir la nouvelle page (les bandes ne couvrent
-    // l'écran qu'après un clic sur un lien, jamais avec le bouton retour).
+    // Dernière remontée avant de découvrir la page : les bandes ne couvrent l'écran qu'après un clic.
     scrollToTop();
     gsap
       .timeline({
@@ -88,7 +75,6 @@ export function PageTransition() {
       .fromTo(text, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.25, ease: 'back.out(2)' }, 0.3);
   };
 
-  // Interception des clics sur les liens internes.
   useEffect(() => {
     const sectionLabel = (path: string) => {
       const first = `/${stripLocale(path).split('/')[1] ?? ''}`;
@@ -126,7 +112,6 @@ export function PageTransition() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reduced, t]);
 
-  // La nouvelle page est là : on découvre l'écran.
   useEffect(() => {
     if (phase.current === 'covered') {
       // On laisse une image au navigateur pour peindre la nouvelle page sous les bandes.

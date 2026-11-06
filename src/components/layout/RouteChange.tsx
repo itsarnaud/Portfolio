@@ -1,30 +1,17 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 import { ScrollTrigger } from '@/lib/gsap';
 import { scrollToTop } from '@/lib/utils';
 
-/**
- * Ce qui doit se passer à chaque changement de page, monté une fois dans le layout :
- * - remonter tout en haut ;
- * - avec le bouton retour (ou suivant), revenir à la position où on avait quitté la page.
- *   Cette position est retenue ici, page par page : la restauration native des navigateurs
- *   n'est pas fiable avec les navigations de Next ;
- * - recalculer les positions des animations au scroll. Sans ça, celles du pied de page
- *   (qui reste d'une page à l'autre) gardent les mesures de la page précédente.
- * Les positions sont aussi recalculées quand la hauteur de la page change (images, filtres).
- */
+// La restauration native du défilement n'est pas fiable avec Next : la position est retenue ici, page par page.
 export function RouteChange() {
   const pathname = usePathname();
   const currentPath = useRef(pathname);
   const fromHistory = useRef(false);
   const positions = useRef(new Map<string, number>());
-  /**
-   * Figé dès qu'une navigation commence (clic sur un lien interne, bouton retour) : quand la
-   * nouvelle page remplace l'ancienne, le navigateur ajuste le défilement à sa hauteur, et cet
-   * ajustement ne doit pas écraser la position retenue pour la page qu'on quitte.
-   */
+  // Figé pendant la navigation : l'ajustement du navigateur à la nouvelle hauteur ne doit pas écraser la position retenue.
   const frozen = useRef(false);
 
   useEffect(() => {
@@ -81,8 +68,7 @@ export function RouteChange() {
 
     if (!restore) {
       scrollToTop();
-      // Une seconde fois après l'affichage de la nouvelle page : sur iPhone, un défilement
-      // par inertie encore en cours peut annuler la première.
+      // Une seconde fois : sur iPhone, un défilement par inertie encore en cours peut annuler la première.
       const frame = requestAnimationFrame(() => {
         scrollToTop();
         ScrollTrigger.refresh();
@@ -91,8 +77,7 @@ export function RouteChange() {
       return () => cancelAnimationFrame(frame);
     }
 
-    // Retour arrière : on attend que la page ait retrouvé sa hauteur (une seconde au plus),
-    // sinon le navigateur ramènerait la position à ce que permet l'ancienne page, plus courte.
+    // Attend que la page ait retrouvé sa hauteur, sinon le navigateur borne la position à l'ancienne page.
     let frame = 0;
     const started = performance.now();
     const tryRestore = () => {

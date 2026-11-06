@@ -1,18 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import fr from '../../messages/fr.json';
+import { EMAIL } from '@/components/layout/navLinks';
+import { stripMarks } from '@/lib/utils';
 import { fontVariables } from '@/styles/fonts';
 import '@/styles/globals.css';
+import fr from '../../messages/fr.json';
 
-/**
- * Dernier filet : une erreur dans le layout lui-même. Version simple de la page d'erreur
- * (même D.A., sans animations ni jeu), avec son propre <html>, en français.
- */
+// Remplace le layout quand il plante : d'où le <html> propre et le texte en dur en français.
 export default function GlobalError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   const t = fr.error;
   const code = error.digest ?? 'client';
-  const title = t.title.replace(/<\/?mark>/g, '');
+  const title = stripMarks(t.title);
 
   return (
     <html lang="fr" className={fontVariables}>
@@ -37,7 +36,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
           </div>
           <p className="text-encre-douce">
             <a
-              href={`mailto:contact@arnaudroyer.fr?subject=${encodeURIComponent(t.mailSubject)}&body=${encodeURIComponent(t.mailBody.replace('{code}', code))}`}
+              href={`mailto:${EMAIL}?subject=${encodeURIComponent(t.mailSubject)}&body=${encodeURIComponent(t.mailBody.replace('{code}', code))}`}
               className="font-bold text-encre underline underline-offset-4"
             >
               {t.report}

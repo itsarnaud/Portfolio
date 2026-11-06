@@ -1,15 +1,11 @@
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
 import { education, experiences } from '@/content/experiences';
 import { getPosts } from '@/content/posts';
 import { getProjects } from '@/content/projects';
 import { toolGroups } from '@/content/skills';
-import fr from '../../../messages/fr.json';
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
 import { absoluteUrl, SITE_URL } from '@/lib/seo';
+import fr from '../../../messages/fr.json';
 
-/**
- * Résumé du site pour les IA (https://llmstxt.org), généré à partir du contenu :
- * un nouveau projet ou un nouveau post y apparaît tout seul.
- */
 export const dynamic = 'force-static';
 
 const pages: [label: string, path: string, summary: string][] = [

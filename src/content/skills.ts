@@ -1,6 +1,5 @@
 import type { Tool, ToolGroup } from './types';
 
-/** La boîte à outils de la page À propos, par groupe. Les titres des groupes sont dans messages (about.toolbox). */
 export const toolGroups: ToolGroup[] = [
   {
     id: 'front',
@@ -47,7 +46,6 @@ export const toolGroups: ToolGroup[] = [
   },
 ];
 
-/** Les stickers de la boîte à outils de l'accueil (une sélection). */
 export const homeTools: Tool[] = [
   { name: 'Svelte / SvelteKit', color: 'tomate' },
   { name: 'React / Next.js', color: 'cobalt' },
@@ -63,5 +61,4 @@ export const homeTools: Tool[] = [
   { name: 'Docker', color: 'cobalt' },
 ];
 
-/** Ce que j'apprends en ce moment (accueil et page À propos). */
 export const learning = ['Java', 'Spring', 'Payload'];

@@ -1,24 +1,19 @@
 'use client';
 
-import { useEffect, useRef, type CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
+import { useEffect, useRef, type CSSProperties } from 'react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
-import { Logo } from './Logo';
 import { LocaleSwitch } from './LocaleSwitch';
+import { Logo } from './Logo';
 import { GITHUB_URL, LINKEDIN_URL, isActive, navLinks } from './navLinks';
 
-/** Légère inclinaison du lien actif, différente selon sa place. */
 const ACTIVE_ROTATIONS = [-2, 1, -1, 2, -1, 1];
 
 const pressable =
   'border-2 shadow-dure-sm transition-[translate,box-shadow] duration-150 ease-out active:translate-0.75 active:shadow-none';
 
-/**
- * Nav mobile : le logo et un bouton menu. Le menu est un <dialog> plein écran violet
- * qui s'ouvre en cercle depuis le bouton, avec les liens qui arrivent un par un.
- * Le <dialog> natif gère Échap, le focus gardé à l'intérieur et le retour du focus au bouton.
- */
+// Le <dialog> natif gère Échap, le focus gardé à l'intérieur et son retour au bouton.
 export function MobileNav() {
   const t = useTranslations('nav');
   const pathname = usePathname();
@@ -29,7 +24,6 @@ export function MobileNav() {
     const dialog = dialogRef.current;
     const button = buttonRef.current;
     if (!dialog || !button) return;
-    // Le cercle part du centre du bouton menu.
     const rect = button.getBoundingClientRect();
     dialog.style.setProperty('--menu-x', `${rect.left + rect.width / 2}px`);
     dialog.style.setProperty('--menu-y', `${rect.top + rect.height / 2}px`);
@@ -38,7 +32,7 @@ export function MobileNav() {
     button.setAttribute('aria-expanded', 'true');
   };
 
-  /** Ferme avec l'animation inverse. `instant` pour une navigation : la transition de page prend le relais. */
+  // `instant` pour une navigation : la transition de page prend le relais.
   const close = (instant = false) => {
     const dialog = dialogRef.current;
     if (!dialog?.open) return;

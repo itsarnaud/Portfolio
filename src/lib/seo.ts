@@ -3,27 +3,22 @@ import { getTranslations } from 'next-intl/server';
 import { metadataLocale } from '@/i18n/locale';
 import { routing, type Locale } from '@/i18n/routing';
 
-/** L'adresse du site en production : base des URLs canoniques, du sitemap et du JSON-LD. */
 export const SITE_URL = 'https://arnaudroyer.fr';
 export const SITE_NAME = 'Arnaud Royer';
-export const TWITTER_HANDLE = '@cestarnaud';
+const TWITTER_HANDLE = '@cestarnaud';
 
-/** L'image de partage par défaut (1200×630). */
-export const DEFAULT_OG_IMAGE = '/images/og-image.png';
+const DEFAULT_OG_IMAGE = '/images/og-image.png';
 
 const ogLocales: Record<Locale, string> = { fr: 'fr_FR', en: 'en_US' };
 const htmlLangs: Record<Locale, string> = { fr: 'fr-FR', en: 'en-US' };
 
-/** Langue au format BCP 47 (`fr-FR`), pour le JSON-LD. */
 export const inLanguage = (locale: Locale) => htmlLangs[locale];
 
-/** URL absolue d'une page dans une langue. `path` commence par « / », ou vaut '' pour l'accueil. */
 export function absoluteUrl(locale: Locale, path = ''): string {
   return `${SITE_URL}/${locale}${path}`;
 }
 
-/** Canonique, puis la même page dans chaque langue, et x-default vers le français. */
-export function languageAlternates(locale: Locale, path = ''): NonNullable<Metadata['alternates']> {
+function languageAlternates(locale: Locale, path = ''): NonNullable<Metadata['alternates']> {
   return {
     canonical: absoluteUrl(locale, path),
     languages: {
@@ -33,8 +28,8 @@ export function languageAlternates(locale: Locale, path = ''): NonNullable<Metad
   };
 }
 
-/** Coupe un texte à `max` caractères sur une fin de mot, avec « … ». Les moteurs coupent vers 155. */
-export function clip(text: string, max = 155): string {
+// Les moteurs coupent vers 155 caractères.
+function clip(text: string, max = 155): string {
   if (text.length <= max) return text;
   const cut = text.slice(0, max - 1);
   const lastSpace = cut.lastIndexOf(' ');
@@ -43,23 +38,17 @@ export function clip(text: string, max = 155): string {
 
 type PageMetadataInput = {
   locale: Locale;
-  /** Chemin sans la langue : '' pour l'accueil, '/projects', '/blog/mon-article'… */
   path: string;
   title: string;
   description: string;
   type?: 'website' | 'profile' | 'article';
-  /** Titre complet, sans le modèle « %s | Arnaud Royer » (accueil, titres déjà longs). */
   absoluteTitle?: boolean;
   image?: { url: string; alt: string };
   publishedTime?: string;
   keywords?: string[];
 };
 
-/**
- * Les métadonnées d'une page : titre, description, canonique, hreflang, Open Graph et Twitter.
- * Open Graph et Twitter sont remplacés en entier par chaque page (Next ne les fusionne pas),
- * d'où cette fonction commune.
- */
+// Open Graph et Twitter sont remplacés en entier par chaque page : Next ne les fusionne pas.
 export function pageMetadata({
   locale,
   path,
@@ -101,7 +90,6 @@ export function pageMetadata({
   };
 }
 
-/** Les pages simples, dont le titre et la description sont dans messages (meta.<page>). */
 type StaticPage = 'projects' | 'blog' | 'about' | 'experiences' | 'contact';
 
 export async function staticPageMetadata(

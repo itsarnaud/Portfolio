@@ -4,16 +4,11 @@ import { Children, useEffect, useRef, useState, type ReactNode } from 'react';
 import { cx } from '@/lib/utils';
 
 type CarouselProps = {
-  /** Nom du carrousel pour les lecteurs d'écran (« Mes derniers projets »). */
   label: string;
   className?: string;
   children: ReactNode;
 };
 
-/**
- * Carrousel horizontal en CSS (scroll-snap), une carte à la fois, avec des points
- * qui montrent la carte visible. Le JavaScript ne sert qu'à mettre à jour les points.
- */
 export function Carousel({ label, className, children }: CarouselProps) {
   const listRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);

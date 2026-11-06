@@ -2,11 +2,6 @@ import { NextResponse } from 'next/server';
 import { contactTopics, validateContact, type ContactPayload, type ContactTopic } from '@/lib/contact';
 import { sendContactEmail } from '@/lib/email/sendContactEmail';
 
-/**
- * POST /api/contact, repris de la v2 :
- * { from_name, from_email, subject, message } obligatoires (400 si un champ est invalide,
- * 500 si l'envoi échoue). La v3 ajoute topic, locale, page et un champ piège (website).
- */
 export async function POST(request: Request) {
   let data: Partial<ContactPayload>;
   try {
@@ -15,7 +10,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Requête invalide' }, { status: 400 });
   }
 
-  // Champ piège rempli : c'est un robot. On fait comme si tout s'était bien passé.
+  // Champ piège rempli : on répond comme si tout allait bien, pour ne rien dire au robot.
   if (typeof data.website === 'string' && data.website.trim() !== '') {
     return NextResponse.json({ success: true }, { status: 200 });
   }

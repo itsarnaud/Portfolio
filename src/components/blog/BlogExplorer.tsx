@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
+import { useState, type ReactNode } from 'react';
 import { hex } from '@/content/colors';
 import type { PostCategory } from '@/content/types';
 import { cx } from '@/lib/utils';
@@ -10,12 +10,10 @@ import { postCategories } from './categories';
 export type BlogItem = {
   slug: string;
   category: PostCategory;
-  /** La carte normale et sa version mise en avant (premier post de la liste), rendues côté serveur. */
   card: ReactNode;
   featured: ReactNode;
 };
 
-/** Couleur de l'étiquette du curseur sur chaque filtre. */
 const FILTER_CURSOR: Record<PostCategory | 'all', string> = {
   all: hex.soleil,
   projects: hex.citron,
@@ -24,10 +22,6 @@ const FILTER_CURSOR: Record<PostCategory | 'all', string> = {
   society: hex.soleil,
 };
 
-/**
- * Filtres par sujet et liste des posts. Le premier post visible passe en grand.
- * À chaque changement, les cartes réapparaissent en cascade.
- */
 export function BlogExplorer({ items }: { items: BlogItem[] }) {
   const t = useTranslations('blog');
   const tCursor = useTranslations('cursor');

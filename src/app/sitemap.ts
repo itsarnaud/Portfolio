@@ -6,7 +6,6 @@ import { absoluteUrl, SITE_URL } from '@/lib/seo';
 
 type Entry = MetadataRoute.Sitemap[number];
 
-/** Les pages fixes, avec les priorités de la v2. */
 const staticPages: { path: string; priority: number; changeFrequency: Entry['changeFrequency'] }[] = [
   { path: '', priority: 1, changeFrequency: 'monthly' },
   { path: '/projects', priority: 0.9, changeFrequency: 'weekly' },
@@ -16,7 +15,6 @@ const staticPages: { path: string; priority: number; changeFrequency: Entry['cha
   { path: '/contact', priority: 0.6, changeFrequency: 'yearly' },
 ];
 
-/** Une entrée par langue, chacune avec les liens vers ses traductions (hreflang). */
 function inEveryLocale(path: string, entry: Omit<Entry, 'url'>): Entry[] {
   const languages = Object.fromEntries(routing.locales.map((locale) => [locale, absoluteUrl(locale, path)]));
   return routing.locales.map((locale) => ({

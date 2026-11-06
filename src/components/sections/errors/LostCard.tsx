@@ -1,22 +1,15 @@
 'use client';
 
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import { Star } from '@/components/ui/Star';
 import { hex } from '@/content/colors';
 import { cx } from '@/lib/utils';
-import { Star } from '@/components/ui/Star';
 
-/**
- * Faces de la carte. L'interlettrage du grand « 404 » est hérité en valeur fixe (calculée sur 300px) :
- * chaque texte de la carte remet donc le sien.
- */
+// Le grand « 404 » transmet son interlettrage en valeur fixe : chaque texte de la carte remet le sien.
 const face =
   'absolute inset-0 flex flex-col items-center justify-center rounded-[0.09em] border-[3px] border-encre shadow-dure-md backface-hidden';
 
-/**
- * Le « 0 » de 404 : une carte violette qui tombe, flotte et se retourne (au survol, au toucher
- * ou au clavier) pour montrer « Carte perdue ». Ses dimensions suivent la taille du texte (em).
- */
 export function LostCard() {
   const t = useTranslations('notFound.card');
   const tCursor = useTranslations('cursor');

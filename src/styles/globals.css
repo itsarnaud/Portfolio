@@ -1,104 +1,79 @@
 @import 'tailwindcss';
 
-/*
- * D.A. v3 : néo-brutal coloré. Fond papier, encre noire, bordures de 2px,
- * ombres dures décalées, couleurs franches.
- * Les noms reprennent ceux du tableau de la D.A. : bg-violet, text-encre, border-citron…
- */
 @theme {
-  /* Couleurs de base. La palette Tailwind par défaut est retirée : on n'utilise que la D.A.
-     (bg-transparent et bg-current restent disponibles). */
+  /* Palette Tailwind retirée : on n'utilise que la D.A. */
   --color-*: initial;
   --color-blanc: #ffffff;
-  --color-encre: #121212; /* texte dessus : papier */
-  --color-papier: #f7f7f2; /* fond du site, texte dessus : encre */
+  --color-encre: #121212;
+  --color-papier: #f7f7f2;
 
   /* Couleurs franches */
-  --color-violet: #6b3cf0; /* marque et actions, texte dessus : blanc */
-  --color-cobalt: #2e5bff; /* texte dessus : blanc */
-  --color-citron: #c8f54a; /* texte dessus : encre */
-  --color-tomate: #ff5b37; /* texte dessus : encre */
-  --color-soleil: #ffcb3d; /* texte dessus : encre */
-  --color-rose: #ff9bd0; /* texte dessus : encre */
+  --color-violet: #6b3cf0;
+  --color-cobalt: #2e5bff;
+  --color-citron: #c8f54a;
+  --color-tomate: #ff5b37;
+  --color-soleil: #ffcb3d;
+  --color-rose: #ff9bd0;
 
   /* Textes secondaires sur papier ou blanc */
-  --color-encre-douce: #3a3a35; /* paragraphes */
-  --color-encre-pale: #4a4a44; /* légendes, étiquettes */
+  --color-encre-douce: #3a3a35;
+  --color-encre-pale: #4a4a44;
 
-  /* Versions foncées pour du texte coloré lisible sur fond clair.
-     text-tomate sur papier ne passe pas (2.9:1) : utiliser text-tomate-fonce (5.1:1). */
+  /* text-tomate sur papier ne passe pas (2.9:1) : utiliser text-tomate-fonce (5.1:1) */
   --color-cobalt-fonce: #1e44d8;
   --color-tomate-fonce: #c2361a;
-
-  /* Polices (chargées par next/font, voir src/styles/fonts.ts) */
   --font-display: var(--font-bricolage), system-ui, sans-serif;
   --font-sans: var(--font-karla), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
-
-  /* Interlettrage des titres (Bricolage 800 : entre -0.02em et -0.05em) */
   --tracking-titre-carte: -0.02em;
   --tracking-titre: -0.03em;
   --tracking-display: -0.04em;
-
-  /* Rayons : rounded-bouton, rounded-carte… (rounded-full pour les pills) */
-  --radius-ecran: 12px; /* capture dans une carte */
+  --radius-ecran: 12px;
   --radius-bouton: 14px;
   --radius-carte: 22px;
-  --radius-carte-lg: 26px;
-
-  /* Ombres dures : shadow-dure, shadow-dure-md… */
-  --shadow-dure-sm: 3px 3px 0 var(--color-encre); /* petites chips, curseur */
-  --shadow-dure: 4px 4px 0 var(--color-encre); /* boutons, petits blocs */
-  --shadow-dure-md: 6px 6px 0 var(--color-encre); /* cartes */
-  --shadow-dure-lg: 10px 10px 0 var(--color-encre); /* carte au survol */
+  --shadow-dure-sm: 3px 3px 0 var(--color-encre);
+  --shadow-dure: 4px 4px 0 var(--color-encre);
+  --shadow-dure-md: 6px 6px 0 var(--color-encre);
+  --shadow-dure-lg: 10px 10px 0 var(--color-encre);
 
   /* Largeurs : max-w-site, max-w-lecture */
   --container-site: 1200px;
   --container-lecture: 680px;
-
-  /* Courbes : « rebond » pour ce qui arrive ou réagit, « douce » pour le reste */
   --ease-rebond: cubic-bezier(0.3, 1.6, 0.5, 1);
-  --ease-douce: cubic-bezier(0.2, 1, 0.3, 1);
-
-  /*
-   * Animations en boucle, très légères. Uniquement transform/opacity (rotate, translate),
-   * jamais de JavaScript. Toutes coupées en mode « animations réduites » (voir plus bas).
-   */
-  --animate-wobble: wobble 2.6s ease-in-out infinite; /* mot surligné qui se balance */
-  --animate-bob: bob 2.2s ease-in-out infinite; /* petite pill qui flotte (6px) */
-  --animate-float: float 3.4s ease-in-out infinite; /* sticker ou carte qui flotte (8px) */
-  --animate-spin-star: spin 6s linear infinite; /* étoiles */
-  --animate-spin-slow: spin 16s linear infinite; /* tampons */
-  --animate-pulse-ring: pulse-ring 1.6s ease-out infinite; /* pastille « en cours » */
-  --animate-jig: jig 0.35s ease-in-out 2; /* sticker au survol */
+  --animate-wobble: wobble 2.6s ease-in-out infinite;
+  --animate-bob: bob 2.2s ease-in-out infinite;
+  --animate-float: float 3.4s ease-in-out infinite;
+  --animate-spin-star: spin 6s linear infinite;
+  --animate-spin-slow: spin 16s linear infinite;
+  --animate-jig: jig 0.35s ease-in-out 2;
   --animate-marquee: marquee 34s linear infinite;
 
-  --animate-wave: wave 1.6s linear infinite; /* soulignement en vague */
-  --animate-tick: tick 7.5s cubic-bezier(0.7, 0, 0.2, 1) infinite; /* mot qui change dans le hero */
-  --animate-blink: blink 1s steps(1) infinite; /* caret */
+  --animate-wave: wave 1.6s linear infinite;
+  --animate-tick: tick 7.5s cubic-bezier(0.7, 0, 0.2, 1) infinite;
+  --animate-blink: blink 1s steps(1) infinite;
 
   /* Arrivées (une seule fois) */
-  --animate-nav-in: nav-in 0.7s cubic-bezier(0.2, 1.2, 0.4, 1) both; /* la nav descend au chargement */
-  --animate-pop: pop 0.7s cubic-bezier(0.2, 1.5, 0.4, 1) both; /* titres, mot par mot */
-  --animate-rise: rise 0.8s cubic-bezier(0.2, 1, 0.3, 1) both; /* textes et blocs */
+  --animate-nav-in: nav-in 0.7s cubic-bezier(0.2, 1.2, 0.4, 1) both;
+  --animate-pop: pop 0.7s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+  --animate-rise: rise 0.8s cubic-bezier(0.2, 1, 0.3, 1) both;
 
-  --animate-cascade-a: cascade-a 0.6s cubic-bezier(0.2, 1.3, 0.4, 1) both; /* cartes après un filtre */
-  --animate-cascade-b: cascade-b 0.6s cubic-bezier(0.2, 1.3, 0.4, 1) both; /* idem, nom différent pour rejouer */
-  --animate-zoom-in: zoom-in 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both; /* image agrandie */
-  --animate-swing: swing 4s ease-in-out infinite; /* polaroïd accroché par le haut */
-  --animate-unfold: unfold 0.35s ease both; /* liste qui se déplie */
+  --animate-cascade-a: cascade-a 0.6s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+  --animate-cascade-b: cascade-b 0.6s cubic-bezier(0.2, 1.3, 0.4, 1) both;
+  --animate-zoom-in: zoom-in 0.45s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  --animate-swing: swing 4s ease-in-out infinite;
+  --animate-unfold: unfold 0.35s ease both;
 
   /* Contact et pages d'erreur */
-  --animate-burst: burst 1s cubic-bezier(0.1, 0.8, 0.3, 1) both; /* confettis */
-  --animate-boing: boing 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); /* chip choisie */
-  --animate-drop: drop 0.9s cubic-bezier(0.3, 1.3, 0.5, 1) both; /* carte 404 qui tombe */
-  --animate-caught: caught 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both; /* étoile attrapée */
-  --animate-shake-l: shake-l 2.4s ease-in-out infinite; /* carte 500 cassée */
+  --animate-burst: burst 1s cubic-bezier(0.1, 0.8, 0.3, 1) both;
+  --animate-boing: boing 0.45s cubic-bezier(0.3, 1.6, 0.5, 1);
+  --animate-drop: drop 0.9s cubic-bezier(0.3, 1.3, 0.5, 1) both;
+  --animate-caught: caught 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  --animate-shake-l: shake-l 2.4s ease-in-out infinite;
   --animate-shake-r: shake-r 2.4s ease-in-out infinite;
-  --animate-crawl: crawl var(--crawl-duration, 7s) linear infinite; /* bugs qui traversent */
-  --animate-wiggle: wiggle 0.3s ease-in-out infinite alternate; /* pattes des bugs */
-  --animate-splat: splat 0.35s cubic-bezier(0.3, 1.6, 0.5, 1) both; /* bug écrasé */
-  --animate-plus-one: plus-one 0.9s ease-out both; /* « +1 » qui monte */
+  --animate-crawl: crawl var(--crawl-duration, 7s) linear infinite;
+  --animate-wiggle: wiggle 0.3s ease-in-out infinite alternate;
+  --animate-splat: splat 0.35s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+  --animate-plus-one: plus-one 0.9s ease-out both;
 
   @keyframes burst {
     0% {
@@ -338,15 +313,6 @@
     }
   }
 
-  @keyframes pulse-ring {
-    0% {
-      box-shadow: 0 0 0 0 rgb(18 18 18 / 0.5);
-    }
-    100% {
-      box-shadow: 0 0 0 9px rgb(18 18 18 / 0);
-    }
-  }
-
   /* Part de la rotation de l'élément (--rot) pour ne pas le redresser d'un coup */
   @keyframes jig {
     0%,
@@ -390,11 +356,7 @@
   html {
     color-scheme: light;
     -webkit-text-size-adjust: 100%;
-    /*
-     * Rien ne doit faire défiler la page à l'horizontale (bandeau croisé, blocs qui arrivent
-     * de côté…). Safari ignore cette règle sur <body> seul : on la met aussi sur <html>.
-     * « clip » (et pas « hidden ») pour ne pas casser les éléments en position: sticky.
-     */
+    /* Safari ignore cette règle sur <body> seul ; clip plutôt que hidden pour garder position: sticky */
     overflow-x: clip;
   }
 
@@ -448,10 +410,7 @@
   }
 }
 
-/*
- * Menu mobile (<dialog>) : il s'ouvre en cercle depuis le bouton menu (--menu-x, --menu-y),
- * les liens arrivent un par un, et il se referme en cercle.
- */
+/* Menu mobile : s'ouvre en cercle depuis le bouton (--menu-x, --menu-y) */
 .mobile-menu[open] {
   animation: menu-in 0.55s cubic-bezier(0.6, 0, 0.2, 1) both;
 }
@@ -490,10 +449,7 @@
   }
 }
 
-/*
- * Paquet de cartes de l'accueil (ProjectDeck). Chaque carte a un rang (0 = dessus),
- * changé par le JavaScript sans re-render React. Au survol (souris), le paquet s'étale en éventail.
- */
+/* Paquet de cartes de l'accueil : le rang (0 = dessus) est changé par ProjectDeck, sans re-render */
 .deck-card {
   transition: transform 0.55s cubic-bezier(0.3, 1.35, 0.5, 1);
 }
@@ -570,11 +526,7 @@ html:has(dialog[open]) {
   overflow: hidden;
 }
 
-/*
- * Curseur custom actif (souris, sans « animations réduites ») : on cache le curseur natif.
- * Sauf quand un <dialog> est ouvert (menu mobile, visionneuse) : il s'affiche au-dessus de tout,
- * curseur custom compris. On cache alors le curseur custom et le curseur natif revient.
- */
+/* Un <dialog> ouvert passe au-dessus du curseur custom : le curseur natif revient */
 html[data-custom-cursor='on']:not(:has(dialog[open])),
 html[data-custom-cursor='on']:not(:has(dialog[open])) * {
   cursor: none;
@@ -594,11 +546,7 @@ html:has(dialog[open]) .custom-cursor {
   animation-play-state: paused !important;
 }
 
-/*
- * Mode « animations réduites » : plus aucune boucle, apparitions instantanées.
- * Les animations finissent tout de suite sur leur état final, les transitions aussi.
- * Les animations GSAP lisent usePrefersReducedMotion de leur côté.
- */
+/* Animations réduites : GSAP lit usePrefersReducedMotion de son côté */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

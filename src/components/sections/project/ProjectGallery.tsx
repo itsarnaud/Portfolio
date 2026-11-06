@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
-import { cx } from '@/lib/utils';
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import { Reveal } from '@/components/motion/Reveal';
 import { Carousel } from '@/components/projects/Carousel';
+import { hex } from '@/content/colors';
+import { cx } from '@/lib/utils';
 
 export type GalleryImage = {
   src: string;
@@ -14,7 +14,6 @@ export type GalleryImage = {
   portrait?: boolean;
 };
 
-/** Fond derrière chaque image (visible autour des captures verticales). */
 const TILE_COLORS = ['bg-soleil', 'bg-citron', 'bg-rose'];
 
 const arrow = (direction: 'left' | 'right') => (
@@ -23,10 +22,6 @@ const arrow = (direction: 'left' | 'right') => (
   </svg>
 );
 
-/**
- * « En images ». Desktop : une grille de vignettes qui s'agrandissent dans une visionneuse
- * (<dialog> : Échap ferme, les flèches du clavier changent d'image). Mobile : un carrousel.
- */
 export function ProjectGallery({ images }: { images: GalleryImage[] }) {
   const t = useTranslations('project');
   const tCursor = useTranslations('cursor');
@@ -69,7 +64,6 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
         </h2>
       </Reveal>
 
-      {/* Desktop */}
       <ul className="site-container hidden grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-6 md:grid">
         {images.map((image, index) => (
           <li key={image.src}>
@@ -103,7 +97,6 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
         ))}
       </ul>
 
-      {/* Mobile */}
       <Carousel label={t('gallery')} className="md:hidden">
         {images.map((image, index) => (
           <figure key={image.src} className="flex w-75 flex-col gap-2">
@@ -115,7 +108,6 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
         ))}
       </Carousel>
 
-      {/* Visionneuse */}
       <dialog
         ref={dialogRef}
         aria-label={current.alt}

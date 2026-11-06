@@ -1,6 +1,5 @@
 import type { ProcessStep, Service } from './types';
 
-/** « Ce que je peux faire pour toi » (page À propos) : les cartes qui se retournent. */
 export const services: Service[] = [
   {
     id: 'website',
@@ -44,7 +43,6 @@ export const services: Service[] = [
   },
 ];
 
-/** « Comment je travaille » (page À propos), dans l'ordre. */
 export const processSteps: ProcessStep[] = [
   {
     color: 'soleil',

@@ -1,9 +1,5 @@
 import type { Post, PostCategory } from './types';
 
-/**
- * Les posts LinkedIn, rangés sur le site.
- * `content` reprend le post tel qu'il a été publié, un paragraphe par entrée.
- */
 const posts: Post[] = [
   {
     slug: 'loi-reseaux-sociaux-mineurs-15-ans',
@@ -273,7 +269,6 @@ const posts: Post[] = [
   },
 ];
 
-/** Tous les posts, du plus récent au plus ancien. */
 export function getPosts(category?: PostCategory): Post[] {
   return posts
     .filter((post) => !category || post.category === category)
@@ -284,7 +279,6 @@ export function getPost(slug: string): Post | undefined {
   return posts.find((post) => post.slug === slug);
 }
 
-/** Les posts autour de celui-ci, dans l'ordre de la liste (du plus récent au plus ancien). */
 export function getAdjacentPosts(slug: string): { newer?: Post; older?: Post } {
   const sorted = getPosts();
   const index = sorted.findIndex((post) => post.slug === slug);

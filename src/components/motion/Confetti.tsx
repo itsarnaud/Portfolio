@@ -3,16 +3,10 @@ import type { CSSProperties } from 'react';
 const COLORS = ['bg-tomate', 'bg-violet', 'bg-citron', 'bg-cobalt', 'bg-rose', 'bg-blanc', 'bg-soleil'];
 
 type ConfettiProps = {
-  /** Nombre de confettis, répartis en cercle. */
   count?: number;
-  /** Distance de base, en px (chaque confetti va un peu plus ou moins loin). */
   distance?: number;
 };
 
-/**
- * Petite explosion de confettis depuis le centre de son parent (positionné).
- * Uniquement du CSS, jouée une fois au montage. Masquée en mode « animations réduites ».
- */
 export function Confetti({ count = 16, distance = 90 }: ConfettiProps) {
   return (
     <span aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-visible motion-reduce:hidden">

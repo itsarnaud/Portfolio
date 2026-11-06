@@ -1,14 +1,11 @@
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
 import { toolGroups } from '@/content/skills';
 import type { Post, Project } from '@/content/types';
 import type { Locale } from '@/i18n/routing';
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
 import { absoluteUrl, inLanguage, SITE_NAME, SITE_URL } from '@/lib/seo';
 
-/**
- * Données structurées (schema.org) lues par Google et les IA.
- * « < » est échappé pour qu'aucun texte ne puisse fermer la balise <script>.
- */
-export function JsonLd({ data }: { data: Record<string, unknown> }) {
+// « < » échappé pour qu'aucun texte ne puisse fermer la balise <script>.
+function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (
     <script
       type="application/ld+json"
@@ -19,7 +16,6 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
 
 const person = { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: SITE_NAME, url: SITE_URL };
 
-/** Les outils des groupes « front » et « back » de la boîte à outils, un par entrée. */
 const knowsAbout = toolGroups
   .filter(({ id }) => id === 'front' || id === 'back')
   .flatMap(({ tools }) => tools.flatMap(({ name }) => name.split(' / ')));
@@ -37,7 +33,6 @@ const personText: Record<Locale, { jobTitle: string; description: string }> = {
   },
 };
 
-/** Qui est derrière le site, et le site lui-même. Dans le layout, sur toutes les pages. */
 export function SiteJsonLd({ locale }: { locale: Locale }) {
   return (
     <JsonLd
@@ -71,7 +66,6 @@ export function SiteJsonLd({ locale }: { locale: Locale }) {
   );
 }
 
-/** Fil d'Ariane : Accueil > section > page. */
 function breadcrumb(items: { name: string; url: string }[]) {
   return {
     '@type': 'BreadcrumbList',

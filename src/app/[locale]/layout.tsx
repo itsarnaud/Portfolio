@@ -1,13 +1,8 @@
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { getProjects } from '@/content/projects';
-import { routing } from '@/i18n/routing';
-import { metadataLocale, resolveLocale } from '@/i18n/locale';
-import { SITE_NAME, SITE_URL } from '@/lib/seo';
-import { fontVariables } from '@/styles/fonts';
 import { Footer } from '@/components/layout/Footer';
 import { MobileNav } from '@/components/layout/MobileNav';
 import { Nav } from '@/components/layout/Nav';
@@ -16,17 +11,19 @@ import { RouteChange } from '@/components/layout/RouteChange';
 import { ScrollProgress } from '@/components/layout/ScrollProgress';
 import { Cursor } from '@/components/motion/Cursor';
 import { SiteJsonLd } from '@/components/seo/JsonLd';
+import { hex } from '@/content/colors';
+import { getProjects } from '@/content/projects';
+import { metadataLocale, resolveLocale } from '@/i18n/locale';
+import { routing } from '@/i18n/routing';
+import { SITE_NAME, SITE_URL } from '@/lib/seo';
+import { fontVariables } from '@/styles/fonts';
 import '@/styles/globals.css';
 
 export const viewport: Viewport = {
-  themeColor: '#f7f7f2',
+  themeColor: hex.papier,
   colorScheme: 'light',
 };
 
-/**
- * Ce qui vaut pour tout le site. Chaque page ajoute son titre, sa description, sa canonique,
- * ses hreflang et son image de partage (lib/seo.ts).
- */
 export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Promise<Metadata> {
   const locale = await metadataLocale(params);
   const t = await getTranslations({ locale, namespace: 'meta.home' });
@@ -39,7 +36,7 @@ export async function generateMetadata({ params }: LayoutProps<'/[locale]'>): Pr
     authors: [{ name: SITE_NAME, url: SITE_URL }],
     creator: SITE_NAME,
     keywords: [
-      'Arnaud Royer',
+      SITE_NAME,
       locale === 'en' ? 'Fullstack developer' : 'Développeur fullstack',
       'Montpellier',
       'Freelance',
@@ -59,7 +56,6 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-/** Couleur de chaque projet, pour la barre de progression des pages détail. */
 const projectColors = Object.fromEntries(getProjects().map(({ slug, color }) => [slug, color]));
 
 export default async function LocaleLayout({ children, params }: LayoutProps<'/[locale]'>) {

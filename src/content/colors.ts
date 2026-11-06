@@ -1,23 +1,6 @@
 import type { ColorName } from './types';
 
-/**
- * Couleur du texte posé sur chaque couleur de fond (tableau de la D.A.).
- * Tous les couples passent le contraste de 4.5:1.
- */
-export const textOn: Record<ColorName, 'blanc' | 'encre'> = {
-  violet: 'blanc',
-  cobalt: 'blanc',
-  citron: 'encre',
-  tomate: 'encre',
-  soleil: 'encre',
-  rose: 'encre',
-  blanc: 'encre',
-};
-
-/**
- * Classes Tailwind écrites en entier : Tailwind ne détecte pas les classes construites
- * à la volée (`bg-${color}`), il faut passer par ces tables.
- */
+// Classes écrites en entier : Tailwind ne détecte pas celles construites à la volée.
 export const bgClass: Record<ColorName, string> = {
   violet: 'bg-violet text-blanc',
   cobalt: 'bg-cobalt text-blanc',
@@ -28,17 +11,14 @@ export const bgClass: Record<ColorName, string> = {
   blanc: 'bg-blanc text-encre',
 };
 
-/** Fond de l'écran d'une capture dans une carte : légèrement plus clair sur les cartes foncées. */
 export function screenClass(color: ColorName): string {
   return color === 'violet' || color === 'cobalt' ? 'bg-blanc/15' : 'bg-encre/7';
 }
 
-/** Couleur de l'étiquette du curseur sur une carte : citron sur les fonds foncés ou blancs. */
 export function cursorColorOn(color: ColorName): string {
   return color === 'violet' || color === 'cobalt' || color === 'blanc' ? hex.citron : hex.blanc;
 }
 
-/** Valeurs hexadécimales, pour les rares cas hors Tailwind (image de partage, SVG, styles inline). */
 export const hex: Record<ColorName | 'encre' | 'papier', string> = {
   encre: '#121212',
   papier: '#f7f7f2',

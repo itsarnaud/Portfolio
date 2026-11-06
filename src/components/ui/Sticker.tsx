@@ -5,26 +5,15 @@ import { cx } from '@/lib/utils';
 
 type StickerProps = {
   color: ColorName;
-  /** Inclinaison en degrés (entre -3 et 3 en général). */
   rotate?: number;
-  /** Flotte doucement en boucle. */
   float?: boolean;
-  /**
-   * Décalage de la boucle, en secondes (négatif). Donne à chaque sticker
-   * d'une même rangée un rythme différent.
-   */
   floatOffset?: number;
   size?: 'sm' | 'md' | 'lg';
-  /** Sans ombre dure (boîte à outils de la page À propos). */
   flat?: boolean;
   className?: string;
   children: ReactNode;
 };
 
-/**
- * Pill colorée et légèrement tournée, comme un autocollant.
- * Elle flotte en boucle et tremble au survol.
- */
 export function Sticker({
   color,
   rotate = -2,

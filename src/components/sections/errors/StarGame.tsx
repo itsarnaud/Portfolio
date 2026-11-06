@@ -1,20 +1,17 @@
 'use client';
 
-import { useState, type MouseEvent, type PointerEvent } from 'react';
 import { useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
-import { cx } from '@/lib/utils';
+import { useState, type MouseEvent, type PointerEvent } from 'react';
 import { Confetti } from '@/components/motion/Confetti';
 import { Star } from '@/components/ui/Star';
+import { hex } from '@/content/colors';
+import { cx } from '@/lib/utils';
 
-/** À la souris, l'étoile fuit 6 fois avant de se laisser attraper. */
 const MOUSE_DODGES = 6;
-/** Au toucher, elle saute 3 fois. */
 const TOUCH_DODGES = 3;
 
 type Position = { x: number; y: number; r: number };
 
-/** Nouvelle place, assez loin de la précédente pour que ça se voie. */
 function nextPosition(current: Position): Position {
   let x: number;
   let y: number;
@@ -25,11 +22,7 @@ function nextPosition(current: Position): Position {
   return { x, y, r: Math.round(Math.random() * 90 - 45) };
 }
 
-/**
- * Mini-jeu de la 404, « Attrape l'étoile ». L'étoile fuit le curseur 6 fois puis se laisse
- * attraper ; au toucher elle saute 3 fois. Au clavier, elle s'attrape tout de suite (pas de
- * piège pour l'accessibilité). Confettis à la fin.
- */
+// Au clavier, l'étoile s'attrape tout de suite : pas de piège pour l'accessibilité.
 export function StarGame() {
   const t = useTranslations('notFound.game');
   const tCursor = useTranslations('cursor');

@@ -1,22 +1,19 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 import { bgClass, hex, screenClass } from '@/content/colors';
 import type { ColorName } from '@/content/types';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { cx } from '@/lib/utils';
 import { ProjectCover } from './ProjectCover';
 
-/** Mélange automatique toutes les 3,8 s. */
 const SHUFFLE_MS = 3800;
-/** Durée de l'envol de la carte du dessus avant qu'elle repasse sous le paquet. */
 const FLY_MS = 340;
 
 export type DeckCard = {
   slug: string;
   number: number;
-  /** Le numéro déjà formaté (« N°12 »). */
   numberLabel: string;
   year: number;
   title: string;
@@ -35,14 +32,7 @@ type ProjectDeckProps = {
   hintTouch: string;
 };
 
-/**
- * Le paquet de cartes du hero. Au clic (ou au toucher), la carte du dessus s'envole et
- * repasse sous le paquet. Il se mélange aussi tout seul, sauf au survol, hors écran,
- * onglet caché ou en mode « animations réduites ». Au survol, les cartes s'étalent en éventail.
- *
- * Aucun re-render React pendant le mélange : seuls les attributs data-rank changent,
- * les positions et les transitions sont en CSS (.deck-card dans globals.css).
- */
+// Aucun re-render pendant le mélange : seuls les data-rank changent, le reste est en CSS (.deck-card).
 export function ProjectDeck({ cards, label, cursor, hint, hintTouch }: ProjectDeckProps) {
   const deckRef = useRef<HTMLButtonElement>(null);
   const countRef = useRef<HTMLSpanElement>(null);
@@ -73,7 +63,6 @@ export function ProjectDeck({ cards, label, cursor, hint, hintTouch }: ProjectDe
     );
   };
 
-  // Mélange automatique, en pause au survol, hors écran et onglet caché.
   useEffect(() => {
     const deck = deckRef.current;
     if (!deck || reduced) return;

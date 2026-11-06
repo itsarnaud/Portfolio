@@ -3,14 +3,10 @@ import { cx } from '@/lib/utils';
 const COLORS = ['bg-tomate', 'bg-citron', 'bg-soleil'];
 
 type TickerProps = {
-  /** Exactement 3 mots : l'animation CSS (tick) est réglée pour 3 positions plus un retour. */
+  // Exactement 3 mots : l'animation CSS (tick) est réglée pour 3 positions plus un retour.
   words: string[];
 };
 
-/**
- * Mot qui change tout seul dans une phrase, en CSS uniquement.
- * Les lecteurs d'écran lisent la liste complète une fois, sans l'animation.
- */
 export function Ticker({ words }: TickerProps) {
   const loop = [...words, words[0]];
 

@@ -1,15 +1,11 @@
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
+import Image from 'next/image';
 import { TextPop } from '@/components/motion/TextPop';
 import { Button } from '@/components/ui/Button';
 import { Star } from '@/components/ui/Star';
 import { Sticker } from '@/components/ui/Sticker';
+import { hex } from '@/content/colors';
 
-/**
- * Hero de la page À propos : le titre, trois paragraphes, deux boutons, et à droite
- * un polaroïd accroché par un bout de scotch, qui se balance (et s'arrête au survol).
- */
 export function AboutHero() {
   const t = useTranslations('about');
   const tCursor = useTranslations('cursor');

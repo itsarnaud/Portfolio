@@ -8,7 +8,6 @@ type ProjectRowProps = {
   project: Project;
 };
 
-/** Ligne de la vue « Liste » (page Projets, desktop). Au survol, la ligne s'éclaire et le N° penche. */
 export function ProjectRow({ project }: ProjectRowProps) {
   const locale = useLocale();
   const t = useTranslations('projects');

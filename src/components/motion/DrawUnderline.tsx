@@ -1,18 +1,16 @@
 'use client';
 
 import { useRef, type ReactNode } from 'react';
-import { gsap, useGSAP } from '@/lib/gsap';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import { gsap, useGSAP } from '@/lib/gsap';
 import { cx } from '@/lib/utils';
 
 type DrawUnderlineProps = {
-  /** Classe de couleur du trait (stroke-violet…). */
   stroke?: string;
   className?: string;
   children: ReactNode;
 };
 
-/** Le mot souligné d'un trait à main levée, qui se dessine quand le titre arrive à l'écran. */
 export function DrawUnderline({ stroke = 'stroke-violet', className, children }: DrawUnderlineProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const reduced = usePrefersReducedMotion();

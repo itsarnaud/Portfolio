@@ -84,7 +84,6 @@
     "shuffle": "Mélanger",
     "flip": "Retourner",
     "read": "Lire",
-    "readOnLinkedin": "Lire sur LinkedIn",
     "learnMore": "En savoir plus",
     "filter": "Filtrer",
     "choose": "Choisir",
@@ -196,8 +195,7 @@
     "close": "Fermer",
     "previousImage": "Image précédente",
     "nextImage": "Image suivante",
-    "next": "Projet suivant",
-    "domain": "Le site : {domain}"
+    "next": "Projet suivant"
   },
 
   "about": {
@@ -314,8 +312,7 @@
     "namePlaceholder": "Camille Martin",
     "emailPlaceholder": "camille@exemple.fr",
     "messagePlaceholder": "Raconte-moi ton projet, tes délais, ce que tu as déjà...",
-    "honeypot": "Laisse ce champ vide",
-    "clockLabel": "Heure à Montpellier"
+    "honeypot": "Laisse ce champ vide"
   },
 
   "notFound": {

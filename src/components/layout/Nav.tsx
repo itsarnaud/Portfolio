@@ -3,14 +3,10 @@
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
-import { Logo } from './Logo';
 import { LocaleSwitch } from './LocaleSwitch';
+import { Logo } from './Logo';
 import { isActive, navLinks } from './navLinks';
 
-/**
- * Nav desktop : barre blanche arrondie avec ombre, liens soulignés au survol,
- * lien actif en pill encre, bouton FR / EN. Descend en glissant au premier chargement.
- */
 export function Nav() {
   const t = useTranslations('nav');
   const pathname = usePathname();

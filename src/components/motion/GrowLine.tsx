@@ -1,21 +1,18 @@
 'use client';
 
 import { useRef } from 'react';
-import { gsap, useGSAP } from '@/lib/gsap';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import { gsap, useGSAP } from '@/lib/gsap';
 import { cx } from '@/lib/utils';
 
 type GrowLineProps = {
-  /** Horizontale (étapes de la page À propos) ou verticale (frise du parcours). */
   axis?: 'x' | 'y';
-  /** Élément dont le défilement fait avancer la ligne (par défaut, la ligne elle-même). */
   trigger?: string;
   start?: string;
   end?: string;
   className?: string;
 };
 
-/** Ligne qui se dessine au fil du défilement. Décorative. */
 export function GrowLine({ axis = 'x', trigger, start = 'top 80%', end = 'top 50%', className }: GrowLineProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();

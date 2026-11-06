@@ -1,15 +1,13 @@
 import type { ReactNode } from 'react';
 
-/** Tracé en zig-zag : 16 vagues sur 160 unités, deux fois la largeur du mot pour défiler en boucle. */
+// Deux fois la largeur du mot, pour défiler en boucle.
 const WAVE_PATH = `M0 5 Q5 0 10 5 ${Array.from({ length: 15 }, (_, i) => `T${(i + 2) * 10} 5`).join(' ')}`;
 
 type WaveWordProps = {
-  /** Classe de couleur du trait. */
   stroke?: string;
   children: ReactNode;
 };
 
-/** Mot souligné d'une vague qui défile en boucle (« outils » dans le hero). */
 export function WaveWord({ stroke = 'stroke-tomate', children }: WaveWordProps) {
   return (
     <span className="relative inline-block">

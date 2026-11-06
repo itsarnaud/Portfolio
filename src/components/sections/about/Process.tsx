@@ -1,14 +1,10 @@
 import { useLocale, useTranslations } from 'next-intl';
+import { GrowLine } from '@/components/motion/GrowLine';
+import { Reveal } from '@/components/motion/Reveal';
 import { bgClass } from '@/content/colors';
 import { processSteps } from '@/content/services';
 import { cx } from '@/lib/utils';
-import { GrowLine } from '@/components/motion/GrowLine';
-import { Reveal } from '@/components/motion/Reveal';
 
-/**
- * « Comment je travaille » : quatre étapes dans un même cadre. Sur grand écran, une ligne
- * relie les numéros et se dessine au scroll. Au survol, le numéro tourne et grossit.
- */
 export function Process() {
   const locale = useLocale();
   const t = useTranslations('about.process');

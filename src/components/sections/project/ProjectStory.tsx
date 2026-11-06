@@ -1,8 +1,8 @@
 import { useLocale, useTranslations } from 'next-intl';
-import type { ColorName, Project } from '@/content/types';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { Reveal } from '@/components/motion/Reveal';
 import { Sticker } from '@/components/ui/Sticker';
+import type { ColorName, Project } from '@/content/types';
 
 const STICKERS: { color: ColorName; rotate: number }[] = [
   { color: 'soleil', rotate: -2 },
@@ -10,7 +10,6 @@ const STICKERS: { color: ColorName; rotate: number }[] = [
   { color: 'rose', rotate: -1 },
 ];
 
-/** « Le projet » (qui arrive de la gauche) et « Le plus dur » (de la droite), avec ses stickers. */
 export function ProjectStory({ project }: { project: Project }) {
   const locale = useLocale();
   const t = useTranslations('project');

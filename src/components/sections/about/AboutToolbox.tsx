@@ -1,12 +1,11 @@
 import { useTranslations } from 'next-intl';
-import { toolGroups } from '@/content/skills';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { Reveal } from '@/components/motion/Reveal';
 import { Sticker } from '@/components/ui/Sticker';
+import { toolGroups } from '@/content/skills';
 
 const ROTATIONS = [-2, 1.5, -1, 2, -1.5, 1, -2.5, 1.8];
 
-/** La boîte à outils par groupe (front et mobile, back, outils et design, j'apprends). */
 export function AboutToolbox() {
   const t = useTranslations('about.toolbox');
 

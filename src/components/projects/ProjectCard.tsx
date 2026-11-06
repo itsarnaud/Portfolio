@@ -1,28 +1,22 @@
-import { useId } from 'react';
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { useId } from 'react';
+import { Arrow } from '@/components/ui/Arrow';
+import { BrowserFrame } from '@/components/ui/BrowserFrame';
+import { Chip } from '@/components/ui/Chip';
 import { bgClass, cursorColorOn, screenClass } from '@/content/colors';
 import type { Project } from '@/content/types';
 import { Link } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
-import { BrowserFrame } from '@/components/ui/BrowserFrame';
-import { Chip } from '@/components/ui/Chip';
 import { ProjectCover } from './ProjectCover';
 
 type ProjectCardProps = {
   project: Project;
-  /** Niveau du titre selon la page (h2 dans une grille, h3 sous une section). */
   headingLevel?: 'h2' | 'h3';
-  /** Charge la capture en priorité (cartes visibles dès l'arrivée sur la page). */
   priority?: boolean;
   className?: string;
 };
 
-/**
- * Carte à collectionner d'un projet : en-tête mono (N° · type · année), faux navigateur
- * avec la capture, titre, description, stack et badge.
- * Au survol : la carte monte, les points du navigateur se colorent et la flèche tourne.
- */
 export function ProjectCard({ project, headingLevel = 'h2', priority = false, className }: ProjectCardProps) {
   const locale = useLocale();
   const t = useTranslations('projects');
@@ -91,17 +85,7 @@ export function ProjectCard({ project, headingLevel = 'h2', priority = false, cl
             'group-hover/card:rotate-45 group-hover/card:bg-citron',
           )}
         >
-          <svg
-            viewBox="0 0 24 24"
-            className="size-4"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M7 17L17 7M9 7h8v8" />
-          </svg>
+          <Arrow direction="up-right" className="size-4" />
         </span>
       </div>
     </Link>

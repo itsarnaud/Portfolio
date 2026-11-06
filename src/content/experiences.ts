@@ -1,6 +1,5 @@
 import type { Education, Experience } from './types';
 
-/** Les expériences, de la plus récente à la plus ancienne (ordre d'affichage). */
 export const experiences: Experience[] = [
   {
     id: 'freelance',
@@ -113,7 +112,6 @@ export const experiences: Experience[] = [
   },
 ];
 
-/** La formation, de la plus récente à la plus ancienne. */
 export const education: Education[] = [
   {
     period: '2025 - 2027',

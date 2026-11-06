@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useLocale } from 'next-intl';
+import { useEffect, useState } from 'react';
 
-/** L'heure à Montpellier, mise à jour toutes les 10 secondes. Vide côté serveur (l'heure du build n'aurait pas de sens). */
+// Vide côté serveur : l'heure du build n'aurait pas de sens.
 export function ParisClock() {
   const locale = useLocale();
   const [time, setTime] = useState<string | null>(null);

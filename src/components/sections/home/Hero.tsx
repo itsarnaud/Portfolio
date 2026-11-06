@@ -1,19 +1,14 @@
 import { useLocale, useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
-import { deck, workingOn } from '@/content/home';
-import { getProject } from '@/content/projects';
 import { TextPop } from '@/components/motion/TextPop';
 import { Ticker } from '@/components/motion/Ticker';
 import { WaveWord } from '@/components/motion/WaveWord';
 import { ProjectDeck, type DeckCard } from '@/components/projects/ProjectDeck';
 import { Button } from '@/components/ui/Button';
 import { Stamp } from '@/components/ui/Stamp';
+import { hex } from '@/content/colors';
+import { deck, workingOn } from '@/content/home';
+import { getProject } from '@/content/projects';
 
-/**
- * Hero de l'accueil : le titre mot par mot (« sites » qui se balance, « applis » qui flotte,
- * « outils » souligné en vague), la phrase dont le dernier mot change, deux boutons,
- * et à droite le paquet de cartes avec le tampon tournant.
- */
 export function Hero() {
   const locale = useLocale();
   const t = useTranslations('home.hero');

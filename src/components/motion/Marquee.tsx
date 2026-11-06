@@ -3,23 +3,15 @@ import { cx } from '@/lib/utils';
 
 type MarqueeProps = {
   items: string[];
-  /** Ce qui sépare deux éléments (une étoile, un ✦). Reçoit l'index de l'élément. */
   separator?: (index: number) => ReactNode;
-  /** Défile vers la droite au lieu de la gauche. */
   reverse?: boolean;
-  /** Durée d'un tour complet, en secondes. Plus c'est long, plus c'est lent. */
   duration?: number;
-  /** Nombre de répétitions de la liste dans chaque moitié, pour remplir les grands écrans. */
   repeat?: number;
   className?: string;
   trackClassName?: string;
 };
 
-/**
- * Bandeau qui défile en boucle, en CSS uniquement.
- * Le contenu est rendu deux fois et décalé d'une moitié, pour que la boucle ne se voie pas.
- * S'arrête au survol de son parent .group/tape. Décoratif : caché aux lecteurs d'écran.
- */
+// Contenu rendu deux fois et décalé d'une moitié, pour que la boucle ne se voie pas.
 export function Marquee({
   items,
   separator,

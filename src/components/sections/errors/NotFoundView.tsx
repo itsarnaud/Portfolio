@@ -1,17 +1,16 @@
 import { useTranslations } from 'next-intl';
 import type { CSSProperties } from 'react';
-import { hex } from '@/content/colors';
-import { Link } from '@/i18n/navigation';
 import { navLinks } from '@/components/layout/navLinks';
 import { Marquee } from '@/components/motion/Marquee';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { TextPop } from '@/components/motion/TextPop';
 import { Button } from '@/components/ui/Button';
 import { Star } from '@/components/ui/Star';
+import { hex } from '@/content/colors';
+import { Link } from '@/i18n/navigation';
 import { LostCard } from './LostCard';
 import { StarGame } from './StarGame';
 
-/** Couleur de chaque lien « Tu cherchais peut-être », au survol. */
 const LINK_COLORS: Record<string, [string, string]> = {
   projects: [hex.violet, hex.blanc],
   blog: [hex.citron, hex.encre],
@@ -20,11 +19,6 @@ const LINK_COLORS: Record<string, [string, string]> = {
   contact: [hex.rose, hex.encre],
 };
 
-/**
- * Page 404 (maquette Erreur404) : « 4 [carte] 4 », le texte, les boutons, les liens vers
- * les autres pages et le mini-jeu « Attrape l'étoile », puis un bandeau qui défile.
- * Le bloc « On en parle ? » du pied de page est masqué (data-hide-footer-cta).
- */
 export function NotFoundView() {
   const t = useTranslations('notFound');
   const tNav = useTranslations('nav');

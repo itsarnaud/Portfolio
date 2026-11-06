@@ -4,9 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { cx } from '@/lib/utils';
 
 type CopyButtonProps = {
-  /** Le texte copié dans le presse-papiers. */
   value: string;
-  /** Ce qui est affiché après la copie (« Copié ! »). */
   copiedLabel: string;
   cursor?: string;
   cursorColor?: string;
@@ -14,7 +12,6 @@ type CopyButtonProps = {
   children: ReactNode;
 };
 
-/** Bouton qui copie un texte, puis affiche « Copié ! » pendant 1,6 s (annoncé aux lecteurs d'écran). */
 export function CopyButton({ value, copiedLabel, cursor, cursorColor, className, children }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);

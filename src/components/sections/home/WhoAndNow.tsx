@@ -1,13 +1,14 @@
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import type { ReactNode } from 'react';
+import { Reveal } from '@/components/motion/Reveal';
+import { Button } from '@/components/ui/Button';
 import { hex } from '@/content/colors';
 import { now } from '@/content/home';
 import { getPosts } from '@/content/posts';
 import { Link } from '@/i18n/navigation';
+import { SITE_NAME } from '@/lib/seo';
 import { cx } from '@/lib/utils';
-import { Reveal } from '@/components/motion/Reveal';
-import { Button } from '@/components/ui/Button';
 
 function NowRow({ label, labelClass, last, children }: { label: string; labelClass: string; last?: boolean; children: ReactNode }) {
   return (
@@ -24,7 +25,6 @@ function NowRow({ label, labelClass, last, children }: { label: string; labelCla
   );
 }
 
-/** Les deux cartes côte à côte : « Qui c'est ? » (avec la photo) et « En ce moment ». */
 export function WhoAndNow() {
   const locale = useLocale();
   const t = useTranslations('home');
@@ -38,7 +38,7 @@ export function WhoAndNow() {
           <div className="flex flex-wrap items-center gap-3.5 md:gap-4.5">
             <Image
               src="/images/photo.webp"
-              alt="Arnaud Royer"
+              alt={SITE_NAME}
               width={112}
               height={112}
               data-cursor={tCursor('hello')}

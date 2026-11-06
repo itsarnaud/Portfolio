@@ -1,9 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
-import { cx } from '@/lib/utils';
+import { useEffect, useRef, useState } from 'react';
 import { EMAIL } from '@/components/layout/navLinks';
 import { Marquee } from '@/components/motion/Marquee';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
@@ -11,20 +9,16 @@ import { TextPop } from '@/components/motion/TextPop';
 import { Button } from '@/components/ui/Button';
 import { CopyButton } from '@/components/ui/CopyButton';
 import { Star } from '@/components/ui/Star';
+import { hex } from '@/content/colors';
+import { cx } from '@/lib/utils';
 import { BrokenCard } from './BrokenCard';
 import { BugGame } from './BugGame';
 
 type ErrorViewProps = {
-  /** Identifiant de l'erreur donné par Next (error.digest), à me transmettre. */
   code: string;
-  /** Relance l'affichage de la page (le reset() de Next). */
   onRetry: () => void;
 };
 
-/**
- * Page d'erreur (maquette Erreur500) : le texte, « Réessayer », le mail prérempli avec le code
- * de l'erreur (qu'on peut aussi copier), la carte cassée, le mini-jeu des bugs et le bandeau.
- */
 export function ErrorView({ code, onRetry }: ErrorViewProps) {
   const t = useTranslations('error');
   const tCursor = useTranslations('cursor');

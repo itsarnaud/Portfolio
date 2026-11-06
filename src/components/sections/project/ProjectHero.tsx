@@ -1,30 +1,25 @@
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import type { CSSProperties } from 'react';
-import { bgClass, hex } from '@/content/colors';
-import type { ColorName, Project } from '@/content/types';
-import { cx } from '@/lib/utils';
 import { Reveal } from '@/components/motion/Reveal';
 import { ProjectCover } from '@/components/projects/ProjectCover';
 import { Button } from '@/components/ui/Button';
 import { PhoneFrame } from '@/components/ui/PhoneFrame';
 import { Star } from '@/components/ui/Star';
+import { bgClass, hex } from '@/content/colors';
+import type { ColorName, Project } from '@/content/types';
+import { cx } from '@/lib/utils';
 
-/** Formes décoratives : deux couleurs qui tranchent avec celle du projet. */
 function decorColors(color: ColorName): [string, string] {
   return [color === 'citron' ? 'bg-soleil' : 'bg-citron', color === 'rose' ? 'bg-tomate' : 'bg-rose'];
 }
 
-/**
- * Taille du titre selon son mot le plus long, pour qu'il tienne sur la largeur
- * (« Quested » en très grand, « FutureKawa » un peu moins), entre 40 et 168 px.
- */
+// Taille selon le mot le plus long, pour que le titre tienne sur la largeur.
 function titleSize(title: string): CSSProperties {
   const longest = Math.max(...title.split(' ').map((word) => word.length));
   return { fontSize: `clamp(40px, calc((min(100vw, 1200px) - 100px) / ${(longest * 0.55).toFixed(2)}), 168px)` };
 }
 
-/** Les lettres du titre, mot par mot, avec leur délai : 60 ms entre deux lettres. */
 function titleLetters(title: string) {
   const words = title.split(' ');
   const offsets = words.map((_, index) => words.slice(0, index).join('').length);
@@ -33,11 +28,6 @@ function titleLetters(title: string) {
   );
 }
 
-/**
- * Hero de la page détail, dans la couleur du projet : les étiquettes, le titre dont les lettres
- * rebondissent une à une, la phrase d'accroche, le lien vers le site, puis la capture
- * (dans un navigateur en desktop, dans un téléphone en mobile).
- */
 export function ProjectHero({ project }: { project: Project }) {
   const locale = useLocale();
   const t = useTranslations('project');
@@ -103,7 +93,6 @@ export function ProjectHero({ project }: { project: Project }) {
           </Button>
         </div>
 
-        {/* Desktop : l'affiche dans un navigateur, qui remonte au scroll */}
         <Reveal from="parallax" className="relative mt-4 hidden md:block">
           <div className="overflow-hidden rounded-[18px] border-2 border-encre bg-papier text-encre shadow-dure-md">
             <div className="flex items-center gap-2 border-b-2 border-encre bg-blanc px-3.5 py-2.5">
@@ -118,7 +107,6 @@ export function ProjectHero({ project }: { project: Project }) {
           </div>
         </Reveal>
 
-        {/* Mobile : la capture mobile dans un téléphone qui flotte, sinon l'affiche */}
         {project.media.phone ? (
           <PhoneFrame className="relative mt-2 w-52.5 animate-bob self-center md:hidden">
             <Image

@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { bgClass, screenClass } from '@/content/colors';
 import type { Project } from '@/content/types';
 import { Link } from '@/i18n/navigation';
@@ -9,10 +9,6 @@ type ProjectCompactCardProps = {
   project: Project;
 };
 
-/**
- * Carte compacte de la page Projets en mobile : une mini-carte dans la couleur du projet
- * (avec son N° et un aperçu de la capture), puis le titre, la description et le type.
- */
 export function ProjectCompactCard({ project }: ProjectCompactCardProps) {
   const locale = useLocale();
   const t = useTranslations('projects');

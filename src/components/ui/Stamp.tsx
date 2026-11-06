@@ -3,28 +3,17 @@ import type { ColorName } from '@/content/types';
 import { cx } from '@/lib/utils';
 import { Star } from './Star';
 
-/** Rayon du cercle sur lequel le texte est posé (dans un viewBox de 200). */
 const TEXT_RADIUS = 74;
 
 type StampProps = {
-  /** Texte qui fait le tour, terminé par un séparateur (« DÉVELOPPEUR FULLSTACK · MONTPELLIER · »). */
   text: string;
   color?: ColorName;
-  /** Classe de remplissage de l'étoile du centre. */
   starFill?: string;
-  /** Étoile au centre (le tampon « Dernier post » du blog n'en a pas). */
   star?: boolean;
   className?: string;
 };
 
-/**
- * Tampon rond qui tourne lentement, avec une étoile au centre qui tourne plus vite.
- *
- * Chaque lettre est placée à la main, à intervalle égal sur le cercle : le texte fait
- * exactement le tour, dans tous les navigateurs. (textLength sur un textPath, prévu pour ça,
- * n'est pas appliqué partout et laissait un trou.) La police est à chasse fixe, donc
- * l'espacement reste régulier. Décoratif : le texte est déjà dit ailleurs sur la page.
- */
+// Lettres placées à la main : textLength sur un textPath n'est pas appliqué partout et laissait un trou.
 export function Stamp({ text, color = 'soleil', starFill = 'fill-tomate', star = true, className }: StampProps) {
   const letters = [...text];
   const step = 360 / letters.length;

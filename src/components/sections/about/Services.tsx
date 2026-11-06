@@ -1,10 +1,10 @@
 import { useLocale, useTranslations } from 'next-intl';
+import { Reveal } from '@/components/motion/Reveal';
+import { Arrow } from '@/components/ui/Arrow';
 import { getProject } from '@/content/projects';
 import { services } from '@/content/services';
-import { Reveal } from '@/components/motion/Reveal';
 import { ServiceCard } from './ServiceCard';
 
-/** « Ce que je peux faire pour toi » : quatre cartes qui se retournent. */
 export function Services() {
   const locale = useLocale();
   const t = useTranslations('about.services');
@@ -18,9 +18,7 @@ export function Services() {
         <p className="inline-flex items-center gap-2 text-encre-douce">
           <span className="pointer-coarse:hidden">{t('hint')}</span>
           <span className="hidden pointer-coarse:inline">{t('hintTouch')}</span>
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
+          <Arrow className="size-4" />
         </p>
       </Reveal>
 

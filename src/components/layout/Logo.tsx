@@ -1,16 +1,11 @@
-import { cx } from '@/lib/utils';
 import { Star } from '@/components/ui/Star';
+import { cx } from '@/lib/utils';
 
 type LogoProps = {
-  /** Affiche « arnaud royer » à côté de la carte. */
   withName?: boolean;
   className?: string;
 };
 
-/**
- * Le logo (piste A) : une petite carte violette inclinée avec « ar », et une étoile citron
- * qui tourne dans le coin. La carte pivote un peu quand on survole le lien parent (.group/logo).
- */
 export function Logo({ withName = true, className }: LogoProps) {
   return (
     <span className={cx('flex items-center gap-3', className)}>

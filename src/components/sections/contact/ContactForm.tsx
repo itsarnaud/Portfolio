@@ -1,15 +1,14 @@
 'use client';
 
-import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Confetti } from '@/components/motion/Confetti';
 import { bgClass, hex } from '@/content/colors';
 import type { ColorName } from '@/content/types';
 import { contactTopics, LIMITS, validateContact, type ContactField, type ContactTopic } from '@/lib/contact';
 import { cx } from '@/lib/utils';
-import { Confetti } from '@/components/motion/Confetti';
 
-/** Couleur de chaque sujet (la même que dans le mail reçu). */
 const TOPIC_COLORS: Record<ContactTopic, ColorName> = {
   website: 'soleil',
   webApp: 'violet',
@@ -23,11 +22,6 @@ type Status = 'idle' | 'sending' | 'sent' | 'error';
 const field =
   'w-full rounded-bouton border-2 bg-papier px-4 text-[17px] transition-[box-shadow,translate,background-color] duration-150 ease-out placeholder:text-encre-pale/70 focus:-translate-0.5 focus:bg-blanc focus:shadow-[5px_5px_0_var(--color-violet)] focus:outline-none aria-invalid:border-tomate-fonce';
 
-/**
- * Formulaire de contact : nom, email, sujet en chips, message (avec un petit texte qui réagit
- * à sa longueur). À l'envoi, l'avion s'envole, puis la confirmation arrive avec des confettis.
- * Les erreurs s'affichent sous chaque champ et sont annoncées aux lecteurs d'écran.
- */
 export function ContactForm() {
   const t = useTranslations('contact');
   const tCursor = useTranslations('cursor');

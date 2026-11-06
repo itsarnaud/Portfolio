@@ -1,10 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/seo';
 
-/**
- * Tout est ouvert sauf l'API. Contrairement à la v2, /_next/ n'est plus bloqué :
- * Google a besoin des fichiers JS et CSS pour voir les pages comme un visiteur.
- */
+// /_next/ reste ouvert : Google a besoin du JS et du CSS pour voir les pages.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: '*', allow: '/', disallow: ['/api/'] }],

@@ -5,7 +5,6 @@ import type { ColorName } from '@/content/types';
 import { usePathname } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
 
-/** Couleur de la barre selon la section. */
 const SECTION_COLORS: Record<string, string> = {
   '': 'bg-violet',
   projects: 'bg-rose',
@@ -15,7 +14,7 @@ const SECTION_COLORS: Record<string, string> = {
   contact: 'bg-tomate',
 };
 
-/** Classes écrites en entier pour que Tailwind les détecte. */
+// Classes écrites en entier pour que Tailwind les détecte.
 const PROJECT_COLORS: Record<ColorName, string> = {
   violet: 'bg-violet',
   cobalt: 'bg-cobalt',
@@ -27,14 +26,10 @@ const PROJECT_COLORS: Record<ColorName, string> = {
 };
 
 type ScrollProgressProps = {
-  /** Couleur de chaque projet, par slug : la barre de la page détail prend la couleur du projet. */
   projectColors: Record<string, ColorName>;
 };
 
-/**
- * Barre de progression de lecture, en haut de l'écran, dans la couleur de la page.
- * Mise à jour au scroll via le style, sans re-render React.
- */
+// Mise à jour directe du style au scroll, sans re-render React.
 export function ScrollProgress({ projectColors }: ScrollProgressProps) {
   const pathname = usePathname();
   const barRef = useRef<HTMLDivElement>(null);

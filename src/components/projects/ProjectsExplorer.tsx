@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
+import { useState, type ReactNode } from 'react';
 import { hex } from '@/content/colors';
 import { cx } from '@/lib/utils';
 import { projectFilters, type ProjectFilter } from './filters';
@@ -9,7 +9,6 @@ import { projectFilters, type ProjectFilter } from './filters';
 export type ExplorerItem = {
   slug: string;
   filter: ProjectFilter;
-  /** Les trois façons d'afficher le projet, rendues côté serveur. */
   card: ReactNode;
   row: ReactNode;
   compact: ReactNode;
@@ -20,12 +19,7 @@ type View = 'grid' | 'list';
 const chip =
   'inline-flex min-h-11 shrink-0 items-center rounded-full border-2 px-4 font-mono text-sm font-semibold whitespace-nowrap transition-colors duration-200 md:px-4.5';
 
-/**
- * Filtres, compteur et choix de la vue de la page Projets.
- * À chaque changement, les cartes réapparaissent en cascade : on alterne entre deux
- * animations de même effet (cascade-a / cascade-b) pour que le navigateur les rejoue.
- * Desktop : vue « Cartes » ou « Liste ». Mobile : cartes compactes, filtres qui défilent.
- */
+// Deux animations identiques (cascade-a et cascade-b) en alternance, pour que le navigateur les rejoue.
 export function ProjectsExplorer({ items }: { items: ExplorerItem[] }) {
   const t = useTranslations('projects');
   const tCursor = useTranslations('cursor');
@@ -53,7 +47,6 @@ export function ProjectsExplorer({ items }: { items: ExplorerItem[] }) {
     ...projectFilters.map((id) => ({ id, label: t(`filters.${id}`) })),
   ];
 
-  /** Cascade : 60 ms entre deux cartes, au chargement et après chaque choix. */
   const animated = (index: number) => ({ className: cascade, style: { animationDelay: `${index * 60}ms` } });
 
   return (
@@ -109,7 +102,6 @@ export function ProjectsExplorer({ items }: { items: ExplorerItem[] }) {
         </div>
       </div>
 
-      {/* Desktop */}
       {view === 'grid' ? (
         <ul className="hidden grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-7 md:grid">
           {visible.map((item, index) => {
@@ -134,7 +126,6 @@ export function ProjectsExplorer({ items }: { items: ExplorerItem[] }) {
         </ul>
       )}
 
-      {/* Mobile */}
       <ul className="flex flex-col gap-3.5 md:hidden">
         {visible.map((item, index) => {
           const { className, style } = animated(index);

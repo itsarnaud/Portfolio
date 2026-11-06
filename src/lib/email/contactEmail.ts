@@ -1,13 +1,9 @@
+import { SITE_URL } from '@/lib/seo';
 import fr from '../../../messages/fr.json';
 import type { ContactTopic } from '../contact';
 
-/**
- * Le mail reçu à chaque message du formulaire (maquette « Email »).
- * Mise en page en tableaux et styles en ligne : c'est ce que les messageries comprennent le mieux.
- * Tout ce qui vient du visiteur est échappé avant d'être inséré.
- */
+// Tableaux et styles en ligne : c'est ce que les messageries comprennent le mieux.
 
-const SITE_URL = 'https://arnaudroyer.fr';
 const LOGO_URL = `${SITE_URL}/images/email/logo@2x.png`;
 
 const INK = '#121212';
@@ -15,7 +11,6 @@ const PAPER = '#F7F7F2';
 const DISPLAY = "'Bricolage Grotesque', 'Arial Black', Arial, sans-serif";
 const BODY = "'Karla', Arial, Helvetica, sans-serif";
 
-/** Couleur de la chip du sujet, comme sur le formulaire. */
 const TOPIC_COLORS: Record<ContactTopic, [background: string, text: string]> = {
   website: ['#FFCB3D', INK],
   webApp: ['#6B3CF0', '#FFFFFF'],
@@ -43,7 +38,6 @@ function escapeHtml(value: string): string {
     .replace(/'/g, '&#39;');
 }
 
-/** « 3 nov. · 23:35 » et « 3 novembre 2026 à 23:35 », à l'heure de Paris. */
 function formatDates(date: Date) {
   const parts = (options: Intl.DateTimeFormatOptions) =>
     Object.fromEntries(
@@ -100,7 +94,6 @@ export function buildContactEmail(data: ContactEmailData) {
 <meta name="color-scheme" content="light">
 <title>${escapeHtml(subject)}</title>
 <style>
-  /* Petits écrans (messageries qui comprennent les media queries) : version compacte de la maquette */
   @media (max-width: 480px) {
     .card { padding: 22px 18px 26px !important; }
     .title { font-size: 34px !important; }

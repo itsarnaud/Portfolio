@@ -1,21 +1,17 @@
 import { useLocale, useTranslations } from 'next-intl';
+import { Arrow } from '@/components/ui/Arrow';
+import { Stamp } from '@/components/ui/Stamp';
 import { bgClass, hex } from '@/content/colors';
 import type { Post } from '@/content/types';
 import { Link } from '@/i18n/navigation';
 import { cx, formatDate } from '@/lib/utils';
-import { Stamp } from '@/components/ui/Stamp';
 import { categoryColor } from './categories';
 
 type PostCardProps = {
   post: Post;
-  /** Le dernier post : en grand, dans la couleur de sa catégorie, avec le tampon « Dernier post ». */
   featured?: boolean;
 };
 
-/**
- * Carte d'un post. Toute la carte mène à la page de l'article sur le site (meilleur pour le SEO),
- * et un lien secondaire ouvre le post sur LinkedIn.
- */
 export function PostCard({ post, featured = false }: PostCardProps) {
   const locale = useLocale();
   const t = useTranslations('blog');
@@ -49,7 +45,6 @@ export function PostCard({ post, featured = false }: PostCardProps) {
           featured ? 'pr-16 text-[26px] md:pr-28 md:text-[clamp(32px,4vw,52px)]' : 'text-[22px] md:text-[26px]',
         )}
       >
-        {/* Lien étiré : il couvre toute la carte (after:inset-0). */}
         <Link
           href={`/blog/${post.slug}`}
           data-cursor={tCursor('read')}
@@ -65,9 +60,7 @@ export function PostCard({ post, featured = false }: PostCardProps) {
       <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t-2 border-dashed border-current pt-3 font-bold">
         <span aria-hidden="true" className="inline-flex items-center gap-2">
           {t('read')}
-          <svg viewBox="0 0 24 24" className="size-4 transition-[translate] duration-250 ease-rebond group-hover/post:translate-x-1.25" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
+          <Arrow className="size-4 transition-[translate] duration-250 ease-rebond group-hover/post:translate-x-1.25" />
         </span>
         <a
           href={post.linkedinUrl}
@@ -78,9 +71,7 @@ export function PostCard({ post, featured = false }: PostCardProps) {
           className="relative z-1 inline-flex min-h-11 items-center gap-1.5 text-sm underline underline-offset-4 hover:no-underline"
         >
           {t('readOnLinkedin')}
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 17L17 7M9 7h8v8" />
-          </svg>
+          <Arrow direction="up-right" className="size-3.5" />
         </a>
       </div>
     </article>

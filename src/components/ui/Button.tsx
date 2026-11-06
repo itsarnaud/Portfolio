@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { Arrow } from '@/components/ui/Arrow';
 import { Link } from '@/i18n/navigation';
 import { cx, isExternal } from '@/lib/utils';
 
@@ -12,11 +13,8 @@ const variants = {
 
 type CommonProps = {
   variant?: keyof typeof variants;
-  /** Flèche à droite du texte, qui avance au survol. */
   arrow?: boolean;
-  /** Étiquette du curseur custom au survol (« Voir le projet », « Écris-moi »…). */
   cursor?: string;
-  /** Couleur de l'étiquette du curseur. */
   cursorColor?: string;
   className?: string;
   children: ReactNode;
@@ -24,7 +22,6 @@ type CommonProps = {
 
 type LinkProps = CommonProps & {
   href: string;
-  /** Pour un fichier à télécharger (le CV). */
   download?: boolean;
 };
 
@@ -37,11 +34,6 @@ type ActionProps = CommonProps & {
 
 export type ButtonProps = LinkProps | ActionProps;
 
-/**
- * Bouton de la D.A. : bordure 2px, ombre dure 4px.
- * Au survol il monte de 2px, au clic il s'enfonce et l'ombre disparaît.
- * Rend un lien traduit (/projects), un <a> (http, mailto, fichier) ou un <button>.
- */
 export function Button(props: ButtonProps) {
   const { variant = 'violet', arrow = false, cursor, cursorColor, className, children } = props;
 
@@ -60,18 +52,7 @@ export function Button(props: ButtonProps) {
     <>
       {children}
       {arrow && (
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          className="size-4.5 shrink-0 transition-[translate] duration-250 ease-rebond group-hover/btn:translate-x-1.25"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
+        <Arrow className="size-4.5 shrink-0 transition-[translate] duration-250 ease-rebond group-hover/btn:translate-x-1.25" />
       )}
     </>
   );

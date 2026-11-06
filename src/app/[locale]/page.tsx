@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { metadataLocale, resolveLocale } from '@/i18n/locale';
-import { pageMetadata } from '@/lib/seo';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { Hero } from '@/components/sections/home/Hero';
 import { HomeTape } from '@/components/sections/home/HomeTape';
 import { HomeToolbox } from '@/components/sections/home/HomeToolbox';
 import { LatestProjects } from '@/components/sections/home/LatestProjects';
 import { WhoAndNow } from '@/components/sections/home/WhoAndNow';
+import { metadataLocale, resolveLocale } from '@/i18n/locale';
+import { pageMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: PageProps<'/[locale]'>): Promise<Metadata> {
   const locale = await metadataLocale(params);
@@ -20,7 +20,6 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
 
   return (
     <>
-      {/* Les boucles CSS de ces zones se mettent en pause quand elles sortent de l'écran. */}
       <PauseOffscreen>
         <Hero />
       </PauseOffscreen>

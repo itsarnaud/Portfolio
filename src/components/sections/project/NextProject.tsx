@@ -1,11 +1,11 @@
 import { useLocale, useTranslations } from 'next-intl';
+import { Reveal } from '@/components/motion/Reveal';
+import { Arrow } from '@/components/ui/Arrow';
 import { bgClass, hex } from '@/content/colors';
 import type { Project } from '@/content/types';
 import { Link } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
-import { Reveal } from '@/components/motion/Reveal';
 
-/** Grande carte vers le projet suivant, dans sa couleur, avec une flèche dans un rond. */
 export function NextProject({ project }: { project: Project }) {
   const locale = useLocale();
   const t = useTranslations('project');
@@ -36,9 +36,7 @@ export function NextProject({ project }: { project: Project }) {
           aria-hidden="true"
           className="inline-flex size-16 items-center justify-center rounded-full border-2 border-encre bg-encre text-citron transition-colors duration-200 group-hover/next:bg-citron group-hover/next:text-encre md:size-20"
         >
-          <svg viewBox="0 0 24 24" className="size-7 md:size-8" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
+          <Arrow className="size-7 md:size-8" />
         </span>
       </Link>
     </Reveal>

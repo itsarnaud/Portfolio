@@ -1,20 +1,12 @@
 import type { Locale } from '@/i18n/routing';
 
-/** Un texte dans les deux langues du site. */
 export type Localized<T = string> = Record<Locale, T>;
 
-/** Couleurs de la D.A. utilisables comme fond (voir src/styles/globals.css). */
 export type ColorName = 'violet' | 'cobalt' | 'citron' | 'tomate' | 'soleil' | 'rose' | 'blanc';
 
-/* ------------------------------------------------------------------ */
-/* Projets                                                             */
-/* ------------------------------------------------------------------ */
-
-/** Ce qu'est le projet techniquement. Affiché dans l'en-tête des cartes (N°11 · Fullstack · 2026). */
 export type ProjectKind = 'mobile' | 'fullstack' | 'frontend' | 'backend' | 'bot' | 'open-source';
 
-/** Le cadre du projet. Sert de badge sur les cartes. */
-export type ProjectCategory =
+type ProjectCategory =
   | 'personal'
   | 'school'
   | 'work-study'
@@ -22,53 +14,38 @@ export type ProjectCategory =
   | 'open-source'
   | 'internship';
 
-export type ProjectImage = {
+type ProjectImage = {
   src: string;
   alt: Localized;
-  /** Capture verticale (écran de téléphone) : affichée en entier, sans être recadrée. */
+  // Capture verticale : affichée en entier, sans être recadrée.
   portrait?: boolean;
 };
 
 export type Project = {
-  /** Numéro de la carte : N°1 (le plus ancien) à N°12. */
   number: number;
   slug: string;
   title: string;
   year: number;
   kind: ProjectKind;
   category: ProjectCategory;
-  /** Couleur de la carte, de la page détail et de l'image de partage. */
   color: ColorName;
-  /** Remplace le badge de catégorie sur les cartes (« En bêta », « 6 étoiles sur GitHub »). */
+  // Remplace le badge de catégorie sur les cartes.
   badge?: Localized;
   url: string;
 
-  /** Une phrase, sur les cartes et la liste. */
   description: Localized;
-  /** Sous-titre du hero de la page détail. */
   tagline: Localized;
-  /** Bloc « Type » de la page détail. */
   format: Localized;
-  /** Bloc « Équipe » de la page détail. */
   team: Localized;
-  /** « Le projet » : un paragraphe par entrée. */
   about: Localized<string[]>;
-  /** « Le plus dur » : un paragraphe par entrée. */
   challenge: Localized<string[]>;
-  /** Les stickers à côté de « Le plus dur ». */
   highlights: Localized<string[]>;
 
-  /** Stack courte, sur les cartes (4 maximum). */
+  // Sur les cartes : 4 maximum.
   stack: string[];
-  /** Stack complète, sur la page détail. */
   technologies: string[];
 
-  /**
-   * Images. `poster` est l'affiche du projet (son logo), montrée sur les cartes et en haut
-   * de la page détail. Sans affiche, une couverture est générée (composant ProjectCover).
-   * `phone` est la capture montrée dans un téléphone en haut de la page détail, sur mobile.
-   * `gallery` contient les captures, montrées dans « En images ».
-   */
+  // Sans `poster`, une couverture est générée (ProjectCover).
   media: {
     poster?: string;
     phone?: string;
@@ -76,32 +53,22 @@ export type Project = {
   };
 };
 
-/* ------------------------------------------------------------------ */
-/* Blog                                                                */
-/* ------------------------------------------------------------------ */
-
 export type PostCategory = 'projects' | 'ai' | 'freelance' | 'society';
 
 export type Post = {
   slug: string;
-  /** Date de publication sur LinkedIn (AAAA-MM-JJ). */
+  // Format AAAA-MM-JJ.
   date: string;
   category: PostCategory;
   title: Localized;
   excerpt: Localized;
-  /** Le post complet : un paragraphe par entrée. */
   content: Localized<string[]>;
   linkedinUrl: string;
   tags: string[];
 };
 
-/* ------------------------------------------------------------------ */
-/* Parcours                                                            */
-/* ------------------------------------------------------------------ */
-
 export type Experience = {
   id: string;
-  /** Affiche le badge « En cours ». */
   current: boolean;
   period: Localized;
   place: string;
@@ -110,7 +77,6 @@ export type Experience = {
   companyUrl?: string;
   color: ColorName;
   description: Localized;
-  /** « Ce que j'y ai fait ». */
   points: Localized<string[]>;
   stack: string[];
 };
@@ -121,10 +87,6 @@ export type Education = {
   school: Localized;
   color: ColorName;
 };
-
-/* ------------------------------------------------------------------ */
-/* Boîte à outils, services, méthode                                   */
-/* ------------------------------------------------------------------ */
 
 export type Tool = {
   name: string;
@@ -141,7 +103,6 @@ export type Service = {
   color: ColorName;
   title: Localized;
   description: Localized;
-  /** Slugs des projets donnés en exemple. */
   examples: string[];
 };
 

@@ -1,142 +1,87 @@
-# Portfolio - Arnaud Royer
+# Portfolio d'Arnaud Royer
 
-![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?logo=next.js)
-![React](https://img.shields.io/badge/React-19.2.4-61DAFB?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss)
-![License](https://img.shields.io/badge/License-MIT-green)
+Mon portfolio de développeur fullstack, en ligne sur [arnaudroyer.fr](https://arnaudroyer.fr). Mes projets y sont présentés comme des cartes à collectionner, avec mon parcours, mes posts et un formulaire de contact, en français et en anglais.
 
-Portfolio personnel présentant mes projets, expériences et compétences en tant que développeur Fullstack.
+## Stack
 
-**[arnaudroyer.fr](https://arnaudroyer.fr)**
-
-![Portfolio Preview](public/images/og-image.png)
-
----
-
-## ✨ Fonctionnalités
-
-- **Design moderne** avec animations GSAP et smooth scroll
-- **Responsive** mobile-first
-- **SEO optimisé** (métadonnées, sitemap, JSON-LD)
-- **Formulaire de contact** avec EmailJS
-- **Performance optimale** avec Next.js App Router
-
----
-
-## Stack Technique
-
-| Catégorie | Technologies |
-|-----------|-------------|
-| **Framework** | Next.js 16 (App Router) |
-| **UI** | React 19, Tailwind CSS 4 |
-| **Langage** | TypeScript 5 |
-| **Animations** | GSAP, ScrollTrigger, ScrollSmoother |
-| **Emails** | EmailJS |
-| **Déploiement** | Vercel |
-
----
+- Next.js 16 (App Router) et React 19
+- TypeScript
+- Tailwind CSS 4
+- next-intl pour le français et l'anglais
+- GSAP pour les animations au scroll et les transitions
+- Nodemailer pour le formulaire de contact
+- Vercel Analytics et Speed Insights
 
 ## Installation
 
-### Prérequis
-
-- Node.js 18+ (.nvmrc)
-- npm, yarn ou pnpm
-
-### Étapes
+Il faut Node.js, dans la version indiquée par `.nvmrc`.
 
 ```bash
-# Cloner le repository
-git clone https://github.com/itsarnaud/Portfolio.git
-cd Portfolio
-
-# Installer les dépendances
 npm install
-
-# Copier les variables d'environnement
 cp .env.example .env
-
-# Lancer en développement
 npm run dev
 ```
 
-Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+Le site tourne ensuite sur [localhost:3000](http://localhost:3000).
 
----
+| Commande | Rôle |
+|---|---|
+| `npm run dev` | Lance le site en développement |
+| `npm run build` | Construit le site pour la production |
+| `npm run start` | Lance le site construit |
+| `npm run lint` | Vérifie le code avec ESLint |
 
 ## Variables d'environnement
 
-Créer un fichier `.env` à la racine :
+Elles servent à envoyer les messages du formulaire de contact. Les valeurs vont dans `.env`, qui n'est pas versionné.
 
-```env
-# URL du site (pour SEO et sitemap)
-NEXT_PUBLIC_SITE_URL=https://arnaudroyer.fr
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
 
-# EmailJS (formulaire de contact)
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
----
-
-## 📁 Structure du projet
+## Structure
 
 ```
-Portfolio/
-├── public/
-│   ├── files/          # CV PDF
-│   ├── icons/          # Icônes PWA
-│   └── images/         # Images (OG, projets, profil)
-├── src/
-│   ├── app/            # Pages Next.js (App Router)
-│   │   ├── about/
-│   │   ├── contact/
-│   │   ├── experiences/
-│   │   ├── projects/
-│   │   └── layout.tsx
-│   ├── components/
-│   │   ├── gsap/       # Composants d'animation
-│   │   ├── seo/        # JSON-LD schemas
-│   │   └── ui/         # Composants réutilisables
-│   └── lib/
-│       └── data.js     # Données (projets, expériences)
-├── .env.example
-├── package.json
-└── README.md
+messages/             textes du site, fr.json et en.json
+public/
+  files/              le CV en PDF
+  icons/              icônes du manifest
+  images/             photo, logo, images de partage, images des projets
+src/
+  app/                pages, API de contact, sitemap, robots, manifest, llms.txt
+  components/
+    blog/             cartes et filtres du blog
+    layout/           nav, pied de page, transitions, changement de page
+    motion/           animations réutilisables
+    projects/         cartes, carrousel et filtres des projets
+    sections/         blocs propres à chaque page
+    seo/              données structurées
+    ui/               boutons, chips, stickers, cadres
+  content/            projets, articles, expériences, compétences, services
+  hooks/              hooks React
+  i18n/               configuration de next-intl
+  lib/                SEO, validation du contact, envoi du mail, utilitaires
+  styles/             tokens de la D.A., animations et polices
+  proxy.ts            redirection selon la langue
 ```
 
----
+## Ajouter un projet
 
-## Scripts
+1. Crée le dossier `public/images/projects/<slug>/` et mets-y les images en WebP : `poster.webp` pour l'affiche, plus les captures de la galerie.
+2. Ajoute une image de partage de 1200×630 dans `public/images/og/<slug>.png`. Les pages projet pointent vers ce fichier.
+3. Ajoute le projet dans `src/content/projects.ts`, avec le numéro suivant. Les champs sont décrits par le type `Project` dans `src/content/types.ts`.
+4. Pour le mettre en avant sur l'accueil, ajoute son slug dans `featuredProjects`, ou dans `deck` pour le paquet de cartes, dans `src/content/home.ts`.
 
-| Commande | Description |
-|----------|-------------|
-| `npm run dev` | Lancer en mode développement |
-| `npm run build` | Build de production |
-| `npm run start` | Lancer le build de production |
-| `npm run lint` | Vérifier le code avec ESLint |
+La page du projet, le sitemap et `llms.txt` se mettent à jour tout seuls.
 
----
+## Ajouter un article
 
-## 📄 License
+Ajoute une entrée dans `src/content/posts.ts`, en français et en anglais, avec un `slug` unique, la date au format `AAAA-MM-JJ`, une catégorie (`projects`, `ai`, `freelance` ou `society`) et le lien du post LinkedIn.
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+L'ordre d'affichage suit la date. La page de l'article, le sitemap et `llms.txt` se mettent à jour tout seuls.
 
----
+## Licence
 
-## 👤 Auteur
-
-**Arnaud Royer**
-
-- Portfolio : [arnaudroyer.fr](https://arnaudroyer.fr)
-- GitHub : [@itsarnaud](https://github.com/itsarnaud)
-- LinkedIn : [Arnaud Royer](https://www.linkedin.com/in/royer-arnaud/)
-- Email : contact@arnaudroyer.fr
-
----
-
-<p align="center">
-  Fait avec ❤️ et ☕ par Arnaud Royer
-</p>
+[MIT](LICENSE)

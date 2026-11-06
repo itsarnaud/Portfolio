@@ -1,7 +1,7 @@
 'use client';
 
-import { useId, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useId, useState } from 'react';
 import { bgClass, hex } from '@/content/colors';
 import type { ColorName } from '@/content/types';
 import { cx } from '@/lib/utils';
@@ -13,11 +13,9 @@ type JobCardProps = {
   stack: string[];
   points: string[];
   color: ColorName;
-  /** Ouvert au chargement (la première expérience). */
   defaultOpen?: boolean;
 };
 
-/** Carte d'une expérience, avec « Ce que j'y ai fait » qui se déplie. */
 export function JobCard({ role, company, description, stack, points, color, defaultOpen = false }: JobCardProps) {
   const t = useTranslations('experiences');
   const tCursor = useTranslations('cursor');

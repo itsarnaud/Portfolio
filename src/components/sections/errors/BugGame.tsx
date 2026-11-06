@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
-import { hex } from '@/content/colors';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Star } from '@/components/ui/Star';
+import { hex } from '@/content/colors';
 
-/** Les 5 couloirs des bugs : hauteur, sens, durée de traversée, décalage et position de départ. */
 const LANES = [
   { top: 14, reverse: false, duration: 7, delay: -1, start: 8, color: hex.tomate },
   { top: 56, reverse: true, duration: 9, delay: -4, start: 62, color: hex.violet },
@@ -14,7 +13,6 @@ const LANES = [
   { top: 176, reverse: false, duration: 6.5, delay: -3.2, start: 48, color: hex.tomate },
 ];
 
-/** Un bug écrasé revient dans son couloir après ce délai. */
 const RESPAWN_MS = 1300;
 
 function Bug({ color }: { color: string }) {
@@ -33,18 +31,12 @@ function Bug({ color }: { color: string }) {
   );
 }
 
-/**
- * Mini-jeu de la page d'erreur, « Écrase quelques bugs » : des bugs traversent le terrain,
- * on clique (ou on touche) pour les écraser et un compteur avance. Les bugs se déplacent avec
- * transform (translate), sans toucher à la mise en page. En mode « animations réduites »,
- * ils restent immobiles mais restent cliquables.
- */
 export function BugGame() {
   const t = useTranslations('error.game');
   const tCursor = useTranslations('cursor');
   const [count, setCount] = useState(0);
   const [dead, setDead] = useState<boolean[]>(() => LANES.map(() => false));
-  /** Génération de chaque bug : change à la réapparition pour relancer sa traversée. */
+  // Change à la réapparition pour relancer la traversée.
   const [generation, setGeneration] = useState<number[]>(() => LANES.map(() => 0));
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
