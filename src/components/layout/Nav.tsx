@@ -21,7 +21,7 @@ export function Nav() {
         aria-label={t('label')}
         className="mx-auto flex max-w-site items-center justify-between gap-3 rounded-[28px] border-2 bg-blanc py-2.5 pr-3 pl-4.5 shadow-dure"
       >
-        <Link href="/" aria-label={t('homeLabel')} className="group/logo">
+        <Link href="/" aria-label={t('homeLabel')} className="group/logo -my-[3.5px] flex min-h-11 items-center">
           <Logo />
         </Link>
 

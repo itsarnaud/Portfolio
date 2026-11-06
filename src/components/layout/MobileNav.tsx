@@ -77,7 +77,7 @@ export function MobileNav() {
 
   return (
     <header className="flex items-center justify-between px-4 pt-4 lg:hidden">
-      <Link href="/" aria-label={t('homeLabel')} className="group/logo">
+      <Link href="/" aria-label={t('homeLabel')} className="group/logo -my-[3.5px] flex min-h-11 items-center">
         <Logo />
       </Link>
 

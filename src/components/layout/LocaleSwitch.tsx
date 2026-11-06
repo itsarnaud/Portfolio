@@ -16,17 +16,19 @@ export function LocaleSwitch({ label, className }: LocaleSwitchProps) {
   const pathname = usePathname();
   const t = useTranslations('nav');
   const other = routing.locales.find((l) => l !== locale) ?? routing.defaultLocale;
+  const text = label === 'both' ? t('locales') : t('otherLocale');
 
   return (
     <Link
       href={pathname}
       locale={other}
       hrefLang={other}
-      aria-label={t('switchLocale')}
+      // Le nom commence par le texte visible : la commande vocale « clique sur EN » doit marcher.
+      aria-label={`${text}, ${t('switchLocale')}`}
       data-transition-label={t('otherLocale')}
       className={className}
     >
-      {label === 'both' ? t('locales') : t('otherLocale')}
+      {text}
     </Link>
   );
 }

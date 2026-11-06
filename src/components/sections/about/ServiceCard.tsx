@@ -56,7 +56,7 @@ export function ServiceCard({ number, title, description, color, examples }: Ser
             aria-label={exampleLabel}
             data-cursor={tCursor('flip')}
             data-cursor-color={hex.blanc}
-            className="mt-auto inline-flex min-h-10 items-center gap-2 self-start rounded-full border-2 border-current px-3.5 text-[15px] font-bold"
+            className="mt-auto inline-flex min-h-11 items-center gap-2 self-start rounded-full border-2 border-current px-3.5 text-[15px] font-bold"
           >
             {t('examples')}
             <svg aria-hidden="true" viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
@@ -94,7 +94,7 @@ export function ServiceCard({ number, title, description, color, examples }: Ser
           <button
             type="button"
             onClick={() => setFlipped(false)}
-            className="mt-auto inline-flex min-h-10 items-center self-start rounded-full border-2 border-papier px-3.5 text-sm font-bold [@media(hover:hover)]:hidden"
+            className="mt-auto inline-flex min-h-11 items-center self-start rounded-full border-2 border-papier px-3.5 text-sm font-bold [@media(hover:hover)]:hidden"
           >
             {t('flipBack')}
           </button>

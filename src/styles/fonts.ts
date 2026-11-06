@@ -17,11 +17,16 @@ export const body = Karla({
   display: 'swap',
 });
 
-/** Étiquettes : N°, dates, chips de techno (400, 600). */
+/**
+ * Étiquettes : N°, dates, chips de techno (400, 600).
+ * Pas de préchargement : ces petits textes peuvent attendre, et la bande passante
+ * va d'abord aux polices des titres et du texte.
+ */
 export const mono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains',
   display: 'swap',
+  preload: false,
 });
 
 export const fontVariables = `${display.variable} ${body.variable} ${mono.variable}`;

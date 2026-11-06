@@ -36,7 +36,7 @@ export function LatestProjects() {
           href="/projects"
           data-cursor={tCursor('seeAll')}
           data-cursor-color={hex.rose}
-          className="hidden text-[17px] font-bold underline underline-offset-4 hover:text-violet md:inline"
+          className="hidden min-h-11 items-center text-[17px] font-bold underline underline-offset-4 hover:text-violet md:inline-flex"
         >
           {t('seeAll', { count: total })}
         </Link>

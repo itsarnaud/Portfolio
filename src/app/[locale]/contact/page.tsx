@@ -55,7 +55,7 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
             href={`mailto:${EMAIL}`}
             data-cursor={tCursor('open')}
             data-cursor-color={hex.blanc}
-            className="font-display text-xl font-extrabold [overflow-wrap:anywhere] hover:underline xl:text-[22px]"
+            className="inline-flex min-h-11 items-center font-display text-xl font-extrabold [overflow-wrap:anywhere] hover:underline"
           >
             {EMAIL}
           </a>

@@ -39,7 +39,7 @@ export function CopyButton({ value, copiedLabel, cursor, cursorColor, className,
       data-cursor={cursor}
       data-cursor-color={cursorColor}
       className={cx(
-        'inline-flex min-h-10 items-center gap-2 rounded-full border-2 px-3.5 font-mono text-sm font-semibold transition-colors duration-200',
+        'inline-flex min-h-11 items-center gap-2 rounded-full border-2 px-3.5 font-mono text-sm font-semibold transition-colors duration-200',
         copied ? 'bg-citron' : 'bg-blanc hover:bg-papier',
         className,
       )}

@@ -143,7 +143,7 @@ export function ProjectDeck({ cards, label, cursor, hint, hintTouch }: ProjectDe
                       src={card.image}
                       alt=""
                       fill
-                      priority={index === 0}
+                      priority
                       sizes="(min-width: 768px) 290px, 230px"
                       className="object-cover"
                     />

@@ -44,7 +44,8 @@ export function Carousel({ label, className, children }: CarouselProps) {
 
   return (
     <div className={className}>
-      <ul ref={listRef} aria-label={label} className="snap-carousel flex gap-3.5 overflow-x-auto scroll-px-4 px-4 pt-1 pb-4">
+      {/* tabIndex : le carrousel doit pouvoir défiler au clavier, même sans lien à l'intérieur. */}
+      <ul ref={listRef} aria-label={label} tabIndex={0} className="snap-carousel flex gap-3.5 overflow-x-auto scroll-px-4 px-4 pt-1 pb-4">
         {items.map((item, index) => (
           <li key={index} className="flex">
             {item}

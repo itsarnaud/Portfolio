@@ -47,7 +47,7 @@ export function JobCard({ role, company, description, stack, points, color, defa
         aria-controls={listId}
         data-cursor={open ? tCursor('close') : tCursor('open')}
         data-cursor-color={hex[color]}
-        className="inline-flex min-h-10 items-center gap-2 self-start rounded-full border-2 bg-blanc px-3.5 text-[15px] font-bold transition-colors duration-200 hover:bg-papier"
+        className="inline-flex min-h-11 items-center gap-2 self-start rounded-full border-2 bg-blanc px-3.5 text-[15px] font-bold transition-colors duration-200 hover:bg-papier"
       >
         {t('whatIDid')}
         <svg

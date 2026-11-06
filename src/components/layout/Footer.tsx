@@ -36,7 +36,7 @@ export function Footer() {
                 href={`mailto:${EMAIL}`}
                 data-cursor={tCursor('writeMe')}
                 data-cursor-color={hex.citron}
-                className="relative self-start font-display text-[23px] font-bold tracking-titre-carte break-all text-citron underline decoration-2 underline-offset-6 md:text-[clamp(24px,3.4vw,44px)] md:decoration-3 md:underline-offset-8"
+                className="relative inline-flex min-h-11 items-center self-start font-display text-[23px] font-bold tracking-titre-carte break-all text-citron underline decoration-2 underline-offset-6 md:text-[clamp(24px,3.4vw,44px)] md:decoration-3 md:underline-offset-8"
               >
                 {t('email')}
               </a>
@@ -59,12 +59,12 @@ export function Footer() {
         </PauseOffscreen>
       </HideOnPaths>
 
-      <div className="flex flex-wrap justify-between gap-3 pt-6 pb-8 font-mono text-xs text-encre-pale md:pt-7 md:pb-10 md:text-[13px]">
+      <div className="flex flex-wrap items-center justify-between gap-x-3 pt-2.5 pb-5 font-mono text-xs text-encre-pale md:pt-3.5 md:pb-6.5 md:text-[13px]">
         <span className="inline-flex items-center gap-2">
           {t('rights', { year: new Date().getFullYear() })}
           <Star spin fill="fill-violet" className="hidden size-3.5 md:block" />
         </span>
-        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-violet">
+        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-2 hover:text-violet">
           <span className="md:hidden">{t('sourceShort')}</span>
           <span className="hidden md:inline">{t('source')}</span>
         </a>
