@@ -4,6 +4,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import { Button } from '@/components/ui/Button';
 import { Star } from '@/components/ui/Star';
 import { hex } from '@/content/colors';
+import { Link } from '@/i18n/navigation';
 import { HideOnPaths } from './HideOnPaths';
 import { EMAIL, GITHUB_URL, LINKEDIN_URL } from './navLinks';
 
@@ -59,10 +60,15 @@ export function Footer() {
           {t('rights', { year: new Date().getFullYear() })}
           <Star spin fill="fill-violet" className="hidden size-3.5 md:block" />
         </span>
-        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-2 hover:text-violet">
-          <span className="md:hidden">{t('sourceShort')}</span>
-          <span className="hidden md:inline">{t('source')}</span>
-        </a>
+        <div className="flex flex-wrap gap-x-5">
+          <Link href="/legal" data-transition-label={t('legal')} className="inline-flex min-h-11 items-center underline underline-offset-2 hover:text-violet">
+            {t('legal')}
+          </Link>
+          <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-2 hover:text-violet">
+            <span className="md:hidden">{t('sourceShort')}</span>
+            <span className="hidden md:inline">{t('source')}</span>
+          </a>
+        </div>
       </div>
     </footer>
   );

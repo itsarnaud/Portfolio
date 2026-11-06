@@ -27,6 +27,10 @@
       "title": "Journey",
       "description": "My journey: work-study at Kollirama and Igocreate, freelancing since 2026, and my studies at EPSI Montpellier and IUT de Meaux."
     },
+    "legal": {
+      "title": "Legal notice",
+      "description": "Who publishes this site, who hosts it and what happens to your data: legal notice and privacy."
+    },
     "contact": {
       "title": "Contact",
       "description": "A project, a question, a work-study offer? Write to me and I'll get back to you as soon as I can."
@@ -67,7 +71,8 @@
     "github": "GitHub",
     "rights": "© {year} Arnaud Royer",
     "source": "The site's code is on GitHub",
-    "sourceShort": "Code on GitHub"
+    "sourceShort": "Code on GitHub",
+    "legal": "Legal notice"
   },
 
   "cursor": {
@@ -289,7 +294,7 @@
       "good": "Perfect, I've got enough to understand",
       "long": "Super detailed, thanks :D"
     },
-    "privacy": "Your email is only used to reply to you.",
+    "privacy": "Your email is only used to reply to you. <link>Learn more</link>",
     "send": "Send",
     "sending": "Sending...",
     "sentTitle": "It's sent!",
@@ -377,6 +382,38 @@
       "one": "Error 500",
       "two": "Happens to the best of us",
       "three": "Fixing it"
+    }
+  },
+
+  "legal": {
+    "title": "Legal <mark>notice</mark>",
+    "intro": "Who publishes this site, who hosts it, and what happens to your data.",
+    "publisher": {
+      "title": "Publisher",
+      "name": "Name",
+      "status": "Status",
+      "statusValue": "Sole proprietor (EI), French micro-entreprise",
+      "siret": "SIRET",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "director": "Publication director"
+    },
+    "host": {
+      "title": "Host",
+      "name": "Name",
+      "address": "Address",
+      "contact": "Contact"
+    },
+    "data": {
+      "title": "Your data",
+      "collected": "The contact form sends me your name, your email, the topic you picked and your message, plus the language and the page you write from. All of it is only used to reply to you.",
+      "kept": "I delete your message once your request has been handled. Nothing is sold or shared. Only my technical providers handle it: Vercel for the site, OVH for the email.",
+      "rights": "You can ask to see, correct or delete your data by writing to me at <mail></mail>. If that doesn't work out, you can also contact the CNIL, the French data protection authority."
+    },
+    "stats": {
+      "title": "Analytics and cookies",
+      "text": "This site sets no advertising cookies. Vercel Analytics and Speed Insights measure traffic and speed anonymously, without third-party cookies. That's why there is no cookie banner :)"
     }
   }
 }

@@ -13,6 +13,7 @@ const staticPages: { path: string; priority: number; changeFrequency: Entry['cha
   { path: '/blog', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/experiences', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/contact', priority: 0.6, changeFrequency: 'yearly' },
+  { path: '/legal', priority: 0.3, changeFrequency: 'yearly' },
 ];
 
 function inEveryLocale(path: string, entry: Omit<Entry, 'url'>): Entry[] {

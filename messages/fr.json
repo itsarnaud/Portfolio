@@ -27,6 +27,10 @@
       "title": "Parcours",
       "description": "Mon parcours : alternance chez Kollirama et Igocreate, freelance depuis 2026, et mes études à l'EPSI Montpellier et à l'IUT de Meaux."
     },
+    "legal": {
+      "title": "Mentions légales",
+      "description": "Qui édite ce site, qui l'héberge et ce qui arrive à tes données : mentions légales et confidentialité."
+    },
     "contact": {
       "title": "Contact",
       "description": "Un projet, une question, une offre d'alternance ? Écris-moi, je te réponds dès que possible."
@@ -67,7 +71,8 @@
     "github": "GitHub",
     "rights": "© {year} Arnaud Royer",
     "source": "Le code du site est sur GitHub",
-    "sourceShort": "Code sur GitHub"
+    "sourceShort": "Code sur GitHub",
+    "legal": "Mentions légales"
   },
 
   "cursor": {
@@ -289,7 +294,7 @@
       "good": "Parfait, j'ai de quoi comprendre",
       "long": "Super détaillé, merci :D"
     },
-    "privacy": "Ton email sert seulement à te répondre.",
+    "privacy": "Ton email sert seulement à te répondre. <link>En savoir plus</link>",
     "send": "Envoyer",
     "sending": "Envoi...",
     "sentTitle": "C'est envoyé !",
@@ -377,6 +382,38 @@
       "one": "Erreur 500",
       "two": "Ça arrive même aux meilleurs",
       "three": "Je répare"
+    }
+  },
+
+  "legal": {
+    "title": "Mentions <mark>légales</mark>",
+    "intro": "Qui édite ce site, qui l'héberge, et ce qui arrive à tes données.",
+    "publisher": {
+      "title": "Éditeur du site",
+      "name": "Nom",
+      "status": "Statut",
+      "statusValue": "Entrepreneur individuel (EI), micro-entreprise",
+      "siret": "SIRET",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "director": "Directeur de la publication"
+    },
+    "host": {
+      "title": "Hébergeur",
+      "name": "Nom",
+      "address": "Adresse",
+      "contact": "Contact"
+    },
+    "data": {
+      "title": "Tes données",
+      "collected": "Le formulaire de contact m'envoie ton nom, ton email, le sujet choisi et ton message, plus la langue et la page d'où tu écris. Tout ça sert uniquement à te répondre.",
+      "kept": "Je supprime ton message une fois ta demande traitée. Rien n'est vendu ni partagé. Seuls mes prestataires techniques le voient passer : Vercel pour le site, OVH pour le mail.",
+      "rights": "Tu peux demander à voir, corriger ou supprimer tes données en m'écrivant à <mail></mail>. Si ça coince, tu peux aussi saisir la CNIL."
+    },
+    "stats": {
+      "title": "Statistiques et cookies",
+      "text": "Ce site ne dépose pas de cookie publicitaire. Vercel Analytics et Speed Insights mesurent la fréquentation et la vitesse du site de façon anonyme, sans cookie tiers. C'est pour ça qu'il n'y a pas de bandeau cookies :)"
     }
   }
 }

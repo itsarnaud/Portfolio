@@ -90,7 +90,7 @@ export function pageMetadata({
   };
 }
 
-type StaticPage = 'projects' | 'blog' | 'about' | 'experiences' | 'contact';
+type StaticPage = 'projects' | 'blog' | 'about' | 'experiences' | 'contact' | 'legal';
 
 export async function staticPageMetadata(
   params: Promise<{ locale: string }>,

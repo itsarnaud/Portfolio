@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Confetti } from '@/components/motion/Confetti';
 import { bgClass, hex } from '@/content/colors';
 import type { ColorName } from '@/content/types';
+import { Link } from '@/i18n/navigation';
 import { contactTopics, LIMITS, validateContact, type ContactField, type ContactTopic } from '@/lib/contact';
 import { cx } from '@/lib/utils';
 
@@ -25,6 +26,7 @@ const field =
 export function ContactForm() {
   const t = useTranslations('contact');
   const tCursor = useTranslations('cursor');
+  const tFooter = useTranslations('footer');
   const locale = useLocale();
   const pathname = usePathname();
 
@@ -235,7 +237,15 @@ export function ContactForm() {
       )}
 
       <div className="flex flex-wrap items-center justify-between gap-3.5">
-        <span className="text-sm text-encre-pale">{t('privacy')}</span>
+        <span className="text-sm text-encre-pale">
+          {t.rich('privacy', {
+            link: (chunks) => (
+              <Link href="/legal" data-transition-label={tFooter('legal')} className="underline underline-offset-2 hover:text-violet">
+                {chunks}
+              </Link>
+            ),
+          })}
+        </span>
         <button
           type="submit"
           disabled={sending}
