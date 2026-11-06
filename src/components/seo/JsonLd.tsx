@@ -56,7 +56,7 @@ export function SiteJsonLd({ locale }: { locale: Locale }) {
             '@type': 'WebSite',
             '@id': `${SITE_URL}/#website`,
             name: SITE_NAME,
-            url: absoluteUrl(locale),
+            url: `${SITE_URL}/`,
             inLanguage: inLanguage(locale),
             author: { '@id': person['@id'] },
           },
