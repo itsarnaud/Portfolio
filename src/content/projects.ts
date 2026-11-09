@@ -578,7 +578,7 @@ const projects: Project[] = [
     },
   },
   {
-    number: 13,
+    number: 12,
     slug: 'resilience-alpha',
     title: 'Resilience Alpha',
     year: 2026,
@@ -638,7 +638,7 @@ const projects: Project[] = [
     },
   },
   {
-    number: 14,
+    number: 13,
     slug: 'kollirama-studio',
     title: 'Kollirama Studio',
     year: 2026,
@@ -698,7 +698,7 @@ const projects: Project[] = [
     },
   },
   {
-    number: 12,
+    number: 14,
     slug: 'tengo',
     title: 'Tengo!',
     year: 2026,

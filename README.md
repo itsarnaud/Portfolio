@@ -74,7 +74,7 @@ src/
 3. Ajoute le projet dans `src/content/projects.ts`, avec le numéro suivant. Les champs sont décrits par le type `Project` dans `src/content/types.ts`.
 4. Donne-lui une phrase courte dans `pitch` : elle s'affiche sur le paquet de cartes de l'accueil (sinon, c'est la description).
 
-L'accueil montre tout seul les projets les plus récents : les 4 derniers dans le paquet de cartes, les 5 derniers dans les projets empilés. La page du projet, le sitemap et `llms.txt` se mettent aussi à jour tout seuls. Pour un projet privé, sans site ni code public, laisse `url` vide.
+L'accueil montre tout seul les projets les plus récents : 4 dans le paquet de cartes, 5 dans les projets empilés. La page du projet, le sitemap et `llms.txt` se mettent aussi à jour tout seuls. Pour un projet privé, sans site ni code public, laisse `url` vide.
 
 ## Ajouter un article
 

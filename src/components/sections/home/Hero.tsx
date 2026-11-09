@@ -18,20 +18,18 @@ export function Hero() {
   const tProjects = useTranslations('projects');
   const tCursor = useTranslations('cursor');
 
-  const cards: DeckCard[] = getProjects()
-    .slice(0, DECK_SIZE)
-    .map((project) => ({
-      slug: project.slug,
-      number: project.number,
-      numberLabel: tProjects('number', { number: project.number }),
-      year: project.year,
-      title: project.title,
-      pitch: (project.pitch ?? project.description)[locale],
-      badge: project.badge?.[locale] ?? tProjects(`categories.${project.category}`),
-      color: project.color,
-      stack: project.stack,
-      image: project.media.poster,
-    }));
+  const cards: DeckCard[] = getProjects().slice(0, DECK_SIZE).map((project) => ({
+    slug: project.slug,
+    number: project.number,
+    numberLabel: tProjects('number', { number: project.number }),
+    year: project.year,
+    title: project.title,
+    pitch: (project.pitch ?? project.description)[locale],
+    badge: project.badge?.[locale] ?? tProjects(`categories.${project.category}`),
+    color: project.color,
+    stack: project.stack,
+    image: project.media.poster,
+  }));
 
   return (
     <section className="site-container grid items-center gap-14 pt-10 pb-6 md:pt-16 md:pb-18 lg:grid-cols-2">
