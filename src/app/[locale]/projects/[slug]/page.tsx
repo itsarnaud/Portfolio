@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { PauseOffscreen } from '@/components/motion/PauseOffscreen';
 import { NextProject } from '@/components/sections/project/NextProject';
 import { ProjectGallery } from '@/components/sections/project/ProjectGallery';
@@ -22,13 +24,14 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/projects
   const locale = await metadataLocale(params);
   const project = getProject((await params).slug);
   if (!project) return {};
+  const ogImage = `/images/og/${project.slug}.png`;
   return pageMetadata({
     locale,
     path: `/projects/${project.slug}`,
     title: project.title,
     description: project.description[locale],
     type: 'article',
-    image: { url: `/images/og/${project.slug}.png`, alt: project.title },
+    image: existsSync(join(process.cwd(), 'public', ogImage)) ? { url: ogImage, alt: project.title } : undefined,
     keywords: [project.title, ...project.technologies, SITE_NAME],
   });
 }

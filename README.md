@@ -72,9 +72,9 @@ src/
 1. Crée le dossier `public/images/projects/<slug>/` et mets-y les images en WebP : `poster.webp` pour l'affiche, plus les captures de la galerie.
 2. Ajoute une image de partage de 1200×630 dans `public/images/og/<slug>.png`. Les pages projet pointent vers ce fichier.
 3. Ajoute le projet dans `src/content/projects.ts`, avec le numéro suivant. Les champs sont décrits par le type `Project` dans `src/content/types.ts`.
-4. Pour le mettre en avant sur l'accueil, ajoute son slug dans `featuredProjects`, ou dans `deck` pour le paquet de cartes, dans `src/content/home.ts`.
+4. Donne-lui une phrase courte dans `pitch` : elle s'affiche sur le paquet de cartes de l'accueil (sinon, c'est la description).
 
-La page du projet, le sitemap et `llms.txt` se mettent à jour tout seuls.
+L'accueil montre tout seul les projets les plus récents : les 4 derniers dans le paquet de cartes, les 5 derniers dans les projets empilés. La page du projet, le sitemap et `llms.txt` se mettent aussi à jour tout seuls. Pour un projet privé, sans site ni code public, laisse `url` vide.
 
 ## Ajouter un article
 

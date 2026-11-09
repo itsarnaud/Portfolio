@@ -39,7 +39,7 @@ function build(): string {
     '',
     ...getProjects().map(
       (project) =>
-        `- [${project.title}](${absoluteUrl('fr', `/projects/${project.slug}`)}) (${project.year}, ${fr.projects.categories[project.category]}): ${project.description.fr} Stack : ${project.technologies.join(', ')}. Lien : ${project.url}`,
+        `- [${project.title}](${absoluteUrl('fr', `/projects/${project.slug}`)}) (${project.year}, ${fr.projects.categories[project.category]}): ${project.description.fr} Stack : ${project.technologies.join(', ')}.${project.url ? ` Lien : ${project.url}` : ' Projet privé, sans lien public.'}`,
     ),
     '',
     '## Expériences',

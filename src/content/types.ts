@@ -31,9 +31,14 @@ export type Project = {
   color: ColorName;
   // Remplace le badge de catégorie sur les cartes.
   badge?: Localized;
-  url: string;
+  // Absent pour un projet privé, sans site ni code public.
+  url?: string;
 
   description: Localized;
+
+  // Phrase courte du paquet de cartes de l'accueil, sinon la description.
+
+  pitch?: Localized;
   tagline: Localized;
   format: Localized;
   team: Localized;

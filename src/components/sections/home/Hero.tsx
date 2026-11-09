@@ -6,8 +6,11 @@ import { ProjectDeck, type DeckCard } from '@/components/projects/ProjectDeck';
 import { Button } from '@/components/ui/Button';
 import { Stamp } from '@/components/ui/Stamp';
 import { hex } from '@/content/colors';
-import { deck, workingOn } from '@/content/home';
-import { getProject } from '@/content/projects';
+import { workingOn } from '@/content/home';
+import { getProjects } from '@/content/projects';
+
+// Le CSS du paquet (.deck-card) prévoit exactement 4 rangs.
+const DECK_SIZE = 4;
 
 export function Hero() {
   const locale = useLocale();
@@ -15,22 +18,20 @@ export function Hero() {
   const tProjects = useTranslations('projects');
   const tCursor = useTranslations('cursor');
 
-  const cards: DeckCard[] = deck.flatMap(({ slug, pitch, badge }) => {
-    const project = getProject(slug);
-    if (!project) return [];
-    return {
-      slug,
+  const cards: DeckCard[] = getProjects()
+    .slice(0, DECK_SIZE)
+    .map((project) => ({
+      slug: project.slug,
       number: project.number,
       numberLabel: tProjects('number', { number: project.number }),
       year: project.year,
       title: project.title,
-      pitch: pitch[locale],
-      badge: badge?.[locale] ?? project.badge?.[locale] ?? tProjects(`categories.${project.category}`),
+      pitch: (project.pitch ?? project.description)[locale],
+      badge: project.badge?.[locale] ?? tProjects(`categories.${project.category}`),
       color: project.color,
       stack: project.stack,
       image: project.media.poster,
-    };
-  });
+    }));
 
   return (
     <section className="site-container grid items-center gap-14 pt-10 pb-6 md:pt-16 md:pb-18 lg:grid-cols-2">

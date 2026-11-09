@@ -5,9 +5,7 @@ import { Carousel } from '@/components/projects/Carousel';
 import { ProjectSlide } from '@/components/projects/ProjectSlide';
 import { ProjectStackCard } from '@/components/projects/ProjectStackCard';
 import { hex } from '@/content/colors';
-import { featuredProjects } from '@/content/home';
-import { getProject, getProjects } from '@/content/projects';
-import type { Project } from '@/content/types';
+import { getProjects } from '@/content/projects';
 import { stripMarks } from '@/lib/utils';
 import { Link } from '@/i18n/navigation';
 
@@ -18,8 +16,10 @@ const STICKY_STEP = 26;
 export function LatestProjects() {
   const t = useTranslations('home.latest');
   const tCursor = useTranslations('cursor');
-  const projects = featuredProjects.map(getProject).filter((project): project is Project => Boolean(project));
-  const total = getProjects().length;
+  const all = getProjects();
+  // Les plus récents, autant que d'inclinaisons prévues.
+  const projects = all.slice(0, ROTATIONS.length);
+  const total = all.length;
 
   return (
     <section aria-labelledby="latest-title" className="pt-12 pb-2 md:pt-24 md:pb-10">

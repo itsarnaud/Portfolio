@@ -93,7 +93,7 @@ export function ProjectJsonLd({ project, locale, crumbs }: { project: Project; l
             keywords: project.technologies.join(', '),
             inLanguage: inLanguage(locale),
             ...(project.media.poster && { image: `${SITE_URL}${project.media.poster}` }),
-            sameAs: project.url,
+            ...(project.url && { sameAs: project.url }),
           },
           breadcrumb([
             { name: crumbs.home, url: absoluteUrl(locale) },

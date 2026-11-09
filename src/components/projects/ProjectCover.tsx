@@ -16,7 +16,7 @@ export function ProjectCover({ project }: ProjectCoverProps) {
         <span className="align-top font-mono text-[0.25em] font-semibold tracking-normal">N°</span>
         {project.number}
       </p>
-      <p className="truncate font-mono text-[11px] opacity-80">{project.stack.join(' · ')}</p>
+      <p className="truncate font-mono text-[11px]">{project.stack.join(' · ')}</p>
     </div>
   );
 }

@@ -192,6 +192,8 @@
     "back": "Retour aux projets",
     "visit": "Voir le site",
     "visitCode": "Voir le code",
+    "private": "projet privé",
+    "privateNote": "Appli interne, sans lien public",
     "type": "Type",
     "team": "Équipe",
     "stack": "Stack",

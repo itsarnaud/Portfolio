@@ -481,6 +481,7 @@ const projects: Project[] = [
       fr: 'Une API qui suit les stocks de café dans plusieurs pays, avec des capteurs IoT.',
       en: 'An API that tracks coffee stocks across several countries, with IoT sensors.',
     },
+    pitch: { fr: 'Une API pour suivre des stocks de café.', en: 'An API to track coffee stocks.' },
     tagline: {
       fr: 'Une API qui suit les stocks de café, avec des capteurs IoT.',
       en: 'An API that tracks coffee stocks, with IoT sensors.',
@@ -530,6 +531,7 @@ const projects: Project[] = [
       fr: 'Le Letterboxd des jeux vidéo : on note ses jeux, on écrit des avis, on suit ses potes.',
       en: 'Letterboxd for video games: rate your games, write reviews, follow your friends.',
     },
+    pitch: { fr: 'Le Letterboxd des jeux vidéo.', en: 'Letterboxd for video games.' },
     tagline: {
       fr: 'Le Letterboxd des jeux vidéo. Gratuit, sans pub et open source.',
       en: 'Letterboxd for video games. Free, no ads and open source.',
@@ -576,6 +578,66 @@ const projects: Project[] = [
     },
   },
   {
+    number: 13,
+    slug: 'kollirama-studio',
+    title: 'Kollirama Studio',
+    year: 2026,
+    kind: 'fullstack',
+    category: 'work-study',
+    color: 'cobalt',
+    badge: { fr: 'Projet privé', en: 'Private project' },
+    description: {
+      fr: "L'appli interne qui transforme les mesures d'un rayonnage en plans, en vue 3D et en PDF de devis.",
+      en: 'The internal app that turns racking measurements into drawings, a 3D view and a quote PDF.',
+    },
+    pitch: { fr: 'Des mesures aux plans 3D et au devis.', en: 'From measurements to 3D drawings and a quote.' },
+    tagline: {
+      fr: 'Des mesures saisies au PDF du devis, sans refaire un seul calcul à la main.',
+      en: 'From the measurements to the quote PDF, without redoing a single calculation by hand.',
+    },
+    format: { fr: 'Appli web interne', en: 'Internal web app' },
+    team: { fr: 'Seul, pour Kollirama', en: 'Solo, for Kollirama' },
+    about: {
+      fr: [
+        "Kollirama aménage des magasins et des entrepôts. Pour chiffrer un rayonnage à palettes, un commercial devait remplir à la main le calculateur Excel du fournisseur, puis refaire les plans à côté.",
+        "Avec Kollirama Studio, il saisit les mesures et l'appli fait le reste : le calcul, les plans 2D cotés (côté, face, dessus), une vue 3D qu'on peut faire tourner, la nomenclature et un PDF A4 prêt pour le devis. Un lien à envoyer au client montre la 3D et les plans, sans aucun prix.",
+      ],
+      en: [
+        'Kollirama fits out shops and warehouses. To price pallet racking, a salesperson had to fill in the supplier\'s Excel calculator by hand, then redraw the plans separately.',
+        'With Kollirama Studio, they enter the measurements and the app does the rest: the calculation, dimensioned 2D drawings (side, front, top), a 3D view you can spin around, the bill of materials and an A4 PDF ready for the quote. A link sent to the client shows the 3D and the drawings, with no prices at all.',
+      ],
+    },
+    challenge: {
+      fr: [
+        "Le calcul. Les formules du fournisseur ne doivent pas être réécrites : l'appli ouvre le vrai fichier Excel avec LibreOffice, écrit les mesures, lance le calcul et lit les résultats, un calcul à la fois.",
+        "Ensuite, garder la 3D, les plans et le PDF parfaitement d'accord. Tout part des mêmes fonctions de géométrie, testées sur des cas de référence, pour qu'une cote ne puisse pas changer d'une vue à l'autre.",
+      ],
+      en: [
+        "The calculation. The supplier's formulas must not be rewritten: the app opens the real Excel file with LibreOffice, writes the measurements, runs the calculation and reads the results, one calculation at a time.",
+        'Then, keeping the 3D, the drawings and the PDF perfectly in sync. Everything comes from the same geometry functions, tested against reference cases, so a dimension can never change from one view to another.',
+      ],
+    },
+    highlights: {
+      fr: ['Le vrai calcul Excel', 'Plans, 3D et PDF', 'Aucun prix affiché'],
+      en: ['The real Excel calculation', 'Drawings, 3D and PDF', 'No prices shown'],
+    },
+    stack: ['Next.js', 'Three.js', 'Python', 'PostgreSQL'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind', 'React Three Fiber', 'Python', 'FastAPI', 'LibreOffice', 'Prisma', 'PostgreSQL', 'Better Auth', 'Zod', 'Playwright', 'Docker', 'Turborepo'],
+    // Captures faites sur un faux projet (« Entrepôt démo »).
+    media: {
+      poster: img('kollirama-studio', 'poster'),
+      phone: img('kollirama-studio', 'client-mobile'),
+      gallery: [
+        { src: img('kollirama-studio', 'editor-3d'), alt: { fr: "L'éditeur, avec la vue 3D du rayonnage", en: 'The editor, with the 3D view of the racking' } },
+        { src: img('kollirama-studio', 'plans'), alt: { fr: 'Les plans 2D cotés : côté, face et dessus', en: 'The dimensioned 2D drawings: side, front and top' } },
+        { src: img('kollirama-studio', 'nomenclature'), alt: { fr: 'La nomenclature, avec le poids de chaque pièce', en: 'The bill of materials, with the weight of each part' } },
+        { src: img('kollirama-studio', 'pdf'), alt: { fr: 'Le PDF A4 prêt pour le devis', en: 'The A4 PDF ready for the quote' } },
+        { src: img('kollirama-studio', 'client'), alt: { fr: 'La page envoyée au client, sans aucun prix', en: 'The page sent to the client, with no prices' } },
+        { src: img('kollirama-studio', 'client-mobile'), portrait: true, alt: { fr: 'La page client sur mobile', en: 'The client page on mobile' } },
+      ],
+    },
+  },
+  {
     number: 12,
     slug: 'tengo',
     title: 'Tengo!',
@@ -589,6 +651,7 @@ const projects: Project[] = [
       fr: "Le Killer entre potes : l'appli tire les cibles, donne les missions secrètes et compte les kills. En bêta sur iPhone et Android.",
       en: 'The Killer game with friends: the app picks the targets, hands out secret missions and counts the kills. In beta on iPhone and Android.',
     },
+    pitch: { fr: "L'appli qui joue le maître du jeu au Killer.", en: 'The app that plays game master at Killer.' },
     tagline: {
       fr: 'Le Killer entre potes, sans papier ni maître du jeu.',
       en: 'The Killer game with friends, no paper and no game master.',

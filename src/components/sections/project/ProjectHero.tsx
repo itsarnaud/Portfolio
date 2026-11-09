@@ -33,7 +33,7 @@ export function ProjectHero({ project }: { project: Project }) {
   const t = useTranslations('project');
   const tProjects = useTranslations('projects');
   const [decorA, decorB] = decorColors(project.color);
-  const host = new URL(project.url).host.replace(/^www\./, '');
+  const host = project.url ? new URL(project.url).host.replace(/^www\./, '') : t('private');
   const isCode = host === 'github.com';
   const badge = project.badge?.[locale] ?? tProjects(`categories.${project.category}`);
   const light = project.color === 'violet' || project.color === 'cobalt';
@@ -88,9 +88,19 @@ export function ProjectHero({ project }: { project: Project }) {
         </p>
 
         <div className="relative animate-rise" style={{ animationDelay: '700ms' }}>
-          <Button href={project.url} variant="citron" arrow cursor={host} cursorColor={hex.citron} className="w-full md:w-auto">
-            {isCode ? t('visitCode') : t('visit')}
-          </Button>
+          {project.url ? (
+            <Button href={project.url} variant="citron" arrow cursor={host} cursorColor={hex.citron} className="w-full md:w-auto">
+              {isCode ? t('visitCode') : t('visit')}
+            </Button>
+          ) : (
+            <p className="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-current px-4 font-bold">
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                <rect x="5" y="11" width="14" height="10" rx="2" />
+                <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+              </svg>
+              {t('privateNote')}
+            </p>
+          )}
         </div>
 
         <Reveal from="parallax" className="relative mt-4 hidden md:block">

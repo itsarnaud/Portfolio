@@ -1,27 +1,5 @@
 import type { Localized } from './types';
 
-export const deck: { slug: string; pitch: Localized; badge?: Localized }[] = [
-  {
-    slug: 'tengo',
-    pitch: { fr: "L'appli qui joue le maître du jeu au Killer.", en: 'The app that plays game master at Killer.' },
-  },
-  {
-    slug: 'quested',
-    pitch: { fr: 'Le Letterboxd des jeux vidéo.', en: 'Letterboxd for video games.' },
-  },
-  {
-    slug: 'futurekawa',
-    pitch: { fr: 'Une API pour suivre des stocks de café.', en: 'An API to track coffee stocks.' },
-    badge: { fr: 'API et IoT', en: 'API and IoT' },
-  },
-  {
-    slug: 'kollirama',
-    pitch: { fr: 'Site vitrine et back-office, en solo.', en: 'Showcase site and back-office, solo.' },
-  },
-];
-
-export const featuredProjects = ['tengo', 'quested', 'kollirama', 'futurekawa', 'atelier-maha'];
-
 export const workingOn: Localized<string[]> = {
   fr: ['Tengo!', 'Quested', 'mon portfolio'],
   en: ['Tengo!', 'Quested', 'my portfolio'],

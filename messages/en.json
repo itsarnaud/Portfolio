@@ -192,6 +192,8 @@
     "back": "Back to projects",
     "visit": "Visit the site",
     "visitCode": "See the code",
+    "private": "private project",
+    "privateNote": "Internal app, no public link",
     "type": "Type",
     "team": "Team",
     "stack": "Stack",
