@@ -14,4 +14,6 @@ export function isActive(pathname: string, href: string): boolean {
 
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/royer-arnaud/';
 export const GITHUB_URL = 'https://github.com/itsarnaud';
+export const INSTAGRAM_URL = 'https://www.instagram.com/itsarnaud.dev/';
+export const TIKTOK_URL = 'https://www.tiktok.com/@itsarnaud.dev';
 export const EMAIL = 'contact@arnaudroyer.fr';

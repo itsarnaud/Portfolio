@@ -6,12 +6,13 @@ import { Link, usePathname } from '@/i18n/navigation';
 import { cx } from '@/lib/utils';
 import { LocaleSwitch } from './LocaleSwitch';
 import { Logo } from './Logo';
-import { GITHUB_URL, LINKEDIN_URL, isActive, navLinks } from './navLinks';
+import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL, isActive, navLinks } from './navLinks';
 
 const ACTIVE_ROTATIONS = [-2, 1, -1, 2, -1, 1];
 
 const pressable =
   'border-2 shadow-dure-sm transition-[translate,box-shadow] duration-150 ease-out active:translate-0.75 active:shadow-none';
+const outbound = cx('flex min-h-12 flex-1 items-center justify-center rounded-bouton bg-blanc font-bold text-encre', pressable);
 
 // Le <dialog> natif gère Échap, le focus gardé à l'intérieur et son retour au bouton.
 export function MobileNav() {
@@ -116,8 +117,8 @@ export function MobileNav() {
             </button>
           </div>
 
-          <nav aria-label={t('label')} className="mt-11">
-            <ul className="flex flex-col gap-2.5">
+          <nav aria-label={t('label')} className="mt-11 [@media(max-height:640px)]:mt-6">
+            <ul className="flex flex-col gap-2.5 [@media(max-height:640px)]:gap-1">
               {navLinks.map(({ key, href }, index) => {
                 const active = isActive(pathname, href);
                 return (
@@ -126,7 +127,7 @@ export function MobileNav() {
                       href={href}
                       onClick={() => close(true)}
                       aria-current={active ? 'page' : undefined}
-                      className="flex items-center justify-between px-1 py-1.5 font-display text-[46px] leading-none font-extrabold tracking-display"
+                      className="flex items-center justify-between px-1 py-1.5 font-display text-[46px] leading-none font-extrabold tracking-display [@media(max-height:640px)]:text-[36px]"
                     >
                       <span
                         style={active ? ({ rotate: `${ACTIVE_ROTATIONS[index]}deg` } as CSSProperties) : undefined}
@@ -147,30 +148,51 @@ export function MobileNav() {
             </ul>
           </nav>
 
-          <div className="mt-auto flex gap-2.5">
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cx('flex min-h-12 flex-1 items-center justify-center rounded-bouton bg-blanc font-bold text-encre', pressable)}
-            >
-              LinkedIn
-            </a>
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cx('flex min-h-12 flex-1 items-center justify-center rounded-bouton bg-blanc font-bold text-encre', pressable)}
-            >
-              GitHub
-            </a>
-            <LocaleSwitch
-              label="other"
-              className={cx(
-                'flex min-h-12 min-w-16 items-center justify-center rounded-bouton bg-citron font-mono font-semibold text-encre',
-                pressable,
-              )}
-            />
+          {/* Petits écrans : le menu se compacte pour que ces boutons restent visibles. */}
+          <div className="mt-auto flex flex-col gap-2.5">
+            <div className="flex gap-2.5">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={outbound}
+              >
+                Instagram
+              </a>
+              <a
+                href={TIKTOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={outbound}
+              >
+                TikTok
+              </a>
+            </div>
+            <div className="flex gap-2.5">
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={outbound}
+              >
+                LinkedIn
+              </a>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={outbound}
+              >
+                GitHub
+              </a>
+              <LocaleSwitch
+                label="other"
+                className={cx(
+                  'flex min-h-12 min-w-16 items-center justify-center rounded-bouton bg-citron font-mono font-semibold text-encre',
+                  pressable,
+                )}
+              />
+            </div>
           </div>
         </div>
       </dialog>

@@ -1,4 +1,4 @@
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
+import { EMAIL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL } from '@/components/layout/navLinks';
 import { education, experiences } from '@/content/experiences';
 import { getPosts } from '@/content/posts';
 import { getProjects } from '@/content/projects';
@@ -65,6 +65,7 @@ function build(): string {
     `- Chaque page existe en anglais : remplacer \`/fr\` par \`/en\` dans l'adresse.`,
     `- [Sitemap](${SITE_URL}/sitemap.xml): toutes les adresses du site, dans les deux langues.`,
     `- Contact : ${EMAIL}, [LinkedIn](${LINKEDIN_URL}), [GitHub](${GITHUB_URL}).`,
+    `- Vidéos tech : [Instagram](${INSTAGRAM_URL}), [TikTok](${TIKTOK_URL}).`,
     '',
   ];
   return lines.join('\n');

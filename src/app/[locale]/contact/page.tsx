@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
+import { EMAIL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL } from '@/components/layout/navLinks';
 import { TextPop } from '@/components/motion/TextPop';
 import { ContactForm } from '@/components/sections/contact/ContactForm';
 import { ParisClock } from '@/components/sections/contact/ParisClock';
@@ -90,9 +90,32 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
           <span className="font-display text-[22px] font-extrabold">itsarnaud</span>
         </a>
 
+        <div className={cx(card, 'animate-rise gap-2.5 bg-rose')} style={{ animationDelay: '830ms' }}>
+          <span className="text-sm font-bold">{t('videos')}</span>
+          <span className="font-display text-[22px] font-extrabold">@itsarnaud.dev</span>
+          <div className="flex flex-wrap gap-2">
+            {[
+              [INSTAGRAM_URL, 'Instagram', tCursor('instagram')],
+              [TIKTOK_URL, 'TikTok', tCursor('tiktok')],
+            ].map(([href, label, cursor]) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor={cursor}
+                data-cursor-color={hex.blanc}
+                className="inline-flex min-h-11 items-center rounded-full border-2 bg-blanc px-4 font-bold transition-colors duration-200 hover:bg-papier"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+
         <p
           className="flex animate-rise items-center gap-3 rounded-[20px] border-2 border-dashed px-4.5 py-3.5"
-          style={{ animationDelay: '830ms' }}
+          style={{ animationDelay: '900ms' }}
         >
           <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round">
             <circle cx="12" cy="12" r="9" />

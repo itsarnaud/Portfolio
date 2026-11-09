@@ -1,4 +1,4 @@
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@/components/layout/navLinks';
+import { EMAIL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL } from '@/components/layout/navLinks';
 import { toolGroups } from '@/content/skills';
 import type { Post, Project } from '@/content/types';
 import type { Locale } from '@/i18n/routing';
@@ -44,7 +44,7 @@ export function SiteJsonLd({ locale }: { locale: Locale }) {
             email: `mailto:${EMAIL}`,
             ...personText[locale],
             address: { '@type': 'PostalAddress', addressLocality: 'Montpellier', addressCountry: 'FR' },
-            sameAs: [GITHUB_URL, LINKEDIN_URL],
+            sameAs: [GITHUB_URL, LINKEDIN_URL, INSTAGRAM_URL, TIKTOK_URL],
             knowsAbout,
             alumniOf: [
               { '@type': 'EducationalOrganization', name: 'EPSI Montpellier' },

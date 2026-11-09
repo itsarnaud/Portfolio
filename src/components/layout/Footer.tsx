@@ -6,7 +6,7 @@ import { Star } from '@/components/ui/Star';
 import { hex } from '@/content/colors';
 import { Link } from '@/i18n/navigation';
 import { HideOnPaths } from './HideOnPaths';
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from './navLinks';
+import { EMAIL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, TIKTOK_URL } from './navLinks';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -64,6 +64,14 @@ export function Footer() {
           <Link href="/legal" data-transition-label={t('legal')} className="inline-flex min-h-11 items-center underline underline-offset-2 hover:text-violet">
             {t('legal')}
           </Link>
+          {[
+            [INSTAGRAM_URL, 'Instagram'],
+            [TIKTOK_URL, 'TikTok'],
+          ].map(([href, label]) => (
+            <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-2 hover:text-violet">
+              {label}
+            </a>
+          ))}
           <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-2 hover:text-violet">
             <span className="md:hidden">{t('sourceShort')}</span>
             <span className="hidden md:inline">{t('source')}</span>
