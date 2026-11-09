@@ -44,7 +44,7 @@ export default async function ProjectPage({ params }: PageProps<'/[locale]/proje
 
   const t = await getTranslations('project');
   const tNav = await getTranslations('nav');
-  const gallery = project.media.gallery.map(({ src, alt, portrait }) => ({ src, alt: alt[locale], portrait }));
+  const gallery = project.media.gallery.map(({ src, alt, contain }) => ({ src, alt: alt[locale], contain }));
 
   return (
     <article>

@@ -11,7 +11,7 @@ import { cx } from '@/lib/utils';
 export type GalleryImage = {
   src: string;
   alt: string;
-  portrait?: boolean;
+  contain?: boolean;
 };
 
 const TILE_COLORS = ['bg-soleil', 'bg-citron', 'bg-rose'];
@@ -87,7 +87,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
                     alt=""
                     fill
                     sizes="(min-width: 1200px) 370px, 45vw"
-                    className={image.portrait ? 'object-contain p-3' : 'object-cover object-top'}
+                    className={image.contain ? 'object-contain p-3' : 'object-cover object-top'}
                   />
                 </button>
                 <figcaption className="text-[15px] text-encre-douce">{image.alt}</figcaption>
@@ -101,7 +101,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
         {images.map((image, index) => (
           <figure key={image.src} className="flex w-75 flex-col gap-2">
             <div className={cx('relative aspect-4/3 overflow-hidden rounded-[18px] border-2 shadow-dure', TILE_COLORS[index % TILE_COLORS.length])}>
-              <Image src={image.src} alt="" fill sizes="300px" className={image.portrait ? 'object-contain p-2' : 'object-cover object-top'} />
+              <Image src={image.src} alt="" fill sizes="300px" className={image.contain ? 'object-contain p-2' : 'object-cover object-top'} />
             </div>
             <figcaption className="text-sm text-encre-douce">{image.alt}</figcaption>
           </figure>
@@ -117,7 +117,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
           <div
             className={cx(
               'relative max-h-[75vh] overflow-hidden rounded-[22px] border-2 shadow-[8px_8px_0_var(--color-encre)]',
-              current.portrait ? 'aspect-4/3' : 'aspect-16/10',
+              current.contain ? 'aspect-4/3' : 'aspect-16/10',
               TILE_COLORS[open % TILE_COLORS.length],
             )}
           >
@@ -127,7 +127,7 @@ export function ProjectGallery({ images }: { images: GalleryImage[] }) {
               alt={current.alt}
               fill
               sizes="960px"
-              className={current.portrait ? 'object-contain p-4' : 'object-cover object-top'}
+              className={current.contain ? 'object-contain p-4' : 'object-cover object-top'}
             />
           </div>
           <div className="flex items-center justify-between gap-3 text-papier">

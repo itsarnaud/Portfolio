@@ -17,8 +17,8 @@ type ProjectCategory =
 type ProjectImage = {
   src: string;
   alt: Localized;
-  // Capture verticale : affichée en entier, sans être recadrée.
-  portrait?: boolean;
+  // Affichée en entier, sans recadrage : capture de téléphone, schéma.
+  contain?: boolean;
 };
 
 export type Project = {
