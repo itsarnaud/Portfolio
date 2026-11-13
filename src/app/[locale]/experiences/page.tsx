@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { GrowLine } from '@/components/motion/GrowLine';
 import { Reveal } from '@/components/motion/Reveal';
 import { TextPop } from '@/components/motion/TextPop';
+import { GitHubActivity } from '@/components/sections/experiences/GitHubActivity';
 import { JobCard } from '@/components/sections/experiences/JobCard';
 import { Button } from '@/components/ui/Button';
 import { bgClass, hex } from '@/content/colors';
@@ -116,6 +117,8 @@ export default async function ExperiencesPage({ params }: PageProps<'/[locale]/e
           ))}
         </ul>
       </section>
+
+      <GitHubActivity titleClassName={sectionTitle} />
     </div>
   );
 }

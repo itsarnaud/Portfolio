@@ -250,7 +250,15 @@
     "jobs": "Expériences",
     "current": "En cours",
     "whatIDid": "Ce que j'y ai fait",
-    "education": "Formation"
+    "education": "Formation",
+    "github": {
+      "title": "Côté code",
+      "count": "{count, plural, one {# contribution} other {# contributions}}",
+      "period": "sur GitHub ces 12 derniers mois.",
+      "link": "Voir mon GitHub",
+      "less": "Moins",
+      "more": "Plus"
+    }
   },
 
   "blog": {
